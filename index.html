@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Australia Awards Hub — Scholarships for International Students in Australia</title>
+<meta name="description" content="A curated hub of scholarships, fellowships and study grants for international students coming to Australia. Find, compare and apply." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF3E7;
+    --cream-2:#F2E7D2;
+    --ink:#231812;
+    --ink-soft:#5C4A3E;
+    --terracotta:#C75A3C;
+    --terracotta-deep:#A8442C;
+    --forest:#1F3A2E;
+    --gold:#E8B14F;
+    --line:rgba(35,24,18,0.12);
+    --shadow:0 1px 2px rgba(35,24,18,0.06), 0 8px 24px rgba(35,24,18,0.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .display{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-0.02em;line-height:1.05}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* --- NAV --- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,243,231,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
+  .logo-mark{width:32px;height:32px;border-radius:50%;background:var(--terracotta);position:relative;display:inline-block}
+  .logo-mark::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--gold)}
+  .nav-links{display:flex;gap:32px;list-style:none}
+  .nav-links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;transition:color .2s}
+  .nav-links a:hover{color:var(--terracotta)}
+  .btn{
+    display:inline-block;padding:11px 22px;border-radius:999px;
+    font-weight:600;font-size:15px;text-decoration:none;border:none;cursor:pointer;
+    transition:transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-primary{background:var(--ink);color:var(--cream)}
+  .btn-primary:hover{background:var(--terracotta);transform:translateY(-1px);box-shadow:var(--shadow)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--ink)}
+
+  /* --- HERO --- */
+  .hero{padding:80px 0 60px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;
+    color:var(--terracotta-deep);margin-bottom:24px;
+  }
+  .eyebrow::before{content:"";width:24px;height:1px;background:var(--terracotta-deep)}
+  .hero h1{font-size:clamp(40px,6vw,72px);margin-bottom:24px}
+  .hero h1 em{font-style:italic;color:var(--terracotta);font-weight:400}
+  .hero p.lede{font-size:19px;color:var(--ink-soft);max-width:520px;margin-bottom:36px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+  .hero-stats{display:flex;gap:48px;border-top:1px solid var(--line);padding-top:28px}
+  .stat-num{font-family:'Fraunces',serif;font-size:36px;font-weight:600;color:var(--ink);line-height:1}
+  .stat-label{font-size:13px;color:var(--ink-soft);margin-top:6px}
+
+  /* Hero visual */
+  .hero-visual{position:relative;aspect-ratio:1/1.1;max-width:480px;justify-self:end}
+  .blob{position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,var(--gold),var(--terracotta) 60%,var(--terracotta-deep));border-radius:46% 54% 60% 40% / 50% 40% 60% 50%;animation:blob 12s ease-in-out infinite}
+  .card-float{position:absolute;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);min-width:200px}
+  .card-float .label{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:6px}
+  .card-float .value{font-family:'Fraunces',serif;font-size:18px;font-weight:600}
+  .card-float.c1{top:18%;left:-8%;animation:float1 6s ease-in-out infinite}
+  .card-float.c2{bottom:14%;right:-6%;animation:float2 7s ease-in-out infinite}
+  .card-float.c3{bottom:42%;left:-4%;animation:float1 8s ease-in-out infinite reverse}
+  @keyframes blob{0%,100%{border-radius:46% 54% 60% 40% / 50% 40% 60% 50%}50%{border-radius:60% 40% 45% 55% / 45% 55% 50% 50%}}
+  @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* --- SECTIONS --- */
+  section{padding:80px 0}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:32px;flex-wrap:wrap}
+  .section-head h2{font-size:clamp(32px,4vw,48px);max-width:600px}
+  .section-head p{color:var(--ink-soft);max-width:380px}
+
+  /* --- FILTERS --- */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+  .chip{
+    padding:9px 18px;border-radius:999px;border:1px solid var(--line);
+    background:transparent;font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;
+    font-family:inherit;transition:all .2s;
+  }
+  .chip:hover{border-color:var(--ink)}
+  .chip.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+
+  /* --- SCHOLARSHIP CARDS --- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{
+    background:var(--cream);border:1px solid var(--line);border-radius:20px;
+    padding:28px;transition:transform .25s, box-shadow .25s, border-color .25s;
+    display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--terracotta)}
+  .card-tag{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;padding:5px 11px;border-radius:999px;background:var(--cream-2);color:var(--ink-soft);margin-bottom:18px;align-self:flex-start}
+  .card h3{font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin-bottom:10px;line-height:1.25}
+  .card .provider{font-size:13px;color:var(--ink-soft);margin-bottom:18px}
+  .card-meta{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:18px}
+  .meta-label{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px}
+  .meta-value{font-size:14px;font-weight:600}
+  .card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+  .deadline{font-size:13px;color:var(--terracotta-deep);font-weight:600}
+  .card-link{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+  .card-link:hover{gap:10px;color:var(--terracotta)}
+
+  /* --- HOW IT WORKS --- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:24px}
+  .step{padding:32px;border-radius:20px;background:var(--cream-2);position:relative}
+  .step-num{font-family:'Fraunces',serif;font-size:48px;color:var(--terracotta);line-height:1;margin-bottom:16px;font-weight:600}
+  .step h4{font-family:'Fraunces',serif;font-size:22px;margin-bottom:10px;font-weight:600}
+  .step p{color:var(--ink-soft);font-size:15px}
+
+  /* --- BLOG --- */
+  .blog-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+  .blog-card{border-radius:20px;overflow:hidden;background:var(--cream);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s, box-shadow .25s}
+  .blog-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .blog-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--terracotta),var(--gold));position:relative}
+  .blog-card.featured .blog-img{aspect-ratio:16/12}
+  .blog-img.b2{background:linear-gradient(135deg,var(--forest),#3a6452)}
+  .blog-img.b3{background:linear-gradient(135deg,var(--ink),var(--terracotta-deep))}
+  .blog-body{padding:24px;display:flex;flex-direction:column;flex:1}
+  .blog-body .card-tag{margin-bottom:14px}
+  .blog-body h3{font-family:'Fraunces',serif;font-size:20px;line-height:1.3;margin-bottom:10px;font-weight:600}
+  .blog-card.featured .blog-body h3{font-size:28px}
+  .blog-body p{color:var(--ink-soft);font-size:14px;margin-bottom:16px}
+  .read-time{font-size:12px;color:var(--ink-soft);margin-top:auto}
+
+  /* --- CTA BAND --- */
+  .cta-band{background:var(--ink);color:var(--cream);border-radius:24px;padding:64px;text-align:center;position:relative;overflow:hidden}
+  .cta-band::before{content:"";position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--terracotta),transparent 70%);opacity:0.5}
+  .cta-band::after{content:"";position:absolute;bottom:-80px;left:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,var(--gold),transparent 70%);opacity:0.3}
+  .cta-band h2{font-size:clamp(32px,4vw,48px);margin-bottom:16px;position:relative}
+  .cta-band p{color:rgba(250,243,231,0.75);max-width:520px;margin:0 auto 32px;position:relative}
+  .newsletter{display:flex;gap:10px;max-width:480px;margin:0 auto;position:relative}
+  .newsletter input{flex:1;padding:14px 20px;border-radius:999px;border:1px solid rgba(250,243,231,0.2);background:rgba(250,243,231,0.08);color:var(--cream);font-family:inherit;font-size:15px;outline:none}
+  .newsletter input::placeholder{color:rgba(250,243,231,0.5)}
+  .newsletter input:focus{border-color:var(--gold)}
+  .newsletter button{background:var(--terracotta);color:var(--cream)}
+  .newsletter button:hover{background:var(--gold);color:var(--ink)}
+
+  /* --- FOOTER --- */
+  footer{padding:64px 0 32px;border-top:1px solid var(--line);margin-top:60px}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .footer-brand p{color:var(--ink-soft);font-size:14px;margin-top:14px;max-width:300px}
+  footer h5{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:18px}
+  footer ul{list-style:none}
+  footer li{margin-bottom:10px}
+  footer a{color:var(--ink-soft);text-decoration:none;font-size:14px;transition:color .2s}
+  footer a:hover{color:var(--terracotta)}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:14px}
+
+  /* --- RESPONSIVE --- */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:60px}
+    .hero-visual{justify-self:center;max-width:340px}
+    .grid,.steps,.blog-grid,.footer-grid{grid-template-columns:1fr}
+    .blog-grid{grid-template-columns:1fr}
+    .nav-links{display:none}
+    .hero-stats{gap:24px;flex-wrap:wrap}
+    .cta-band{padding:48px 24px}
+    .newsletter{flex-direction:column}
+    .newsletter input,.newsletter button{width:100%}
+  }
+  @media(max-width:600px){
+    section{padding:56px 0}
+    .hero{padding:48px 0 32px}
+  }
+
+  /* --- ENTRANCE --- */
+  .reveal{opacity:0;transform:translateY(20px);animation:reveal .9s ease forwards}
+  .reveal:nth-child(2){animation-delay:.1s}
+  .reveal:nth-child(3){animation-delay:.2s}
+  @keyframes reveal{to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="logo"><span class="logo-mark"></span>Australia Awards Hub</a>
+    <ul class="nav-links">
+      <li><a href="#scholarships">Scholarships</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#blog">Guides</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#scholarships" class="btn btn-primary">Browse scholarships</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">For international students · 2026 intake</div>
+      <h1 class="display">Find your <em>scholarship</em> to study in Australia.</h1>
+      <p class="lede">A curated hub of fully-funded scholarships, government awards and university grants — handpicked for international students applying to Australian universities.</p>
+      <div class="hero-cta">
+        <a href="#scholarships" class="btn btn-primary">Explore scholarships</a>
+        <a href="#how" class="btn btn-ghost">How it works</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">120+</div><div class="stat-label">Active scholarships</div></div>
+        <div><div class="stat-num">38</div><div class="stat-label">Australian universities</div></div>
+        <div><div class="stat-num">Free</div><div class="stat-label">Always, no signup</div></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="blob"></div>
+      <div class="card-float c1"><div class="label">Award</div><div class="value">Australia Awards</div></div>
+      <div class="card-float c2"><div class="label">Funding</div><div class="value">Full tuition + stipend</div></div>
+      <div class="card-float c3"><div class="label">Level</div><div class="value">Masters / PhD</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- SCHOLARSHIPS -->
+<section id="scholarships">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="display">Featured scholarships, freshly curated.</h2>
+      <p>Filter by level, region or funding type. New opportunities added weekly.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="govt">Government</button>
+      <button class="chip" data-filter="university">University</button>
+      <button class="chip" data-filter="masters">Masters</button>
+      <button class="chip" data-filter="phd">PhD</button>
+      <button class="chip" data-filter="undergrad">Undergrad</button>
+    </div>
+
+    <div class="grid" id="cards">
+      <!-- card 1 -->
+      <article class="card" data-cat="govt masters phd">
+        <span class="card-tag">Government · Fully Funded</span>
+        <h3>Australia Awards Scholarships</h3>
+        <div class="provider">Department of Foreign Affairs & Trade</div>
+        <div class="card-meta">
+          <div><div class="meta-label">Level</div><div class="meta-value">Masters / PhD</div></div>
+          <div><div class="meta-label">Value</div><div class="meta-value">Full tuition + stipend</div></div>
+          <div><div class="meta-label">Eligibility</div><div class="meta-value">Selected countries</div></div>
+          <div><div class="meta-label">Duration</div><div class="meta-value">Up to 4 years</div></div>
+        </div>
+        <div class="card-foot">
+          <span class="deadline">Closes 30 Apr 2026</span>
+          <a href="#" class="card-link">Details →</a>
+        </div>
+      </article>
+
+      <!-- card 2 -->
+      <article class="card" data-cat="university masters">
+        <span class="card-tag">University · Partial</span>
+        <h3>Sydney Scholars Awards</h3>
+        <div class="provider">University of Sydney</div>
+        <div class="card-meta">
+          <div><div class="meta-label">Level</div><div class="meta-value">Masters</div></div>
+          <div><div class="meta-label">Value</div><div class="meta-value">$10,000 AUD</div></div>
+          <div><div class="meta-label">Eligibility</div><div class="meta-value">International</div></div>
+          <div><div class="meta-label">Duration</div><div class="meta-value">1 year</div></div>
+        </div>
+        <div class="card-foot">
+          <span class="deadline">Closes 15 Jun 2026</span>
+          <a href="#" class="card-link">Details →</a>
+        </div>
+      </article>
+
+      <!-- card 3 -->
+      <article class="card" data-cat="university phd">
+        <span class="card-tag">Research · Fully Funded</span>
+        <h3>RTP Stipend Scholarship</h3>
+        <div class="provider">Australian Government (multiple unis)</div>
+        <div class="card-meta">
+          <div><div class="meta-label">Level</div><div class="meta-value">PhD</div></div>
+          <div><div class="meta-label">Value</div><div class="meta-value">$32,192 p.a. tax-free</div></div>
+          <div><div class="meta-label">Eligibility</div><div class="meta-value">International</div></div>
+          <div><div class="meta-label">Duration</div><div class="meta-value">3.5 years</div></div>
+        </div>
+        <div class="card-foot">
+          <span class="deadline">Rolling intakes</span>
+          <a href="#" class="card-link">Details →</a>
+        </div>
+      </article>
+
+      <!-- card 4 -->
+      <article class="card" data-cat="university undergrad">
+        <span class="card-tag">University · Merit</span>
+        <h3>Melbourne International Undergrad Scholarship</h3>
+        <div class="provider">University of Melbourne</div>
+        <div class="card-meta">
+          <div><div class="meta-label">Level</div><div class="meta-value">Undergraduate</div></div>
+          <div><div class="meta-label">Value</div><div class="meta-value">Up to $56,000 AUD</div></div>
+          <div><div class="meta-label">Eligibility</div><div class="meta-value">International</div></div>
+          <div><div class="meta-label">Duration</div><div class="meta-value">3 years</div></div>
+        </div>
+        <div class="card-foot">
+          <span class="deadline">Closes 31 Oct 2026</span>
+          <a href="#" class="card-link">Details →</a>
+        </div>
+      </article>
+
+      <!-- card 5 -->
+      <article class="card" data-cat="university masters">
+        <span class="card-tag">University · Full</span>
+        <h3>UQ Global Leaders Award</h3>
+        <div class="provider">University of Queensland</div>
+        <div class="card-meta">
+          <div><div class="meta-label">Level</div><div class="meta-value">Masters</div></div>
+          <div><div class="meta-label">Value</div><div class="meta-value">25% tuition reduction</div></div>
+          <div><div class="meta-label">Eligibility</div><div class="meta-value">International</div></div>
+          <div><div class="meta-label">Duration</div><div class="meta-value">2 years</div></div>
+        </div>
+        <div class="card-foot">
+          <span class="deadline">Closes 30 May 2026</span>
+          <a href="#" class="card-link">Details →</a>
+        </div>
+      </article>
+
+      <!-- card 6 -->
+      <article class="card" data-cat="govt phd">
+        <span class="card-tag">Government · Endeavour</span>
+        <h3>Endeavour Postgraduate Awards</h3>
+        <div class="provider">Australian Government</div>
+        <div class="card-meta">
+          <div><div class="meta-label">Level</div><div class="meta-value">PhD / Research</div></div>
+          <div><div class="meta-label">Value</div><div class="meta-value">Up to $272,500</div></div>
+          <div><div class="meta-label">Eligibility</div><div class="meta-value">Worldwide</div></div>
+          <div><div class="meta-label">Duration</div><div class="meta-value">Up to 4 years</div></div>
+        </div>
+        <div class="card-foot">
+          <span class="deadline">Closes 30 Jun 2026</span>
+          <a href="#" class="card-link">Details →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" style="background:linear-gradient(180deg,var(--cream),var(--cream-2))">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="display">How the hub works.</h2>
+      <p>From discovering the right opportunity to submitting a strong application — three simple steps.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Discover</h4>
+        <p>Browse curated scholarships filtered by your study level, field and country of origin. Each listing includes funding value, eligibility and deadlines.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Prepare</h4>
+        <p>Use our guides on writing personal statements, gathering documents, and meeting English-language requirements (IELTS, PTE).</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Apply</h4>
+        <p>Follow our application checklists, then apply directly through the official scholarship portal — we link you to the right place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="display">Guides & insights.</h2>
+      <p>Plain-English advice on applications, visas, and student life in Australia.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card featured">
+        <div class="blog-img"></div>
+        <div class="blog-body">
+          <span class="card-tag">Application Guide</span>
+          <h3>The Complete Guide to Australia Awards 2026</h3>
+          <p>Everything you need to know about eligibility, the application timeline, required documents, and how to write a competitive personal statement.</p>
+          <span class="read-time">12 min read</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-img b2"></div>
+        <div class="blog-body">
+          <span class="card-tag">Visa</span>
+          <h3>Subclass 500 Student Visa, demystified.</h3>
+          <p>Documents, financial requirements, and processing times.</p>
+          <span class="read-time">7 min read</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-img b3"></div>
+        <div class="blog-body">
+          <span class="card-tag">Living</span>
+          <h3>Cost of studying in Sydney vs. Melbourne.</h3>
+          <p>Rent, transport, groceries — a real-world breakdown.</p>
+          <span class="read-time">9 min read</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section id="about">
+  <div class="container">
+    <div class="cta-band">
+      <h2 class="display">Get scholarship alerts in your inbox.</h2>
+      <p>One short email a week with new opportunities matched to international students. Unsubscribe anytime, no spam.</p>
+      <form class="newsletter" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed ✓'">
+        <input type="email" placeholder="you@example.com" required />
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark"></span>Australia Awards Hub</div>
+        <p>An independent, free resource helping international students discover and apply for scholarships to study in Australia.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#scholarships">Scholarships</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#blog">Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="#">By country</a></li>
+          <li><a href="#">By university</a></li>
+          <li><a href="#">By field</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Get in touch</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Australia Awards Hub. Independent guide, not affiliated with the Australian Government.</div>
+      <div>Made with care in Sydney</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Filter logic
+  const chips = document.querySelectorAll('.chip');
+  const cards = document.querySelectorAll('#cards .card');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const f = chip.dataset.filter;
+      cards.forEach(card => {
+        const cats = card.dataset.cat.split(' ');
+        card.style.display = (f === 'all' || cats.includes(f)) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
