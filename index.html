@@ -178,11 +178,29 @@
   footer a:hover{color:var(--terracotta)}
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:14px}
 
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc-card{background:white;border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s,border-color .2s}
+  .svc-card:hover{box-shadow:var(--shadow);border-color:rgba(35,24,18,0.2)}
+  .svc-card-featured{border:2px solid var(--gold)}
+  .svc-card-soft{background:var(--cream-2);border-style:dashed;border-color:var(--line)}
+  .svc-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .svc-icon-wrap{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .svc-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px;letter-spacing:0.04em}
+  .svc-card h3{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin:0;line-height:1.25}
+  .svc-card p{font-size:14px;color:var(--ink-soft);line-height:1.65;margin:0}
+  .svc-list{list-style:none;margin:0;padding:0}
+  .svc-list li{font-size:13px;color:var(--ink-soft);padding:7px 0 7px 16px;border-bottom:1px solid var(--line);position:relative;line-height:1.5}
+  .svc-list li:last-child{border-bottom:none}
+  .svc-list li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--ink-soft);position:absolute;left:0;top:12px;opacity:0.4}
+  .svc-link{display:block;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;padding-top:12px;border-top:1px solid var(--line);margin-top:auto;transition:color .2s}
+  .svc-link:hover{color:var(--terracotta)}
+
   /* --- RESPONSIVE --- */
   @media(max-width:900px){
     .hero-grid{grid-template-columns:1fr;gap:60px}
     .hero-visual{justify-self:center;max-width:340px}
-    .grid,.steps,.blog-grid,.footer-grid{grid-template-columns:1fr}
+    .grid,.steps,.blog-grid,.footer-grid,.svc-grid{grid-template-columns:1fr}
     .blog-grid{grid-template-columns:1fr}
     .nav-links{display:none}
     .hero-stats{gap:24px;flex-wrap:wrap}
