@@ -215,20 +215,83 @@
             </div>
           </div>
 
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">WhatsApp / Phone number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567" />
+            </div>
+            <div class="field">
+              <label for="country">Your country of citizenship *</label>
+              <select id="country" name="country" required>
+                <option value="" disabled selected>Select your country</option>
+                <option>Afghanistan</option><option>Bangladesh</option><option>Bhutan</option>
+                <option>Cambodia</option><option>Egypt</option><option>Ethiopia</option>
+                <option>Fiji</option><option>Ghana</option><option>India</option>
+                <option>Indonesia</option><option>Iraq</option><option>Kenya</option>
+                <option>Myanmar</option><option>Nepal</option><option>Nigeria</option>
+                <option>Pakistan</option><option>Papua New Guinea</option><option>Philippines</option>
+                <option>Rwanda</option><option>Samoa</option><option>Solomon Islands</option>
+                <option>Sri Lanka</option><option>Tanzania</option><option>Timor-Leste</option>
+                <option>Tonga</option><option>Uganda</option><option>Vanuatu</option>
+                <option>Vietnam</option><option>Zimbabwe</option><option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="education">Highest education level *</label>
+              <select id="education" name="education" required>
+                <option value="" disabled selected>Select level</option>
+                <option>High School / A-Levels</option>
+                <option>Bachelor's Degree (in progress)</option>
+                <option>Bachelor's Degree (completed)</option>
+                <option>Master's Degree (in progress)</option>
+                <option>Master's Degree (completed)</option>
+                <option>PhD (in progress)</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="study_level">Intended study level in Australia *</label>
+              <select id="study_level" name="study_level" required>
+                <option value="" disabled selected>Select level</option>
+                <option>Undergraduate (Bachelor's)</option>
+                <option>Postgraduate Coursework (Master's)</option>
+                <option>Master's by Research</option>
+                <option>PhD / Doctoral</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="field_of_study">Field / subject of study</label>
+              <input type="text" id="field_of_study" name="field_of_study" placeholder="e.g. Civil Engineering, Public Health, Education" />
+            </div>
+            <div class="field">
+              <label for="intake_year">Target intake year *</label>
+              <select id="intake_year" name="intake_year" required>
+                <option value="" disabled selected>Select year</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
           <div class="field">
-            <label for="country">Your country of citizenship *</label>
-            <select id="country" name="country" required>
-              <option value="" disabled selected>Select your country</option>
-              <option>Afghanistan</option><option>Bangladesh</option><option>Bhutan</option>
-              <option>Cambodia</option><option>Egypt</option><option>Ethiopia</option>
-              <option>Fiji</option><option>Ghana</option><option>India</option>
-              <option>Indonesia</option><option>Iraq</option><option>Kenya</option>
-              <option>Myanmar</option><option>Nepal</option><option>Nigeria</option>
-              <option>Pakistan</option><option>Papua New Guinea</option><option>Philippines</option>
-              <option>Rwanda</option><option>Samoa</option><option>Solomon Islands</option>
-              <option>Sri Lanka</option><option>Tanzania</option><option>Timor-Leste</option>
-              <option>Tonga</option><option>Uganda</option><option>Vanuatu</option>
-              <option>Vietnam</option><option>Zimbabwe</option><option>Other</option>
+            <label for="english_test">English language test taken?</label>
+            <select id="english_test" name="english_test">
+              <option value="" disabled selected>Select option</option>
+              <option>Yes — IELTS</option>
+              <option>Yes — TOEFL</option>
+              <option>Yes — PTE</option>
+              <option>Yes — Other</option>
+              <option>No — planning to take it</option>
+              <option>No — exempt (studied in English)</option>
             </select>
           </div>
 
@@ -250,7 +313,21 @@
 
           <div class="field">
             <label for="message">Your message *</label>
-            <textarea id="message" name="message" placeholder="Tell us a bit about your situation — your current education level, which scholarships or universities you're considering, and what specific help you need..." required></textarea>
+            <textarea id="message" name="message" placeholder="Tell us about your background, which scholarships or universities you're considering, and what specific help you need..." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="heard_from">How did you find us?</label>
+            <select id="heard_from" name="heard_from">
+              <option value="" disabled selected>Select option</option>
+              <option>Google search</option>
+              <option>Facebook / Instagram</option>
+              <option>WhatsApp group</option>
+              <option>Friend or family</option>
+              <option>Reddit / Quora</option>
+              <option>YouTube</option>
+              <option>Other</option>
+            </select>
           </div>
 
           <!-- Honeypot for spam -->
