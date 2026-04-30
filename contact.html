@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — Australia Awards Hub</title>
+<meta name="description" content="Get in touch for scholarship guidance, application help, visa questions, or any other enquiry about studying in Australia as an international student." />
+<link rel="icon" type="image/png" href="logo.png" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL2YCR2ZTZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZL2YCR2ZTZ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF3E7; --cream-2:#F2E7D2; --ink:#231812; --ink-soft:#5C4A3E;
+    --terracotta:#C75A3C; --terracotta-deep:#A8442C; --forest:#1F3A2E;
+    --gold:#E8B14F; --line:rgba(35,24,18,0.12);
+    --shadow:0 1px 2px rgba(35,24,18,0.06), 0 8px 24px rgba(35,24,18,0.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(250,243,231,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-0.02em;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+  .logo-mark{width:80px;height:80px;display:inline-block;flex-shrink:0}
+  .logo-mark img{width:100%;height:100%;object-fit:contain;display:block}
+  .nav-links{display:flex;gap:32px;list-style:none}
+  .nav-links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--terracotta)}
+  .btn{display:inline-block;padding:11px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+  .btn-primary{background:var(--ink);color:var(--cream)}
+  .btn-primary:hover{background:var(--terracotta);transform:translateY(-1px)}
+
+  /* PAGE HEADER */
+  .page-header{padding:72px 0 56px;text-align:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--terracotta-deep);margin-bottom:20px}
+  .eyebrow::before{content:"";width:24px;height:1px;background:var(--terracotta-deep)}
+  .page-header h1{font-family:'Fraunces',serif;font-size:clamp(40px,6vw,64px);font-weight:500;letter-spacing:-0.02em;line-height:1.05;margin-bottom:20px}
+  .page-header p{font-size:19px;color:var(--ink-soft);max-width:540px;margin:0 auto}
+
+  /* MAIN GRID */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;padding:0 0 100px;align-items:start}
+
+  /* LEFT — INFO */
+  .contact-info h2{font-family:'Fraunces',serif;font-size:28px;font-weight:600;margin-bottom:24px;letter-spacing:-0.01em}
+  .topic-list{list-style:none;margin-bottom:48px}
+  .topic-item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line)}
+  .topic-item:first-child{border-top:1px solid var(--line)}
+  .topic-icon{width:40px;height:40px;border-radius:12px;background:var(--cream-2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;margin-top:2px}
+  .topic-text h4{font-weight:600;font-size:15px;margin-bottom:3px}
+  .topic-text p{font-size:14px;color:var(--ink-soft);margin:0}
+
+  .response-badge{background:var(--cream-2);border-radius:16px;padding:22px 24px;display:flex;gap:16px;align-items:center}
+  .response-badge .icon{font-size:28px}
+  .response-badge h4{font-weight:600;font-size:15px;margin-bottom:3px}
+  .response-badge p{font-size:14px;color:var(--ink-soft);margin:0}
+
+  /* RIGHT — FORM */
+  .form-card{background:white;border-radius:24px;padding:48px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .form-card h2{font-family:'Fraunces',serif;font-size:28px;font-weight:600;margin-bottom:8px}
+  .form-card .subtitle{color:var(--ink-soft);font-size:15px;margin-bottom:36px}
+
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .field{margin-bottom:24px}
+  .field label{display:block;font-weight:600;font-size:14px;margin-bottom:8px;color:var(--ink)}
+  .field input,.field select,.field textarea{
+    width:100%;padding:14px 18px;
+    border:1.5px solid var(--line);border-radius:12px;
+    font-family:inherit;font-size:15px;color:var(--ink);
+    background:var(--cream);
+    transition:border-color .2s, box-shadow .2s;
+    outline:none;
+    appearance:none;
+  }
+  .field input:focus,.field select,.field textarea:focus{
+    border-color:var(--terracotta);
+    box-shadow:0 0 0 3px rgba(199,90,60,0.1);
+  }
+  .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C4A3E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;padding-right:44px;cursor:pointer}
+  .field textarea{resize:vertical;min-height:140px;line-height:1.6}
+  .field input::placeholder,.field textarea::placeholder{color:rgba(92,74,62,0.5)}
+
+  .submit-btn{
+    width:100%;padding:16px;border-radius:999px;
+    background:var(--ink);color:var(--cream);
+    font-family:inherit;font-size:16px;font-weight:600;
+    border:none;cursor:pointer;
+    transition:background .2s, transform .2s;
+    margin-top:8px;
+  }
+  .submit-btn:hover{background:var(--terracotta);transform:translateY(-1px)}
+  .submit-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+
+  .privacy-note{font-size:13px;color:var(--ink-soft);text-align:center;margin-top:16px}
+
+  /* SUCCESS STATE */
+  .success-msg{display:none;text-align:center;padding:40px 20px}
+  .success-msg .check{font-size:56px;margin-bottom:16px}
+  .success-msg h3{font-family:'Fraunces',serif;font-size:28px;font-weight:600;margin-bottom:12px}
+  .success-msg p{color:var(--ink-soft);font-size:16px}
+
+  footer{padding:48px 0 32px;border-top:1px solid var(--line);margin-top:0}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:0;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:14px}
+
+  @media(max-width:900px){
+    .contact-grid{grid-template-columns:1fr;gap:40px}
+    .form-row{grid-template-columns:1fr}
+    .nav-links{display:none}
+    .form-card{padding:32px 24px}
+    .page-header{padding:48px 0 36px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Australia Awards Hub" /></span>Australia Awards Hub</a>
+    <ul class="nav-links">
+      <li><a href="index.html#scholarships">Scholarships</a></li>
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#blog">Guides</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="index.html#scholarships" class="btn btn-primary">Browse scholarships</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <div class="eyebrow">Get in touch</div>
+    <h1>We're here to help.</h1>
+    <p>Whether you need help finding the right scholarship, reviewing your application, or understanding your visa options — reach out.</p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT -->
+      <div class="contact-info">
+        <h2>How can we help you?</h2>
+        <ul class="topic-list">
+          <li class="topic-item">
+            <div class="topic-icon">🎓</div>
+            <div class="topic-text">
+              <h4>Scholarship discovery</h4>
+              <p>Finding the right scholarship for your background, country, and study level</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <div class="topic-icon">📝</div>
+            <div class="topic-text">
+              <h4>Application guidance</h4>
+              <p>Personal statement review, GTE statement help, document checklist</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <div class="topic-icon">✈️</div>
+            <div class="topic-text">
+              <h4>Visa questions</h4>
+              <p>Subclass 500 requirements, processing times, financial evidence</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <div class="topic-icon">🏫</div>
+            <div class="topic-text">
+              <h4>University selection</h4>
+              <p>Choosing the right university and program for your goals</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <div class="topic-icon">🌏</div>
+            <div class="topic-text">
+              <h4>Life in Australia</h4>
+              <p>Accommodation, cost of living, cultural adjustment, work rights</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="response-badge">
+          <div class="icon">⏱</div>
+          <div>
+            <h4>Typical response time</h4>
+            <p>We aim to reply within 24–48 hours on business days.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — FORM -->
+      <div class="form-card">
+        <h2>Send us a message</h2>
+        <p class="subtitle">Fill in the form and we'll get back to you as soon as possible.</p>
+
+        <form id="contactForm" action="https://formspree.io/f/xqenzgyg" method="POST">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full name *</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email address *</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="country">Your country of citizenship *</label>
+            <select id="country" name="country" required>
+              <option value="" disabled selected>Select your country</option>
+              <option>Afghanistan</option><option>Bangladesh</option><option>Bhutan</option>
+              <option>Cambodia</option><option>Egypt</option><option>Ethiopia</option>
+              <option>Fiji</option><option>Ghana</option><option>India</option>
+              <option>Indonesia</option><option>Iraq</option><option>Kenya</option>
+              <option>Myanmar</option><option>Nepal</option><option>Nigeria</option>
+              <option>Pakistan</option><option>Papua New Guinea</option><option>Philippines</option>
+              <option>Rwanda</option><option>Samoa</option><option>Solomon Islands</option>
+              <option>Sri Lanka</option><option>Tanzania</option><option>Timor-Leste</option>
+              <option>Tonga</option><option>Uganda</option><option>Vanuatu</option>
+              <option>Vietnam</option><option>Zimbabwe</option><option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="topic">What do you need help with? *</label>
+            <select id="topic" name="topic" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option>Finding the right scholarship</option>
+              <option>Australia Awards application</option>
+              <option>University scholarship application</option>
+              <option>Personal statement / GTE review</option>
+              <option>Student visa (Subclass 500) questions</option>
+              <option>University and program selection</option>
+              <option>English test requirements</option>
+              <option>Life in Australia</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Your message *</label>
+            <textarea id="message" name="message" placeholder="Tell us a bit about your situation — your current education level, which scholarships or universities you're considering, and what specific help you need..." required></textarea>
+          </div>
+
+          <!-- Honeypot for spam -->
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_subject" value="New enquiry — Australia Awards Hub" />
+
+          <button type="submit" class="submit-btn" id="submitBtn">Send message →</button>
+          <p class="privacy-note">Your information is kept private and never shared with third parties.</p>
+        </form>
+
+        <div class="success-msg" id="successMsg">
+          <div class="check">✅</div>
+          <h3>Message sent!</h3>
+          <p>Thank you for reaching out. We'll get back to you within 24–48 hours.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <div>© 2026 Australia Awards Hub. Independent guide, not affiliated with the Australian Government.</div>
+      <div><a href="index.html" style="color:var(--terracotta);text-decoration:none">← Back to home</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('submitBtn');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
