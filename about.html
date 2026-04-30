@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Us | Australia Awards Hub</title>
+<meta name="description" content="Australia Awards Hub is built by a team of scholarship alumni who have studied across Australian universities — including Australia Awards scholars, RTP recipients, and university merit scholarship holders."/>
+<link rel="icon" type="image/png" href="logo.png"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL2YCR2ZTZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZL2YCR2ZTZ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF3E7;--cream-2:#F2E7D2;--ink:#231812;--ink-soft:#5C4A3E;--terracotta:#C75A3C;--terracotta-deep:#A8442C;--forest:#1F3A2E;--gold:#E8B14F;--line:rgba(35,24,18,0.12);--shadow:0 1px 2px rgba(35,24,18,0.06),0 8px 24px rgba(35,24,18,0.06);}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.container-narrow{max-width:760px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:rgba(250,243,231,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:56px;height:56px;flex-shrink:0}.logo-mark img{width:100%;height:100%;object-fit:contain}
+.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;transition:color .2s}.nav-links a:hover{color:var(--terracotta)}
+.btn{display:inline-block;padding:10px 22px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
+.btn-primary{background:var(--ink);color:var(--cream)}.btn-primary:hover{background:var(--terracotta)}
+
+/* HERO */
+.hero{padding:72px 0 64px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--terracotta-deep);margin-bottom:20px}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(40px,6vw,68px);font-weight:500;letter-spacing:-0.02em;line-height:1.05;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--terracotta)}
+.hero-lede{font-size:19px;color:var(--ink-soft);max-width:620px;line-height:1.6;margin-bottom:40px}
+.hero-stats{display:flex;gap:48px;padding-top:40px;border-top:1px solid var(--line);flex-wrap:wrap}
+.stat-num{font-family:'Fraunces',serif;font-size:40px;font-weight:600;line-height:1;color:var(--ink)}
+.stat-label{font-size:13px;color:var(--ink-soft);margin-top:6px}
+
+/* STORY */
+.story{padding:80px 0}
+.story p{font-size:17px;color:var(--ink);line-height:1.75;margin-bottom:24px}
+.story p:last-child{margin-bottom:0}
+.story strong{font-weight:600}
+.story a{color:var(--terracotta-deep);text-decoration:underline;text-underline-offset:3px}
+.pull-quote{font-family:'Fraunces',serif;font-size:26px;font-weight:400;font-style:italic;color:var(--ink);border-left:3px solid var(--terracotta);padding:8px 0 8px 28px;margin:48px 0;line-height:1.4}
+
+/* TEAM CARDS */
+.team-section{padding:0 0 80px}
+.team-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--terracotta-deep);margin-bottom:16px}
+.team-heading{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,40px);font-weight:500;letter-spacing:-0.02em;margin-bottom:48px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.team-card{background:white;border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.team-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:white;flex-shrink:0}
+.team-name{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.team-role{font-size:13px;color:var(--ink-soft);margin-bottom:6px}
+.team-award{display:inline-block;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--cream-2);color:var(--ink-soft)}
+.team-bio{font-size:14px;color:var(--ink-soft);line-height:1.65}
+
+/* VALUES */
+.values-section{background:var(--cream-2);padding:80px 0}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.value-card{padding:28px;border-radius:20px;background:var(--cream)}
+.value-num{font-family:'Fraunces',serif;font-size:36px;font-weight:600;color:var(--terracotta);margin-bottom:12px;line-height:1}
+.value-card h4{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:10px}
+.value-card p{font-size:14px;color:var(--ink-soft);line-height:1.65;margin:0}
+
+/* CTA */
+.cta-band{background:var(--ink);color:var(--cream);border-radius:24px;padding:56px 48px;text-align:center;position:relative;overflow:hidden;margin:0 0 80px}
+.cta-band::before{content:"";position:absolute;top:-80px;right:-80px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,var(--terracotta),transparent 70%);opacity:0.5}
+.cta-band h2{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,40px);margin-bottom:14px;position:relative}
+.cta-band p{color:rgba(250,243,231,0.75);margin-bottom:32px;position:relative;font-size:17px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-terra{background:var(--terracotta);color:var(--cream)}.btn-terra:hover{background:var(--gold);color:var(--ink)}
+.btn-outl{background:transparent;color:var(--cream);border:1px solid rgba(250,243,231,0.3)}
+
+footer{padding:40px 0 28px;border-top:1px solid var(--line)}
+.footer-bottom{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:12px}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .team-grid,.values-grid{grid-template-columns:1fr}
+  .hero-stats{gap:24px}
+  .cta-band{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="container nav-inner">
+<a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Australia Awards Hub"/></span>Australia Awards Hub</a>
+<ul class="nav-links">
+<li><a href="index.html#scholarships">Scholarships</a></li>
+<li><a href="index.html#blog">Guides</a></li>
+<li><a href="index.html#services">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<a href="contact.html" class="btn btn-primary">Get guidance</a>
+</div></nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container-narrow">
+  <div class="eyebrow">About us</div>
+  <h1>We have been <em>where you are</em> right now.</h1>
+  <p class="hero-lede">Australia Awards Hub is built by a team of scholarship alumni who have studied at universities across Australia — including Australia Awards scholars, Research Training Program (RTP) recipients, and university merit scholarship holders. We built this because we wished it existed when we were applying.</p>
+  <div class="hero-stats">
+    <div><div class="stat-num">7+</div><div class="stat-label">Universities represented</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label">Countries our team came from</div></div>
+    <div><div class="stat-num">12+</div><div class="stat-label">Scholarships held by our team</div></div>
+  </div>
+</div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+<div class="container-narrow">
+  <p>The Australia Awards Scholarship application is one of the most demanding scholarship processes in the world. It asks for a detailed personal statement, a clear articulation of your development goals, referee reports, English test results, and evidence of professional experience — all submitted through a government portal with a hard 2pm AEST deadline.</p>
+
+  <p>Most students who are genuinely qualified don't make it past the first round. Not because they aren't good enough — but because they applied to the wrong scholarship, started too late, wrote a generic personal statement, or didn't understand what the selection panel was actually looking for.</p>
+
+  <blockquote class="pull-quote">"We didn't build this site to aggregate information. We built it because we know exactly what it feels like to sit in front of that OASIS form at 1am, not knowing if your application is strong enough."</blockquote>
+
+  <p>Our team includes <strong>Australia Awards scholars</strong> who have studied at the University of Sydney, University of Melbourne, ANU, and Monash University. We also include holders of <strong>RTP stipend scholarships</strong>, <strong>university merit scholarships</strong>, and <strong>postgraduate research packages</strong> — across fields including civil engineering, public health, education, environmental science, and public policy.</p>
+
+  <p>We have lived the experience — the IELTS preparation, the visa application, the GTE statement, the arrival in a new city, the first semester, the part-time work, and eventually the graduation. Every guide on this site is written from that firsthand experience, not from a textbook or a government website.</p>
+
+  <p>Australia Awards Hub is <strong>free for every student, always</strong>. We don't charge to browse scholarships, read guides, or use our country pages. If you want personalised help with your application, we offer that too — but the core resource will never go behind a paywall.</p>
+</div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+<div class="container">
+  <div class="team-label">The team</div>
+  <h2 class="team-heading">Scholarship alumni, not consultants.</h2>
+  <div class="team-grid">
+
+    <div class="team-card">
+      <div class="team-avatar" style="background:var(--terracotta)">A</div>
+      <div>
+        <div class="team-name">Alumni Lead</div>
+        <div class="team-role">University of Sydney · Civil Engineering</div>
+        <span class="team-award">Australia Awards Scholar</span>
+      </div>
+      <p class="team-bio">Masters by Research graduate with experience in infrastructure and urban development. Led the development of this hub after helping 20+ applicants from his home country through the Australia Awards process.</p>
+    </div>
+
+    <div class="team-card">
+      <div class="team-avatar" style="background:var(--forest)">R</div>
+      <div>
+        <div class="team-name">Research Advisor</div>
+        <div class="team-role">University of Melbourne · Public Health</div>
+        <span class="team-award">RTP Scholarship Recipient</span>
+      </div>
+      <p class="team-bio">PhD graduate in public health with a focus on health systems in developing countries. Advises on research scholarship applications and supervisor matching for postgraduate research candidates.</p>
+    </div>
+
+    <div class="team-card">
+      <div class="team-avatar" style="background:var(--gold)" style="color:var(--ink)">S</div>
+      <div>
+        <div class="team-name">Visa & Admissions Specialist</div>
+        <div class="team-role">Monash University · Education</div>
+        <span class="team-award">Monash Merit Scholar</span>
+      </div>
+      <p class="team-bio">Masters graduate in education policy. Specialises in student visa (Subclass 500) guidance, GTE statement review, and pre-departure support for students relocating to Melbourne and Sydney.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+<div class="container">
+  <div class="team-label">What we stand for</div>
+  <h2 class="team-heading">Three things we never compromise on.</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-num">01</div>
+      <h4>Accuracy over speed</h4>
+      <p>Every scholarship listing is verified against the official provider website. We update deadlines, stipend values, and eligibility requirements as they change — not once a year.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">02</div>
+      <h4>Honest advice</h4>
+      <p>We tell you which scholarships you're unlikely to win based on your profile — not just which ones exist. Honest advice saves you 40 hours of preparing a doomed application.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">03</div>
+      <h4>Free, always</h4>
+      <p>Scholarship information should not be locked behind a paywall. The core resources on this site — scholarship listings, guides, country pages — are free for every student, permanently.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<div class="container">
+<div class="cta-band">
+  <h2>Have a question? We are here.</h2>
+  <p>Whether you need help finding the right scholarship or want a second opinion on your application — get in touch. We respond within 24–48 hours.</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn btn-terra">Contact us →</a>
+    <a href="index.html#scholarships" class="btn btn-outl">Browse scholarships</a>
+  </div>
+</div>
+</div>
+
+<footer><div class="container">
+<div class="footer-bottom">
+<div>© 2026 Australia Awards Hub — Independent guide, not affiliated with any university or government.</div>
+<div><a href="index.html" style="color:var(--terracotta);text-decoration:none">← Back to home</a></div>
+</div></div></footer>
+
+</body>
+</html>
