@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://australiaawardshub.com/</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://australiaawardshub.com/fully-funded-scholarships-australia.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://australiaawardshub.com/</loc><lastmod>2026-04-30</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://australiaawardshub.com/fully-funded-scholarships-australia.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://australiaawardshub.com/australia-student-visa-guide.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://australiaawardshub.com/contact.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://australiaawardshub.com/australia-awards-scholarship-2027.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/melbourne-graduate-research-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/sydney-usydis-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/melbourne-international-undergraduate-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/uts-vc-international-postgraduate-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/sydney-vc-international-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/anu-chancellors-international-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/monash-international-merit-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/unsw-scientia-coursework-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/monash-graduate-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/uq-international-excellence-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://australiaawardshub.com/rmit-future-leaders-scholarship.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>
