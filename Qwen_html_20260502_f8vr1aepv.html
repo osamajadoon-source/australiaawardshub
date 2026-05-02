@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find fully-funded scholarships, government awards, and university grants for international students applying to Australian universities.">
+    <title>Scholarships in Australia 2026/2027 | Australia Awards Hub</title>
+    <style>
+        :root {
+            --primary: #003B5C;
+            --secondary: #005f8b;
+            --accent: #89CFF0;
+            --light: #f8f9fa;
+            --text: #333;
+            --gray: #6c757d;
+            --border: #dee2e6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: var(--text); background: var(--light); }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Navigation */
+        .nav { background: white; padding: 1rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); }
+        .nav-links a { margin-left: 2rem; color: var(--text); font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--secondary); }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 5rem 0; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 800; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto 2rem; }
+        .hero-btn { background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; font-weight: 700; display: inline-block; transition: transform 0.2s; }
+        .hero-btn:hover { transform: translateY(-2px); }
+        
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        
+        /* Stats */
+        .stats { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; margin-top: -3rem; position: relative; z-index: 10; }
+        .stat-item { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; min-width: 200px; }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--primary); display: block; }
+        .stat-label { color: var(--gray); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Scholarship Grid */
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .section-title p { color: var(--gray); font-size: 1.1rem; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .card-header { background: var(--light); padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .badge { padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; }
+        .badge-full { background: #d4edda; color: #155724; }
+        .badge-partial { background: #fff3cd; color: #856404; }
+        .badge-merit { background: #cce5ff; color: #004085; }
+        .card-body { padding: 1.5rem; flex: 1; }
+        .card-body h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary); }
+        .card-body .uni { color: var(--gray); font-size: 0.9rem; margin-bottom: 1rem; display: block; }
+        .details { list-style: none; margin-bottom: 1.5rem; }
+        .details li { margin-bottom: 0.5rem; font-size: 0.95rem; display: flex; }
+        .details li span { font-weight: 600; min-width: 80px; }
+        .card-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--border); }
+        .btn-link { color: var(--secondary); font-weight: 600; display: inline-flex; align-items: center; }
+        .btn-link:hover { text-decoration: underline; }
+        
+        /* Steps */
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .step { text-align: center; padding: 2rem; }
+        .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1rem; }
+        
+        /* Services */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card { background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--border); }
+        .service-card h3 { color: var(--primary); margin-bottom: 1rem; }
+        .service-card ul { margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--gray); }
+        .service-card a { color: var(--secondary); font-weight: 600; }
+        
+        /* Guides */
+        .guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .guide-card { background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .guide-card h4 { margin-bottom: 0.5rem; }
+        .guide-card p { font-size: 0.9rem; color: var(--gray); margin-bottom: 1rem; }
+        .read-time { font-size: 0.8rem; color: var(--gray); font-weight: 600; }
+        
+        /* Newsletter */
+        .newsletter { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; border-radius: 12px; margin: 4rem 0; }
+        .newsletter h2 { margin-bottom: 1rem; }
+        .newsletter-form { display: flex; gap: 1rem; max-width: 500px; margin: 2rem auto 0; }
+        .newsletter-form input { flex: 1; padding: 1rem; border: none; border-radius: 4px; }
+        .newsletter-form button { padding: 1rem 2rem; background: var(--accent); color: var(--primary); border: none; border-radius: 4px; font-weight: 700; cursor: pointer; }
+        
+        /* Footer */
+        footer { background: #1a1a1a; color: white; padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .footer-col h4 { margin-bottom: 1.5rem; color: var(--accent); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.75rem; }
+        .footer-col a { color: #ccc; transition: color 0.2s; }
+        .footer-col a:hover { color: white; }
+        .copyright { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #333; color: #777; font-size: 0.9rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .stats { gap: 1rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .newsletter-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🇦🇺 Australia Awards Hub</a>
+            <div class="nav-links">
+                <a href="#scholarships">Scholarships</a>
+                <a href="#how">How it Works</a>
+                <a href="#guides">Guides</a>
+                <a href="ielts-guide.html">IELTS Guide</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1rem;">For international students · 2026 intake</p>
+            <h1>Find your scholarship to study in Australia.</h1>
+            <p>A curated hub of fully-funded scholarships, government awards, and university grants — handpicked for international students.</p>
+            <a href="#scholarships" class="hero-btn">Browse Scholarships</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Active Scholarships</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Australian Universities</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Free</span>
+                <span class="stat-label">Always, no signup</span>
+            </div>
+        </div>
+
+        <section id="scholarships" style="margin-top: 4rem;">
+            <div class="section-title">
+                <h2>Featured Scholarships</h2>
+                <p>Freshly curated opportunities. Filter by level, region, or funding type.</p>
+            </div>
+
+            <div class="grid">
+                <!-- Australia Awards -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-full">Government · Fully Funded</span>
+                        <span>Closes 30 Apr 2026</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Australia Awards Scholarships 2027</h3>
+                        <span class="uni">Australian Government (DFAT)</span>
+                        <ul class="details">
+                            <li><span>Level:</span> Masters / PhD / UG</li>
+                            <li><span>Value:</span> Tuition + stipend + airfare</li>
+                            <li><span>Eligibility:</span> ~50 partner countries</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="australia-awards-scholarship-2027.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Melbourne Grad -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-full">University · Fully Funded</span>
+                        <span>Apply by 31 Oct 2026</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Melbourne Graduate Research Scholarships</h3>
+                        <span class="uni">University of Melbourne</span>
+                        <ul class="details">
+                            <li><span>Level:</span> Masters by Res / PhD</li>
+                            <li><span>Value:</span> Full fees + $39,500 p.a.</li>
+                            <li><span>Eligibility:</span> All nationalities</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="melbourne-graduate-research-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Sydney USYDIS -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-full">University · Fully Funded</span>
+                        <span>11 Sept / 18 Dec 2026</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>USYDIS — Sydney International Stipend</h3>
+                        <span class="uni">University of Sydney</span>
+                        <ul class="details">
+                            <li><span>Level:</span> Masters by Res / PhD</li>
+                            <li><span>Value:</span> Full fees + $42,754 p.a.</li>
+                            <li><span>Eligibility:</span> International</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sydney-usydis-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Melbourne UG -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-partial">University · Partial</span>
+                        <span>31 May / 31 Oct 2026</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Melbourne International Undergraduate</h3>
+                        <span class="uni">University of Melbourne</span>
+                        <ul class="details">
+                            <li><span>Level:</span> Undergraduate</li>
+                            <li><span>Value:</span> 25% / 50% / 100% fees</li>
+                            <li><span>Eligibility:</span> Selected countries</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="melbourne-international-undergraduate-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- UTS -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-full">University · Fully Funded</span>
+                        <span>Rolling intakes</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>UTS Vice-Chancellor's Int'l Postgrad</h3>
+                        <span class="uni">University of Technology Sydney</span>
+                        <ul class="details">
+                            <li><span>Level:</span> Masters Coursework</li>
+                            <li><span>Value:</span> Full tuition</li>
+                            <li><span>Eligibility:</span> International</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="uts-vc-international-postgraduate-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Sydney VC -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-merit">University · Merit</span>
+                        <span>With admission offer</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Sydney Vice-Chancellor's Int'l Scholarship</h3>
+                        <span class="uni">University of Sydney</span>
+                        <ul class="details">
+                            <li><span>Level:</span> UG / PG Coursework</li>
+                            <li><span>Value:</span> $5,000 – $40,000 AUD</li>
+                            <li><span>Eligibility:</span> High-achieving int'l</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sydney-vc-international-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- ANU -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-partial">University · Partial</span>
+                        <span>Auto-assessed</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>ANU Chancellor's Int'l Scholarship</h3>
+                        <span class="uni">Australian National University</span>
+                        <ul class="details">
+                            <li><span>Level:</span> UG / PG Coursework</li>
+                            <li><span>Value:</span> 25% – 50% tuition</li>
+                            <li><span>Eligibility:</span> 9 regional categories</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="anu-chancellors-international-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Monash Merit -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-partial">University · Partial</span>
+                        <span>Auto-considered</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Monash International Merit Scholarship</h3>
+                        <span class="uni">Monash University</span>
+                        <ul class="details">
+                            <li><span>Level:</span> UG / PG Coursework</li>
+                            <li><span>Value:</span> $10,000 AUD per year</li>
+                            <li><span>Eligibility:</span> All nationalities</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="monash-international-merit-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- UNSW -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-full">University · Fully Funded</span>
+                        <span>Application required</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>UNSW International Scientia Coursework</h3>
+                        <span class="uni">University of New South Wales</span>
+                        <ul class="details">
+                            <li><span>Level:</span> UG / PG Coursework</li>
+                            <li><span>Value:</span> Full tuition or $20k p.a.</li>
+                            <li><span>Eligibility:</span> High-achieving int'l</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="unsw-scientia-coursework-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Monash Grad -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-full">University · Fully Funded</span>
+                        <span>Closes 31 Mar (annual)</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Monash Graduate Scholarship + MITS</h3>
+                        <span class="uni">Monash University</span>
+                        <ul class="details">
+                            <li><span>Level:</span> Masters by Res / PhD</li>
+                            <li><span>Value:</span> Full fees + $37,145 p.a.</li>
+                            <li><span>Eligibility:</span> International</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="monash-graduate-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- UQ -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-partial">University · Partial</span>
+                        <span>Auto-considered</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>UQ International Excellence Scholarship</h3>
+                        <span class="uni">University of Queensland</span>
+                        <ul class="details">
+                            <li><span>Level:</span> UG / PG Coursework</li>
+                            <li><span>Value:</span> 25% tuition reduction</li>
+                            <li><span>Eligibility:</span> High-achieving int'l</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="uq-international-excellence-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- RMIT -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="badge badge-partial">South Asia · Partial</span>
+                        <span>2026 intakes</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>RMIT Future Leaders Scholarship</h3>
+                        <span class="uni">RMIT University</span>
+                        <ul class="details">
+                            <li><span>Level:</span> UG / PG Coursework</li>
+                            <li><span>Value:</span> 20% tuition reduction</li>
+                            <li><span>Eligibility:</span> India, Pakistan, Bangladesh...</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="rmit-future-leaders-scholarship.html" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how" style="margin-top: 6rem; text-align: center;">
+            <div class="section-title">
+                <h2>Your journey to Australia, step by step.</h2>
+                <p>Most students fail because they apply too late or to the wrong scholarship. Here's how we help.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Discover the right scholarship</h3>
+                    <p>Browse our curated listings. Every scholarship links directly to the official portal — no middlemen.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>Build a strong application</h3>
+                    <p>Read our guides on personal statements, GTE, IELTS, and documents — written for international applicants.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Apply with confidence</h3>
+                    <p>Submit through the official portal. Need a review? Our team can check your application before you submit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 6rem;">
+            <div class="section-title">
+                <h2>Expert Guidance</h2>
+                <p>Real guidance from people who know the Australian scholarship system inside out.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Scholarship Matching</h3>
+                    <p>Tell us your background — we identify which scholarships you are competitive for.</p>
+                    <ul>
+                        <li>Eligibility check across 12+ scholarships</li>
+                        <li>Ranked by your profile and country</li>
+                    </ul>
+                    <a href="contact.html">Get matched →</a>
+                </div>
+                <div class="service-card">
+                    <h3>Degree & University Selection</h3>
+                    <p>Match your background to the right Australian program and institution.</p>
+                    <ul>
+                        <li>Program shortlisting across 8 universities</li>
+                        <li>CRICOS verification included</li>
+                    </ul>
+                    <a href="contact.html">Get advice →</a>
+                </div>
+                <div class="service-card">
+                    <h3>Application Review</h3>
+                    <p>Specific, honest written feedback on your personal statement and GTE before you submit.</p>
+                    <ul>
+                        <li>Line-by-line feedback</li>
+                        <li>Australia Awards OASIS form guidance</li>
+                    </ul>
+                    <a href="contact.html">Submit for review →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="guides" style="margin-top: 6rem;">
+            <div class="section-title">
+                <h2>Guides & Insights</h2>
+                <p>Plain-English advice on applications, visas, and student life.</p>
+            </div>
+            <div class="guides-grid">
+                <a href="fully-funded-scholarships-australia.html" class="guide-card">
+                    <h4>Fully Funded Scholarships Guide</h4>
+                    <p>Government vs university scholarships, eligibility, deadlines, and how to write a winning application.</p>
+                    <span class="read-time">12 min read</span>
+                </a>
+                <a href="australia-student-visa-guide.html" class="guide-card">
+                    <h4>Subclass 500 Student Visa</h4>
+                    <p>Documents, financial requirements, work rights, and processing times demystified.</p>
+                    <span class="read-time">10 min read</span>
+                </a>
+                <div class="guide-card" style="background: #f0f4f8;">
+                    <h4>Cost of Living: Sydney vs Melbourne</h4>
+                    <p>Rent, transport, groceries — a real-world breakdown for international students.</p>
+                    <span class="read-time">9 min read</span>
+                </div>
+                <!-- NEW IELTS LINK -->
+                <a href="ielts-guide.html" class="guide-card" style="border-left-color: #ffc107;">
+                    <h4>IELTS Requirements Guide ⭐</h4>
+                    <p>Complete guide to IELTS scores, preparation, and requirements for Australian scholarships.</p>
+                    <span class="read-time">15 min read</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="newsletter">
+            <h2>Get scholarship alerts in your inbox</h2>
+            <p>One short email a week with new opportunities matched to international students. No spam.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Australia Awards Hub</h4>
+                <p style="color: #ccc; line-height: 1.8;">Built by a team of scholarship alumni who have studied across Australian universities — including Australia Awards scholars, RTP recipients, and university merit scholarship holders.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://www.facebook.com/profile.php?id=61586897518642" style="color: var(--accent);">Follow on Facebook</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#scholarships">Scholarships</a></li>
+                    <li><a href="#how">How it Works</a></li>
+                    <li><a href="#guides">Guides</a></li>
+                    <li><a href="ielts-guide.html">IELTS Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="scholarships-for-pakistani-students-in-australia.html">Pakistan</a></li>
+                    <li><a href="scholarships-for-indian-students-in-australia.html">India</a></li>
+                    <li><a href="scholarships-for-bangladeshi-students-in-australia.html">Bangladesh</a></li>
+                    <li><a href="scholarships-for-nigerian-students-in-australia.html">Nigeria</a></li>
+                    <li><a href="top-30-universities-australia.html">Top 30 Universities</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Get in Touch</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 Australia Awards Hub. Independent guide, not affiliated with the Australian Government.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
