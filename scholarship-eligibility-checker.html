@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Australia Scholarship Eligibility Checker 2026 — Find Your Best Match | Australia Awards Hub</title>
+<meta name="description" content="Free scholarship eligibility checker for international students applying to Australia 2026. Answer 6 questions and get a personalised list of scholarships you are most likely to win."/>
+<meta name="keywords" content="Australia scholarship eligibility checker 2026, am I eligible for Australia Awards, which scholarship Australia, scholarship finder Australia international students"/>
+<link rel="icon" type="image/png" href="logo.png"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL2YCR2ZTZ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL2YCR2ZTZ');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF3E7;--cream-2:#F2E7D2;--ink:#231812;--ink-soft:#5C4A3E;--terracotta:#C75A3C;--terracotta-deep:#A8442C;--forest:#1F3A2E;--gold:#E8B14F;--line:rgba(35,24,18,0.12);--shadow:0 2px 4px rgba(35,24,18,0.06),0 12px 32px rgba(35,24,18,0.08);}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+.container-wide{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:rgba(250,243,231,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:56px;height:56px;flex-shrink:0}.logo-mark img{width:100%;height:100%;object-fit:contain}
+.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:14px}.nav-links a:hover{color:var(--terracotta)}
+.btn{display:inline-block;padding:10px 22px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
+.btn-primary{background:var(--ink);color:var(--cream)}.btn-primary:hover{background:var(--terracotta)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--terracotta-deep),var(--terracotta));color:white;padding:56px 0 48px;text-align:center}
+.hero-eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;opacity:0.8;margin-bottom:14px}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(28px,5vw,50px);font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-bottom:14px}
+.hero p{font-size:17px;opacity:0.9;max-width:580px;margin:0 auto 28px;line-height:1.6}
+.steps-row{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.step-pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600}
+.step-num{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.3);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* CHECKER CARD */
+.checker-wrap{max-width:760px;margin:-32px auto 60px;padding:0 24px;position:relative;z-index:10}
+.checker-card{background:white;border-radius:24px;padding:40px;box-shadow:var(--shadow)}
+
+/* PROGRESS */
+.progress-bar-wrap{background:var(--line);border-radius:999px;height:6px;margin-bottom:32px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--terracotta),var(--gold));border-radius:999px;transition:width .4s ease}
+.progress-label{font-size:13px;color:var(--ink-soft);text-align:center;margin-bottom:16px}
+
+/* QUESTION */
+.question-step{display:none}
+.question-step.active{display:block}
+.q-number{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--terracotta);margin-bottom:10px}
+.q-text{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin-bottom:8px;line-height:1.3}
+.q-hint{font-size:14px;color:var(--ink-soft);margin-bottom:24px}
+.options-grid{display:flex;flex-direction:column;gap:10px}
+.option-btn{display:block;width:100%;text-align:left;padding:16px 20px;border:2px solid var(--line);border-radius:12px;background:white;font-family:inherit;font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:12px}
+.option-btn:hover{border-color:var(--terracotta);background:var(--cream)}
+.option-btn.selected{border-color:var(--terracotta);background:var(--cream-2);font-weight:700}
+.option-icon{font-size:20px;width:28px;text-align:center;flex-shrink:0}
+.nav-btns{display:flex;gap:12px;margin-top:24px}
+.back-btn{padding:13px 24px;border:1.5px solid var(--line);border-radius:999px;font-family:inherit;font-size:15px;font-weight:600;background:white;color:var(--ink-soft);cursor:pointer;transition:all .2s}
+.back-btn:hover{border-color:var(--ink);color:var(--ink)}
+.next-btn{flex:1;padding:14px 24px;background:var(--terracotta);border:none;border-radius:999px;font-family:inherit;font-size:15px;font-weight:700;color:white;cursor:pointer;transition:all .2s}
+.next-btn:hover{background:var(--terracotta-deep)}
+.next-btn:disabled{opacity:0.4;cursor:not-allowed}
+
+/* RESULTS */
+.results-step{display:none}
+.results-step.active{display:block}
+.results-header{text-align:center;margin-bottom:32px}
+.results-header h2{font-family:'Fraunces',serif;font-size:28px;font-weight:600;margin-bottom:8px}
+.results-header p{font-size:15px;color:var(--ink-soft)}
+
+.match-card{border-radius:18px;padding:24px;margin-bottom:16px;border:2px solid var(--line);display:flex;gap:20px;align-items:flex-start;cursor:default;transition:all .2s}
+.match-card:hover{box-shadow:var(--shadow);border-color:rgba(35,24,18,0.2)}
+.match-card.strong{border-color:var(--forest);background:#EDF6F0}
+.match-card.good{border-color:#005FAD;background:#EBF4FF}
+.match-card.possible{border-color:var(--gold);background:#FFF9ED}
+.match-score-wrap{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:60px}
+.match-score{font-family:'Fraunces',serif;font-size:28px;font-weight:600;line-height:1}
+.match-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-top:4px}
+.match-card.strong .match-score{color:var(--forest)}
+.match-card.strong .match-label{color:var(--forest)}
+.match-card.good .match-score{color:#005FAD}
+.match-card.good .match-label{color:#005FAD}
+.match-card.possible .match-score{color:#854F0B}
+.match-card.possible .match-label{color:#854F0B}
+.match-content{flex:1}
+.match-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin-bottom:4px}
+.match-provider{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+.match-value{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.match-reason{font-size:14px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px}
+.match-link{display:inline-block;font-size:14px;font-weight:700;color:var(--terracotta-deep);text-decoration:none;border:1.5px solid var(--line);padding:8px 16px;border-radius:999px;transition:all .2s}
+.match-link:hover{border-color:var(--terracotta);color:var(--terracotta)}
+.no-match{text-align:center;padding:32px;background:var(--cream-2);border-radius:16px}
+
+.restart-btn{display:block;width:100%;padding:14px;background:var(--cream-2);border:1.5px solid var(--line);border-radius:12px;font-family:inherit;font-size:15px;font-weight:600;color:var(--ink-soft);cursor:pointer;transition:all .2s;margin-top:20px;text-align:center}
+.restart-btn:hover{border-color:var(--ink);color:var(--ink)}
+
+.cta-block{background:var(--forest);border-radius:16px;padding:28px;margin-top:24px;text-align:center}
+.cta-block p{color:rgba(250,243,231,0.8);font-size:15px;margin-bottom:16px}
+.cta-block h3{font-family:'Fraunces',serif;font-size:20px;color:white;margin-bottom:8px}
+.cta-block a{display:inline-block;background:var(--gold);color:var(--ink);padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;transition:all .2s}
+.cta-block a:hover{background:#d4a040}
+
+footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
+.footer-bottom{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:12px}
+@media(max-width:700px){.nav-links{display:none}.steps-row{gap:12px}.checker-card{padding:24px}}
+</style>
+</head>
+<body>
+
+<nav><div class="container-wide nav-inner">
+<a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Australia Awards Hub"/></span>Australia Awards Hub</a>
+<ul class="nav-links">
+<li><a href="index.html#scholarships">Scholarships</a></li>
+<li><a href="student-budget-calculator.html">Budget Calculator</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<a href="contact.html" class="btn btn-primary">Get guidance</a>
+</div></nav>
+
+<div class="hero">
+<div class="container-wide">
+  <div class="hero-eyebrow">Free · Instant · No sign-up required</div>
+  <h1>Find Which Scholarships You're Eligible For</h1>
+  <p>Answer 6 quick questions about your background and goals — get a personalised list of Australian scholarships ranked by your chances of winning.</p>
+  <div class="steps-row">
+    <div class="step-pill"><span class="step-num">6</span> Quick questions</div>
+    <div class="step-pill"><span class="step-num">19</span> Scholarships checked</div>
+    <div class="step-pill">⚡ Instant results</div>
+  </div>
+</div>
+</div>
+
+<div class="checker-wrap">
+<div class="checker-card">
+
+  <div class="progress-label" id="progressLabel">Question 1 of 6</div>
+  <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar" style="width:16%"></div></div>
+
+  <!-- Q1: Country -->
+  <div class="question-step active" id="q1">
+    <div class="q-number">Question 1 of 6</div>
+    <div class="q-text">What is your country of citizenship?</div>
+    <div class="q-hint">This determines which government scholarships you can access.</div>
+    <div class="options-grid">
+      <button class="option-btn" onclick="select(1,'pakistan')" id="q1-pakistan"><span class="option-icon">🇵🇰</span> Pakistan</button>
+      <button class="option-btn" onclick="select(1,'bangladesh')" id="q1-bangladesh"><span class="option-icon">🇧🇩</span> Bangladesh</button>
+      <button class="option-btn" onclick="select(1,'nigeria')" id="q1-nigeria"><span class="option-icon">🇳🇬</span> Nigeria</button>
+      <button class="option-btn" onclick="select(1,'india')" id="q1-india"><span class="option-icon">🇮🇳</span> India</button>
+      <button class="option-btn" onclick="select(1,'other_eligible')" id="q1-other_eligible"><span class="option-icon">🌍</span> Another Australia Awards participating country</button>
+      <button class="option-btn" onclick="select(1,'other')" id="q1-other"><span class="option-icon">🌐</span> Other country (not in Australia Awards program)</button>
+    </div>
+    <div class="nav-btns">
+      <button class="next-btn" onclick="next(1)" id="next1" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- Q2: Study level -->
+  <div class="question-step" id="q2">
+    <div class="q-number">Question 2 of 6</div>
+    <div class="q-text">What level do you want to study?</div>
+    <div class="q-hint">Different scholarships are available at different levels.</div>
+    <div class="options-grid">
+      <button class="option-btn" onclick="select(2,'phd')" id="q2-phd"><span class="option-icon">🔬</span> PhD (Doctorate)</button>
+      <button class="option-btn" onclick="select(2,'masters_research')" id="q2-masters_research"><span class="option-icon">📖</span> Masters by Research</button>
+      <button class="option-btn" onclick="select(2,'masters_coursework')" id="q2-masters_coursework"><span class="option-icon">🎓</span> Masters by Coursework</button>
+      <button class="option-btn" onclick="select(2,'undergrad')" id="q2-undergrad"><span class="option-icon">📗</span> Undergraduate (Bachelor's degree)</button>
+    </div>
+    <div class="nav-btns">
+      <button class="back-btn" onclick="back(2)">← Back</button>
+      <button class="next-btn" onclick="next(2)" id="next2" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- Q3: Work experience -->
+  <div class="question-step" id="q3">
+    <div class="q-number">Question 3 of 6</div>
+    <div class="q-text">How many years of relevant work experience do you have after your bachelor's degree?</div>
+    <div class="q-hint">Australia Awards requires 2+ years. University scholarships have no minimum.</div>
+    <div class="options-grid">
+      <button class="option-btn" onclick="select(3,'none')" id="q3-none"><span class="option-icon">🎓</span> None — I am a recent graduate or still studying</button>
+      <button class="option-btn" onclick="select(3,'under2')" id="q3-under2"><span class="option-icon">📅</span> Less than 2 years</button>
+      <button class="option-btn" onclick="select(3,'2to5')" id="q3-2to5"><span class="option-icon">💼</span> 2–5 years</button>
+      <button class="option-btn" onclick="select(3,'over5')" id="q3-over5"><span class="option-icon">⭐</span> More than 5 years</button>
+    </div>
+    <div class="nav-btns">
+      <button class="back-btn" onclick="back(3)">← Back</button>
+      <button class="next-btn" onclick="next(3)" id="next3" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- Q4: Academic performance -->
+  <div class="question-step" id="q4">
+    <div class="q-number">Question 4 of 6</div>
+    <div class="q-text">How would you describe your academic performance?</div>
+    <div class="q-hint">Be honest — this helps give you the most accurate results.</div>
+    <div class="options-grid">
+      <button class="option-btn" onclick="select(4,'distinction')" id="q4-distinction"><span class="option-icon">🥇</span> Distinction / First Class — top of my class</button>
+      <button class="option-btn" onclick="select(4,'credit')" id="q4-credit"><span class="option-icon">🥈</span> Credit / Merit — good grades, above average</button>
+      <button class="option-btn" onclick="select(4,'pass')" id="q4-pass"><span class="option-icon">✅</span> Pass — completed my degree</button>
+    </div>
+    <div class="nav-btns">
+      <button class="back-btn" onclick="back(4)">← Back</button>
+      <button class="next-btn" onclick="next(4)" id="next4" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- Q5: IELTS -->
+  <div class="question-step" id="q5">
+    <div class="q-number">Question 5 of 6</div>
+    <div class="q-text">What is your English language test status?</div>
+    <div class="q-hint">Most scholarships require IELTS 6.5+ or equivalent.</div>
+    <div class="options-grid">
+      <button class="option-btn" onclick="select(5,'ielts_7')" id="q5-ielts_7"><span class="option-icon">🌟</span> IELTS 7.0+ (or PTE 65+)</button>
+      <button class="option-btn" onclick="select(5,'ielts_65')" id="q5-ielts_65"><span class="option-icon">✅</span> IELTS 6.5 (or PTE 58–64)</button>
+      <button class="option-btn" onclick="select(5,'ielts_below')" id="q5-ielts_below"><span class="option-icon">📚</span> IELTS below 6.5 (or equivalent)</button>
+      <button class="option-btn" onclick="select(5,'no_test')" id="q5-no_test"><span class="option-icon">⏳</span> I haven't taken the test yet</button>
+      <button class="option-btn" onclick="select(5,'exempt')" id="q5-exempt"><span class="option-icon">🇬🇧</span> English is my first language / I'm exempt</button>
+    </div>
+    <div class="nav-btns">
+      <button class="back-btn" onclick="back(5)">← Back</button>
+      <button class="next-btn" onclick="next(5)" id="next5" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- Q6: Field -->
+  <div class="question-step" id="q6">
+    <div class="q-number">Question 6 of 6</div>
+    <div class="q-text">What is your field of study or professional background?</div>
+    <div class="q-hint">Some scholarships prioritise specific sectors — especially Australia Awards.</div>
+    <div class="options-grid">
+      <button class="option-btn" onclick="select(6,'engineering')" id="q6-engineering"><span class="option-icon">⚙️</span> Engineering, Infrastructure or Environmental Science</button>
+      <button class="option-btn" onclick="select(6,'health')" id="q6-health"><span class="option-icon">🏥</span> Health, Medicine or Public Health</button>
+      <button class="option-btn" onclick="select(6,'education')" id="q6-education"><span class="option-icon">📘</span> Education or Social Sciences</button>
+      <button class="option-btn" onclick="select(6,'business')" id="q6-business"><span class="option-icon">💼</span> Business, Economics or Governance</button>
+      <button class="option-btn" onclick="select(6,'it')" id="q6-it"><span class="option-icon">💻</span> IT, Computer Science or Data</button>
+      <button class="option-btn" onclick="select(6,'other_field')" id="q6-other_field"><span class="option-icon">🎨</span> Arts, Law, Agriculture or Other</button>
+    </div>
+    <div class="nav-btns">
+      <button class="back-btn" onclick="back(6)">← Back</button>
+      <button class="next-btn" onclick="showResults()" id="next6" disabled>See my results →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-step" id="results">
+    <div class="results-header">
+      <h2 id="resultsHeading">Your scholarship matches</h2>
+      <p id="resultsSubtext"></p>
+    </div>
+    <div id="matchCards"></div>
+    <button class="restart-btn" onclick="restart()">← Start again</button>
+    <div class="cta-block">
+      <h3>Want personalised advice on your application?</h3>
+      <p>Our team reviews scholarship applications and helps you build the strongest possible case — including DILP writing, personal statements, and visa guidance.</p>
+      <a href="contact.html">Get in touch — it's free →</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer><div class="container-wide">
+<div class="footer-bottom">
+<div>© 2026 Australia Awards Hub — Eligibility results are indicative only and based on publicly available scholarship criteria. Always check official scholarship pages before applying.</div>
+<div><a href="index.html" style="color:var(--terracotta);text-decoration:none">← Back to home</a></div>
+</div></div></footer>
+
+<script>
+const answers = {};
+let currentStep = 1;
+
+// ── Scholarship database ─────────────────────────────────────────
+const SCHOLARSHIPS = [
+  {
+    id:'australia_awards',
+    name:'Australia Awards Scholarships 2027',
+    provider:'Australian Government (DFAT)',
+    value:'Fully funded — tuition + stipend + airfare + OSHC',
+    url:'australia-awards-scholarship-2027.html',
+    check(a){
+      let score = 0;
+      if(['pakistan','bangladesh','nigeria','other_eligible'].includes(a.country)) score+=40; else return null;
+      if(['masters_coursework','masters_research','phd'].includes(a.level)) score+=15;
+      if(['2to5','over5'].includes(a.work)) score+=(a.work==='over5'?20:12);
+      if(['distinction','credit'].includes(a.academic)) score+=(a.academic==='distinction'?15:8);
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=10;
+      if(['engineering','health','education','business'].includes(a.field)) score+=10;
+      return {score, tier:score>=75?'strong':score>=55?'good':'possible',
+        reason: score>=75
+          ? `Your country is a participating country and you have ${a.work==='over5'?'strong':'relevant'} work experience — exactly what Australia Awards looks for. Your ${a.field} background aligns well with priority sectors.`
+          : score>=55
+          ? `You meet the core eligibility criteria. Strengthen your application by ensuring you have 2+ years of work experience and an IELTS score of 6.5 or above before applying.`
+          : `You may be eligible but some criteria need attention — especially work experience (minimum 2 years required) and IELTS score (6.5 minimum).`
+      };
+    }
+  },
+  {
+    id:'rtp',
+    name:'Research Training Program (RTP) Scholarship',
+    provider:'Australian Government via universities',
+    value:'Full tuition + AUD $34,000–42,754/year stipend',
+    url:'rtp-scholarship-australia.html',
+    check(a){
+      if(!['phd','masters_research'].includes(a.level)) return null;
+      let score = 30;
+      if(a.academic==='distinction') score+=30; else if(a.academic==='credit') score+=15;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=20;
+      if(['over5','2to5'].includes(a.work)) score+=10;
+      if(a.ielts==='ielts_below'||a.ielts==='no_test') score-=15;
+      return {score, tier:score>=70?'strong':score>=50?'good':'possible',
+        reason:`The RTP is open to all nationalities for research degrees. With ${a.academic==='distinction'?'first-class academic results':'good academic results'}, you are a ${score>=70?'strong':'reasonable'} candidate. Contact a potential supervisor 3–6 months before applying.`
+      };
+    }
+  },
+  {
+    id:'mgrs',
+    name:'Melbourne Graduate Research Scholarship (MGRS)',
+    provider:'University of Melbourne',
+    value:'Full tuition + AUD $39,500/year',
+    url:'melbourne-graduate-research-scholarship.html',
+    check(a){
+      if(!['phd','masters_research'].includes(a.level)) return null;
+      let score = 20;
+      if(a.academic==='distinction') score+=40; else if(a.academic==='credit') score+=15;
+      if(['ielts_7','exempt'].includes(a.ielts)) score+=20; else if(a.ielts==='ielts_65') score+=10;
+      if(a.work==='over5') score+=10;
+      return {score, tier:score>=70?'strong':score>=50?'good':'possible',
+        reason:`Melbourne is Australia's top-ranked university. ${a.academic==='distinction'?'Your first-class academic results are exactly what is needed.':'You will need very strong academic results — aim for a GPA equivalent to First Class Honours.'} A confirmed supervisor contact significantly improves your chances.`
+      };
+    }
+  },
+  {
+    id:'usydis',
+    name:'USYDIS — Sydney Research Stipend',
+    provider:'University of Sydney',
+    value:'Full tuition + AUD $42,754/year (highest in Australia)',
+    url:'sydney-usydis-scholarship.html',
+    check(a){
+      if(!['phd','masters_research'].includes(a.level)) return null;
+      let score = 20;
+      if(a.academic==='distinction') score+=40; else if(a.academic==='credit') score+=15;
+      if(['ielts_7','exempt'].includes(a.ielts)) score+=20; else if(a.ielts==='ielts_65') score+=10;
+      if(['engineering','health','it'].includes(a.field)) score+=10;
+      return {score, tier:score>=70?'strong':score>=50?'good':'possible',
+        reason:`The highest research stipend in Australia. ${a.academic==='distinction'?'Your academic results are competitive for this scholarship.':'First-class academic results are essential.'} Applications close in September and December — plan ahead.`
+      };
+    }
+  },
+  {
+    id:'monash_mgs',
+    name:'Monash Graduate Scholarship (MGS)',
+    provider:'Monash University',
+    value:'Full tuition + AUD $37,145/year',
+    url:'monash-graduate-scholarship.html',
+    check(a){
+      if(!['phd','masters_research'].includes(a.level)) return null;
+      let score = 25;
+      if(a.academic==='distinction') score+=35; else if(a.academic==='credit') score+=18;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=20;
+      if(['health','education','engineering'].includes(a.field)) score+=10;
+      return {score, tier:score>=70?'strong':score>=50?'good':'possible',
+        reason:`Monash has a large international research community. ${a.academic==='distinction'?'Strong academic results give you a competitive edge.':'Academic results above 75% WAM are recommended.'} Applications are accepted on a rolling basis.`
+      };
+    }
+  },
+  {
+    id:'anu',
+    name:"ANU Chancellor's International Scholarship",
+    provider:'Australian National University',
+    value:'25–50% tuition reduction',
+    url:'anu-chancellors-international-scholarship.html',
+    check(a){
+      if(a.level==='phd') return null;
+      let score = 30;
+      if(a.academic==='distinction') score+=30; else if(a.academic==='credit') score+=18;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=20;
+      if(['pakistan','bangladesh','nigeria','india','other_eligible'].includes(a.country)) score+=10;
+      return {score, tier:score>=70?'strong':score>=50?'good':'possible',
+        reason:`ANU assesses applicants from South Asia and Africa in regional categories — meaning you compete against regional peers rather than globally. This improves your odds significantly.`
+      };
+    }
+  },
+  {
+    id:'uq',
+    name:'UQ International Excellence Scholarship',
+    provider:'University of Queensland',
+    value:'25% tuition reduction',
+    url:'uq-international-excellence-scholarship.html',
+    check(a){
+      if(a.level==='phd') return null;
+      let score = 35;
+      if(a.academic==='distinction') score+=30; else if(a.academic==='credit') score+=20;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=20;
+      return {score, tier:score>=75?'strong':score>=55?'good':'possible',
+        reason:`UQ is in Brisbane — significantly lower cost of living than Sydney. The Excellence Scholarship is automatically assessed with your admission application — no separate form needed.`
+      };
+    }
+  },
+  {
+    id:'monash_merit',
+    name:'Monash International Merit Scholarship',
+    provider:'Monash University',
+    value:'AUD $10,000/year',
+    url:'monash-international-merit-scholarship.html',
+    check(a){
+      if(a.level==='phd') return null;
+      let score = 40;
+      if(a.academic==='distinction') score+=30; else if(a.academic==='credit') score+=20;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=15;
+      return {score, tier:score>=75?'strong':score>=60?'good':'possible',
+        reason:`Automatically assessed when you apply to Monash — no separate application needed. Monash has the largest international student community in Australia and a wide range of programs.`
+      };
+    }
+  },
+  {
+    id:'rmit',
+    name:'RMIT Future Leaders Scholarship',
+    provider:'RMIT University',
+    value:'20% tuition reduction',
+    url:'rmit-future-leaders-scholarship.html',
+    check(a){
+      if(!['pakistan','bangladesh','india','nigeria','other_eligible'].includes(a.country)) return null;
+      if(a.level==='phd') return null;
+      let score = 50;
+      if(a.academic==='distinction') score+=25; else if(a.academic==='credit') score+=15;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=15;
+      return {score, tier:score>=75?'strong':score>=60?'good':'possible',
+        reason:`Specifically designed for students from South Asia and Africa — your country is eligible. RMIT's City Campus is in Melbourne CBD with excellent industry connections, particularly for engineering, IT, design, and business.`
+      };
+    }
+  },
+  {
+    id:'adelaide',
+    name:'Adelaide Global Excellence Scholarship',
+    provider:'University of Adelaide',
+    value:'50% tuition reduction',
+    url:'adelaide-global-excellence-scholarship.html',
+    check(a){
+      if(a.level==='phd') return null;
+      let score = 35;
+      if(a.academic==='distinction') score+=35; else if(a.academic==='credit') score+=20;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=20;
+      return {score, tier:score>=75?'strong':score>=55?'good':'possible',
+        reason:`Adelaide is one of Australia's most affordable cities — and the 50% tuition reduction makes this package excellent value. The University of Adelaide is a Group of Eight research university with a strong reputation.`
+      };
+    }
+  },
+  {
+    id:'griffith',
+    name:'Griffith Remarkable Scholarship',
+    provider:'Griffith University',
+    value:'50% tuition reduction',
+    url:'griffith-remarkable-scholarship.html',
+    check(a){
+      if(a.level==='phd') return null;
+      let score = 40;
+      if(a.academic==='distinction') score+=30; else if(a.academic==='credit') score+=20;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=15;
+      if(['business','health','education','it'].includes(a.field)) score+=10;
+      return {score, tier:score>=75?'strong':score>=60?'good':'possible',
+        reason:`Griffith is in Brisbane — lower cost of living than Sydney or Melbourne. The 50% tuition reduction is substantial. Strong in business, criminology, health, and music programs.`
+      };
+    }
+  },
+  {
+    id:'macquarie',
+    name:'Macquarie VC International Scholarship',
+    provider:'Macquarie University',
+    value:'Up to AUD $10,000',
+    url:'macquarie-vc-international-scholarship.html',
+    check(a){
+      if(a.level==='phd') return null;
+      let score = 40;
+      if(a.academic==='distinction') score+=25; else if(a.academic==='credit') score+=18;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=15;
+      if(['business','it'].includes(a.field)) score+=10;
+      return {score, tier:score>=70?'strong':score>=55?'good':'possible',
+        reason:`Macquarie is known for finance, linguistics, business, and IT. Located in Sydney with a campus close to Australia's financial district. The VC Scholarship is merit-based and assessed with your application.`
+      };
+    }
+  },
+  {
+    id:'flinders',
+    name:'Flinders FIPRS — Postgraduate Research',
+    provider:'Flinders University',
+    value:'Full tuition + stipend + airfare',
+    url:'flinders-fiprs-scholarship.html',
+    check(a){
+      if(!['phd','masters_research'].includes(a.level)) return null;
+      let score = 35;
+      if(a.academic==='distinction') score+=35; else if(a.academic==='credit') score+=15;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=15;
+      if(['health','engineering','education'].includes(a.field)) score+=10;
+      return {score, tier:score>=70?'strong':score>=50?'good':'possible',
+        reason:`Flinders FIPRS covers full fees, stipend, and airfares — making it one of the most comprehensive research packages. Flinders is in Adelaide, one of Australia's most affordable cities. Strong in health sciences, engineering, and defence research.`
+      };
+    }
+  },
+  {
+    id:'destination',
+    name:'Destination Australia Scholarships',
+    provider:'Australian Government — Regional Universities',
+    value:'AUD $15,000/year',
+    url:'destination-australia-scholarships.html',
+    check(a){
+      let score = 35;
+      if(['ielts_7','ielts_65','exempt'].includes(a.ielts)) score+=20;
+      if(a.academic==='distinction') score+=20; else if(a.academic==='credit') score+=15;
+      score+=10; // open to all
+      return {score, tier:score>=70?'strong':score>=55?'good':'possible',
+        reason:`Destination Australia is open to both domestic and international students studying at regional universities. AUD $15,000/year is stackable with other scholarships. If you're open to studying outside major cities (Sydney/Melbourne), this significantly improves your funding.`
+      };
+    }
+  },
+];
+
+function select(q, val){
+  answers['q'+q] = val;
+  document.querySelectorAll(`#q${q} .option-btn`).forEach(b=>b.classList.remove('selected'));
+  document.getElementById(`q${q}-${val}`).classList.add('selected');
+  document.getElementById(`next${q}`).disabled = false;
+}
+
+function next(q){
+  document.getElementById('q'+q).classList.remove('active');
+  if(q < 6){
+    document.getElementById('q'+(q+1)).classList.add('active');
+    currentStep = q+1;
+  }
+  updateProgress();
+}
+
+function back(q){
+  document.getElementById('q'+q).classList.remove('active');
+  document.getElementById('q'+(q-1)).classList.add('active');
+  currentStep = q-1;
+  updateProgress();
+}
+
+function updateProgress(){
+  const pct = Math.round((currentStep/6)*100);
+  document.getElementById('progressBar').style.width = pct+'%';
+  document.getElementById('progressLabel').textContent = `Question ${currentStep} of 6`;
+}
+
+function getAnswers(){
+  return {
+    country: answers.q1,
+    level:   answers.q2,
+    work:    answers.q3,
+    academic:answers.q4,
+    ielts:   answers.q5,
+    field:   answers.q6,
+  };
+}
+
+function showResults(){
+  const a = getAnswers();
+  const matches = [];
+
+  SCHOLARSHIPS.forEach(s => {
+    const result = s.check(a);
+    if(result && result.score >= 30){
+      matches.push({...s, ...result});
+    }
+  });
+
+  matches.sort((a,b)=>b.score-a.score);
+
+  const strong = matches.filter(m=>m.tier==='strong');
+  const good   = matches.filter(m=>m.tier==='good');
+  const poss   = matches.filter(m=>m.tier==='possible');
+
+  document.getElementById('resultsHeading').textContent =
+    `You matched ${matches.length} scholarship${matches.length!==1?'s':''}`;
+  document.getElementById('resultsSubtext').textContent =
+    `Based on your profile — ${strong.length} strong match${strong.length!==1?'es':''}, ${good.length} good match${good.length!==1?'es':''}. Ranked by your estimated chances.`;
+
+  const tierConfig = {
+    strong:{label:'Strong match',color:'strong'},
+    good:{label:'Good match',color:'good'},
+    possible:{label:'Possible',color:'possible'},
+  };
+
+  if(matches.length === 0){
+    document.getElementById('matchCards').innerHTML = `
+      <div class="no-match">
+        <p style="font-size:20px;margin-bottom:8px">🔍</p>
+        <p style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:8px">No strong matches found</p>
+        <p style="font-size:14px;color:var(--ink-soft)">This is often because of IELTS score or work experience. Improving your IELTS score to 6.5+ and gaining 2+ years of work experience will open up many more scholarships. Get in touch for personalised advice.</p>
+      </div>`;
+  } else {
+    document.getElementById('matchCards').innerHTML = matches.slice(0,8).map(m=>{
+      const tc = tierConfig[m.tier];
+      return `
+      <div class="match-card ${tc.color}">
+        <div class="match-score-wrap">
+          <div class="match-score">${m.score}%</div>
+          <div class="match-label">${tc.label}</div>
+        </div>
+        <div class="match-content">
+          <div class="match-name">${m.name}</div>
+          <div class="match-provider">${m.provider}</div>
+          <div class="match-value">💰 ${m.value}</div>
+          <div class="match-reason">${m.reason}</div>
+          <a href="${m.url}" class="match-link">Full details →</a>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  document.getElementById('progressBar').style.width='100%';
+  document.getElementById('progressLabel').textContent='Your results';
+  document.querySelectorAll('.question-step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('results').classList.add('active');
+}
+
+function restart(){
+  Object.keys(answers).forEach(k=>delete answers[k]);
+  currentStep=1;
+  document.querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));
+  document.querySelectorAll('.next-btn').forEach(b=>b.disabled=true);
+  document.getElementById('results').classList.remove('active');
+  document.getElementById('q1').classList.add('active');
+  document.getElementById('progressBar').style.width='16%';
+  document.getElementById('progressLabel').textContent='Question 1 of 6';
+}
+</script>
+</body>
+</html>
