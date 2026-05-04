@@ -153,6 +153,23 @@
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:14px}
 
   @media(max-width:900px){.nav-links{display:none}.footer-grid{grid-template-columns:1fr}.article-cta{padding:40px 24px}}
+
+  .breadcrumb-nav{
+    background:white;border-bottom:1px solid var(--line);
+    padding:10px 0;font-size:13px;
+  }
+  .breadcrumb-list{
+    display:flex;align-items:center;gap:6px;
+    list-style:none;flex-wrap:wrap;
+    max-width:1100px;margin:0 auto;padding:0 24px;
+  }
+  .breadcrumb-list li{display:flex;align-items:center;gap:6px}
+  .breadcrumb-list a{color:var(--ink-soft);text-decoration:none;transition:color .2s}
+  .breadcrumb-list a:hover{color:var(--terracotta)}
+  .breadcrumb-list li::after{content:'›';color:var(--line);font-size:15px}
+  .breadcrumb-list li:last-child::after{display:none}
+  .breadcrumb-list li:last-child span{color:var(--ink);font-weight:600}
+
 </style>
 </head>
 <body>
@@ -169,6 +186,14 @@
     <a href="index.html#scholarships" class="btn btn-primary">Browse scholarships</a>
   </div>
 </nav>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#blog">Guides</a></li>
+    <li><span>Student Visa Guide</span></li>
+  </ol>
+</nav>
+
 
 <header class="article-header">
   <div class="container">
