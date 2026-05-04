@@ -208,22 +208,51 @@
   /* --- SCHOLARSHIP CARDS --- */
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .card{
-    transition:opacity .2s ease, transform .2s ease;
-    background:var(--cream);border:1px solid var(--line);border-radius:20px;
-    padding:28px;transition:transform .25s, box-shadow .25s, border-color .25s;
-    display:flex;flex-direction:column;
+    background:white;border:1px solid var(--line);border-radius:20px;
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .22s,box-shadow .22s,border-color .22s;
   }
-  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--terracotta)}
-  .card-tag{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;padding:5px 11px;border-radius:999px;background:var(--cream-2);color:var(--ink-soft);margin-bottom:18px;align-self:flex-start}
-  .card h3{font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin-bottom:10px;line-height:1.25}
-  .card .provider{font-size:13px;color:var(--ink-soft);margin-bottom:18px}
-  .card-meta{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:18px}
-  .meta-label{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px}
-  .meta-value{font-size:14px;font-weight:600}
-  .card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
-  .deadline{font-size:13px;color:var(--terracotta-deep);font-weight:600}
-  .card-link{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
-  .card-link:hover{gap:10px;color:var(--terracotta)}
+  .card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(35,24,18,0.06),0 16px 40px rgba(35,24,18,0.12);border-color:var(--terracotta)}
+  /* Card header strip */
+  .card-header{padding:18px 20px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+  .card-tag{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;
+    padding:4px 10px;border-radius:999px;flex-shrink:0;
+  }
+  .card-tag.full{background:#EDF6F0;color:#1F7A50}
+  .card-tag.partial{background:#FFF9ED;color:#854F0B}
+  .card-tag.govt{background:#EBF4FF;color:#005FAD}
+  /* Card body */
+  .card-body{padding:0 20px 18px;flex:1;display:flex;flex-direction:column}
+  .card-provider{font-size:12px;color:var(--ink-soft);font-weight:500;margin-bottom:6px}
+  .card h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;line-height:1.25;margin-bottom:16px;color:var(--ink)}
+  /* Metric pills row */
+  .card-metrics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .metric{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:12px;font-weight:600;padding:5px 10px;
+    border-radius:8px;background:var(--cream);border:1px solid var(--line);
+    color:var(--ink);white-space:nowrap;
+  }
+  .metric.value{background:#EDF6F0;border-color:#C6E9D4;color:#1F5C37}
+  .metric.level{background:#EBF4FF;border-color:#BDD8F5;color:#004A8F}
+  .metric.location{background:#FFF9ED;border-color:#F0DDA0;color:#6B4F00}
+  .metric.nation{background:var(--cream);border-color:var(--line);color:var(--ink-soft)}
+  /* Deadline bar */
+  .card-foot{
+    margin-top:auto;padding:12px 20px;
+    border-top:1px solid var(--line);background:var(--cream);
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+  }
+  .deadline{font-size:12px;color:var(--terracotta-deep);font-weight:700;display:flex;align-items:center;gap:4px}
+  .card-link{
+    font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;
+    display:inline-flex;align-items:center;gap:5px;
+    padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);
+    transition:all .18s;white-space:nowrap;flex-shrink:0;
+  }
+  .card-link:hover{background:var(--ink);color:var(--cream);border-color:var(--ink);gap:8px}
 
   /* --- HOW IT WORKS --- */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:24px}
@@ -633,316 +662,297 @@
         <div class="grid" id="cards">
       <!-- card 1 -->
       <article class="card" data-cat="govt masters phd undergrad" data-type="govt" data-funding="full" data-country="eligible" data-city="any">
-        <span class="card-tag">Government · Fully Funded</span>
-        <h3>Australia Awards Scholarships 2027</h3>
-        <div class="provider">Australian Government (DFAT)</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">Masters / PhD / UG</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">Tuition + stipend + airfare</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">~50 partner countries</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Up to 4 years</div></div>
+        <div class="card-header">
+          <span class="card-tag govt">🏆 Govt · Fully Funded</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">Australian Government (DFAT)</div>
+          <h3>Australia Awards Scholarships 2027</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Tuition + stipend + airfare</span><span class="metric level"><span>🎓</span>Masters / PhD / UG</span><span class="metric location"><span>📍</span>Any city</span><span class="metric nation"><span>🌍</span>~50 countries</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Closes 30 Apr 2026, 2pm AEST</span>
+          <span class="deadline">📅 30 Apr 2026, 2pm AEST</span>
           <a href="australia-awards-scholarship-2027.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 2 -->
       <article class="card" data-cat="university masters phd" data-type="university" data-funding="full" data-country="all" data-city="melbourne">
-        <span class="card-tag">University · Fully Funded</span>
-        <h3>Melbourne Graduate Research Scholarships</h3>
-        <div class="provider">University of Melbourne</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">Masters by Res / PhD</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">Full fees + $39,500 p.a.</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">All nationalities</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Up to 4 years</div></div>
+        <div class="card-header">
+          <span class="card-tag full">🎓 University · Fully Funded</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">University of Melbourne</div>
+          <h3>Melbourne Graduate Research Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Full fees + $39,500/yr</span><span class="metric level"><span>🔬</span>Masters / PhD</span><span class="metric location"><span>📍</span>Melbourne</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Apply by 31 Oct 2026</span>
+          <span class="deadline">📅 Oct 2026 & Dec 2026</span>
           <a href="melbourne-graduate-research-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 3 -->
       <article class="card" data-cat="university masters phd" data-type="university" data-funding="full" data-country="all" data-city="sydney">
-        <span class="card-tag">University · Fully Funded</span>
-        <h3>USYDIS — Sydney International Stipend</h3>
-        <div class="provider">University of Sydney</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">Masters by Res / PhD</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">Full fees + $42,754 p.a.</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">International</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Up to 3.5 years</div></div>
+        <div class="card-header">
+          <span class="card-tag full">🎓 University · Fully Funded</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">University of Sydney</div>
+          <h3>USYDIS — Sydney International Stipend</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Full fees + $42,754/yr</span><span class="metric level"><span>🔬</span>Masters / PhD</span><span class="metric location"><span>📍</span>Sydney</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">11 Sept / 18 Dec 2026</span>
+          <span class="deadline">📅 11 Sept / 18 Dec 2026</span>
           <a href="sydney-usydis-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 4 -->
       <article class="card" data-cat="university undergrad" data-type="university" data-funding="partial" data-country="all" data-city="melbourne">
-        <span class="card-tag">University · Partial</span>
-        <h3>Melbourne International Undergraduate Scholarship</h3>
-        <div class="provider">University of Melbourne</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">Undergraduate</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">25% / 50% / 100% fees</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">Selected countries</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Up to 3 years</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">University of Melbourne</div>
+          <h3>Melbourne International Undergraduate Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Up to $10,000/yr</span><span class="metric level"><span>📖</span>Undergraduate</span><span class="metric location"><span>📍</span>Melbourne</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">31 May / 31 Oct 2026</span>
+          <span class="deadline">📅 With admission offer</span>
           <a href="melbourne-international-undergraduate-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 5 -->
       <article class="card" data-cat="university masters" data-type="university" data-funding="partial" data-country="all" data-city="sydney">
-        <span class="card-tag">University · Partial</span>
-        <h3>UTS Vice-Chancellor's International Postgraduate Scholarship</h3>
-        <div class="provider">University of Technology Sydney</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">Masters Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">Full tuition</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">International</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Course duration</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">University of Technology Sydney</div>
+          <h3>UTS Vice-Chancellor's International Postgraduate Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Up to $10,000/yr</span><span class="metric level"><span>🎓</span>Masters</span><span class="metric location"><span>📍</span>Sydney</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Rolling intakes</span>
+          <span class="deadline">📅 Rolling — with admission</span>
           <a href="uts-vc-international-postgraduate-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 6 -->
       <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="partial" data-country="all" data-city="sydney">
-        <span class="card-tag">University · Merit</span>
-        <h3>Sydney Vice-Chancellor's International Scholarship</h3>
-        <div class="provider">University of Sydney</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">$5,000 – $40,000 AUD</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">High-achieving int'l</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">1 year (auto-applied)</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Merit</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">University of Sydney</div>
+          <h3>Sydney Vice-Chancellor's International Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Up to $10,000/yr</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Sydney</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">With admission offer</span>
+          <span class="deadline">📅 Rolling — with admission</span>
           <a href="sydney-vc-international-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 7 -->
       <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="partial" data-country="all" data-city="canberra">
-        <span class="card-tag">University · Partial</span>
-        <h3>ANU Chancellor's International Scholarship</h3>
-        <div class="provider">Australian National University</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">25% – 50% tuition</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">9 regional categories</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Course duration</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">Australian National University</div>
+          <h3>ANU Chancellor's International Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>25–50% tuition</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Canberra</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Auto-assessed with offer</span>
+          <span class="deadline">📅 Auto-assessed with offer</span>
           <a href="anu-chancellors-international-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 8 -->
       <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="partial" data-country="all" data-city="melbourne">
-        <span class="card-tag">University · Partial</span>
-        <h3>Monash International Merit Scholarship</h3>
-        <div class="provider">Monash University</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">$10,000 AUD per year</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">All nationalities</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Full degree</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Merit</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">Monash University</div>
+          <h3>Monash International Merit Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>$10,000 AUD/yr</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Melbourne</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Auto-considered with offer</span>
+          <span class="deadline">📅 Auto-considered with offer</span>
           <a href="monash-international-merit-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 9 -->
       <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="partial" data-country="all" data-city="sydney">
-        <span class="card-tag">University · Partial</span>
-        <h3>UNSW International Scientia Coursework Scholarship</h3>
-        <div class="provider">University of New South Wales</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">Full tuition or $20k p.a.</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">High-achieving int'l</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Program duration</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">University of New South Wales</div>
+          <h3>UNSW International Scientia Coursework Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Up to $10,000/yr</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Sydney</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Application required</span>
+          <span class="deadline">📅 Rolling — with admission</span>
           <a href="unsw-scientia-coursework-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 10 -->
       <article class="card" data-cat="university masters phd" data-type="university" data-funding="full" data-country="all" data-city="melbourne">
-        <span class="card-tag">University · Fully Funded</span>
-        <h3>Monash Graduate Scholarship + MITS</h3>
-        <div class="provider">Monash University</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">Masters by Res / PhD</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">Full fees + $37,145 p.a.</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">International</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Up to 3 years</div></div>
+        <div class="card-header">
+          <span class="card-tag full">🔬 University · Fully Funded</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">Monash University</div>
+          <h3>Monash Graduate Scholarship (MGS)</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Full fees + $37,145/yr</span><span class="metric level"><span>🔬</span>Masters / PhD</span><span class="metric location"><span>📍</span>Melbourne</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Closes 31 Mar (annual)</span>
+          <span class="deadline">📅 Rolling — contact supervisor</span>
           <a href="monash-graduate-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 11 -->
       <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="partial" data-country="all" data-city="brisbane">
-        <span class="card-tag">University · Partial</span>
-        <h3>UQ International Excellence Scholarship</h3>
-        <div class="provider">University of Queensland</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">25% tuition reduction</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">High-achieving int'l</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Full program</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">University of Queensland</div>
+          <h3>UQ International Excellence Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>25% tuition reduction</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Brisbane</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Auto-considered with offer</span>
+          <span class="deadline">📅 Auto-assessed with offer</span>
           <a href="uq-international-excellence-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <!-- card 12 -->
       <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="partial" data-country="eligible" data-city="melbourne">
-        <span class="card-tag">University · Partial · South Asia</span>
-        <h3>RMIT Future Leaders Scholarship</h3>
-        <div class="provider">RMIT University</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">20% tuition reduction</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan</div></div>
-          <div><div class="meta-label">Duration</div><div class="meta-value">Full program</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">RMIT University</div>
+          <h3>RMIT Future Leaders Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>20% tuition reduction</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Melbourne</span><span class="metric nation"><span>🌍</span>Eligible countries</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">2026 intakes onwards</span>
+          <span class="deadline">📅 2026 intakes onwards</span>
           <a href="rmit-future-leaders-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <article class="card" data-cat="govt masters phd undergrad" data-type="govt" data-funding="partial" data-country="all" data-city="any">
-        <span class="card-tag">Government · AUD $15,000/yr</span>
-        <h3>Destination Australia Scholarships</h3>
-        <div class="provider">Australian Government · Regional Universities</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / Masters / PhD</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">AUD $15,000 per year</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">Domestic & International</div></div>
-          <div><div class="meta-label">Location</div><div class="meta-value">Regional Australia</div></div>
+        <div class="card-header">
+          <span class="card-tag govt">🏆 Govt · Regional</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">Australian Government · Regional Universities</div>
+          <h3>Destination Australia Scholarships</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>$15,000 AUD/yr</span><span class="metric level"><span>🎓</span>UG / Masters / PhD</span><span class="metric location"><span>📍</span>Regional Australia</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Varies by university</span>
+          <span class="deadline">📅 Varies by university</span>
           <a href="destination-australia-scholarships.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <article class="card" data-cat="university masters undergrad" data-type="university" data-funding="partial" data-country="all" data-city="adelaide">
-        <span class="card-tag">University · 50% Tuition</span>
-        <h3>Adelaide Global Excellence Scholarship</h3>
-        <div class="provider">University of Adelaide</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">50% tuition reduction</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">International students</div></div>
-          <div><div class="meta-label">Selection</div><div class="meta-value">Academic merit</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">University of Adelaide</div>
+          <h3>Adelaide Global Excellence Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>50% tuition reduction</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Adelaide</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">With admission offer</span>
+          <span class="deadline">📅 With admission offer</span>
           <a href="adelaide-global-excellence-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <article class="card" data-cat="university masters undergrad" data-type="university" data-funding="partial" data-country="all" data-city="brisbane">
-        <span class="card-tag">University · 50% Tuition</span>
-        <h3>Griffith Remarkable Scholarship</h3>
-        <div class="provider">Griffith University</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">50% tuition reduction</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">International students</div></div>
-          <div><div class="meta-label">Selection</div><div class="meta-value">Academic excellence</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">Griffith University</div>
+          <h3>Griffith Remarkable Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>50% tuition reduction</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Brisbane</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Rolling — with admission</span>
+          <span class="deadline">📅 Rolling — with admission</span>
           <a href="griffith-remarkable-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <article class="card" data-cat="university masters undergrad" data-type="university" data-funding="partial" data-country="all" data-city="sydney">
-        <span class="card-tag">University · AUD $10,000</span>
-        <h3>Macquarie VC International Scholarship</h3>
-        <div class="provider">Macquarie University</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">Up to AUD $10,000</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">International students</div></div>
-          <div><div class="meta-label">Selection</div><div class="meta-value">Merit-based</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">Macquarie University</div>
+          <h3>Macquarie VC International Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Up to $10,000/yr</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Sydney</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">With admission application</span>
+          <span class="deadline">📅 With admission application</span>
           <a href="macquarie-vc-international-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <article class="card" data-cat="university masters phd undergrad" data-type="university" data-funding="partial" data-country="all" data-city="sydney">
-        <span class="card-tag">University · Multiple Awards</span>
-        <h3>UNSW International Scholarships</h3>
-        <div class="provider">UNSW Sydney</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / Masters / PhD</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">Full fees to partial awards</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">International students</div></div>
-          <div><div class="meta-label">Selection</div><div class="meta-value">Academic merit</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Multiple</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">UNSW Sydney</div>
+          <h3>UNSW International Scholarships</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Full fees to partial</span><span class="metric level"><span>🔬</span>UG / Masters / PhD</span><span class="metric location"><span>📍</span>Sydney</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Multiple rounds per year</span>
+          <span class="deadline">📅 Multiple rounds per year</span>
           <a href="unsw-international-scholarships.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <article class="card" data-cat="university masters phd" data-type="university" data-funding="full" data-country="all" data-city="adelaide">
-        <span class="card-tag">University · Fully Funded Research</span>
-        <h3>Flinders FIPRS — Postgraduate Research</h3>
-        <div class="provider">Flinders University</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">Masters by Res / PhD</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">Full fees + stipend + airfare</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">International students</div></div>
-          <div><div class="meta-label">Location</div><div class="meta-value">Adelaide, SA</div></div>
+        <div class="card-header">
+          <span class="card-tag full">🔬 University · Fully Funded</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">Flinders University</div>
+          <h3>Flinders FIPRS — Postgraduate Research</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>Full fees + stipend + airfare</span><span class="metric level"><span>🔬</span>Masters / PhD</span><span class="metric location"><span>📍</span>Adelaide</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">Check current round</span>
+          <span class="deadline">📅 Check current round</span>
           <a href="flinders-fiprs-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
 
       <article class="card" data-cat="university masters undergrad" data-type="university" data-funding="partial" data-country="all" data-city="darwin">
-        <span class="card-tag">University · 25–50% Tuition</span>
-        <h3>CDU VC International High Achievers Scholarship</h3>
-        <div class="provider">Charles Darwin University</div>
-        <div class="card-meta">
-          <div><div class="meta-label">Level</div><div class="meta-value">UG / PG Coursework</div></div>
-          <div><div class="meta-label">Value</div><div class="meta-value">25–50% tuition waiver</div></div>
-          <div><div class="meta-label">Eligibility</div><div class="meta-value">International students</div></div>
-          <div><div class="meta-label">Location</div><div class="meta-value">Darwin, NT</div></div>
+        <div class="card-header">
+          <span class="card-tag partial">🎓 University · Partial</span>
+        </div>
+        <div class="card-body">
+          <div class="card-provider">Charles Darwin University</div>
+          <h3>CDU VC International High Achievers Scholarship</h3>
+          <div class="card-metrics"><span class="metric value"><span>💰</span>25–50% tuition waiver</span><span class="metric level"><span>🎓</span>Masters / UG</span><span class="metric location"><span>📍</span>Darwin, NT</span><span class="metric nation"><span>🌍</span>All nationalities</span></div>
         </div>
         <div class="card-foot">
-          <span class="deadline">With admission application</span>
+          <span class="deadline">📅 With admission application</span>
           <a href="cdu-vc-international-scholarship.html" class="card-link">Details →</a>
         </div>
       </article>
