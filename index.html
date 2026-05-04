@@ -77,66 +77,7 @@
   .logo-mark img{width:100%;height:100%;object-fit:contain;display:block}
   .nav-right{display:flex;align-items:center;gap:8px}
 
-  /* ── Search ──────────────────────────────────── */
-  .search-btn{
-    background:none;border:none;cursor:pointer;padding:8px;
-    border-radius:8px;color:var(--ink);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  }
-  .search-btn:hover{background:var(--cream-2);color:var(--terracotta)}
-  /* Full-screen search modal */
-  #searchModal{
-    display:none;
-    position:fixed;inset:0;z-index:9999;
-    background:rgba(35,24,18,0.5);
-    align-items:flex-start;justify-content:center;
-    padding-top:100px;
-  }
-  #searchModal.open{display:flex}
-  .search-box{
-    background:white;border-radius:20px;
-    width:min(680px,calc(100vw - 32px));
-    box-shadow:0 20px 60px rgba(35,24,18,0.25);
-    overflow:hidden;
-  }
-  .search-top{
-    display:flex;align-items:center;gap:12px;
-    padding:16px 20px;border-bottom:1px solid var(--line);
-  }
-  .search-input{
-    flex:1;border:none;background:transparent;
-    padding:6px 0;font-family:inherit;font-size:17px;color:var(--ink);
-    outline:none;
-  }
-  .search-input::placeholder{color:#C0AFA6}
-  .search-close{
-    background:none;border:none;cursor:pointer;padding:6px 10px;
-    border-radius:8px;color:var(--ink-soft);font-size:16px;font-weight:600;
-    transition:background .15s;white-space:nowrap;
-  }
-  .search-close:hover{background:var(--cream-2)}
-  .search-results{padding:8px 0}
-  .search-result-item{
-    display:flex;align-items:center;gap:14px;padding:12px 20px;
-    text-decoration:none;color:var(--ink);transition:background .12s;
-  }
-  .search-result-item:hover{background:var(--cream)}
-  .sri-icon{font-size:20px;width:28px;text-align:center;flex-shrink:0}
-  .sri-title{font-size:14px;font-weight:600;margin-bottom:1px}
-  .sri-sub{font-size:12px;color:var(--ink-soft)}
-  .sri-tag{
-    font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;
-    margin-left:auto;flex-shrink:0;white-space:nowrap;
-  }
-  .search-empty{padding:24px 20px;text-align:center;color:var(--ink-soft);font-size:14px}
-  .search-hint{
-    padding:12px 20px;border-top:1px solid var(--line);
-    font-size:12px;color:var(--ink-soft);display:flex;gap:16px;
-  }
-  .search-hint kbd{
-    background:var(--cream-2);border:1px solid var(--line);border-radius:4px;
-    padding:1px 6px;font-size:11px;font-family:inherit;
-  }
+  
 
   /* Mobile hamburger */
   .hamburger{
@@ -343,6 +284,28 @@
   .reveal:nth-child(2){animation-delay:.1s}
   .reveal:nth-child(3){animation-delay:.2s}
   @keyframes reveal{to{opacity:1;transform:translateY(0)}}
+
+  /* ── Search modal ─────────────────────── */
+  #srchModal{display:none;position:fixed;inset:0;background:rgba(35,24,18,0.55);z-index:9999;align-items:flex-start;justify-content:center;padding-top:90px}
+  #srchModal.open{display:flex}
+  .srch-box{background:#fff;border-radius:18px;width:min(640px,calc(100vw - 32px));box-shadow:0 24px 64px rgba(35,24,18,0.25);overflow:hidden}
+  .srch-top{display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px solid rgba(35,24,18,0.1)}
+  .srch-inp{flex:1;border:none;background:transparent;font-family:inherit;font-size:16px;color:#231812;outline:none}
+  .srch-inp::placeholder{color:#C0AFA6}
+  .srch-cls{background:none;border:1px solid rgba(35,24,18,0.15);border-radius:6px;padding:3px 9px;cursor:pointer;font-size:12px;color:#5C4A3E;transition:background .15s}
+  .srch-cls:hover{background:#FAF3E7}
+  #srchRes{max-height:380px;overflow-y:auto}
+  .srch-item{display:flex;align-items:center;gap:14px;padding:12px 20px;text-decoration:none;color:#231812;border-bottom:1px solid #f5f0ea;transition:background .12s}
+  .srch-item:last-child{border-bottom:none}
+  .srch-item:hover{background:#FAF3E7}
+  .srch-ico{font-size:18px;width:26px;text-align:center;flex-shrink:0}
+  .srch-ttl{font-size:14px;font-weight:600;line-height:1.3}
+  .srch-sub{font-size:12px;color:#5C4A3E;margin-top:1px}
+  .srch-tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:auto;flex-shrink:0;white-space:nowrap}
+  .srch-empty{padding:22px 20px;text-align:center;color:#5C4A3E;font-size:14px}
+  .srch-foot{padding:10px 20px;border-top:1px solid #f0ebe3;font-size:12px;color:#C0AFA6;display:flex;gap:14px}
+  .srch-foot kbd{background:#FAF3E7;border:1px solid #E2D5C3;border-radius:4px;padding:1px 6px;font-family:inherit;font-size:11px}
+
 </style>
 <script type="application/ld+json">
 {
@@ -384,14 +347,6 @@
 </head>
 <body>
 
-<!-- SEARCH MODAL -->
-<div id="searchModal" role="dialog" aria-modal="true" aria-label="Search">
-  <div class="search-box" id="searchBox">
-    <div class="search-top">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0AFA6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input class="search-input" id="searchInput" type="text" placeholder="Search scholarships, guides, tools..." autocomplete="off" spellcheck="false"/>
-      <button class="search-close" id="searchClose">Esc</button>
-    </div>
     <div class="search-results" id="searchResults">
       <div class="search-empty">Start typing to search 35+ pages...</div>
     </div>
@@ -428,6 +383,18 @@
   <a href="contact.html">✉️ Contact</a>
 </div>
 
+<!-- SEARCH MODAL -->
+<div id="srchModal">
+  <div class="srch-box" id="srchBox">
+    <div class="srch-top">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0AFA6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="srch-inp" id="srchInp" placeholder="Search scholarships, guides, tools..." autocomplete="off" spellcheck="false"/>
+      <button class="srch-cls" id="srchCls">Esc</button>
+    </div>
+    <div id="srchRes"><div class="srch-empty">Start typing to search 35+ pages…</div></div>
+    <div class="srch-foot"><span><kbd>↵</kbd> open</span><span><kbd>Esc</kbd> close</span><span><kbd>Ctrl K</kbd> open anytime</span></div>
+  </div>
+</div>
 <nav id="mainNav">
   <div class="container nav-inner">
     <a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Australia Awards Hub" /></span>Australia Awards Hub</a>
@@ -518,7 +485,7 @@
 
     </ul>
     <div class="nav-right">
-      <button class="search-btn" id="searchBtn" aria-label="Search">
+      <button class="search-btn" id="srchBtn" aria-label="Search">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       </button>
       <a href="#scholarships" class="btn btn-primary" style="font-size:13px;padding:9px 18px">Browse scholarships</a>
@@ -1231,104 +1198,105 @@ window.addEventListener('scroll', () => {
 }, {passive:true});
 
 // ── Search ───────────────────────────────────────────────────────
-const searchData = [
-  // Scholarships
-  {icon:'🏆',title:'Australia Awards Scholarships 2027',sub:'Australian Government · Fully funded',tag:'Fully funded',url:'australia-awards-scholarship-2027.html',cats:'australia awards government fully funded phd masters'},
-  {icon:'🔬',title:'RTP — Research Training Program',sub:'Australian Government · Full fees + stipend',tag:'Research',url:'rtp-scholarship-australia.html',cats:'research training program phd masters research rtp'},
-  {icon:'🎓',title:'Melbourne Graduate Research Scholarship',sub:'University of Melbourne · Full fees + AUD $39,500/yr',tag:'Research',url:'melbourne-graduate-research-scholarship.html',cats:'melbourne research phd masters mgrs'},
-  {icon:'🎓',title:'Sydney USYDIS Research Stipend',sub:'University of Sydney · AUD $42,754/yr',tag:'Research',url:'sydney-usydis-scholarship.html',cats:'sydney research phd masters usydis'},
-  {icon:'🎓',title:'ANU Chancellor's International Scholarship',sub:'Australian National University · 25–50% tuition',tag:'Coursework',url:'anu-chancellors-international-scholarship.html',cats:'anu canberra masters undergraduate coursework'},
-  {icon:'🎓',title:'Monash Graduate Scholarship',sub:'Monash University · Full fees + stipend',tag:'Research',url:'monash-graduate-scholarship.html',cats:'monash research phd masters mgs'},
-  {icon:'🎓',title:'Monash International Merit Scholarship',sub:'Monash University · AUD $10,000/yr',tag:'Coursework',url:'monash-international-merit-scholarship.html',cats:'monash merit coursework undergraduate masters'},
-  {icon:'🎓',title:'UQ International Excellence Scholarship',sub:'University of Queensland · 25% tuition',tag:'Coursework',url:'uq-international-excellence-scholarship.html',cats:'uq queensland brisbane coursework masters'},
-  {icon:'🎓',title:'UNSW Scientia Coursework Scholarship',sub:'UNSW Sydney · Up to AUD $10,000',tag:'Coursework',url:'unsw-scientia-coursework-scholarship.html',cats:'unsw sydney scientia coursework masters'},
-  {icon:'🎓',title:'Adelaide Global Excellence Scholarship',sub:'University of Adelaide · 50% tuition',tag:'Coursework',url:'adelaide-global-excellence-scholarship.html',cats:'adelaide global excellence coursework masters undergraduate'},
-  {icon:'🎓',title:'Griffith Remarkable Scholarship',sub:'Griffith University · 50% tuition',tag:'Coursework',url:'griffith-remarkable-scholarship.html',cats:'griffith brisbane remarkable coursework'},
-  {icon:'🎓',title:'Macquarie VC International Scholarship',sub:'Macquarie University · Up to AUD $10,000',tag:'Coursework',url:'macquarie-vc-international-scholarship.html',cats:'macquarie sydney vc international coursework'},
-  {icon:'🎓',title:'Flinders FIPRS — Postgraduate Research',sub:'Flinders University · Full fees + stipend + airfare',tag:'Research',url:'flinders-fiprs-scholarship.html',cats:'flinders adelaide research phd masters'},
-  {icon:'🎓',title:'RMIT Future Leaders Scholarship',sub:'RMIT University · 20% tuition',tag:'Coursework',url:'rmit-future-leaders-scholarship.html',cats:'rmit melbourne coursework engineering it'},
-  {icon:'🎓',title:'UNSW International Scholarships',sub:'UNSW Sydney · Multiple awards',tag:'Multiple',url:'unsw-international-scholarships.html',cats:'unsw sydney international scholarship'},
-  {icon:'🎓',title:'CDU VC International High Achievers Scholarship',sub:'Charles Darwin University · 25–50% tuition',tag:'Coursework',url:'cdu-vc-international-scholarship.html',cats:'darwin cdu northern territory coursework'},
-  {icon:'🎓',title:'Destination Australia Scholarships',sub:'Australian Government · AUD $15,000/yr',tag:'Regional',url:'destination-australia-scholarships.html',cats:'destination australia regional government'},
-  {icon:'🎓',title:'Fully Funded Scholarships Australia',sub:'Complete guide to fully funded opportunities',tag:'Guide',url:'fully-funded-scholarships-australia.html',cats:'fully funded scholarships guide'},
-  // Country pages
-  {icon:'🇵🇰',title:'Scholarships for Pakistani Students',sub:'All scholarships available for Pakistan',tag:'Country',url:'scholarships-for-pakistani-students-in-australia.html',cats:'pakistan pakistani scholarships'},
-  {icon:'🇮🇳',title:'Scholarships for Indian Students',sub:'All scholarships available for India',tag:'Country',url:'scholarships-for-indian-students-in-australia.html',cats:'india indian scholarships'},
-  {icon:'🇧🇩',title:'Scholarships for Bangladeshi Students',sub:'All scholarships available for Bangladesh',tag:'Country',url:'scholarships-for-bangladeshi-students-in-australia.html',cats:'bangladesh bangladeshi scholarships'},
-  {icon:'🇳🇬',title:'Scholarships for Nigerian Students',sub:'All scholarships available for Nigeria',tag:'Country',url:'scholarships-for-nigerian-students-in-australia.html',cats:'nigeria nigerian scholarships'},
-  // Guides
-  {icon:'📋',title:'DILP Writing Guide',sub:'How to write a winning Development Impact Plan',tag:'Guide',url:'australia-awards-dilp-guide.html',cats:'dilp development impact linkages plan writing guide'},
-  {icon:'📄',title:'GTE / GS Statement Guide 2026',sub:'Genuine Student statement for student visa',tag:'Visa',url:'gte-statement-guide-australia.html',cats:'gte gs genuine student temporary entrant statement visa'},
-  {icon:'✈️',title:'Australia Student Visa Guide',sub:'Subclass 500 complete guide',tag:'Visa',url:'australia-student-visa-guide.html',cats:'student visa subclass 500 application'},
-  {icon:'📝',title:'IELTS Guide for Australia Scholarships',sub:'Scores required and how to prepare',tag:'Guide',url:'ielts-guide-australia-scholarships.html',cats:'ielts english test score requirement'},
-  {icon:'🏥',title:'OSHC Guide for International Students',sub:'Overseas Student Health Cover explained',tag:'Guide',url:'oshc-australia-international-students.html',cats:'oshc health cover insurance student visa'},
-  {icon:'💰',title:'Cost of Living in Australia 2026',sub:'City-by-city breakdown — Sydney, Melbourne and more',tag:'Guide',url:'student-budget-calculator.html',cats:'cost of living budget sydney melbourne brisbane perth adelaide expenses'},
-  {icon:'🏛️',title:'CRICOS Guide Australia',sub:'Commonwealth Register explained',tag:'Guide',url:'cricos-australia-guide.html',cats:'cricos course code university registered'},
-  {icon:'🎓',title:'Top 30 Universities in Australia',sub:'AA Hub Rankings 2026',tag:'Guide',url:'top-30-universities-australia.html',cats:'top universities rankings australia 2026'},
-  // Tools
-  {icon:'🎯',title:'Scholarship Eligibility Checker',sub:'Find which scholarships you can win — free tool',tag:'Tool',url:'scholarship-eligibility-checker.html',cats:'eligibility checker scholarship match find'},
-  {icon:'⚡',title:'Compare OSHC Quotes — Live',sub:'Real-time prices from Allianz, Bupa, Medibank, NIB',tag:'Tool',url:'oshc-compare-quotes.html',cats:'oshc compare quotes allianz bupa medibank nib price'},
-  {icon:'📘',title:'DILP Complete Guide — AUD $19',sub:'The insider guide that gets you selected',tag:'Shop',url:'dilp-guide-product.html',cats:'dilp guide buy purchase pdf'},
-];
 
-const searchModal = document.getElementById('searchModal');
-const searchBox   = document.getElementById('searchBox');
-const searchInput = document.getElementById('searchInput');
-const searchClose = document.getElementById('searchClose');
-const searchResults = document.getElementById('searchResults');
-const searchBtn   = document.getElementById('searchBtn');
+// ── Search ──────────────────────────────────────────────────────
+(function(){
+  var modal = document.getElementById('srchModal');
+  var box   = document.getElementById('srchBox');
+  var inp   = document.getElementById('srchInp');
+  var res   = document.getElementById('srchRes');
+  var btn   = document.getElementById('srchBtn');
+  var cls   = document.getElementById('srchCls');
 
-function openSearch(){
-  searchModal.classList.add('open');
-  searchInput.focus();
-}
-function closeSearch(){
-  searchModal.classList.remove('open');
-  searchInput.value = '';
-  searchResults.innerHTML = '<div class="search-empty">Start typing to search 35+ pages...</div>';
-}
+  if(!modal||!btn){ return; } // safety
 
-searchBtn.addEventListener('click', openSearch);
-searchClose.addEventListener('click', closeSearch);
+  var EMPTY = '<div class="srch-empty">Start typing to search 35+ pages…</div>';
 
-// Close when clicking dark backdrop (not the box)
-searchModal.addEventListener('click', (e)=>{
-  if(!searchBox.contains(e.target)) closeSearch();
-});
-
-document.addEventListener('keydown', (e)=>{
-  if(e.key==='Escape') closeSearch();
-  if((e.ctrlKey||e.metaKey) && e.key==='k'){ e.preventDefault(); openSearch(); }
-});
-
-searchInput.addEventListener('input', function(){
-  const q = this.value.trim().toLowerCase();
-  if(!q){
-    searchResults.innerHTML = '<div class="search-empty">Start typing to search 35+ pages...</div>';
-    return;
+  function open_(){
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+    setTimeout(function(){ inp.focus(); }, 30);
   }
-  const hits = searchData.filter(function(item){
-    return item.title.toLowerCase().indexOf(q)>-1 ||
-           item.sub.toLowerCase().indexOf(q)>-1 ||
-           item.cats.toLowerCase().indexOf(q)>-1;
-  }).slice(0,8);
-
-  if(!hits.length){
-    searchResults.innerHTML = '<div class="search-empty">No results — try different keywords</div>';
-    return;
+  function close_(){
+    modal.classList.remove('open');
+    document.body.style.overflow='';
+    inp.value='';
+    res.innerHTML=EMPTY;
   }
-  var html = '';
-  hits.forEach(function(h){
-    var tc = tagColors[h.tag] || 'background:var(--cream-2);color:var(--ink-soft)';
-    html += '<a class="search-result-item" href="'+h.url+'">'
-          + '<span class="sri-icon">'+h.icon+'</span>'
-          + '<span style="flex:1;min-width:0"><div class="sri-title">'+h.title+'</div>'
-          + '<div class="sri-sub">'+h.sub+'</div></span>'
-          + '<span class="sri-tag" style="'+tc+'">'+h.tag+'</span>'
-          + '</a>';
+
+  btn.addEventListener('click', function(e){ e.stopPropagation(); open_(); });
+  cls.addEventListener('click', function(e){ e.stopPropagation(); close_(); });
+  modal.addEventListener('click', function(e){ if(!box.contains(e.target)) close_(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape'){ close_(); }
+    if((e.ctrlKey||e.metaKey) && e.key==='k'){ e.preventDefault(); open_(); }
   });
-  searchResults.innerHTML = html;
-});
+
+  var pages = [
+    {i:'🏆',t:'Australia Awards Scholarships 2027',s:'Australian Government · Fully funded',g:'Fully funded',u:'australia-awards-scholarship-2027.html',k:'australia awards government funded phd masters'},
+    {i:'🔬',t:'RTP Research Training Program',s:'Full fees + stipend',g:'Research',u:'rtp-scholarship-australia.html',k:'rtp research training phd masters stipend'},
+    {i:'🎓',t:'Melbourne Graduate Research Scholarship',s:'University of Melbourne · AUD $39,500/yr',g:'Research',u:'melbourne-graduate-research-scholarship.html',k:'melbourne research phd mgrs'},
+    {i:'🎓',t:'Sydney USYDIS Research Stipend',s:'University of Sydney · AUD $42,754/yr',g:'Research',u:'sydney-usydis-scholarship.html',k:'sydney research phd usydis'},
+    {i:'🎓',t:'ANU Chancellor's International Scholarship',s:'25-50% tuition reduction',g:'Coursework',u:'anu-chancellors-international-scholarship.html',k:'anu canberra masters coursework'},
+    {i:'🎓',t:'Monash Graduate Scholarship',s:'Full fees + AUD $37,145/yr',g:'Research',u:'monash-graduate-scholarship.html',k:'monash research phd mgs'},
+    {i:'🎓',t:'Monash International Merit Scholarship',s:'AUD $10,000/yr',g:'Coursework',u:'monash-international-merit-scholarship.html',k:'monash merit coursework'},
+    {i:'🎓',t:'UQ International Excellence Scholarship',s:'25% tuition reduction',g:'Coursework',u:'uq-international-excellence-scholarship.html',k:'uq queensland brisbane coursework'},
+    {i:'🎓',t:'UNSW Scientia Coursework Scholarship',s:'Up to AUD $10,000',g:'Coursework',u:'unsw-scientia-coursework-scholarship.html',k:'unsw sydney scientia coursework'},
+    {i:'🎓',t:'Adelaide Global Excellence Scholarship',s:'50% tuition reduction',g:'Coursework',u:'adelaide-global-excellence-scholarship.html',k:'adelaide coursework'},
+    {i:'🎓',t:'Griffith Remarkable Scholarship',s:'50% tuition reduction',g:'Coursework',u:'griffith-remarkable-scholarship.html',k:'griffith brisbane coursework'},
+    {i:'🎓',t:'Macquarie VC International Scholarship',s:'Up to AUD $10,000',g:'Coursework',u:'macquarie-vc-international-scholarship.html',k:'macquarie sydney vc'},
+    {i:'🎓',t:'RMIT Future Leaders Scholarship',s:'20% tuition reduction',g:'Coursework',u:'rmit-future-leaders-scholarship.html',k:'rmit melbourne future leaders'},
+    {i:'🎓',t:'UNSW International Scholarships',s:'Multiple awards',g:'Coursework',u:'unsw-international-scholarships.html',k:'unsw sydney international'},
+    {i:'🎓',t:'Flinders FIPRS Research Scholarship',s:'Full fees + stipend + airfare',g:'Research',u:'flinders-fiprs-scholarship.html',k:'flinders adelaide research phd'},
+    {i:'🎓',t:'CDU VC International Scholarship',s:'25-50% tuition waiver',g:'Coursework',u:'cdu-vc-international-scholarship.html',k:'darwin cdu coursework'},
+    {i:'🎓',t:'Destination Australia Scholarships',s:'AUD $15,000/yr',g:'Regional',u:'destination-australia-scholarships.html',k:'destination australia regional'},
+    {i:'🎓',t:'Fully Funded Scholarships Guide',s:'Complete guide to fully funded opportunities',g:'Guide',u:'fully-funded-scholarships-australia.html',k:'fully funded scholarships guide'},
+    {i:'🇵🇰',t:'Scholarships for Pakistani Students',s:'All scholarships for Pakistan',g:'Country',u:'scholarships-for-pakistani-students-in-australia.html',k:'pakistan pakistani scholarships'},
+    {i:'🇮🇳',t:'Scholarships for Indian Students',s:'All scholarships for India',g:'Country',u:'scholarships-for-indian-students-in-australia.html',k:'india indian scholarships'},
+    {i:'🇧🇩',t:'Scholarships for Bangladeshi Students',s:'All scholarships for Bangladesh',g:'Country',u:'scholarships-for-bangladeshi-students-in-australia.html',k:'bangladesh bangladeshi scholarships'},
+    {i:'🇳🇬',t:'Scholarships for Nigerian Students',s:'All scholarships for Nigeria',g:'Country',u:'scholarships-for-nigerian-students-in-australia.html',k:'nigeria nigerian scholarships'},
+    {i:'📋',t:'DILP Writing Guide',s:'How to write a winning Development Impact Plan',g:'Guide',u:'australia-awards-dilp-guide.html',k:'dilp development impact linkages writing'},
+    {i:'📄',t:'GTE GS Statement Guide 2026',s:'Genuine Student statement for student visa',g:'Visa',u:'gte-statement-guide-australia.html',k:'gte gs genuine student visa statement'},
+    {i:'✈️',t:'Student Visa Guide Australia',s:'Subclass 500 complete guide',g:'Visa',u:'australia-student-visa-guide.html',k:'student visa subclass 500 application'},
+    {i:'📝',t:'IELTS Guide for Australia',s:'Scores required and how to prepare',g:'Guide',u:'ielts-guide-australia-scholarships.html',k:'ielts english test score'},
+    {i:'🏥',t:'OSHC Guide for International Students',s:'Overseas Student Health Cover explained',g:'Guide',u:'oshc-australia-international-students.html',k:'oshc health cover insurance student visa'},
+    {i:'💰',t:'Cost of Living in Australia 2026',s:'Sydney Melbourne Brisbane Perth Adelaide',g:'Guide',u:'student-budget-calculator.html',k:'cost living budget expenses city'},
+    {i:'🏛️',t:'CRICOS Guide Australia',s:'Commonwealth Register explained',g:'Guide',u:'cricos-australia-guide.html',k:'cricos course code university registered'},
+    {i:'🎓',t:'Top 30 Universities in Australia',s:'AA Hub Rankings 2026',g:'Guide',u:'top-30-universities-australia.html',k:'top universities rankings australia'},
+    {i:'🎯',t:'Scholarship Eligibility Checker',s:'Find which scholarships you can win',g:'Tool',u:'scholarship-eligibility-checker.html',k:'eligibility checker scholarship match find'},
+    {i:'⚡',t:'Compare OSHC Quotes Live',s:'Allianz Bupa Medibank NIB prices',g:'Tool',u:'oshc-compare-quotes.html',k:'oshc compare quotes allianz bupa medibank nib price'},
+    {i:'📘',t:'DILP Complete Guide AUD $19',s:'The insider guide that gets you selected',g:'Shop',u:'dilp-guide-product.html',k:'dilp guide buy purchase pdf product'},
+  ];
+
+  var TC = {
+    'Fully funded':'background:#EDF6F0;color:#1F7A50',
+    'Research':'background:#EBF4FF;color:#005FAD',
+    'Coursework':'background:#FFF9ED;color:#854F0B',
+    'Guide':'background:#F5F0E8;color:#5C4A3E',
+    'Visa':'background:#FEF2F2;color:#C8102E',
+    'Country':'background:#F5F0E8;color:#5C4A3E',
+    'Tool':'background:#F0FDF4;color:#166534',
+    'Shop':'background:#FFF9ED;color:#854F0B',
+    'Regional':'background:#EDF6F0;color:#1F7A50',
+  };
+
+  inp.addEventListener('input', function(){
+    var q = this.value.trim().toLowerCase();
+    if(!q){ res.innerHTML=EMPTY; return; }
+    var hits = pages.filter(function(p){
+      return p.t.toLowerCase().indexOf(q)>-1 || p.s.toLowerCase().indexOf(q)>-1 || p.k.indexOf(q)>-1;
+    }).slice(0,8);
+    if(!hits.length){ res.innerHTML='<div class="srch-empty">No results — try different keywords</div>'; return; }
+    res.innerHTML = hits.map(function(p){
+      var tc = TC[p.g]||'background:#eee;color:#666';
+      return '<a class="srch-item" href="'+p.u+'">'
+        +'<span class="srch-ico">'+p.i+'</span>'
+        +'<span style="flex:1;min-width:0"><div class="srch-ttl">'+p.t+'</div><div class="srch-sub">'+p.s+'</div></span>'
+        +'<span class="srch-tag" style="'+tc+'">'+p.g+'</span>'
+        +'</a>';
+    }).join('');
+  });
+})();
 
 // ── Mobile hamburger ──────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
