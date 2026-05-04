@@ -154,7 +154,49 @@
   .section-head p{color:var(--ink-soft);max-width:380px}
 
   /* --- FILTERS --- */
-  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+  /* ── Advanced Filter Sidebar ─────────────────── */
+  .schol-layout{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
+  .filter-sidebar{
+    position:sticky;top:92px;background:white;
+    border:1px solid var(--line);border-radius:20px;padding:24px;
+    box-shadow:0 2px 12px rgba(35,24,18,0.07);
+    max-height:calc(100vh - 112px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--cream-2) transparent;
+  }
+  .filter-sidebar::-webkit-scrollbar{width:4px}
+  .filter-sidebar::-webkit-scrollbar-track{background:transparent}
+  .filter-sidebar::-webkit-scrollbar-thumb{background:var(--cream-2);border-radius:999px}
+  .filter-sidebar-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .filter-sidebar-head h3{font-family:'Fraunces',serif;font-size:17px;font-weight:600;display:flex;align-items:center;gap:8px}
+  .filter-sidebar-head h3::before{content:'▼';font-size:10px;color:var(--terracotta)}
+  .filter-clear{background:var(--terracotta);color:white;border:none;font-size:12px;font-weight:700;cursor:pointer;padding:4px 10px;border-radius:999px;display:none;transition:background .15s}
+  .filter-clear:hover{background:var(--terracotta-deep)}
+  .filter-clear.visible{display:block}
+  .result-count{font-size:13px;color:var(--ink-soft);margin-bottom:16px;font-weight:500;padding:10px 12px;background:var(--cream);border-radius:8px;text-align:center}
+  .result-count strong{color:var(--ink);font-weight:700}
+  .filter-group{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .filter-group:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+  .filter-group-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-soft);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--cream-2)}
+  .filter-option{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:8px;cursor:pointer;transition:background .15s;-webkit-user-select:none;user-select:none}
+  .filter-option:hover{background:var(--cream)}
+  .filter-option input[type=checkbox]{display:none}
+  .fcheck{width:18px;height:18px;border:2px solid var(--line);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;background:white}
+  .filter-option:hover .fcheck{border-color:var(--forest)}
+  .filter-option input:checked ~ .fcheck{background:var(--forest);border-color:var(--forest);transform:scale(1.05)}
+  .fcheck svg{display:none}
+  .filter-option input:checked ~ .fcheck svg{display:block}
+  .filter-option input:checked ~ .filter-option-text{color:var(--forest);font-weight:600}
+  .filter-option-text{font-size:14px;color:var(--ink);flex:1}
+  .filter-option-count{font-size:12px;color:var(--ink-soft);background:var(--cream-2);padding:1px 7px;border-radius:999px}
+  .active-tags{display:none;flex-wrap:wrap;gap:6px;margin-bottom:16px;align-items:center}
+  .active-tags.show{display:flex}
+  .active-tags-label{font-size:12px;color:var(--ink-soft);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-right:4px}
+    .active-tag{display:inline-flex;align-items:center;gap:6px;background:var(--forest);color:white;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;}
+  .active-tag button{background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.8);font-size:13px;line-height:1;padding:0;display:flex;align-items:center;transition:color .15s}
+  .active-tag button:hover{color:white}
+  .active-tag button{background:none;border:none;color:white;cursor:pointer;padding:0;font-size:14px;line-height:1;opacity:0.7}
+  .active-tag button:hover{opacity:1}
+  .no-results-msg{grid-column:1/-1;text-align:center;padding:48px 24px;color:var(--ink-soft)}
+  .no-results-msg h3{font-family:'Fraunces',serif;font-size:22px;margin-bottom:8px;color:var(--ink)}
   .chip{
     padding:9px 18px;border-radius:999px;border:1px solid var(--line);
     background:transparent;font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;
@@ -164,8 +206,9 @@
   .chip.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
 
   /* --- SCHOLARSHIP CARDS --- */
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .card{
+    transition:opacity .2s ease, transform .2s ease;
     background:var(--cream);border:1px solid var(--line);border-radius:20px;
     padding:28px;transition:transform .25s, box-shadow .25s, border-color .25s;
     display:flex;flex-direction:column;
@@ -266,6 +309,7 @@
   @media(max-width:900px){
     .hero-grid{grid-template-columns:1fr;gap:60px}
     .hero-visual{justify-self:center;max-width:340px}
+    .schol-layout{grid-template-columns:1fr}.filter-sidebar{position:static;margin-bottom:20px}
     .grid,.steps,.blog-grid,.footer-grid,.svc-grid{grid-template-columns:1fr}
     .blog-grid{grid-template-columns:1fr}
     .nav-links{display:none}.hamburger{display:flex}.btn-primary{display:none}
@@ -514,21 +558,80 @@
   <div class="container">
     <div class="section-head">
       <h2 class="display">Featured scholarships, freshly curated.</h2>
-      <p>Filter by level, region or funding type. New opportunities added weekly.</p>
+      <p>Use the filters to find the right scholarship for your background and goals.</p>
     </div>
 
-    <div class="filters" id="filters">
-      <button class="chip active" data-filter="all">All</button>
-      <button class="chip" data-filter="govt">Government</button>
-      <button class="chip" data-filter="university">University</button>
-      <button class="chip" data-filter="masters">Masters</button>
-      <button class="chip" data-filter="phd">PhD</button>
-      <button class="chip" data-filter="undergrad">Undergrad</button>
-    </div>
+    <div class="schol-layout">
 
-    <div class="grid" id="cards">
+      <!-- SIDEBAR -->
+      <aside class="filter-sidebar" id="filterSidebar">
+        <div class="filter-sidebar-head">
+          <h3>Filters <span class="f-badge" id="fBadge" style="display:none;background:var(--terracotta);color:white;font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;font-family:'Plus Jakarta Sans',sans-serif">0</span></h3>
+          <button class="filter-clear" id="filterClear">Clear all</button>
+        </div>
+        <div style="padding:0 16px 14px">
+          <div class="result-count" id="resultCount"><strong>19</strong> scholarships</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+            <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);white-space:nowrap;flex-shrink:0">Sort by</span>
+            <select id="sortSelect" style="flex:1;border:1.5px solid var(--line);border-radius:8px;padding:6px 10px;font-family:inherit;font-size:12px;color:var(--ink);background:white;outline:none;cursor:pointer">
+              <option value="default">Default order</option>
+              <option value="funded">Fully funded first</option>
+              <option value="govt">Government first</option>
+              <option value="az">A → Z</option>
+            </select>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--line);margin:0 0 14px"></div>
+
+        <!-- Funding Type -->
+        <div class="filter-group">
+          <div class="filter-group-label">Funding Type</div>
+          <label class="filter-option"><input type="checkbox" data-dim="type" value="govt"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Government</span><span class="filter-option-count">2</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="type" value="university"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">University</span><span class="filter-option-count">17</span></label>
+        </div>
+
+        <!-- Study Level -->
+        <div class="filter-group">
+          <div class="filter-group-label">Study Level</div>
+          <label class="filter-option"><input type="checkbox" data-dim="level" value="phd"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">PhD / Research</span><span class="filter-option-count">9</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="level" value="masters"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Masters</span><span class="filter-option-count">17</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="level" value="undergrad"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Undergraduate</span><span class="filter-option-count">11</span></label>
+        </div>
+
+        <!-- Funding Amount -->
+        <div class="filter-group">
+          <div class="filter-group-label">Funding Amount</div>
+          <label class="filter-option"><input type="checkbox" data-dim="funding" value="full"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Fully funded</span><span class="filter-option-count">8</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="funding" value="partial"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Partial / Merit</span><span class="filter-option-count">11</span></label>
+        </div>
+
+        <!-- City / Location -->
+        <div class="filter-group">
+          <div class="filter-group-label">City</div>
+          <label class="filter-option"><input type="checkbox" data-dim="city" value="sydney"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Sydney</span><span class="filter-option-count">5</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="city" value="melbourne"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Melbourne</span><span class="filter-option-count">5</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="city" value="brisbane"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Brisbane</span><span class="filter-option-count">2</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="city" value="adelaide"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Adelaide</span><span class="filter-option-count">2</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="city" value="canberra"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Canberra</span><span class="filter-option-count">1</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="city" value="any"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Any city</span><span class="filter-option-count">2</span></label>
+        </div>
+
+        <!-- Country Eligibility -->
+        <div class="filter-group">
+          <div class="filter-group-label">Eligibility</div>
+          <label class="filter-option"><input type="checkbox" data-dim="country" value="all"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">All nationalities</span><span class="filter-option-count">15</span></label>
+          <label class="filter-option"><input type="checkbox" data-dim="country" value="eligible"><span class="fcheck"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="filter-option-text">Eligible countries only</span><span class="filter-option-count">4</span></label>
+        </div>
+
+        <a href="scholarship-eligibility-checker.html" style="display:block;text-align:center;background:var(--cream-2);border-radius:10px;padding:11px;font-size:13px;font-weight:700;color:var(--forest);text-decoration:none;transition:background .2s" onmouseover="this.style.background='#E2D5C3'" onmouseout="this.style.background='var(--cream-2)'">🎯 Check my eligibility →</a>
+      </aside>
+
+      <!-- CARDS -->
+      <div>
+        <div class="active-tags" id="activeTags"><span class="active-tags-label">Active:</span></div>
+        <div class="grid" id="cards">
       <!-- card 1 -->
-      <article class="card" data-cat="govt masters phd undergrad">
+      <article class="card" data-cat="govt masters phd undergrad" data-type="govt" data-funding="full" data-country="eligible" data-city="any">
         <span class="card-tag">Government · Fully Funded</span>
         <h3>Australia Awards Scholarships 2027</h3>
         <div class="provider">Australian Government (DFAT)</div>
@@ -545,7 +648,7 @@
       </article>
 
       <!-- card 2 -->
-      <article class="card" data-cat="university masters phd">
+      <article class="card" data-cat="university masters phd" data-type="university" data-funding="full" data-country="all" data-city="melbourne">
         <span class="card-tag">University · Fully Funded</span>
         <h3>Melbourne Graduate Research Scholarships</h3>
         <div class="provider">University of Melbourne</div>
@@ -579,7 +682,7 @@
       </article>
 
       <!-- card 4 -->
-      <article class="card" data-cat="university undergrad">
+      <article class="card" data-cat="university undergrad" data-type="university" data-funding="partial" data-country="all" data-city="canberra">
         <span class="card-tag">University · Partial</span>
         <h3>Melbourne International Undergraduate Scholarship</h3>
         <div class="provider">University of Melbourne</div>
@@ -596,7 +699,7 @@
       </article>
 
       <!-- card 5 -->
-      <article class="card" data-cat="university masters">
+      <article class="card" data-cat="university masters" data-type="university" data-funding="full" data-country="all" data-city="melbourne">
         <span class="card-tag">University · Fully Funded</span>
         <h3>UTS Vice-Chancellor's International Postgraduate Scholarship</h3>
         <div class="provider">University of Technology Sydney</div>
@@ -613,7 +716,7 @@
       </article>
 
       <!-- card 6 -->
-      <article class="card" data-cat="university undergrad masters">
+      <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="partial" data-country="all" data-city="melbourne">
         <span class="card-tag">University · Merit</span>
         <h3>Sydney Vice-Chancellor's International Scholarship</h3>
         <div class="provider">University of Sydney</div>
@@ -664,7 +767,7 @@
       </article>
 
       <!-- card 9 -->
-      <article class="card" data-cat="university undergrad masters">
+      <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="full" data-country="eligible" data-city="melbourne">
         <span class="card-tag">University · Fully Funded</span>
         <h3>UNSW International Scientia Coursework Scholarship</h3>
         <div class="provider">University of New South Wales</div>
@@ -681,7 +784,7 @@
       </article>
 
       <!-- card 10 -->
-      <article class="card" data-cat="university masters phd">
+      <article class="card" data-cat="university masters phd" data-type="university" data-funding="full" data-country="all" data-city="melbourne">
         <span class="card-tag">University · Fully Funded</span>
         <h3>Monash Graduate Scholarship + MITS</h3>
         <div class="provider">Monash University</div>
@@ -698,7 +801,7 @@
       </article>
 
       <!-- card 11 -->
-      <article class="card" data-cat="university undergrad masters">
+      <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="partial" data-country="all" data-city="brisbane">
         <span class="card-tag">University · Partial</span>
         <h3>UQ International Excellence Scholarship</h3>
         <div class="provider">University of Queensland</div>
@@ -715,7 +818,7 @@
       </article>
 
       <!-- card 12 -->
-      <article class="card" data-cat="university undergrad masters">
+      <article class="card" data-cat="university undergrad masters" data-type="university" data-funding="partial" data-country="eligible" data-city="sydney">
         <span class="card-tag">University · Partial · South Asia</span>
         <h3>RMIT Future Leaders Scholarship</h3>
         <div class="provider">RMIT University</div>
@@ -731,7 +834,7 @@
         </div>
       </article>
 
-      <article class="card" data-cat="govt masters phd undergrad">
+      <article class="card" data-cat="govt masters phd undergrad" data-type="govt" data-funding="partial" data-country="all" data-city="regional">
         <span class="card-tag">Government · AUD $15,000/yr</span>
         <h3>Destination Australia Scholarships</h3>
         <div class="provider">Australian Government · Regional Universities</div>
@@ -747,7 +850,7 @@
         </div>
       </article>
 
-      <article class="card" data-cat="university masters undergrad">
+      <article class="card" data-cat="university masters undergrad" data-type="university" data-funding="partial" data-country="all" data-city="adelaide">
         <span class="card-tag">University · 50% Tuition</span>
         <h3>Adelaide Global Excellence Scholarship</h3>
         <div class="provider">University of Adelaide</div>
@@ -763,7 +866,7 @@
         </div>
       </article>
 
-      <article class="card" data-cat="university masters undergrad">
+      <article class="card" data-cat="university masters undergrad" data-type="university" data-funding="partial" data-country="all" data-city="brisbane">
         <span class="card-tag">University · 50% Tuition</span>
         <h3>Griffith Remarkable Scholarship</h3>
         <div class="provider">Griffith University</div>
@@ -779,7 +882,7 @@
         </div>
       </article>
 
-      <article class="card" data-cat="university masters undergrad">
+      <article class="card" data-cat="university masters undergrad" data-type="university" data-funding="partial" data-country="all" data-city="sydney">
         <span class="card-tag">University · AUD $10,000</span>
         <h3>Macquarie VC International Scholarship</h3>
         <div class="provider">Macquarie University</div>
@@ -795,7 +898,7 @@
         </div>
       </article>
 
-      <article class="card" data-cat="university masters phd undergrad">
+      <article class="card" data-cat="university masters phd undergrad" data-type="university" data-funding="partial" data-country="all" data-city="sydney">
         <span class="card-tag">University · Multiple Awards</span>
         <h3>UNSW International Scholarships</h3>
         <div class="provider">UNSW Sydney</div>
@@ -811,7 +914,7 @@
         </div>
       </article>
 
-      <article class="card" data-cat="university masters phd">
+      <article class="card" data-cat="university masters phd" data-type="university" data-funding="full" data-country="all" data-city="adelaide">
         <span class="card-tag">University · Fully Funded Research</span>
         <h3>Flinders FIPRS — Postgraduate Research</h3>
         <div class="provider">Flinders University</div>
@@ -827,7 +930,7 @@
         </div>
       </article>
 
-      <article class="card" data-cat="university masters undergrad">
+      <article class="card" data-cat="university masters undergrad" data-type="university" data-funding="partial" data-country="all" data-city="darwin">
         <span class="card-tag">University · 25–50% Tuition</span>
         <h3>CDU VC International High Achievers Scholarship</h3>
         <div class="provider">Charles Darwin University</div>
@@ -1290,6 +1393,92 @@ window.addEventListener('scroll', () => {
   });
 })();
 
+// ── Advanced multi-dimension filter ────────────────────────────
+(function(){
+  var cards    = Array.from(document.querySelectorAll('#cards .card'));
+  var checks   = document.querySelectorAll('.filter-option input[type=checkbox]');
+  var clearBtn = document.getElementById('filterClear');
+  var countEl  = document.getElementById('resultCount');
+  var tagsEl   = document.getElementById('activeTags');
+  var badge    = document.getElementById('fBadge');
+  var sortSel  = document.getElementById('sortSelect');
+  var grid     = document.getElementById('cards');
+  var origOrder = cards.slice();
+  var active = {type:[],level:[],funding:[],city:[],country:[]};
+  var labels = {
+    type:{govt:'Government',university:'University'},
+    level:{phd:'PhD / Research',masters:'Masters',undergrad:'Undergraduate'},
+    funding:{full:'Fully funded',partial:'Partial / Merit'},
+    city:{sydney:'Sydney',melbourne:'Melbourne',brisbane:'Brisbane',adelaide:'Adelaide',canberra:'Canberra',darwin:'Darwin',regional:'Regional',any:'Any city'},
+    country:{all:'All nationalities',eligible:'Eligible countries only'}
+  };
+  function matches(card){
+    var cat=card.dataset.cat||'',type=card.dataset.type||'',
+        funding=card.dataset.funding||'',city=card.dataset.city||'',country=card.dataset.country||'';
+    if(active.type.length && active.type.indexOf(type)<0) return false;
+    if(active.funding.length && active.funding.indexOf(funding)<0) return false;
+    if(active.city.length && active.city.indexOf(city)<0) return false;
+    if(active.country.length && active.country.indexOf(country)<0) return false;
+    if(active.level.length && !active.level.some(function(l){return cat.indexOf(l)>-1;})) return false;
+    return true;
+  }
+  function getSorted(){
+    var v=sortSel?sortSel.value:'default', copy=cards.slice();
+    if(v==='funded') copy.sort(function(a,b){return (a.dataset.funding==='full'?0:1)-(b.dataset.funding==='full'?0:1);});
+    else if(v==='govt') copy.sort(function(a,b){return (a.dataset.type==='govt'?0:1)-(b.dataset.type==='govt'?0:1);});
+    else if(v==='az') copy.sort(function(a,b){var ah=a.querySelector('h3'),bh=b.querySelector('h3');return (ah?ah.textContent:'').localeCompare(bh?bh.textContent:'');});
+    else copy.sort(function(a,b){return origOrder.indexOf(a)-origOrder.indexOf(b);});
+    return copy;
+  }
+  function apply(){
+    var anyActive=Object.values(active).some(function(a){return a.length>0;});
+    var inOrder=getSorted();
+    inOrder.forEach(function(c){grid.appendChild(c);});
+    var shown=0;
+    inOrder.forEach(function(card){
+      var pass=matches(card);
+      card.style.display=pass?'':'none';
+      if(pass) shown++;
+    });
+    countEl.innerHTML='<strong>'+shown+'</strong> scholarship'+(shown===1?'':'s');
+    var total=Object.values(active).reduce(function(s,a){return s+a.length;},0);
+    if(badge){badge.textContent=total;badge.style.display=total>0?'inline-block':'none';}
+    clearBtn.classList.toggle('visible',anyActive);
+    var html=anyActive?'<span class="active-tags-label">Active:</span>':'';
+    Object.keys(active).forEach(function(dim){
+      active[dim].forEach(function(val){
+        var lbl=labels[dim][val]||val;
+        html+='<span class="active-tag">'+lbl+'<button onclick="removeFilter(\''+dim+'\',\''+val+'\')">&#x2715;</button></span>';
+      });
+    });
+    tagsEl.innerHTML=html;
+    tagsEl.classList.toggle('show',anyActive);
+    var nm=document.getElementById('noResultsMsg');
+    if(shown===0){
+      if(!nm){nm=document.createElement('div');nm.id='noResultsMsg';nm.style.cssText='grid-column:1/-1;text-align:center;padding:64px 24px;background:white;border-radius:20px;border:1px solid rgba(35,24,18,0.12)';nm.innerHTML='<p style="font-family:Fraunces,serif;font-size:22px;font-weight:600;margin-bottom:8px">No scholarships match</p><p style="color:#5C4A3E;font-size:15px;margin:0">Try removing some filters to see more results.</p>';grid.appendChild(nm);}
+    } else {if(nm)nm.remove();}
+  }
+  window.removeFilter=function(dim,val){
+    active[dim]=active[dim].filter(function(v){return v!==val;});
+    var cb=document.querySelector('input[data-dim="'+dim+'"][value="'+val+'"]');
+    if(cb)cb.checked=false;
+    apply();
+  };
+  checks.forEach(function(cb){
+    cb.addEventListener('change',function(){
+      var dim=this.dataset.dim,val=this.value;
+      if(this.checked){if(active[dim].indexOf(val)<0)active[dim].push(val);}
+      else active[dim]=active[dim].filter(function(v){return v!==val;});
+      apply();
+    });
+  });
+  if(sortSel)sortSel.addEventListener('change',apply);
+  clearBtn.addEventListener('click',function(){
+    Object.keys(active).forEach(function(k){active[k]=[];});
+    checks.forEach(function(cb){cb.checked=false;});
+    apply();
+  });
+})();
 // ── Mobile hamburger ──────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
