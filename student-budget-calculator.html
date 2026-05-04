@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Australia Student Budget Calculator 2026 — Cost of Living by City | Australia Awards Hub</title>
-<meta name="description" content="Free student budget calculator for international students in Australia 2026. Compare monthly costs in Sydney, Melbourne, Brisbane, Perth and Adelaide — rent, food, transport and more."/>
-<meta name="keywords" content="student budget calculator Australia 2026, cost of living Sydney international student, cost of living Melbourne student, Australia student expenses calculator"/>
+<title>Cost of Living in Australia for International Students 2026 — City by City Guide | Australia Awards Hub</title>
+<meta name="description" content="Complete cost of living guide for international students in Australia 2026. Detailed breakdown of rent, food, transport and expenses in Sydney, Melbourne, Brisbane, Perth and Adelaide with tables and real data."/>
+<meta name="keywords" content="cost of living Australia international students 2026, student living costs Sydney Melbourne Brisbane Perth Adelaide, Australia student expenses 2026, how much money do I need to study in Australia"/>
+<meta property="og:title" content="Cost of Living in Australia for International Students 2026"/>
+<meta property="og:type" content="article"/>
 <link rel="icon" type="image/png" href="logo.png"/>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL2YCR2ZTZ"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL2YCR2ZTZ');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much money does an international student need per year in Australia 2026?","acceptedAnswer":{"@type":"Answer","text":"The Australian Government requires international students to demonstrate access to at least AUD $29,710 per year for living expenses in 2026. In practice, students in Sydney or Melbourne typically spend AUD $28,000–38,000 per year excluding tuition, while students in Adelaide or Perth can live comfortably on AUD $22,000–28,000 per year."}},
+{"@type":"Question","name":"Which Australian city is cheapest for international students?","acceptedAnswer":{"@type":"Answer","text":"Adelaide and Perth are consistently the most affordable cities for international students in Australia. Monthly living costs in Adelaide average AUD $1,900–2,400 compared to AUD $2,800–3,400 in Sydney. Both cities have strong universities and growing international student communities."}},
+{"@type":"Question","name":"How much is student accommodation in Australia 2026?","acceptedAnswer":{"@type":"Answer","text":"Student accommodation costs vary significantly by city and type. Shared housing ranges from AUD $700–1,100/month, on-campus housing AUD $850–1,200/month, studio apartments AUD $1,200–1,800/month, and homestay AUD $950–1,400/month including meals. Sydney and Melbourne are most expensive; Adelaide and Perth most affordable."}},
+{"@type":"Question","name":"Can I work while studying in Australia to cover living costs?","acceptedAnswer":{"@type":"Answer","text":"Yes. International students on a Subclass 500 student visa can work up to 48 hours per fortnight during term time and unlimited hours during university breaks. At the 2026 minimum wage of AUD $24.10 per hour, 48 hours per fortnight generates approximately AUD $578 per month, which can cover a significant portion of living costs."}}
+]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,6 +25,7 @@
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
+.narrow{max-width:820px;margin:0 auto;padding:0 24px}
 nav{position:sticky;top:0;z-index:50;background:rgba(250,243,231,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
 .logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
@@ -26,92 +35,88 @@ nav{position:sticky;top:0;z-index:50;background:rgba(250,243,231,0.9);backdrop-f
 .btn-primary{background:var(--ink);color:var(--cream)}.btn-primary:hover{background:var(--terracotta)}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,var(--forest),#2D5A44);color:white;padding:56px 0 48px;text-align:center}
+.hero{background:linear-gradient(135deg,var(--forest),#2D5A44);color:white;padding:64px 0 56px}
+.breadcrumb{font-size:13px;opacity:0.75;margin-bottom:16px}.breadcrumb a{color:white;text-decoration:none}
 .hero-eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;opacity:0.75;margin-bottom:14px}
-.hero h1{font-family:'Fraunces',serif;font-size:clamp(28px,5vw,50px);font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-bottom:14px}
-.hero p{font-size:17px;opacity:0.9;max-width:600px;margin:0 auto 32px;line-height:1.6}
-.hero-badges{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.badge{background:rgba(255,255,255,0.12);padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(28px,5vw,50px);font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-bottom:18px}
+.hero-intro{font-size:17px;opacity:0.9;max-width:720px;margin-bottom:36px;line-height:1.6}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.hstat{background:rgba(255,255,255,0.12);border-radius:14px;padding:18px;text-align:center}
+.hstat-num{font-family:'Fraunces',serif;font-size:24px;font-weight:600;line-height:1;margin-bottom:5px}
+.hstat-label{font-size:12px;opacity:0.8;line-height:1.4}
 
-/* CALCULATOR CARD */
-.calc-wrapper{max-width:1000px;margin:-32px auto 56px;position:relative;z-index:10;padding:0 24px}
-.calc-card{background:white;border-radius:24px;padding:40px;box-shadow:var(--shadow)}
-.calc-heading{font-family:'Fraunces',serif;font-size:26px;font-weight:600;text-align:center;margin-bottom:8px}
-.calc-sub{text-align:center;color:var(--ink-soft);font-size:15px;margin-bottom:32px}
+/* SUMMARY CARDS */
+.city-summary{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:48px 0}
+.city-card{background:white;border:2px solid var(--line);border-radius:18px;padding:20px;text-align:center;transition:all .2s}
+.city-card:hover{border-color:var(--terracotta);box-shadow:var(--shadow)}
+.city-emoji{font-size:28px;margin-bottom:8px}
+.city-name-s{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:2px}
+.city-state-s{font-size:11px;color:var(--ink-soft);margin-bottom:10px}
+.city-range{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--forest);margin-bottom:4px}
+.city-range-label{font-size:11px;color:var(--ink-soft);margin-bottom:10px}
+.city-tag-s{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;display:inline-block}
 
-/* STEP 1 — CITY & LIFESTYLE */
-.form-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}
-.field label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);margin-bottom:8px}
-.field select,.field input[type=range]{width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:15px;color:var(--ink);background:var(--cream);outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
-.field select:focus{border-color:var(--forest)}
-
-/* SLIDERS */
-.slider-section{margin-bottom:28px}
-.slider-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.slider-field{background:var(--cream-2);border-radius:14px;padding:18px 20px}
-.slider-field label{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;margin-bottom:10px}
-.slider-val{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--forest)}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:var(--line);outline:none;padding:0;border:none}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--forest);cursor:pointer;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.2)}
-
-.calc-btn{display:block;width:100%;padding:16px;background:var(--forest);color:white;border:none;border-radius:12px;font-family:inherit;font-size:17px;font-weight:700;cursor:pointer;transition:all .2s;margin-bottom:8px}
-.calc-btn:hover{background:var(--terracotta);transform:translateY(-1px)}
-.calc-disclaimer{text-align:center;font-size:12px;color:var(--ink-soft)}
-
-/* RESULTS */
-.results{display:none;margin-top:36px;border-top:1px solid var(--line);padding-top:32px}
-.results.show{display:block}
-.results-city{font-family:'Fraunces',serif;font-size:22px;font-weight:600;text-align:center;margin-bottom:4px}
-.results-sub-text{text-align:center;font-size:14px;color:var(--ink-soft);margin-bottom:28px}
-
-.budget-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
-.budget-item{background:var(--cream-2);border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
-.budget-label{font-size:14px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px}
-.budget-amount{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink)}
-.budget-total{background:var(--forest);border-radius:14px;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.budget-total .budget-label{color:white;font-size:16px}
-.budget-total .budget-amount{color:var(--gold);font-size:28px}
-
-.city-compare{margin-top:28px}
-.compare-title{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:16px;text-align:center}
-.compare-bars{display:flex;flex-direction:column;gap:10px}
-.compare-row{display:flex;align-items:center;gap:12px}
-.compare-city{font-size:13px;font-weight:600;width:90px;text-align:right;flex-shrink:0}
-.compare-bar-wrap{flex:1;background:var(--line);border-radius:999px;height:8px;overflow:hidden}
-.compare-bar{height:100%;border-radius:999px;background:var(--forest);transition:width 0.6s ease}
-.compare-bar.active{background:var(--terracotta)}
-.compare-amount{font-size:13px;font-weight:700;color:var(--ink);width:70px;flex-shrink:0}
-
-.work-tip{background:#EDF6F0;border:1px solid #1F7A50;border-radius:14px;padding:20px 24px;margin-top:20px;display:flex;gap:14px;align-items:flex-start}
-.work-tip-icon{font-size:28px;flex-shrink:0}
-.work-tip h4{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--forest);margin-bottom:4px}
-.work-tip p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.6}
-
-/* CITY CARDS */
-.cities-section{padding:64px 0;background:var(--cream-2)}
+/* SECTIONS */
+section{padding:64px 0}
 .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--terracotta-deep);margin-bottom:12px}
-h2{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,38px);font-weight:500;letter-spacing:-0.02em;margin-bottom:8px}
-.city-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:32px}
-.city-card{background:white;border-radius:16px;padding:20px;border:1px solid var(--line);text-align:center}
-.city-flag{font-size:32px;margin-bottom:10px}
-.city-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px}
-.city-state{font-size:12px;color:var(--ink-soft);margin-bottom:14px}
-.city-cost{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--forest)}
-.city-cost-label{font-size:11px;color:var(--ink-soft);margin-bottom:10px}
-.city-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px}
+h2{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,38px);font-weight:500;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.2}
+h3{font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin:36px 0 14px;color:var(--ink)}
+p{font-size:16px;line-height:1.75;margin-bottom:16px;color:var(--ink)}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--line);margin:20px 0}
+table{width:100%;border-collapse:collapse;background:white;min-width:600px}
+thead th{background:var(--forest);color:white;padding:13px 16px;text-align:left;font-size:13px;font-weight:700;white-space:nowrap}
+thead th.center{text-align:center}
+tbody tr{border-bottom:1px solid var(--line)}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:rgba(232,177,79,0.04)}
+td{padding:12px 16px;font-size:14px;vertical-align:middle}
+td:first-child{font-weight:600;color:var(--ink)}
+td.center{text-align:center}
+td.green{color:#1F7A50;font-weight:700}
+td.red{color:#C8102E;font-weight:700}
+td.gold{color:#854F0B;font-weight:700}
+.row-alt{background:var(--cream)}
+
+/* CITY SECTION HEADERS */
+.city-header{display:flex;align-items:center;gap:16px;background:var(--forest);color:white;border-radius:18px 18px 0 0;padding:22px 28px;margin-top:40px}
+.city-header-emoji{font-size:36px}
+.city-header-name{font-family:'Fraunces',serif;font-size:26px;font-weight:600}
+.city-header-sub{font-size:14px;opacity:0.8;margin-top:2px}
+.city-body{background:white;border:1px solid var(--line);border-top:none;border-radius:0 0 18px 18px;padding:28px}
+.city-body p{font-size:15px;color:var(--ink-soft);margin-bottom:0}
+
+/* CALLOUT */
+.callout{border-radius:14px;padding:22px 26px;margin:24px 0}
+.callout.green{background:#EDF6F0;border-left:4px solid var(--forest)}
+.callout.gold{background:#FFF9ED;border-left:4px solid var(--gold)}
+.callout.info{background:var(--cream-2);border-left:4px solid var(--terracotta)}
+.callout.blue{background:#EBF4FF;border-left:4px solid #005FAD}
+.callout h4{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:8px}
+.callout p{font-size:15px;color:var(--ink-soft);margin:0;line-height:1.65}
+.callout ul{margin:8px 0 0 18px;font-size:15px;color:var(--ink-soft)}
+.callout li{margin-bottom:6px}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;padding:18px 0;font-family:inherit;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left}
+.faq-icon{font-size:20px;color:var(--terracotta);flex-shrink:0;transition:transform .2s}
+.faq-a{display:none;padding:0 0 18px}.faq-a p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.7;font-size:15px}
+.faq-item.open .faq-a{display:block}.faq-item.open .faq-icon{transform:rotate(45deg)}
 
 /* CTA */
-.cta-band{background:var(--ink);color:var(--cream);border-radius:24px;padding:56px;text-align:center;position:relative;overflow:hidden;margin:64px 0 80px}
+.cta-band{background:var(--ink);color:var(--cream);border-radius:24px;padding:56px 48px;text-align:center;position:relative;overflow:hidden;margin:56px 0 80px}
 .cta-band::before{content:"";position:absolute;top:-80px;right:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,var(--terracotta),transparent 70%);opacity:0.5}
-.cta-band h2{position:relative;font-size:clamp(24px,4vw,36px);margin-bottom:12px}
-.cta-band p{position:relative;color:rgba(250,243,231,0.75);margin-bottom:28px}
+.cta-band h2{position:relative;font-family:'Fraunces',serif;font-size:clamp(24px,4vw,36px);margin-bottom:12px}
+.cta-band p{position:relative;color:rgba(250,243,231,0.75);margin-bottom:28px;font-size:16px}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
 .btn-terra{background:var(--terracotta);color:var(--cream)}.btn-terra:hover{background:var(--terracotta-deep)}
 .btn-outl{background:transparent;color:var(--cream);border:1px solid rgba(250,243,231,0.35)}
 
 footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 .footer-bottom{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:12px}
-@media(max-width:900px){.nav-links{display:none}.form-row{grid-template-columns:1fr}.slider-grid{grid-template-columns:1fr}.budget-grid{grid-template-columns:1fr}.city-cards{grid-template-columns:repeat(2,1fr)}.cta-band{padding:40px 24px}}
+@media(max-width:900px){.nav-links{display:none}.hero-stats{grid-template-columns:repeat(2,1fr)}.city-summary{grid-template-columns:repeat(2,1fr)}.cta-band{padding:40px 24px}}
 </style>
 </head>
 <body>
@@ -126,287 +131,388 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 <a href="contact.html" class="btn btn-primary">Get guidance</a>
 </div></nav>
 
-<div class="hero">
+<div class="hero"><div class="container">
+<div class="breadcrumb"><a href="index.html">Home</a> › <a href="australia-student-visa-guide.html">Visa Guide</a> › Cost of Living</div>
+<div class="hero-eyebrow">Updated for 2026 · Based on real student data</div>
+<h1>Cost of Living in Australia for International Students 2026</h1>
+<p class="hero-intro">A city-by-city breakdown of what international students actually spend in Sydney, Melbourne, Brisbane, Perth and Adelaide — covering rent, food, transport, OSHC and everything else you need to budget for before you arrive.</p>
+<div class="hero-stats">
+  <div class="hstat"><div class="hstat-num">AUD $29,710</div><div class="hstat-label">Government minimum living cost requirement per year</div></div>
+  <div class="hstat"><div class="hstat-num">5 cities</div><div class="hstat-label">Compared in detail with real expense data</div></div>
+  <div class="hstat"><div class="hstat-num">$1,900–3,400</div><div class="hstat-label">Typical monthly range depending on city and lifestyle</div></div>
+  <div class="hstat"><div class="hstat-num">AUD $24.10/hr</div><div class="hstat-label">2026 minimum wage for part-time work</div></div>
+</div>
+</div></div>
+
+<!-- CITY SUMMARY OVERVIEW -->
+<section style="padding:48px 0 0">
 <div class="container">
-  <div class="hero-eyebrow">Free tool · No sign-up · Updated 2026</div>
-  <h1>Australia Student Budget Calculator 2026</h1>
-  <p>Find out exactly how much you need to live comfortably as an international student in Australia — personalised to your city, lifestyle, and study situation.</p>
-  <div class="hero-badges">
-    <span class="badge">🏙️ 5 cities</span>
-    <span class="badge">🎛️ Fully adjustable</span>
-    <span class="badge">💰 Monthly breakdown</span>
-    <span class="badge">📊 City comparison</span>
-  </div>
-</div>
-</div>
+  <div class="section-label">Quick comparison</div>
+  <h2>Monthly cost of living — all 5 cities at a glance</h2>
+  <p style="color:var(--ink-soft);font-size:16px;max-width:680px">Based on a single international student in shared accommodation with a moderate lifestyle. Excludes tuition fees and OSHC.</p>
 
-<div class="calc-wrapper">
-<div class="calc-card">
-  <div class="calc-heading">What's your monthly budget?</div>
-  <div class="calc-sub">Adjust the sliders to match your lifestyle — your budget updates instantly.</div>
-
-  <div class="form-row">
-    <div class="field">
-      <label>City</label>
-      <select id="city" onchange="calculate()">
-        <option value="sydney">Sydney, NSW</option>
-        <option value="melbourne" selected>Melbourne, VIC</option>
-        <option value="brisbane">Brisbane, QLD</option>
-        <option value="perth">Perth, WA</option>
-        <option value="adelaide">Adelaide, SA</option>
-      </select>
+  <div class="city-summary">
+    <div class="city-card">
+      <div class="city-emoji">🌆</div>
+      <div class="city-name-s">Sydney</div>
+      <div class="city-state-s">NSW</div>
+      <div class="city-range">$2,800–3,400</div>
+      <div class="city-range-label">per month</div>
+      <span class="city-tag-s" style="background:#FEF2F2;color:#C8102E">Most expensive</span>
     </div>
-    <div class="field">
-      <label>Accommodation</label>
-      <select id="accomType" onchange="calculate()">
-        <option value="shared">Shared house (2–3 people)</option>
-        <option value="studio">Studio apartment</option>
-        <option value="onbedroom">1-bedroom apartment</option>
-        <option value="homestay">Homestay / with family</option>
-        <option value="oncampus">On-campus housing</option>
-      </select>
+    <div class="city-card">
+      <div class="city-emoji">🎭</div>
+      <div class="city-name-s">Melbourne</div>
+      <div class="city-state-s">VIC</div>
+      <div class="city-range">$2,400–2,900</div>
+      <div class="city-range-label">per month</div>
+      <span class="city-tag-s" style="background:#EBF4FF;color:#005FAD">Most popular</span>
     </div>
-    <div class="field">
-      <label>Lifestyle</label>
-      <select id="lifestyle" onchange="calculate()">
-        <option value="budget">Budget (cook at home, public transport)</option>
-        <option value="moderate" selected>Moderate (occasional dining out)</option>
-        <option value="comfortable">Comfortable (regular eating out)</option>
-      </select>
+    <div class="city-card">
+      <div class="city-emoji">☀️</div>
+      <div class="city-name-s">Brisbane</div>
+      <div class="city-state-s">QLD</div>
+      <div class="city-range">$2,200–2,700</div>
+      <div class="city-range-label">per month</div>
+      <span class="city-tag-s" style="background:#FFF9ED;color:#854F0B">Great value</span>
     </div>
-  </div>
-
-  <div class="slider-grid" style="margin-bottom:20px">
-    <div class="slider-field">
-      <label>Groceries / month <span class="slider-val" id="grocVal">$300</span></label>
-      <input type="range" id="groceries" min="150" max="600" step="10" value="300" oninput="updateSlider('groceries','grocVal','$');calculate()">
+    <div class="city-card">
+      <div class="city-emoji">🦘</div>
+      <div class="city-name-s">Perth</div>
+      <div class="city-state-s">WA</div>
+      <div class="city-range">$2,000–2,500</div>
+      <div class="city-range-label">per month</div>
+      <span class="city-tag-s" style="background:#EDF6F0;color:#1F7A50">Affordable</span>
     </div>
-    <div class="slider-field">
-      <label>Eating out / month <span class="slider-val" id="dineVal">$150</span></label>
-      <input type="range" id="dining" min="0" max="600" step="10" value="150" oninput="updateSlider('dining','dineVal','$');calculate()">
-    </div>
-    <div class="slider-field">
-      <label>Transport / month <span class="slider-val" id="transVal">$160</span></label>
-      <input type="range" id="transport" min="60" max="400" step="10" value="160" oninput="updateSlider('transport','transVal','$');calculate()">
-    </div>
-    <div class="slider-field">
-      <label>Entertainment / month <span class="slider-val" id="entVal">$100</span></label>
-      <input type="range" id="entertainment" min="0" max="500" step="10" value="100" oninput="updateSlider('entertainment','entVal','$');calculate()">
-    </div>
-    <div class="slider-field">
-      <label>Phone plan / month <span class="slider-val" id="phoneVal">$30</span></label>
-      <input type="range" id="phone" min="10" max="100" step="5" value="30" oninput="updateSlider('phone','phoneVal','$');calculate()">
-    </div>
-    <div class="slider-field">
-      <label>Books & study materials <span class="slider-val" id="studyVal">$50</span></label>
-      <input type="range" id="study" min="0" max="300" step="10" value="50" oninput="updateSlider('study','studyVal','$');calculate()">
-    </div>
-  </div>
-
-  <!-- LIVE RESULTS (auto-updates) -->
-  <div class="results show" id="results">
-    <div class="results-city" id="resultsCity">Melbourne, VIC</div>
-    <div class="results-sub-text" id="resultsSub">Moderate lifestyle · Shared house</div>
-
-    <div class="budget-grid" id="budgetGrid"></div>
-    <div class="budget-total" id="budgetTotal">
-      <div class="budget-label">💰 Total estimated monthly budget</div>
-      <div class="budget-amount" id="totalAmount">AUD $0</div>
-    </div>
-    <p style="text-align:center;font-size:12px;color:var(--ink-soft);margin-bottom:24px">Does not include tuition fees or OSHC. Add these separately based on your course.</p>
-
-    <div class="city-compare" id="cityCompare">
-      <div class="compare-title">How does this compare to other cities?</div>
-      <div class="compare-bars" id="compareBars"></div>
-    </div>
-
-    <div class="work-tip">
-      <div class="work-tip-icon">💼</div>
-      <div>
-        <h4>Part-time work tip</h4>
-        <p id="workTipText">International students can work up to 48 hours per fortnight during term and unlimited hours during university breaks. At minimum wage (AUD $24.10/hr), 48 hours per fortnight = approximately $578/month — which can significantly offset your living costs.</p>
-      </div>
+    <div class="city-card">
+      <div class="city-emoji">🍷</div>
+      <div class="city-name-s">Adelaide</div>
+      <div class="city-state-s">SA</div>
+      <div class="city-range">$1,900–2,400</div>
+      <div class="city-range-label">per month</div>
+      <span class="city-tag-s" style="background:#EDF6F0;color:#1F7A50">Most affordable</span>
     </div>
   </div>
 </div>
-</div>
+</section>
 
-<!-- CITY OVERVIEW -->
-<section class="cities-section">
+<!-- MASTER COMPARISON TABLE -->
+<section style="padding:48px 0">
+<div class="container">
+  <div class="section-label">Full comparison</div>
+  <h2>Expense-by-expense breakdown — all 5 cities</h2>
+  <p style="color:var(--ink-soft);max-width:700px">All amounts are approximate monthly figures in AUD for a single international student. Ranges reflect budget to comfortable lifestyle.</p>
+
+  <div class="table-wrap">
+  <table>
+  <thead>
+    <tr>
+      <th>Expense category</th>
+      <th class="center">Sydney</th>
+      <th class="center">Melbourne</th>
+      <th class="center">Brisbane</th>
+      <th class="center">Perth</th>
+      <th class="center">Adelaide</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-alt"><td>🏠 Shared house (rent only)</td><td class="center red">$900–1,300</td><td class="center">$800–1,100</td><td class="center">$700–1,000</td><td class="center">$650–950</td><td class="center green">$600–900</td></tr>
+    <tr><td>🏢 Studio apartment</td><td class="center red">$1,600–2,200</td><td class="center">$1,400–1,900</td><td class="center">$1,300–1,700</td><td class="center">$1,200–1,600</td><td class="center green">$1,100–1,500</td></tr>
+    <tr class="row-alt"><td>🏨 Homestay (room + 2 meals)</td><td class="center">$1,200–1,600</td><td class="center">$1,100–1,400</td><td class="center">$1,000–1,300</td><td class="center">$950–1,200</td><td class="center green">$900–1,150</td></tr>
+    <tr><td>🏫 On-campus housing</td><td class="center">$1,100–1,400</td><td class="center">$1,000–1,300</td><td class="center">$950–1,200</td><td class="center">$900–1,150</td><td class="center green">$850–1,100</td></tr>
+    <tr class="row-alt"><td>💡 Utilities (electricity, gas)</td><td class="center">$80–120</td><td class="center">$90–140</td><td class="center">$60–100</td><td class="center">$70–110</td><td class="center">$80–120</td></tr>
+    <tr><td>📶 Internet (home)</td><td class="center">$40–70</td><td class="center">$40–70</td><td class="center">$40–65</td><td class="center">$40–65</td><td class="center green">$35–60</td></tr>
+    <tr class="row-alt"><td>📱 Mobile phone plan</td><td class="center">$20–50</td><td class="center">$20–50</td><td class="center">$20–50</td><td class="center">$20–50</td><td class="center">$20–50</td></tr>
+    <tr><td>🛒 Groceries</td><td class="center red">$300–450</td><td class="center">$280–420</td><td class="center">$260–400</td><td class="center">$250–380</td><td class="center green">$240–360</td></tr>
+    <tr class="row-alt"><td>🍽️ Eating out (occasional)</td><td class="center">$150–350</td><td class="center">$140–320</td><td class="center">$130–300</td><td class="center">$120–280</td><td class="center green">$110–260</td></tr>
+    <tr><td>🚌 Public transport (monthly pass)</td><td class="center red">$160–220</td><td class="center">$140–200</td><td class="center">$130–180</td><td class="center">$110–160</td><td class="center green">$100–150</td></tr>
+    <tr class="row-alt"><td>📚 Books & study materials</td><td class="center">$40–80</td><td class="center">$40–80</td><td class="center">$40–80</td><td class="center">$40–80</td><td class="center">$40–80</td></tr>
+    <tr><td>🎬 Entertainment & leisure</td><td class="center">$100–250</td><td class="center">$100–250</td><td class="center">$80–200</td><td class="center">$80–200</td><td class="center green">$70–180</td></tr>
+    <tr class="row-alt"><td>🧴 Personal care & clothing</td><td class="center">$80–150</td><td class="center">$80–150</td><td class="center">$70–130</td><td class="center">$70–130</td><td class="center">$60–120</td></tr>
+    <tr style="background:#F2E7D2"><td><strong>💰 Total monthly estimate</strong></td><td class="center red"><strong>$2,800–3,400</strong></td><td class="center"><strong>$2,400–2,900</strong></td><td class="center"><strong>$2,200–2,700</strong></td><td class="center"><strong>$2,000–2,500</strong></td><td class="center green"><strong>$1,900–2,400</strong></td></tr>
+    <tr><td><strong>📅 Total annual estimate</strong></td><td class="center red"><strong>$33,600–40,800</strong></td><td class="center"><strong>$28,800–34,800</strong></td><td class="center"><strong>$26,400–32,400</strong></td><td class="center"><strong>$24,000–30,000</strong></td><td class="center green"><strong>$22,800–28,800</strong></td></tr>
+  </tbody>
+  </table>
+  </div>
+  <p style="font-size:13px;color:var(--ink-soft);margin-top:10px">All figures are estimates based on 2026 data. Actual costs vary by individual circumstances. Excludes tuition fees and OSHC health cover.</p>
+</div>
+</section>
+
+<!-- CITY BY CITY DETAIL -->
+<section style="background:var(--cream-2);padding:64px 0">
 <div class="container">
   <div class="section-label">City guide</div>
-  <h2>Average monthly costs by city (2026)</h2>
-  <p style="font-size:16px;color:var(--ink-soft);max-width:640px;margin-bottom:0">Based on a single international student in shared accommodation with a moderate lifestyle. Excludes tuition and OSHC.</p>
+  <h2>City-by-city detailed breakdown</h2>
 
-  <div class="city-cards">
-    <div class="city-card">
-      <div class="city-flag">🌆</div>
-      <div class="city-name">Sydney</div>
-      <div class="city-state">NSW</div>
-      <div class="city-cost">$2,800–3,400</div>
-      <div class="city-cost-label">per month</div>
-      <span class="city-tag" style="background:#FEF2F2;color:#C8102E">Most expensive</span>
+  <!-- SYDNEY -->
+  <div class="city-header">
+    <div class="city-header-emoji">🌆</div>
+    <div><div class="city-header-name">Sydney, NSW</div><div class="city-header-sub">Australia's largest city · Most expensive · Best job market</div></div>
+  </div>
+  <div class="city-body">
+    <p>Sydney is Australia's largest and most expensive city for international students. However, it also offers the largest job market, the widest range of part-time work opportunities, and some of Australia's strongest universities including the University of Sydney and UNSW. The higher cost of living is partially offset by better earning potential.</p>
+    <div class="table-wrap" style="margin-top:16px">
+    <table>
+    <thead><tr><th>Accommodation type</th><th class="center">Monthly cost (AUD)</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Shared house / room</td><td class="center">$900–1,300</td><td>2–4 housemates, suburb location</td></tr>
+      <tr class="row-alt"><td>Student studio (private)</td><td class="center">$1,600–2,200</td><td>Inner-city areas cost significantly more</td></tr>
+      <tr><td>On-campus housing (USYD / UNSW)</td><td class="center">$1,100–1,400</td><td>Includes internet, some meals</td></tr>
+      <tr class="row-alt"><td>Homestay (room + meals)</td><td class="center">$1,200–1,600</td><td>Western Sydney areas most affordable</td></tr>
+      <tr><td>1-bedroom apartment</td><td class="center">$2,000–2,800</td><td>Significantly cheaper 30+ min from CBD</td></tr>
+    </tbody>
+    </table>
     </div>
-    <div class="city-card">
-      <div class="city-flag">🎭</div>
-      <div class="city-name">Melbourne</div>
-      <div class="city-state">VIC</div>
-      <div class="city-cost">$2,400–2,900</div>
-      <div class="city-cost-label">per month</div>
-      <span class="city-tag" style="background:#EBF4FF;color:#005FAD">Most popular</span>
-    </div>
-    <div class="city-card">
-      <div class="city-flag">☀️</div>
-      <div class="city-name">Brisbane</div>
-      <div class="city-state">QLD</div>
-      <div class="city-cost">$2,200–2,700</div>
-      <div class="city-cost-label">per month</div>
-      <span class="city-tag" style="background:#FFF9ED;color:#854F0B">Great value</span>
-    </div>
-    <div class="city-card">
-      <div class="city-flag">🦘</div>
-      <div class="city-name">Perth</div>
-      <div class="city-state">WA</div>
-      <div class="city-cost">$2,000–2,500</div>
-      <div class="city-cost-label">per month</div>
-      <span class="city-tag" style="background:#EDF6F0;color:#1F7A50">Most affordable</span>
-    </div>
-    <div class="city-card">
-      <div class="city-flag">🍷</div>
-      <div class="city-name">Adelaide</div>
-      <div class="city-state">SA</div>
-      <div class="city-cost">$1,900–2,400</div>
-      <div class="city-cost-label">per month</div>
-      <span class="city-tag" style="background:#EDF6F0;color:#1F7A50">Most affordable</span>
+    <div class="callout info" style="margin-top:16px">
+      <h4>Sydney student tip</h4>
+      <p>Suburbs like Parramatta, Liverpool, Bankstown, and Hurstville are 30–50% cheaper than inner Sydney and well-connected by train. Students at Western Sydney University can live very affordably compared to those at USYD or UNSW in inner-city campuses.</p>
     </div>
   </div>
 
-  <div style="margin-top:32px;background:white;border-radius:18px;padding:28px;border:1px solid var(--line)">
-    <h3 style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:16px">What's included in your OSHC — don't pay twice</h3>
-    <p style="font-size:15px;color:var(--ink-soft);line-height:1.7">Your OSHC covers GP visits, hospital stays, emergency ambulance, and some prescription medicines. You don't need to budget separately for basic medical care if you hold OSHC — but optical, dental checkups, and physiotherapy are extras not covered by standard OSHC.</p>
-    <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
-      <a href="oshc-compare-quotes.html" style="display:inline-block;background:var(--forest);color:white;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none">Compare OSHC prices →</a>
-      <a href="oshc-australia-international-students.html" style="display:inline-block;border:1px solid var(--line);color:var(--ink);padding:10px 20px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none">OSHC guide →</a>
+  <!-- MELBOURNE -->
+  <div class="city-header" style="margin-top:32px">
+    <div class="city-header-emoji">🎭</div>
+    <div><div class="city-header-name">Melbourne, VIC</div><div class="city-header-sub">Australia's most popular student city · Cultural hub · Strong research universities</div></div>
+  </div>
+  <div class="city-body">
+    <p>Melbourne consistently ranks as the most popular city among international students and has one of the world's most vibrant multicultural communities. It is cheaper than Sydney but more expensive than Brisbane, Perth, and Adelaide. The University of Melbourne, Monash, RMIT, and La Trobe all have Melbourne campuses.</p>
+    <div class="table-wrap" style="margin-top:16px">
+    <table>
+    <thead><tr><th>Accommodation type</th><th class="center">Monthly cost (AUD)</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Shared house / room</td><td class="center">$800–1,100</td><td>Carlton, Brunswick, Footscray are popular student areas</td></tr>
+      <tr class="row-alt"><td>Student studio (private)</td><td class="center">$1,400–1,900</td><td>CBD areas higher end of range</td></tr>
+      <tr><td>On-campus housing (UniMelb)</td><td class="center">$1,000–1,300</td><td>Parkville residential colleges</td></tr>
+      <tr class="row-alt"><td>Homestay (room + meals)</td><td class="center">$1,100–1,400</td><td>Outer suburbs offer better rates</td></tr>
+      <tr><td>1-bedroom apartment</td><td class="center">$1,700–2,400</td><td>Inner city most expensive</td></tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="callout info" style="margin-top:16px">
+      <h4>Melbourne student tip</h4>
+      <p>Melbourne has an excellent tram network that is free within the CBD and affordable beyond it. Students in Footscray, Brunswick, or Coburg can live significantly more cheaply than those in Carlton or Fitzroy while still having great transport links to the university precinct.</p>
     </div>
   </div>
+
+  <!-- BRISBANE -->
+  <div class="city-header" style="margin-top:32px">
+    <div class="city-header-emoji">☀️</div>
+    <div><div class="city-header-name">Brisbane, QLD</div><div class="city-header-sub">Fastest-growing student city · Warm climate · Great value for money</div></div>
+  </div>
+  <div class="city-body">
+    <p>Brisbane has emerged as one of Australia's most popular student destinations, with its warm climate, lower cost of living than the southern capitals, and the presence of the University of Queensland, Queensland University of Technology (QUT), and Griffith University. Brisbane hosted the 2032 Olympics, driving significant infrastructure investment.</p>
+    <div class="table-wrap" style="margin-top:16px">
+    <table>
+    <thead><tr><th>Accommodation type</th><th class="center">Monthly cost (AUD)</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Shared house / room</td><td class="center">$700–1,000</td><td>West End, Toowong, Kelvin Grove popular with students</td></tr>
+      <tr class="row-alt"><td>Student studio (private)</td><td class="center">$1,300–1,700</td><td>South Bank and CBD higher</td></tr>
+      <tr><td>On-campus housing (UQ)</td><td class="center">$950–1,200</td><td>St Lucia colleges</td></tr>
+      <tr class="row-alt"><td>Homestay (room + meals)</td><td class="center">$1,000–1,300</td><td>Outer suburbs most affordable</td></tr>
+      <tr><td>1-bedroom apartment</td><td class="center">$1,500–2,000</td><td>Prices rising rapidly due to demand</td></tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="callout gold" style="margin-top:16px">
+      <h4>Brisbane student tip</h4>
+      <p>Brisbane's rental market has tightened significantly since 2022. Apply for accommodation early — ideally 3 months before your arrival. Students at UQ's St Lucia campus have good access to on-campus housing which is well-priced relative to private rental.</p>
+    </div>
+  </div>
+
+  <!-- PERTH -->
+  <div class="city-header" style="margin-top:32px">
+    <div class="city-header-emoji">🦘</div>
+    <div><div class="city-header-name">Perth, WA</div><div class="city-header-sub">Affordable · Sunny · Remote but liveable · Great outdoor lifestyle</div></div>
+  </div>
+  <div class="city-body">
+    <p>Perth offers excellent value for international students, with consistently lower rents, food costs, and transport expenses than Sydney or Melbourne. The University of Western Australia, Curtin University, and Murdoch University are all well-regarded. Perth's relative isolation from the eastern capitals is its main drawback, but students who choose Perth consistently report a high quality of life.</p>
+    <div class="table-wrap" style="margin-top:16px">
+    <table>
+    <thead><tr><th>Accommodation type</th><th class="center">Monthly cost (AUD)</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Shared house / room</td><td class="center">$650–950</td><td>Nedlands, Crawley near UWA affordable</td></tr>
+      <tr class="row-alt"><td>Student studio (private)</td><td class="center">$1,200–1,600</td><td>CBD and Northbridge higher</td></tr>
+      <tr><td>On-campus housing (UWA)</td><td class="center">$900–1,150</td><td>Crawley campus colleges</td></tr>
+      <tr class="row-alt"><td>Homestay (room + meals)</td><td class="center">$950–1,200</td><td>Wide range across suburbs</td></tr>
+      <tr><td>1-bedroom apartment</td><td class="center">$1,400–1,900</td><td>Cheapest of all 5 major cities</td></tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="callout green" style="margin-top:16px">
+      <h4>Perth student tip</h4>
+      <p>Perth's mining and resources sector creates strong part-time work opportunities in trades, hospitality, and services. Students comfortable with weekend and shift work can earn well above minimum wage. Perth's outdoor lifestyle — beaches, national parks, outdoor sports — is largely free or very low cost.</p>
+    </div>
+  </div>
+
+  <!-- ADELAIDE -->
+  <div class="city-header" style="margin-top:32px">
+    <div class="city-header-emoji">🍷</div>
+    <div><div class="city-header-name">Adelaide, SA</div><div class="city-header-sub">Most affordable major city · Friendly · Excellent universities · Great food and wine</div></div>
+  </div>
+  <div class="city-body">
+    <p>Adelaide is consistently Australia's most affordable major city for international students. The University of Adelaide (Group of Eight), Flinders University, and UniSA all have strong programs. Adelaide has a compact, walkable CBD, a thriving arts and food scene, and a warm, Mediterranean climate. For students on tighter budgets — or those on scholarships wanting their money to go further — Adelaide is the standout choice.</p>
+    <div class="table-wrap" style="margin-top:16px">
+    <table>
+    <thead><tr><th>Accommodation type</th><th class="center">Monthly cost (AUD)</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Shared house / room</td><td class="center">$600–900</td><td>North Adelaide, Prospect, Unley popular</td></tr>
+      <tr class="row-alt"><td>Student studio (private)</td><td class="center">$1,100–1,500</td><td>City fringe best value</td></tr>
+      <tr><td>On-campus housing (UniAdelaide / Flinders)</td><td class="center">$850–1,100</td><td>Several residential colleges</td></tr>
+      <tr class="row-alt"><td>Homestay (room + meals)</td><td class="center">$900–1,150</td><td>Well-established homestay network</td></tr>
+      <tr><td>1-bedroom apartment</td><td class="center">$1,300–1,700</td><td>Lowest of all 5 cities</td></tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="callout green" style="margin-top:16px">
+      <h4>Adelaide student tip</h4>
+      <p>Adelaide is small enough that a bicycle often replaces public transport entirely — saving $100–150/month. The Adelaide Central Market (twice weekly) offers fresh produce at prices significantly below supermarkets. Students who cook at home in Adelaide can keep grocery costs well under $250/month.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SPECIFIC COSTS -->
+<section>
+<div class="container">
+  <div class="section-label">Specific expenses</div>
+  <h2>Key costs explained in detail</h2>
+
+  <h3>🍽️ Groceries and food — what students actually spend</h3>
+  <div class="table-wrap">
+  <table>
+  <thead><tr><th>Item</th><th class="center">Budget option</th><th class="center">Mid-range</th><th>Where to buy cheaply</th></tr></thead>
+  <tbody>
+    <tr><td>Weekly groceries (self-catering)</td><td class="center green">$60–80</td><td class="center">$80–120</td><td>Aldi, Coles, Woolworths, IGA, local markets</td></tr>
+    <tr class="row-alt"><td>Cafe coffee (takeaway)</td><td class="center">$4.50–5.50</td><td class="center">$5–6</td><td>—</td></tr>
+    <tr><td>Cheap lunch (food court, bakery)</td><td class="center green">$8–12</td><td class="center">$12–18</td><td>University food courts, Asian food halls</td></tr>
+    <tr class="row-alt"><td>Mid-range restaurant meal</td><td class="center">$18–28</td><td class="center">$25–40</td><td>—</td></tr>
+    <tr><td>Home-cooked meal (per serve)</td><td class="center green">$3–6</td><td class="center">$5–10</td><td>Aldi is consistently cheapest for staples</td></tr>
+    <tr class="row-alt"><td>Monthly grocery total (estimate)</td><td class="center green">$200–280</td><td class="center">$280–400</td><td>—</td></tr>
+  </tbody>
+  </table>
+  </div>
+
+  <h3>🚌 Transport — public transit costs 2026</h3>
+  <div class="table-wrap">
+  <table>
+  <thead><tr><th>City</th><th class="center">Monthly pass / Opal top-up</th><th class="center">Daily cap</th><th>Key feature</th></tr></thead>
+  <tbody>
+    <tr><td>Sydney (Opal Card)</td><td class="center red">$160–220</td><td class="center">$17.80/day</td><td>Weekly spending cap AUD $50 — great for heavy users</td></tr>
+    <tr class="row-alt"><td>Melbourne (myki)</td><td class="center">$140–190</td><td class="center">$11.00/day</td><td>Free CBD tram zone — saves money if studying centrally</td></tr>
+    <tr><td>Brisbane (go card)</td><td class="center">$120–170</td><td class="center">$10.80/day</td><td>30% concession discount with student card</td></tr>
+    <tr class="row-alt"><td>Perth (SmartRider)</td><td class="center green">$100–150</td><td class="center">$9.80/day</td><td>CAT buses free in CBD area</td></tr>
+    <tr><td>Adelaide (Metrocard)</td><td class="center green">$95–140</td><td class="center">$8.40/day</td><td>Compact city — many students cycle instead</td></tr>
+  </tbody>
+  </table>
+  </div>
+  <div class="callout blue">
+    <h4>Student concession cards — always get one</h4>
+    <p>All Australian cities offer discounted public transport for full-time students. In Sydney, apply for an ISIC card. In Melbourne, apply for a Tertiary Student concession myki. In Brisbane, apply for a student go card. These typically reduce transport costs by 30–50% compared to adult fares.</p>
+  </div>
+
+  <h3>🏥 OSHC — mandatory health cover</h3>
+  <p>OSHC is compulsory for all student visa holders and must be added to your budget. It is not optional and cannot be skipped.</p>
+  <div class="table-wrap">
+  <table>
+  <thead><tr><th>Provider</th><th class="center">Single (per year)</th><th class="center">Couple (per year)</th><th class="center">Family (per year)</th></tr></thead>
+  <tbody>
+    <tr><td>NIB OSHC</td><td class="center green">~$630–680</td><td class="center green">~$1,260–1,360</td><td class="center green">~$1,960–2,100</td></tr>
+    <tr class="row-alt"><td>Allianz Care</td><td class="center">~$650–700</td><td class="center">~$1,300–1,400</td><td class="center">~$2,000–2,150</td></tr>
+    <tr><td>Medibank</td><td class="center">~$650–720</td><td class="center">~$1,300–1,440</td><td class="center">~$2,020–2,220</td></tr>
+    <tr class="row-alt"><td>Bupa</td><td class="center red">~$700–750</td><td class="center red">~$1,400–1,500</td><td class="center red">~$2,180–2,350</td></tr>
+  </tbody>
+  </table>
+  </div>
+  <p><a href="oshc-compare-quotes.html" style="color:var(--terracotta-deep);font-weight:700;text-decoration:underline">→ Get live OSHC quotes for your specific course dates</a></p>
+
+  <h3>💼 Part-time work — how much can you earn?</h3>
+  <div class="table-wrap">
+  <table>
+  <thead><tr><th>Work scenario</th><th class="center">Hours per fortnight</th><th class="center">Monthly income (approx.)</th><th>% of monthly budget covered</th></tr></thead>
+  <tbody>
+    <tr><td>Minimum (casual shifts)</td><td class="center">8 hrs/fortnight</td><td class="center green">~$193/month</td><td>~8–10% of budget</td></tr>
+    <tr class="row-alt"><td>Moderate (regular part-time)</td><td class="center">24 hrs/fortnight</td><td class="center">~$578/month</td><td>~20–28% of budget</td></tr>
+    <tr><td>Maximum during term (legal limit)</td><td class="center">48 hrs/fortnight</td><td class="center">~$1,156/month</td><td>~40–55% of budget</td></tr>
+    <tr class="row-alt"><td>University break (no limit)</td><td class="center">Unlimited</td><td class="center red">Varies widely</td><td>Can fully cover living costs</td></tr>
+  </tbody>
+  </table>
+  </div>
+  <div class="callout green">
+    <h4>2026 minimum wage — AUD $24.10 per hour</h4>
+    <p>Australia's minimum wage increased to AUD $24.10/hour in 2026 — one of the highest in the world. Many student jobs in hospitality, retail, cleaning, and campus roles pay above minimum wage. Casual loading (25% extra) applies to most casual roles, effectively making the rate AUD $30.13/hour for casual workers.</p>
+  </div>
+</div>
+</section>
+
+<!-- GOV REQUIREMENT -->
+<section style="background:var(--cream-2);padding:64px 0">
+<div class="container">
+  <div class="section-label">Visa requirements</div>
+  <h2>The AUD $29,710 government requirement — explained</h2>
+  <p>When applying for your Subclass 500 student visa, you must demonstrate access to at least <strong>AUD $29,710 per year</strong> for living expenses (2026 figure). This is the government's minimum and must be shown through bank statements, scholarship letters, or sponsor evidence.</p>
+
+  <div class="table-wrap">
+  <table>
+  <thead><tr><th>What you must show (2026)</th><th class="center">Annual amount</th><th class="center">Monthly equivalent</th></tr></thead>
+  <tbody>
+    <tr><td>Living expenses (primary applicant)</td><td class="center">AUD $29,710</td><td class="center">AUD $2,476</td></tr>
+    <tr class="row-alt"><td>Tuition fees</td><td class="center">Full annual tuition</td><td class="center">Varies by course</td></tr>
+    <tr><td>Return airfare</td><td class="center">~AUD $2,000–4,000</td><td class="center">One-time</td></tr>
+    <tr class="row-alt"><td>Additional for spouse/partner</td><td class="center">+AUD $10,441</td><td class="center">+AUD $870</td></tr>
+    <tr><td>Additional per child</td><td class="center">+AUD $3,956</td><td class="center">+AUD $330</td></tr>
+  </tbody>
+  </table>
+  </div>
+
+  <div class="callout info" style="margin-top:20px">
+    <h4>Important — this is the minimum, not the actual cost</h4>
+    <p>AUD $29,710/year = AUD $2,476/month. This is below the actual cost of living in Sydney and Melbourne (where students typically spend $2,800–3,400/month). It is more realistic for Perth and Adelaide. If you are applying for a Sydney or Melbourne university, budget above the government minimum when demonstrating financial capacity — showing exactly $29,710 for a Sydney university can raise questions about whether your budget is genuinely sufficient.</p>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section>
+<div class="narrow">
+  <div class="section-label">Common questions</div>
+  <h2>Frequently asked questions</h2>
+
+  <div class="faq-item"><button class="faq-q">How much money do I need per year to study in Australia in 2026?<span class="faq-icon">+</span></button><div class="faq-a"><p>The Australian Government requires you to show AUD $29,710/year in living funds for your visa application. In practice, total annual expenses depend on city and lifestyle. Sydney: AUD $33,600–40,800/year (excluding tuition). Melbourne: $28,800–34,800. Brisbane: $26,400–32,400. Perth: $24,000–30,000. Adelaide: $22,800–28,800. Add full tuition fees and OSHC on top of these figures.</p></div></div>
+
+  <div class="faq-item"><button class="faq-q">Is it cheaper to study in Adelaide or Perth than Sydney?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes — significantly. A student in Adelaide or Perth typically spends AUD $800–1,400 less per month than the same student in Sydney with the same lifestyle. Over a 2-year Masters degree, that difference can be AUD $19,200–33,600. Both Adelaide and Perth have strong universities including Group of Eight members (University of Adelaide and University of Western Australia respectively).</p></div></div>
+
+  <div class="faq-item"><button class="faq-q">Can I work while studying to help cover living costs?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes. International students on a Subclass 500 visa can work up to 48 hours per fortnight during term time and unlimited hours during university breaks. At the 2026 minimum wage of AUD $24.10/hour, 48 hours per fortnight generates approximately AUD $1,156/month — enough to cover a significant portion of living costs in most cities. Many student jobs pay above minimum wage.</p></div></div>
+
+  <div class="faq-item"><button class="faq-q">What is the cheapest type of student accommodation in Australia?<span class="faq-icon">+</span></button><div class="faq-a"><p>Shared housing with 2–3 housemates is typically the cheapest form of accommodation, ranging from AUD $600–1,300/month depending on city. On-campus housing is similarly priced and includes utilities and internet in most cases. Homestay includes meals which offsets its slightly higher base cost. Private studio apartments are the most expensive option for students on a budget.</p></div></div>
+
+  <div class="faq-item"><button class="faq-q">Does OSHC count towards my living cost requirement?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. The AUD $29,710 living cost requirement is separate from your OSHC. You must show funds for living costs AND pay for OSHC on top of that. For a single student, OSHC costs approximately AUD $630–750/year depending on provider. Compare current OSHC prices using our live comparison tool.</p></div></div>
+
+  <div class="faq-item"><button class="faq-q">How far does an Australia Awards scholarship go for living costs?<span class="faq-icon">+</span></button><div class="faq-a"><p>Australia Awards scholarships include a living allowance of approximately AUD $28,000–30,000/year (the exact amount is reviewed annually by DFAT). This is sufficient to live comfortably in Adelaide, Perth, or Brisbane, and adequately in Melbourne. Sydney is the most challenging city to live comfortably on the Australia Awards stipend alone — students in Sydney often supplement with part-time work or careful budgeting.</p></div></div>
 </div>
 </section>
 
 <!-- CTA -->
 <div class="container">
 <div class="cta-band">
-  <h2>Need scholarship funding to cover these costs?</h2>
-  <p>We list every major scholarship available to international students in Australia — from fully funded research packages to partial tuition awards.</p>
+  <h2>Ready to find scholarships to fund your studies?</h2>
+  <p>Use our free eligibility checker to find which Australian scholarships match your background — or browse all 19 scholarships we currently list.</p>
   <div class="cta-btns">
-    <a href="index.html#scholarships" class="btn btn-terra">Browse scholarships →</a>
-    <a href="contact.html" class="btn btn-outl">Get personalised guidance</a>
+    <a href="scholarship-eligibility-checker.html" class="btn btn-terra">Check my eligibility →</a>
+    <a href="index.html#scholarships" class="btn btn-outl">Browse all scholarships</a>
   </div>
 </div>
 </div>
 
 <footer><div class="container">
 <div class="footer-bottom">
-<div>© 2026 Australia Awards Hub — Budget figures are estimates based on 2026 cost of living data. Actual costs vary by individual circumstances.</div>
+<div>© 2026 Australia Awards Hub — All cost figures are estimates based on 2026 data. Actual costs vary by individual circumstances and lifestyle. Always verify the government living cost requirement at immi.homeaffairs.gov.au.</div>
 <div><a href="index.html" style="color:var(--terracotta);text-decoration:none">← Back to home</a></div>
 </div></div></footer>
 
 <script>
-// ── Cost data by city (AUD/month) ─────────────────────────────────
-const CITY_DATA = {
-  sydney:    { name:'Sydney, NSW',    accom:{ shared:1100, studio:1800, onbedroom:2400, homestay:1400, oncampus:1200 }, transport:200, base:2800 },
-  melbourne: { name:'Melbourne, VIC', accom:{ shared:900,  studio:1500, onbedroom:2000, homestay:1200, oncampus:1000 }, transport:160, base:2500 },
-  brisbane:  { name:'Brisbane, QLD',  accom:{ shared:800,  studio:1400, onbedroom:1800, homestay:1100, oncampus:950  }, transport:140, base:2300 },
-  perth:     { name:'Perth, WA',      accom:{ shared:750,  studio:1300, onbedroom:1700, homestay:1000, oncampus:900  }, transport:120, base:2100 },
-  adelaide:  { name:'Adelaide, SA',   accom:{ shared:700,  studio:1200, onbedroom:1600, homestay:950,  oncampus:850  }, transport:110, base:2000 },
-};
-
-const ACCOM_LABELS = {shared:'Shared house',studio:'Studio apartment',onbedroom:'1-bedroom apt',homestay:'Homestay',oncampus:'On-campus'};
-const LIFESTYLE_LABELS = {budget:'Budget lifestyle',moderate:'Moderate lifestyle',comfortable:'Comfortable lifestyle'};
-
-function fmt(n){ return 'AUD $'+Math.round(n).toLocaleString(); }
-function updateSlider(id,valId,prefix){ document.getElementById(valId).textContent=prefix+document.getElementById(id).value; }
-
-function calculate(){
-  const city = document.getElementById('city').value;
-  const accom = document.getElementById('accomType').value;
-  const lifestyle = document.getElementById('lifestyle').value;
-  const groceries = parseInt(document.getElementById('groceries').value);
-  const dining = parseInt(document.getElementById('dining').value);
-  const transport = parseInt(document.getElementById('transport').value);
-  const entertainment = parseInt(document.getElementById('entertainment').value);
-  const phone = parseInt(document.getElementById('phone').value);
-  const study = parseInt(document.getElementById('study').value);
-
-  const cityInfo = CITY_DATA[city];
-  const rent = cityInfo.accom[accom];
-  const utilities = accom === 'shared' ? 80 : accom === 'oncampus' ? 0 : 150;
-  const internet = accom === 'oncampus' ? 0 : 50;
-  const personal = lifestyle === 'budget' ? 60 : lifestyle === 'moderate' ? 100 : 160;
-
-  const total = rent + utilities + internet + groceries + dining + transport + entertainment + phone + study + personal;
-
-  // Update city name
-  document.getElementById('resultsCity').textContent = cityInfo.name;
-  document.getElementById('resultsSub').textContent = LIFESTYLE_LABELS[lifestyle] + ' · ' + ACCOM_LABELS[accom];
-
-  // Budget grid
-  const items = [
-    {icon:'🏠', label:'Rent / accommodation', amount:rent},
-    {icon:'💡', label:'Utilities & internet', amount:utilities+internet},
-    {icon:'🛒', label:'Groceries', amount:groceries},
-    {icon:'🍽️', label:'Eating out & cafes', amount:dining},
-    {icon:'🚌', label:'Transport', amount:transport},
-    {icon:'🎬', label:'Entertainment & leisure', amount:entertainment},
-    {icon:'📱', label:'Phone plan', amount:phone},
-    {icon:'📚', label:'Books & study materials', amount:study},
-    {icon:'🧴', label:'Personal care & clothing', amount:personal},
-  ];
-
-  document.getElementById('budgetGrid').innerHTML = items.map(item=>`
-    <div class="budget-item">
-      <div class="budget-label">${item.icon} ${item.label}</div>
-      <div class="budget-amount">${fmt(item.amount)}</div>
-    </div>`).join('');
-
-  document.getElementById('totalAmount').textContent = fmt(total);
-
-  // City comparison bars
-  const userOptions = {accomType:accom,groceries,dining,transport,entertainment,phone,study,lifestyle};
-  const cityTotals = {};
-  Object.entries(CITY_DATA).forEach(([k,v])=>{
-    const r = v.accom[accom];
-    const u = accom==='shared'?80:accom==='oncampus'?0:150;
-    const i = accom==='oncampus'?0:50;
-    const p = lifestyle==='budget'?60:lifestyle==='moderate'?100:160;
-    cityTotals[k] = r+u+i+groceries+dining+transport+entertainment+phone+study+p;
-  });
-
-  const maxTotal = Math.max(...Object.values(cityTotals));
-  const cities = [
-    {key:'sydney',label:'Sydney'},
-    {key:'melbourne',label:'Melbourne'},
-    {key:'brisbane',label:'Brisbane'},
-    {key:'perth',label:'Perth'},
-    {key:'adelaide',label:'Adelaide'},
-  ];
-
-  document.getElementById('compareBars').innerHTML = cities.map(c=>`
-    <div class="compare-row">
-      <div class="compare-city">${c.label}</div>
-      <div class="compare-bar-wrap">
-        <div class="compare-bar${c.key===city?' active':''}" style="width:${Math.round((cityTotals[c.key]/maxTotal)*100)}%"></div>
-      </div>
-      <div class="compare-amount">${fmt(cityTotals[c.key])}</div>
-    </div>`).join('');
-
-  // Work tip
-  const monthsToBreakEven = Math.round(total / 578 * 10)/10;
-  document.getElementById('workTipText').textContent =
-    `International students can work up to 48 hours per fortnight during term. At the 2026 minimum wage (AUD $24.10/hr), that's approximately AUD $578/month — covering ${Math.round((578/total)*100)}% of your estimated ${cityInfo.name} budget. During university breaks, there is no work limit.`;
-}
-
-// Run on load with defaults
-calculate();
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>btn.closest('.faq-item').classList.toggle('open'));
+});
 </script>
 </body>
 </html>
