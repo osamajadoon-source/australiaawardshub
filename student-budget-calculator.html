@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Australia Student Budget Calculator 2026 — Cost of Living by City | Australia Awards Hub</title>
+<meta name="description" content="Free student budget calculator for international students in Australia 2026. Compare monthly costs in Sydney, Melbourne, Brisbane, Perth and Adelaide — rent, food, transport and more."/>
+<meta name="keywords" content="student budget calculator Australia 2026, cost of living Sydney international student, cost of living Melbourne student, Australia student expenses calculator"/>
+<link rel="icon" type="image/png" href="logo.png"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL2YCR2ZTZ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL2YCR2ZTZ');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF3E7;--cream-2:#F2E7D2;--ink:#231812;--ink-soft:#5C4A3E;--terracotta:#C75A3C;--terracotta-deep:#A8442C;--forest:#1F3A2E;--gold:#E8B14F;--line:rgba(35,24,18,0.12);--shadow:0 2px 4px rgba(35,24,18,0.06),0 12px 32px rgba(35,24,18,0.08);}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:rgba(250,243,231,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:56px;height:56px;flex-shrink:0}.logo-mark img{width:100%;height:100%;object-fit:contain}
+.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{color:var(--ink);text-decoration:none;font-weight:500;font-size:14px}.nav-links a:hover{color:var(--terracotta)}
+.btn{display:inline-block;padding:10px 22px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
+.btn-primary{background:var(--ink);color:var(--cream)}.btn-primary:hover{background:var(--terracotta)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--forest),#2D5A44);color:white;padding:56px 0 48px;text-align:center}
+.hero-eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;opacity:0.75;margin-bottom:14px}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(28px,5vw,50px);font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-bottom:14px}
+.hero p{font-size:17px;opacity:0.9;max-width:600px;margin:0 auto 32px;line-height:1.6}
+.hero-badges{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.badge{background:rgba(255,255,255,0.12);padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600}
+
+/* CALCULATOR CARD */
+.calc-wrapper{max-width:1000px;margin:-32px auto 56px;position:relative;z-index:10;padding:0 24px}
+.calc-card{background:white;border-radius:24px;padding:40px;box-shadow:var(--shadow)}
+.calc-heading{font-family:'Fraunces',serif;font-size:26px;font-weight:600;text-align:center;margin-bottom:8px}
+.calc-sub{text-align:center;color:var(--ink-soft);font-size:15px;margin-bottom:32px}
+
+/* STEP 1 — CITY & LIFESTYLE */
+.form-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}
+.field label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);margin-bottom:8px}
+.field select,.field input[type=range]{width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:15px;color:var(--ink);background:var(--cream);outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.field select:focus{border-color:var(--forest)}
+
+/* SLIDERS */
+.slider-section{margin-bottom:28px}
+.slider-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.slider-field{background:var(--cream-2);border-radius:14px;padding:18px 20px}
+.slider-field label{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;margin-bottom:10px}
+.slider-val{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--forest)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:var(--line);outline:none;padding:0;border:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--forest);cursor:pointer;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.2)}
+
+.calc-btn{display:block;width:100%;padding:16px;background:var(--forest);color:white;border:none;border-radius:12px;font-family:inherit;font-size:17px;font-weight:700;cursor:pointer;transition:all .2s;margin-bottom:8px}
+.calc-btn:hover{background:var(--terracotta);transform:translateY(-1px)}
+.calc-disclaimer{text-align:center;font-size:12px;color:var(--ink-soft)}
+
+/* RESULTS */
+.results{display:none;margin-top:36px;border-top:1px solid var(--line);padding-top:32px}
+.results.show{display:block}
+.results-city{font-family:'Fraunces',serif;font-size:22px;font-weight:600;text-align:center;margin-bottom:4px}
+.results-sub-text{text-align:center;font-size:14px;color:var(--ink-soft);margin-bottom:28px}
+
+.budget-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.budget-item{background:var(--cream-2);border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.budget-label{font-size:14px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px}
+.budget-amount{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink)}
+.budget-total{background:var(--forest);border-radius:14px;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.budget-total .budget-label{color:white;font-size:16px}
+.budget-total .budget-amount{color:var(--gold);font-size:28px}
+
+.city-compare{margin-top:28px}
+.compare-title{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:16px;text-align:center}
+.compare-bars{display:flex;flex-direction:column;gap:10px}
+.compare-row{display:flex;align-items:center;gap:12px}
+.compare-city{font-size:13px;font-weight:600;width:90px;text-align:right;flex-shrink:0}
+.compare-bar-wrap{flex:1;background:var(--line);border-radius:999px;height:8px;overflow:hidden}
+.compare-bar{height:100%;border-radius:999px;background:var(--forest);transition:width 0.6s ease}
+.compare-bar.active{background:var(--terracotta)}
+.compare-amount{font-size:13px;font-weight:700;color:var(--ink);width:70px;flex-shrink:0}
+
+.work-tip{background:#EDF6F0;border:1px solid #1F7A50;border-radius:14px;padding:20px 24px;margin-top:20px;display:flex;gap:14px;align-items:flex-start}
+.work-tip-icon{font-size:28px;flex-shrink:0}
+.work-tip h4{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--forest);margin-bottom:4px}
+.work-tip p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.6}
+
+/* CITY CARDS */
+.cities-section{padding:64px 0;background:var(--cream-2)}
+.section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--terracotta-deep);margin-bottom:12px}
+h2{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,38px);font-weight:500;letter-spacing:-0.02em;margin-bottom:8px}
+.city-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:32px}
+.city-card{background:white;border-radius:16px;padding:20px;border:1px solid var(--line);text-align:center}
+.city-flag{font-size:32px;margin-bottom:10px}
+.city-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:4px}
+.city-state{font-size:12px;color:var(--ink-soft);margin-bottom:14px}
+.city-cost{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--forest)}
+.city-cost-label{font-size:11px;color:var(--ink-soft);margin-bottom:10px}
+.city-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px}
+
+/* CTA */
+.cta-band{background:var(--ink);color:var(--cream);border-radius:24px;padding:56px;text-align:center;position:relative;overflow:hidden;margin:64px 0 80px}
+.cta-band::before{content:"";position:absolute;top:-80px;right:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,var(--terracotta),transparent 70%);opacity:0.5}
+.cta-band h2{position:relative;font-size:clamp(24px,4vw,36px);margin-bottom:12px}
+.cta-band p{position:relative;color:rgba(250,243,231,0.75);margin-bottom:28px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-terra{background:var(--terracotta);color:var(--cream)}.btn-terra:hover{background:var(--terracotta-deep)}
+.btn-outl{background:transparent;color:var(--cream);border:1px solid rgba(250,243,231,0.35)}
+
+footer{padding:40px 0 28px;border-top:1px solid var(--line)}
+.footer-bottom{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:12px}
+@media(max-width:900px){.nav-links{display:none}.form-row{grid-template-columns:1fr}.slider-grid{grid-template-columns:1fr}.budget-grid{grid-template-columns:1fr}.city-cards{grid-template-columns:repeat(2,1fr)}.cta-band{padding:40px 24px}}
+</style>
+</head>
+<body>
+
+<nav><div class="container nav-inner">
+<a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Australia Awards Hub"/></span>Australia Awards Hub</a>
+<ul class="nav-links">
+<li><a href="index.html#scholarships">Scholarships</a></li>
+<li><a href="oshc-compare-quotes.html">Compare OSHC</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<a href="contact.html" class="btn btn-primary">Get guidance</a>
+</div></nav>
+
+<div class="hero">
+<div class="container">
+  <div class="hero-eyebrow">Free tool · No sign-up · Updated 2026</div>
+  <h1>Australia Student Budget Calculator 2026</h1>
+  <p>Find out exactly how much you need to live comfortably as an international student in Australia — personalised to your city, lifestyle, and study situation.</p>
+  <div class="hero-badges">
+    <span class="badge">🏙️ 5 cities</span>
+    <span class="badge">🎛️ Fully adjustable</span>
+    <span class="badge">💰 Monthly breakdown</span>
+    <span class="badge">📊 City comparison</span>
+  </div>
+</div>
+</div>
+
+<div class="calc-wrapper">
+<div class="calc-card">
+  <div class="calc-heading">What's your monthly budget?</div>
+  <div class="calc-sub">Adjust the sliders to match your lifestyle — your budget updates instantly.</div>
+
+  <div class="form-row">
+    <div class="field">
+      <label>City</label>
+      <select id="city" onchange="calculate()">
+        <option value="sydney">Sydney, NSW</option>
+        <option value="melbourne" selected>Melbourne, VIC</option>
+        <option value="brisbane">Brisbane, QLD</option>
+        <option value="perth">Perth, WA</option>
+        <option value="adelaide">Adelaide, SA</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Accommodation</label>
+      <select id="accomType" onchange="calculate()">
+        <option value="shared">Shared house (2–3 people)</option>
+        <option value="studio">Studio apartment</option>
+        <option value="onbedroom">1-bedroom apartment</option>
+        <option value="homestay">Homestay / with family</option>
+        <option value="oncampus">On-campus housing</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Lifestyle</label>
+      <select id="lifestyle" onchange="calculate()">
+        <option value="budget">Budget (cook at home, public transport)</option>
+        <option value="moderate" selected>Moderate (occasional dining out)</option>
+        <option value="comfortable">Comfortable (regular eating out)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="slider-grid" style="margin-bottom:20px">
+    <div class="slider-field">
+      <label>Groceries / month <span class="slider-val" id="grocVal">$300</span></label>
+      <input type="range" id="groceries" min="150" max="600" step="10" value="300" oninput="updateSlider('groceries','grocVal','$');calculate()">
+    </div>
+    <div class="slider-field">
+      <label>Eating out / month <span class="slider-val" id="dineVal">$150</span></label>
+      <input type="range" id="dining" min="0" max="600" step="10" value="150" oninput="updateSlider('dining','dineVal','$');calculate()">
+    </div>
+    <div class="slider-field">
+      <label>Transport / month <span class="slider-val" id="transVal">$160</span></label>
+      <input type="range" id="transport" min="60" max="400" step="10" value="160" oninput="updateSlider('transport','transVal','$');calculate()">
+    </div>
+    <div class="slider-field">
+      <label>Entertainment / month <span class="slider-val" id="entVal">$100</span></label>
+      <input type="range" id="entertainment" min="0" max="500" step="10" value="100" oninput="updateSlider('entertainment','entVal','$');calculate()">
+    </div>
+    <div class="slider-field">
+      <label>Phone plan / month <span class="slider-val" id="phoneVal">$30</span></label>
+      <input type="range" id="phone" min="10" max="100" step="5" value="30" oninput="updateSlider('phone','phoneVal','$');calculate()">
+    </div>
+    <div class="slider-field">
+      <label>Books & study materials <span class="slider-val" id="studyVal">$50</span></label>
+      <input type="range" id="study" min="0" max="300" step="10" value="50" oninput="updateSlider('study','studyVal','$');calculate()">
+    </div>
+  </div>
+
+  <!-- LIVE RESULTS (auto-updates) -->
+  <div class="results show" id="results">
+    <div class="results-city" id="resultsCity">Melbourne, VIC</div>
+    <div class="results-sub-text" id="resultsSub">Moderate lifestyle · Shared house</div>
+
+    <div class="budget-grid" id="budgetGrid"></div>
+    <div class="budget-total" id="budgetTotal">
+      <div class="budget-label">💰 Total estimated monthly budget</div>
+      <div class="budget-amount" id="totalAmount">AUD $0</div>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--ink-soft);margin-bottom:24px">Does not include tuition fees or OSHC. Add these separately based on your course.</p>
+
+    <div class="city-compare" id="cityCompare">
+      <div class="compare-title">How does this compare to other cities?</div>
+      <div class="compare-bars" id="compareBars"></div>
+    </div>
+
+    <div class="work-tip">
+      <div class="work-tip-icon">💼</div>
+      <div>
+        <h4>Part-time work tip</h4>
+        <p id="workTipText">International students can work up to 48 hours per fortnight during term and unlimited hours during university breaks. At minimum wage (AUD $24.10/hr), 48 hours per fortnight = approximately $578/month — which can significantly offset your living costs.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- CITY OVERVIEW -->
+<section class="cities-section">
+<div class="container">
+  <div class="section-label">City guide</div>
+  <h2>Average monthly costs by city (2026)</h2>
+  <p style="font-size:16px;color:var(--ink-soft);max-width:640px;margin-bottom:0">Based on a single international student in shared accommodation with a moderate lifestyle. Excludes tuition and OSHC.</p>
+
+  <div class="city-cards">
+    <div class="city-card">
+      <div class="city-flag">🌆</div>
+      <div class="city-name">Sydney</div>
+      <div class="city-state">NSW</div>
+      <div class="city-cost">$2,800–3,400</div>
+      <div class="city-cost-label">per month</div>
+      <span class="city-tag" style="background:#FEF2F2;color:#C8102E">Most expensive</span>
+    </div>
+    <div class="city-card">
+      <div class="city-flag">🎭</div>
+      <div class="city-name">Melbourne</div>
+      <div class="city-state">VIC</div>
+      <div class="city-cost">$2,400–2,900</div>
+      <div class="city-cost-label">per month</div>
+      <span class="city-tag" style="background:#EBF4FF;color:#005FAD">Most popular</span>
+    </div>
+    <div class="city-card">
+      <div class="city-flag">☀️</div>
+      <div class="city-name">Brisbane</div>
+      <div class="city-state">QLD</div>
+      <div class="city-cost">$2,200–2,700</div>
+      <div class="city-cost-label">per month</div>
+      <span class="city-tag" style="background:#FFF9ED;color:#854F0B">Great value</span>
+    </div>
+    <div class="city-card">
+      <div class="city-flag">🦘</div>
+      <div class="city-name">Perth</div>
+      <div class="city-state">WA</div>
+      <div class="city-cost">$2,000–2,500</div>
+      <div class="city-cost-label">per month</div>
+      <span class="city-tag" style="background:#EDF6F0;color:#1F7A50">Most affordable</span>
+    </div>
+    <div class="city-card">
+      <div class="city-flag">🍷</div>
+      <div class="city-name">Adelaide</div>
+      <div class="city-state">SA</div>
+      <div class="city-cost">$1,900–2,400</div>
+      <div class="city-cost-label">per month</div>
+      <span class="city-tag" style="background:#EDF6F0;color:#1F7A50">Most affordable</span>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;background:white;border-radius:18px;padding:28px;border:1px solid var(--line)">
+    <h3 style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:16px">What's included in your OSHC — don't pay twice</h3>
+    <p style="font-size:15px;color:var(--ink-soft);line-height:1.7">Your OSHC covers GP visits, hospital stays, emergency ambulance, and some prescription medicines. You don't need to budget separately for basic medical care if you hold OSHC — but optical, dental checkups, and physiotherapy are extras not covered by standard OSHC.</p>
+    <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="oshc-compare-quotes.html" style="display:inline-block;background:var(--forest);color:white;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none">Compare OSHC prices →</a>
+      <a href="oshc-australia-international-students.html" style="display:inline-block;border:1px solid var(--line);color:var(--ink);padding:10px 20px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none">OSHC guide →</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<div class="container">
+<div class="cta-band">
+  <h2>Need scholarship funding to cover these costs?</h2>
+  <p>We list every major scholarship available to international students in Australia — from fully funded research packages to partial tuition awards.</p>
+  <div class="cta-btns">
+    <a href="index.html#scholarships" class="btn btn-terra">Browse scholarships →</a>
+    <a href="contact.html" class="btn btn-outl">Get personalised guidance</a>
+  </div>
+</div>
+</div>
+
+<footer><div class="container">
+<div class="footer-bottom">
+<div>© 2026 Australia Awards Hub — Budget figures are estimates based on 2026 cost of living data. Actual costs vary by individual circumstances.</div>
+<div><a href="index.html" style="color:var(--terracotta);text-decoration:none">← Back to home</a></div>
+</div></div></footer>
+
+<script>
+// ── Cost data by city (AUD/month) ─────────────────────────────────
+const CITY_DATA = {
+  sydney:    { name:'Sydney, NSW',    accom:{ shared:1100, studio:1800, onbedroom:2400, homestay:1400, oncampus:1200 }, transport:200, base:2800 },
+  melbourne: { name:'Melbourne, VIC', accom:{ shared:900,  studio:1500, onbedroom:2000, homestay:1200, oncampus:1000 }, transport:160, base:2500 },
+  brisbane:  { name:'Brisbane, QLD',  accom:{ shared:800,  studio:1400, onbedroom:1800, homestay:1100, oncampus:950  }, transport:140, base:2300 },
+  perth:     { name:'Perth, WA',      accom:{ shared:750,  studio:1300, onbedroom:1700, homestay:1000, oncampus:900  }, transport:120, base:2100 },
+  adelaide:  { name:'Adelaide, SA',   accom:{ shared:700,  studio:1200, onbedroom:1600, homestay:950,  oncampus:850  }, transport:110, base:2000 },
+};
+
+const ACCOM_LABELS = {shared:'Shared house',studio:'Studio apartment',onbedroom:'1-bedroom apt',homestay:'Homestay',oncampus:'On-campus'};
+const LIFESTYLE_LABELS = {budget:'Budget lifestyle',moderate:'Moderate lifestyle',comfortable:'Comfortable lifestyle'};
+
+function fmt(n){ return 'AUD $'+Math.round(n).toLocaleString(); }
+function updateSlider(id,valId,prefix){ document.getElementById(valId).textContent=prefix+document.getElementById(id).value; }
+
+function calculate(){
+  const city = document.getElementById('city').value;
+  const accom = document.getElementById('accomType').value;
+  const lifestyle = document.getElementById('lifestyle').value;
+  const groceries = parseInt(document.getElementById('groceries').value);
+  const dining = parseInt(document.getElementById('dining').value);
+  const transport = parseInt(document.getElementById('transport').value);
+  const entertainment = parseInt(document.getElementById('entertainment').value);
+  const phone = parseInt(document.getElementById('phone').value);
+  const study = parseInt(document.getElementById('study').value);
+
+  const cityInfo = CITY_DATA[city];
+  const rent = cityInfo.accom[accom];
+  const utilities = accom === 'shared' ? 80 : accom === 'oncampus' ? 0 : 150;
+  const internet = accom === 'oncampus' ? 0 : 50;
+  const personal = lifestyle === 'budget' ? 60 : lifestyle === 'moderate' ? 100 : 160;
+
+  const total = rent + utilities + internet + groceries + dining + transport + entertainment + phone + study + personal;
+
+  // Update city name
+  document.getElementById('resultsCity').textContent = cityInfo.name;
+  document.getElementById('resultsSub').textContent = LIFESTYLE_LABELS[lifestyle] + ' · ' + ACCOM_LABELS[accom];
+
+  // Budget grid
+  const items = [
+    {icon:'🏠', label:'Rent / accommodation', amount:rent},
+    {icon:'💡', label:'Utilities & internet', amount:utilities+internet},
+    {icon:'🛒', label:'Groceries', amount:groceries},
+    {icon:'🍽️', label:'Eating out & cafes', amount:dining},
+    {icon:'🚌', label:'Transport', amount:transport},
+    {icon:'🎬', label:'Entertainment & leisure', amount:entertainment},
+    {icon:'📱', label:'Phone plan', amount:phone},
+    {icon:'📚', label:'Books & study materials', amount:study},
+    {icon:'🧴', label:'Personal care & clothing', amount:personal},
+  ];
+
+  document.getElementById('budgetGrid').innerHTML = items.map(item=>`
+    <div class="budget-item">
+      <div class="budget-label">${item.icon} ${item.label}</div>
+      <div class="budget-amount">${fmt(item.amount)}</div>
+    </div>`).join('');
+
+  document.getElementById('totalAmount').textContent = fmt(total);
+
+  // City comparison bars
+  const userOptions = {accomType:accom,groceries,dining,transport,entertainment,phone,study,lifestyle};
+  const cityTotals = {};
+  Object.entries(CITY_DATA).forEach(([k,v])=>{
+    const r = v.accom[accom];
+    const u = accom==='shared'?80:accom==='oncampus'?0:150;
+    const i = accom==='oncampus'?0:50;
+    const p = lifestyle==='budget'?60:lifestyle==='moderate'?100:160;
+    cityTotals[k] = r+u+i+groceries+dining+transport+entertainment+phone+study+p;
+  });
+
+  const maxTotal = Math.max(...Object.values(cityTotals));
+  const cities = [
+    {key:'sydney',label:'Sydney'},
+    {key:'melbourne',label:'Melbourne'},
+    {key:'brisbane',label:'Brisbane'},
+    {key:'perth',label:'Perth'},
+    {key:'adelaide',label:'Adelaide'},
+  ];
+
+  document.getElementById('compareBars').innerHTML = cities.map(c=>`
+    <div class="compare-row">
+      <div class="compare-city">${c.label}</div>
+      <div class="compare-bar-wrap">
+        <div class="compare-bar${c.key===city?' active':''}" style="width:${Math.round((cityTotals[c.key]/maxTotal)*100)}%"></div>
+      </div>
+      <div class="compare-amount">${fmt(cityTotals[c.key])}</div>
+    </div>`).join('');
+
+  // Work tip
+  const monthsToBreakEven = Math.round(total / 578 * 10)/10;
+  document.getElementById('workTipText').textContent =
+    `International students can work up to 48 hours per fortnight during term. At the 2026 minimum wage (AUD $24.10/hr), that's approximately AUD $578/month — covering ${Math.round((578/total)*100)}% of your estimated ${cityInfo.name} budget. During university breaks, there is no work limit.`;
+}
+
+// Run on load with defaults
+calculate();
+</script>
+</body>
+</html>
