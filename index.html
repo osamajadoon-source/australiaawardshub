@@ -327,6 +327,59 @@
     .tl-panel-content{padding:20px}
   }
 
+
+  /* ── Accordion Services ──────────────────────── */
+  .acc-grid{display:flex;flex-direction:column;gap:12px}
+  .acc-card{
+    background:white;border:1.5px solid var(--line);border-radius:18px;
+    overflow:hidden;transition:border-color .2s,box-shadow .2s;
+  }
+  .acc-card.open{border-color:var(--terracotta);box-shadow:0 2px 4px rgba(35,24,18,0.04),0 12px 32px rgba(35,24,18,0.08)}
+  .acc-card-featured{border-color:var(--gold)}
+  .acc-card-featured.open{border-color:var(--gold);box-shadow:0 2px 4px rgba(232,177,79,0.1),0 12px 32px rgba(232,177,79,0.15)}
+  .acc-card-soft{background:var(--cream)}
+  .acc-head{
+    width:100%;background:none;border:none;cursor:pointer;
+    display:flex;align-items:center;gap:16px;padding:20px 24px;
+    text-align:left;font-family:inherit;transition:background .15s;
+  }
+  .acc-head:hover{background:var(--cream)}
+  .acc-card.open .acc-head{background:var(--cream)}
+  .acc-head-left{display:flex;align-items:center;gap:14px;flex:1;min-width:0}
+  .acc-icon-wrap{
+    width:40px;height:40px;border-radius:10px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .acc-title{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:2px}
+  .acc-subtitle{font-size:13px;color:var(--ink-soft);line-height:1.4}
+  .acc-badge{
+    background:var(--gold);color:var(--ink);font-size:11px;font-weight:700;
+    padding:3px 10px;border-radius:999px;white-space:nowrap;flex-shrink:0;
+  }
+  .acc-arrow{font-size:14px;color:var(--ink-soft);flex-shrink:0;transition:transform .25s ease}
+  .acc-card.open .acc-arrow{transform:rotate(180deg);color:var(--terracotta)}
+  .acc-body{
+    display:none;padding:0 24px 24px;border-top:1px solid var(--line);
+  }
+  .acc-card.open .acc-body{display:block;animation:accFade .25s ease}
+  @keyframes accFade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+  .acc-body p{font-size:15px;color:var(--ink-soft);line-height:1.7;margin:18px 0 16px}
+  .acc-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px;padding:0}
+  .acc-list li{font-size:14px;color:var(--ink);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+  .acc-list li::before{content:"✓";color:var(--forest);font-weight:700;flex-shrink:0;margin-top:1px}
+  .acc-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .acc-btn-primary{
+    display:inline-block;background:var(--ink);color:var(--cream);
+    padding:10px 20px;border-radius:999px;font-size:14px;font-weight:700;
+    text-decoration:none;transition:all .2s;
+  }
+  .acc-btn-primary:hover{background:var(--terracotta)}
+  .acc-btn-ghost{
+    display:inline-block;border:1.5px solid var(--line);color:var(--ink);
+    padding:10px 20px;border-radius:999px;font-size:14px;font-weight:600;
+    text-decoration:none;transition:all .2s;
+  }
+  .acc-btn-ghost:hover{border-color:var(--ink)}
   /* --- HOW IT WORKS --- */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:24px}
   .step{padding:32px;border-radius:20px;background:var(--cream-2);position:relative}
@@ -1190,9 +1243,183 @@
     <div class="section-head" style="margin-bottom:48px">
       <p style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--terracotta-deep);margin-bottom:12px">Expert guidance</p>
       <h2 class="display">How we help you, <em style="color:var(--terracotta);font-style:italic">personally.</em></h2>
-      <p style="max-width:520px">Beyond the free resources — real guidance from people who know the Australian scholarship system inside out.</p>
+      <p style="max-width:520px">Beyond the free resources — real guidance from people who know the Australian scholarship system inside out. Click any service to learn more.</p>
     </div>
-    <div class="svc-grid">
+
+    <div class="acc-grid">
+
+      <div class="acc-card" id="acc-0">
+        <button class="acc-head" onclick="toggleAcc(0)">
+          <div class="acc-head-left">
+            <div class="acc-icon-wrap" style="background:#EBF4FF">
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#185FA5" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="acc-title">Scholarship matching</div>
+              <div class="acc-subtitle">Find which scholarships you're competitive for</div>
+            </div>
+          </div>
+          <div class="acc-arrow">▾</div>
+        </button>
+        <div class="acc-body">
+          <p>Tell us your background — we identify which scholarships you are actually competitive for, ranked by your chances and country. We look at your nationality, academic results, work experience, IELTS score, and field to shortlist the right opportunities.</p>
+          <ul class="acc-list">
+            <li>Eligibility check across 19 scholarships</li>
+            <li>Ranked by your profile and country of citizenship</li>
+            <li>Application timeline and deadline planning</li>
+            <li>Realistic assessment — we tell you the truth about your chances</li>
+          </ul>
+          <div class="acc-actions">
+            <a href="scholarship-eligibility-checker.html" class="acc-btn-primary">Try free eligibility checker →</a>
+            <a href="contact.html" class="acc-btn-ghost">Get personalised matching</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-card" id="acc-1">
+        <button class="acc-head" onclick="toggleAcc(1)">
+          <div class="acc-head-left">
+            <div class="acc-icon-wrap" style="background:#EDFAF3">
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#0F6E56" stroke-width="1.5"/><path d="M5 8h6M5 5.5h4M5 10.5h3" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="acc-title">Degree &amp; university selection</div>
+              <div class="acc-subtitle">Match your goals to the right program and institution</div>
+            </div>
+          </div>
+          <div class="acc-arrow">▾</div>
+        </button>
+        <div class="acc-body">
+          <p>Choosing the wrong course or university can cost you a scholarship, a visa, or a year of your life. We help you match your academic background and career goals to the right Australian program — whether coursework or research — at the right institution.</p>
+          <ul class="acc-list">
+            <li>Program shortlisting across 30+ Australian universities</li>
+            <li>CRICOS verification — confirm your course is approved for your visa</li>
+            <li>Supervisor matching for research degrees (HDR)</li>
+            <li>City and cost-of-living comparison across your shortlist</li>
+          </ul>
+          <div class="acc-actions">
+            <a href="cricos-australia-guide.html" class="acc-btn-primary">Read CRICOS guide →</a>
+            <a href="contact.html" class="acc-btn-ghost">Get course advice</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-card acc-card-featured" id="acc-2">
+        <button class="acc-head" onclick="toggleAcc(2)">
+          <div class="acc-head-left">
+            <div class="acc-icon-wrap" style="background:#FFF4E6">
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 4h10M3 8h7M3 12h5" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="acc-title">Application &amp; DILP review</div>
+              <div class="acc-subtitle">Line-by-line feedback before you submit — most popular</div>
+            </div>
+          </div>
+          <span class="acc-badge">★ Most popular</span>
+          <div class="acc-arrow">▾</div>
+        </button>
+        <div class="acc-body">
+          <p>Your personal statement, DILP, and GTE statement are the documents that most applicants get wrong — and the ones that matter most to assessors. We provide specific, written feedback before you submit. Not generic advice — line-by-line commentary on your actual draft.</p>
+          <ul class="acc-list">
+            <li>DILP (Development Impact and Linkages Plan) — full written review with revision suggestions</li>
+            <li>Personal statement — structure, specificity, and coherence check</li>
+            <li>GTE / Genuine Student statement — risk assessment and rewrite guidance</li>
+            <li>Australia Awards OASIS form — section-by-section guidance</li>
+            <li>Turnaround: 48–72 hours</li>
+          </ul>
+          <div class="acc-actions">
+            <a href="contact.html" class="acc-btn-primary">Submit your draft →</a>
+            <a href="dilp-guide-product.html" class="acc-btn-ghost">Get the DILP guide — AUD $19</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-card" id="acc-3">
+        <button class="acc-head" onclick="toggleAcc(3)">
+          <div class="acc-head-left">
+            <div class="acc-icon-wrap" style="background:#F2E7D2">
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M8 2L8 5M8 11L8 14M2 8L5 8M11 8L14 8" stroke="#5C4A3E" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="3" stroke="#5C4A3E" stroke-width="1.5"/></svg>
+            </div>
+            <div>
+              <div class="acc-title">Student visa guidance</div>
+              <div class="acc-subtitle">Subclass 500 — documents, financials, and GTE statement</div>
+            </div>
+          </div>
+          <div class="acc-arrow">▾</div>
+        </button>
+        <div class="acc-body">
+          <p>The Subclass 500 student visa is refused for roughly 1 in 5 applicants — usually because of a weak Genuine Student statement, insufficient financial evidence, or unexplained gaps in employment history. We help you avoid the most common reasons for refusal.</p>
+          <ul class="acc-list">
+            <li>Document checklist tailored to your country (Pakistan, India, Bangladesh, Nigeria)</li>
+            <li>Financial evidence planning — what amount, what format, what sources</li>
+            <li>GTE / Genuine Student statement drafting and review</li>
+            <li>Previous visa refusal — advice on disclosure and mitigation</li>
+          </ul>
+          <div class="acc-actions">
+            <a href="gte-statement-guide-australia.html" class="acc-btn-primary">Read GTE guide →</a>
+            <a href="contact.html" class="acc-btn-ghost">Get visa help</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-card" id="acc-4">
+        <button class="acc-head" onclick="toggleAcc(4)">
+          <div class="acc-head-left">
+            <div class="acc-icon-wrap" style="background:#F2E7D2">
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M2 12C2 9.8 5 8 8 8s6 1.8 6 4" stroke="#5C4A3E" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="5" r="3" stroke="#5C4A3E" stroke-width="1.5"/></svg>
+            </div>
+            <div>
+              <div class="acc-title">Pre-departure support</div>
+              <div class="acc-subtitle">OSHC, accommodation, banking and arrival planning</div>
+            </div>
+          </div>
+          <div class="acc-arrow">▾</div>
+        </button>
+        <div class="acc-body">
+          <p>Offer accepted? The weeks before you fly are stressful — OSHC must be sorted before your visa, accommodation books out fast, and the Australian banking system works differently from home. We cover all of it from firsthand experience living and studying in Australia.</p>
+          <ul class="acc-list">
+            <li>OSHC provider comparison and purchase guidance</li>
+            <li>Accommodation options by city — shared, on-campus, homestay</li>
+            <li>Australian bank account setup before arrival</li>
+            <li>Pre-arrival checklist and orientation tips</li>
+          </ul>
+          <div class="acc-actions">
+            <a href="oshc-compare-quotes.html" class="acc-btn-primary">Compare OSHC prices →</a>
+            <a href="student-budget-calculator.html" class="acc-btn-ghost">Cost of living guide</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-card acc-card-soft" id="acc-5">
+        <button class="acc-head" onclick="toggleAcc(5)">
+          <div class="acc-head-left">
+            <div class="acc-icon-wrap" style="background:white">
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 5a2 2 0 012-2h6a2 2 0 012 2v4a2 2 0 01-2 2H8l-3 2v-2H5a2 2 0 01-2-2V5z" stroke="#231812" stroke-width="1.5"/></svg>
+            </div>
+            <div>
+              <div class="acc-title">Not sure where to start?</div>
+              <div class="acc-subtitle">Send us your background — we'll point you in the right direction</div>
+            </div>
+          </div>
+          <div class="acc-arrow">▾</div>
+        </button>
+        <div class="acc-body">
+          <p>If you're not sure which service you need — or whether you're ready to apply — just send us a message with your background and goals. We'll give you a direct, honest assessment of your options and the best next step.</p>
+          <ul class="acc-list">
+            <li>Response within 24–48 hours</li>
+            <li>Personalised to your country, field, and career stage</li>
+            <li>No fees for an initial message</li>
+            <li>No sign-up or account required</li>
+          </ul>
+          <div class="acc-actions">
+            <a href="contact.html" class="acc-btn-primary">Send a message →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <div class="svc-card">
         <div class="svc-top">
@@ -1268,31 +1495,6 @@
         <p>Offer accepted? We cover accommodation, OSHC, banking, and orientation — from firsthand experience living and studying in Australia.</p>
         <ul class="svc-list">
           <li>Accommodation options by city</li>
-          <li>OSHC and banking setup guide</li>
-          <li>Arrival checklist and orientation tips</li>
-        </ul>
-        <a href="contact.html" class="svc-link">Ask us →</a>
-      </div>
-
-      <div class="svc-card svc-card-soft">
-        <div class="svc-top">
-          <div class="svc-icon-wrap" style="background:white">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 5a2 2 0 012-2h6a2 2 0 012 2v4a2 2 0 01-2 2H8l-3 2v-2H5a2 2 0 01-2-2V5z" stroke="#231812" stroke-width="1.5"/></svg>
-          </div>
-        </div>
-        <h3>Not sure where to start?</h3>
-        <p>Send us a message with your background and goals. We will point you in the right direction — no commitment, no fees required.</p>
-        <ul class="svc-list">
-          <li>Reply within 24–48 hours</li>
-          <li>Personalised to your country and field</li>
-          <li>No fees, no sign-up required</li>
-        </ul>
-        <a href="contact.html" class="svc-link svc-link-dark">Send a message →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- BLOG -->
 
@@ -1778,5 +1980,26 @@ mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   document.body.style.overflow = '';
 }));
 </script>
+
+// ── Accordion Services ───────────────────────────────────────────
+(function(){
+  var openIdx = -1;
+  window.toggleAcc = function(idx){
+    var cards = document.querySelectorAll('.acc-card');
+    cards.forEach(function(card, i){
+      if(i === idx){
+        var isOpen = card.classList.contains('open');
+        card.classList.toggle('open', !isOpen);
+        openIdx = isOpen ? -1 : idx;
+      } else {
+        card.classList.remove('open');
+      }
+    });
+  };
+  // Open first card by default on load
+  var first = document.getElementById('acc-2'); // featured card
+  if(first) first.classList.add('open');
+})();
+
 </body>
 </html>
