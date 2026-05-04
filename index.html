@@ -1271,77 +1271,84 @@ const tagColors = {
   'Regional':'background:#EDF6F0;color:#1F7A50',
 };
 
-const searchBtn   = document.getElementById('searchBtn');
+const searchBtn     = document.getElementById('searchBtn');
 const searchOverlay = document.getElementById('searchOverlay');
-const searchInput = document.getElementById('searchInput');
-const searchClose = document.getElementById('searchClose');
+const searchInput   = document.getElementById('searchInput');
+const searchClose   = document.getElementById('searchClose');
 const searchResults = document.getElementById('searchResults');
+let searchOpen = false;
 
 function openSearch(){
+  searchOpen = true;
   searchOverlay.classList.add('open');
-  setTimeout(()=>searchInput.focus(), 350);
-  document.body.style.overflow='';
+  setTimeout(()=>{ searchInput.focus(); }, 350);
 }
 function closeSearch(){
+  searchOpen = false;
   searchOverlay.classList.remove('open');
   searchResults.classList.remove('show');
-  searchInput.value='';
+  searchInput.value = '';
 }
 
-searchBtn.addEventListener('click', openSearch);
-searchClose.addEventListener('click', closeSearch);
-
-document.addEventListener('keydown', e=>{
-  if(e.key==='Escape') closeSearch();
-  if((e.ctrlKey||e.metaKey) && e.key==='k'){e.preventDefault();openSearch();}
+// Stop click from bubbling so outside-click handler doesn't fire immediately
+searchBtn.addEventListener('click', (e)=>{
+  e.stopPropagation();
+  searchOpen ? closeSearch() : openSearch();
 });
 
+searchClose.addEventListener('click', (e)=>{ e.stopPropagation(); closeSearch(); });
+searchOverlay.addEventListener('click', (e)=>{ e.stopPropagation(); });
+searchResults.addEventListener('click', (e)=>{ e.stopPropagation(); });
+
+// Close on outside click
+document.addEventListener('click', ()=>{ if(searchOpen) closeSearch(); });
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape' && searchOpen) closeSearch();
+  if((e.ctrlKey||e.metaKey) && e.key==='k'){ e.preventDefault(); openSearch(); }
+});
+
+// Live search
 searchInput.addEventListener('input', ()=>{
   const q = searchInput.value.trim().toLowerCase();
   if(!q){ searchResults.classList.remove('show'); return; }
+
   const hits = searchData.filter(item =>
     item.title.toLowerCase().includes(q) ||
     item.sub.toLowerCase().includes(q) ||
     item.cats.toLowerCase().includes(q)
   ).slice(0, 8);
 
-  if(!hits.length){
-    searchResults.innerHTML = '<div class="no-results">No results found — try different keywords</div>';
-  } else {
-    const color = (tag) => tagColors[tag] || 'background:var(--cream-2);color:var(--ink-soft)';
-    searchResults.innerHTML = hits.map(h=>`
-      <a class="search-result-item" href="${h.url}">
-        <span class="sri-icon">${h.icon}</span>
-        <span style="flex:1;min-width:0">
-          <div class="sri-title">${h.title}</div>
-          <div class="sri-sub">${h.sub}</div>
-        </span>
-        <span class="sri-tag" style="${color(h.tag)}">${h.tag}</span>
-      </a>`).join('');
-  }
+  const color = (tag) => tagColors[tag] || 'background:var(--cream-2);color:var(--ink-soft)';
+  searchResults.innerHTML = hits.length
+    ? hits.map(h=>`
+        <a class="search-result-item" href="${h.url}">
+          <span class="sri-icon">${h.icon}</span>
+          <span style="flex:1;min-width:0">
+            <div class="sri-title">${h.title}</div>
+            <div class="sri-sub">${h.sub}</div>
+          </span>
+          <span class="sri-tag" style="${color(h.tag)}">${h.tag}</span>
+        </a>`).join('')
+    : '<div class="no-results">No results — try different keywords</div>';
+
   searchResults.classList.add('show');
 });
 
-// Close on outside click
-document.addEventListener('click', e=>{
-  if(!searchOverlay.contains(e.target) && !searchBtn.contains(e.target) && !searchResults.contains(e.target)){
-    closeSearch();
-  }
-});
-
-// ── Mobile hamburger ─────────────────────────────────────────────
+// ── Mobile hamburger ──────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', ()=>{
+hamburger.addEventListener('click', (e)=>{
+  e.stopPropagation();
   const open = mobileMenu.classList.toggle('open');
   hamburger.classList.toggle('open', open);
   document.body.style.overflow = open ? 'hidden' : '';
 });
-// Close mobile menu on link click
 mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   mobileMenu.classList.remove('open');
   hamburger.classList.remove('open');
-  document.body.style.overflow='';
+  document.body.style.overflow = '';
 }));
 </script>
 </body>
