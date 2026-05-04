@@ -254,6 +254,79 @@
   }
   .card-link:hover{background:var(--ink);color:var(--cream);border-color:var(--ink);gap:8px}
 
+  /* --- TIMELINE --- */
+  .timeline-wrap{margin-top:56px;position:relative}
+  .timeline-track{position:absolute;top:28px;left:0;right:0;height:3px;background:var(--line);border-radius:999px;z-index:0;pointer-events:none}
+  .timeline-progress{height:100%;background:linear-gradient(90deg,var(--terracotta),var(--gold));border-radius:999px;width:0%;transition:width .5s cubic-bezier(.4,0,.2,1)}
+  .timeline-nodes{display:flex;justify-content:space-between;position:relative;z-index:1;margin-bottom:36px}
+  .tl-node{display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;flex:1}
+  .tl-dot{
+    width:56px;height:56px;border-radius:50%;
+    background:white;border:3px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    transition:all .3s ease;box-shadow:0 2px 8px rgba(35,24,18,0.08);
+  }
+  .tl-dot span{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--ink-soft);transition:color .3s}
+  .tl-label{font-size:12px;font-weight:600;color:var(--ink-soft);text-align:center;line-height:1.3;max-width:80px;transition:color .3s}
+  .tl-node.active .tl-dot{background:var(--terracotta);border-color:var(--terracotta);transform:scale(1.15);box-shadow:0 4px 20px rgba(199,90,60,0.35)}
+  .tl-node.active .tl-dot span{color:white}
+  .tl-node.active .tl-label{color:var(--terracotta);font-weight:700}
+  .tl-node.done .tl-dot{background:var(--forest);border-color:var(--forest)}
+  .tl-node.done .tl-dot span{color:white}
+  .tl-node.done .tl-label{color:var(--forest)}
+  .tl-node:hover:not(.active) .tl-dot{border-color:var(--terracotta);transform:scale(1.05)}
+
+  /* Panel */
+  .timeline-panel-wrap{position:relative;min-height:220px}
+  .tl-panel{
+    display:none;background:white;border-radius:24px;
+    border:1px solid var(--line);overflow:hidden;
+    box-shadow:0 2px 4px rgba(35,24,18,0.04),0 16px 40px rgba(35,24,18,0.08);
+    animation:tlFadeIn .35s ease;
+  }
+  .tl-panel.active{display:grid;grid-template-columns:72px 1fr auto}
+  @keyframes tlFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .tl-panel-icon{
+    background:linear-gradient(135deg,var(--terracotta),var(--terracotta-deep));
+    display:flex;align-items:center;justify-content:center;
+    font-size:28px;padding:0 0 0 4px;
+  }
+  .tl-panel-content{padding:28px 32px 28px 24px}
+  .tl-step-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--terracotta);margin-bottom:8px}
+  .tl-panel-content h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin-bottom:12px;line-height:1.2}
+  .tl-panel-content p{font-size:15px;color:var(--ink-soft);line-height:1.7;margin-bottom:20px}
+  .tl-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .tl-btn-primary{display:inline-block;background:var(--terracotta);color:white;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s}
+  .tl-btn-primary:hover{background:var(--terracotta-deep);transform:translateY(-1px)}
+  .tl-btn-ghost{display:inline-block;border:1.5px solid var(--line);color:var(--ink);padding:10px 20px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s}
+  .tl-btn-ghost:hover{border-color:var(--ink)}
+  .tl-panel-meta{
+    background:var(--cream);border-left:1px solid var(--line);
+    padding:28px 28px 28px 24px;
+    display:flex;flex-direction:column;gap:14px;justify-content:center;min-width:220px;
+  }
+  .tl-meta-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-soft);font-weight:500}
+  .tl-meta-icon{font-size:16px;flex-shrink:0}
+
+  /* Mobile nav dots */
+  .tl-nav{display:none;align-items:center;justify-content:center;gap:16px;margin-top:20px}
+  .tl-prev,.tl-next{background:white;border:1.5px solid var(--line);border-radius:50%;width:40px;height:40px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .tl-prev:hover,.tl-next:hover{border-color:var(--terracotta);color:var(--terracotta)}
+  .tl-prev:disabled,.tl-next:disabled{opacity:0.3;cursor:default}
+  .tl-dots{display:flex;gap:6px}
+  .tl-dot-pip{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .2s}
+  .tl-dot-pip.active{background:var(--terracotta);width:20px;border-radius:999px}
+
+  @media(max-width:900px){
+    .tl-panel.active{grid-template-columns:1fr}
+    .tl-panel-icon{height:60px;font-size:24px;padding:0}
+    .tl-panel-meta{border-left:none;border-top:1px solid var(--line);flex-direction:row;flex-wrap:wrap;padding:16px 20px;min-width:auto}
+    .timeline-nodes{display:none}
+    .timeline-track{display:none}
+    .tl-nav{display:flex}
+    .tl-panel-content{padding:20px}
+  }
+
   /* --- HOW IT WORKS --- */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:24px}
   .step{padding:32px;border-radius:20px;background:var(--cream-2);position:relative}
@@ -962,29 +1035,152 @@
 </section>
 
 <!-- HOW IT WORKS -->
-<section id="how" style="background:linear-gradient(180deg,var(--cream),var(--cream-2));padding:80px 0">
+<section id="how" style="background:linear-gradient(180deg,var(--cream),var(--cream-2));padding:80px 0;overflow:hidden">
   <div class="container">
     <div class="section-head">
       <h2 class="display">Your journey to Australia, <em style="color:var(--terracotta);font-style:italic">step by step.</em></h2>
       <p>Most students don't fail because they aren't qualified — they fail because they apply too late, to the wrong scholarship, with a weak personal statement. Here's how we help you avoid that.</p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h4>Discover the right scholarship</h4>
-        <p>Browse our curated listings by country, level, and funding type. Every scholarship links directly to the official portal — no middlemen, no outdated info.</p>
+
+    <!-- TIMELINE -->
+    <div class="timeline-wrap">
+
+      <!-- Progress track -->
+      <div class="timeline-track">
+        <div class="timeline-progress" id="tlProgress"></div>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h4>Build a strong application</h4>
-        <p>Read our step-by-step guides on personal statements, GTE requirements, IELTS preparation, and document checklists — all written specifically for international applicants.</p>
+
+      <!-- Step nodes -->
+      <div class="timeline-nodes">
+        <div class="tl-node active" id="tln-0" onclick="setStep(0)">
+          <div class="tl-dot"><span>01</span></div>
+          <div class="tl-label">Check eligibility</div>
+        </div>
+        <div class="tl-node" id="tln-1" onclick="setStep(1)">
+          <div class="tl-dot"><span>02</span></div>
+          <div class="tl-label">Pick your scholarship</div>
+        </div>
+        <div class="tl-node" id="tln-2" onclick="setStep(2)">
+          <div class="tl-dot"><span>03</span></div>
+          <div class="tl-label">Build your application</div>
+        </div>
+        <div class="tl-node" id="tln-3" onclick="setStep(3)">
+          <div class="tl-dot"><span>04</span></div>
+          <div class="tl-label">Write your DILP / GTE</div>
+        </div>
+        <div class="tl-node" id="tln-4" onclick="setStep(4)">
+          <div class="tl-dot"><span>05</span></div>
+          <div class="tl-label">Submit & prepare</div>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h4>Apply with confidence</h4>
-        <p>Submit through the official portal. Need a second pair of eyes? Our team can review your application, GTE statement, or research proposal before you submit.</p>
+
+      <!-- Detail panel -->
+      <div class="timeline-panel-wrap">
+        <!-- Step 0 -->
+        <div class="tl-panel active" id="tlp-0">
+          <div class="tl-panel-icon">🎯</div>
+          <div class="tl-panel-content">
+            <div class="tl-step-tag">Step 01</div>
+            <h3>Check your eligibility</h3>
+            <p>Before investing weeks in an application, confirm you actually qualify. Eligibility varies by nationality, career stage, IELTS score, and field — and getting this wrong wastes months.</p>
+            <div class="tl-actions">
+              <a href="scholarship-eligibility-checker.html" class="tl-btn-primary">Run eligibility check →</a>
+              <a href="index.html#scholarships" class="tl-btn-ghost">Browse all scholarships</a>
+            </div>
+          </div>
+          <div class="tl-panel-meta">
+            <div class="tl-meta-item"><span class="tl-meta-icon">⏱️</span><span>Takes 2 minutes</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">📋</span><span>19 scholarships checked</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">✅</span><span>Free, instant results</span></div>
+          </div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="tl-panel" id="tlp-1">
+          <div class="tl-panel-icon">🎓</div>
+          <div class="tl-panel-content">
+            <div class="tl-step-tag">Step 02</div>
+            <h3>Pick the right scholarship</h3>
+            <p>Use our filters to find scholarships matched to your level, field, city preference and funding needs. Every listing links directly to the official portal — no outdated information, no middlemen.</p>
+            <div class="tl-actions">
+              <a href="index.html#scholarships" class="tl-btn-primary">Browse scholarships →</a>
+              <a href="fully-funded-scholarships-australia.html" class="tl-btn-ghost">Fully funded guide</a>
+            </div>
+          </div>
+          <div class="tl-panel-meta">
+            <div class="tl-meta-item"><span class="tl-meta-icon">🏆</span><span>19 scholarships listed</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">🔍</span><span>Filter by level, city, funding</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">🔗</span><span>Direct official links</span></div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="tl-panel" id="tlp-2">
+          <div class="tl-panel-icon">📋</div>
+          <div class="tl-panel-content">
+            <div class="tl-step-tag">Step 03</div>
+            <h3>Build a strong application</h3>
+            <p>Your documents, transcripts, references, English test, and financial evidence all need to be in order before you apply. Use our visa guide and IELTS guide to prepare everything in advance.</p>
+            <div class="tl-actions">
+              <a href="australia-student-visa-guide.html" class="tl-btn-primary">Visa guide →</a>
+              <a href="ielts-guide-australia-scholarships.html" class="tl-btn-ghost">IELTS requirements</a>
+            </div>
+          </div>
+          <div class="tl-panel-meta">
+            <div class="tl-meta-item"><span class="tl-meta-icon">📄</span><span>Full document checklist</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">📝</span><span>IELTS score guide by scholarship</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">💰</span><span>Financial evidence explained</span></div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="tl-panel" id="tlp-3">
+          <div class="tl-panel-icon">✍️</div>
+          <div class="tl-panel-content">
+            <div class="tl-step-tag">Step 04</div>
+            <h3>Write your DILP &amp; GTE statement</h3>
+            <p>The DILP (for Australia Awards) and the Genuine Student statement (for your visa) are the two documents that most applicants get wrong. Our guides show you exactly what to write — with real winning examples.</p>
+            <div class="tl-actions">
+              <a href="australia-awards-dilp-guide.html" class="tl-btn-primary">DILP writing guide →</a>
+              <a href="gte-statement-guide-australia.html" class="tl-btn-ghost">GTE / GS guide</a>
+            </div>
+          </div>
+          <div class="tl-panel-meta">
+            <div class="tl-meta-item"><span class="tl-meta-icon">✅</span><span>Real winning examples included</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">🧑‍⚖️</span><span>Official assessor insights</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">📘</span><span>Full guide — AUD $19</span></div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="tl-panel" id="tlp-4">
+          <div class="tl-panel-icon">🚀</div>
+          <div class="tl-panel-content">
+            <div class="tl-step-tag">Step 05</div>
+            <h3>Submit &amp; prepare to arrive</h3>
+            <p>Once your application is submitted, start planning your arrival. Sort your OSHC health cover, research your city's cost of living, and understand your CRICOS course requirements before you land.</p>
+            <div class="tl-actions">
+              <a href="oshc-compare-quotes.html" class="tl-btn-primary">Compare OSHC prices →</a>
+              <a href="student-budget-calculator.html" class="tl-btn-ghost">Cost of living guide</a>
+            </div>
+          </div>
+          <div class="tl-panel-meta">
+            <div class="tl-meta-item"><span class="tl-meta-icon">🏥</span><span>OSHC mandatory before visa</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">🏙️</span><span>5 cities compared</span></div>
+            <div class="tl-meta-item"><span class="tl-meta-icon">🏛️</span><span>CRICOS registration explained</span></div>
+          </div>
+        </div>
+
+      </div><!-- end panel wrap -->
+
+      <!-- Mobile nav arrows -->
+      <div class="tl-nav">
+        <button class="tl-prev" id="tlPrev" onclick="stepBy(-1)" aria-label="Previous step">←</button>
+        <div class="tl-dots" id="tlDots"></div>
+        <button class="tl-next" id="tlNext" onclick="stepBy(1)" aria-label="Next step">→</button>
       </div>
-    </div>
+
+    </div><!-- end timeline-wrap -->
   </div>
 </section>
 
@@ -1490,7 +1686,84 @@ window.addEventListener('scroll', () => {
     apply();
   });
 })();
-// ── Mobile hamburger ──────────────────────────────────────────────
+// ── Interactive Timeline ─────────────────────────────────────────
+(function(){
+  var STEPS = 5;
+  var current = 0;
+
+  function setStep(n){
+    if(n < 0 || n >= STEPS) return;
+    current = n;
+
+    // Update nodes
+    for(var i=0;i<STEPS;i++){
+      var node = document.getElementById('tln-'+i);
+      if(!node) continue;
+      node.classList.remove('active','done');
+      if(i < n) node.classList.add('done');
+      else if(i === n) node.classList.add('active');
+    }
+
+    // Update panels
+    for(var j=0;j<STEPS;j++){
+      var p = document.getElementById('tlp-'+j);
+      if(p) p.classList.toggle('active', j===n);
+    }
+
+    // Update progress bar
+    var pct = STEPS > 1 ? (n/(STEPS-1))*100 : 0;
+    var bar = document.getElementById('tlProgress');
+    if(bar) bar.style.width = pct + '%';
+
+    // Update dots
+    var dotEls = document.querySelectorAll('.tl-dot-pip');
+    dotEls.forEach(function(d,i){ d.classList.toggle('active', i===n); });
+
+    // Update arrow states
+    var prev = document.getElementById('tlPrev');
+    var next = document.getElementById('tlNext');
+    if(prev) prev.disabled = n === 0;
+    if(next) next.disabled = n === STEPS - 1;
+  }
+
+  function stepBy(delta){ setStep(current + delta); }
+
+  // Build mobile dots
+  var dotsWrap = document.getElementById('tlDots');
+  if(dotsWrap){
+    for(var k=0;k<STEPS;k++){
+      var d = document.createElement('div');
+      d.className = 'tl-dot-pip' + (k===0?' active':'');
+      (function(idx){ d.onclick = function(){ setStep(idx); }; })(k);
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  // Expose globally for onclick
+  window.setStep = setStep;
+  window.stepBy = stepBy;
+
+  // Init
+  setStep(0);
+
+  // Auto-advance on scroll into view (once)
+  var section = document.getElementById('how');
+  var autoPlayed = false;
+  if(section && 'IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting && !autoPlayed){
+        autoPlayed = true;
+        var i = 0;
+        var interval = setInterval(function(){
+          i++;
+          if(i >= STEPS){ clearInterval(interval); setStep(0); return; }
+          setStep(i);
+        }, 600);
+      }
+    },{threshold:0.4});
+    obs.observe(section);
+  }
+})();
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', (e)=>{
