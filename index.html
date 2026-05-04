@@ -348,7 +348,7 @@
 <body>
 
     <div class="search-results" id="searchResults">
-      <div class="search-empty">Start typing to search 35+ pages...</div>
+      
     </div>
     <div class="search-hint">
       <span><kbd>↵</kbd> to open</span>
@@ -391,8 +391,7 @@
       <input class="srch-inp" id="srchInp" placeholder="Search scholarships, guides, tools..." autocomplete="off" spellcheck="false"/>
       <button class="srch-cls" id="srchCls">Esc</button>
     </div>
-    <div id="srchRes"><div class="srch-empty">Start typing to search 35+ pages…</div></div>
-    <div class="srch-foot"><span><kbd>↵</kbd> open</span><span><kbd>Esc</kbd> close</span><span><kbd>Ctrl K</kbd> open anytime</span></div>
+    <div id="srchRes"></div>
   </div>
 </div>
 <nav id="mainNav">
@@ -1210,7 +1209,7 @@ window.addEventListener('scroll', () => {
 
   if(!modal||!btn){ return; } // safety
 
-  var EMPTY = '<div class="srch-empty">Start typing to search 35+ pages…</div>';
+  var EMPTY = "";
 
   function open_(){
     modal.classList.add('open');
