@@ -125,44 +125,31 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 <div class="container">
   <div class="hero-eyebrow">Free · Instant · No sign-up required</div>
   <h1>Compare OSHC Quotes Australia 2026</h1>
-  <p>Enter your course start date, end date, and cover type — get instant estimated prices from all 4 major OSHC providers side by side.</p>
-  <div class="live-badge"><span class="live-dot"></span> Live price comparison · Updated 2026</div>
+  <p>Compare real-time prices from all 4 major OSHC providers. Enter your dates and purchase your OSHC certificate instantly — no sign-up needed.</p>
+  <div class="live-badge"><span class="live-dot"></span> Live prices · Real quotes · Instant purchase</div>
 </div>
 </div>
 
-<!-- CALCULATOR -->
+<!-- KONPARE LIVE EMBED -->
 <div class="container">
 <div class="calculator">
-  <div class="calc-title">Get your OSHC estimate</div>
-  <div class="calc-grid">
-    <div class="field">
-      <label>Course Start Date</label>
-      <input type="date" id="startDate"/>
-    </div>
-    <div class="field">
-      <label>Course End Date</label>
-      <input type="date" id="endDate"/>
-    </div>
-    <div class="field">
-      <label>Cover Type</label>
-      <select id="coverType">
-        <option value="single">Single (just me)</option>
-        <option value="couple">Couple (me + partner)</option>
-        <option value="family">Family (me + partner + kids)</option>
-        <option value="single_parent">Single Parent (me + kids)</option>
-      </select>
-    </div>
+  <div class="calc-title">Get Live OSHC Quotes — All Providers</div>
+  <p style="text-align:center;font-size:15px;color:var(--ink-soft);margin-bottom:24px">Compare real prices from Allianz, Bupa, Medibank and NIB. Enter your dates below and purchase instantly — your certificate arrives within minutes.</p>
+  <div style="border-radius:14px;overflow:hidden;border:1px solid var(--line);min-height:600px">
+    <iframe
+      src="https://usamajadoon.konpare.online/"
+      width="100%"
+      height="700"
+      frameborder="0"
+      scrolling="auto"
+      style="display:block;border:none;border-radius:14px"
+      title="OSHC Live Quote Comparison — Australia Awards Hub"
+      loading="lazy"
+    ></iframe>
   </div>
-  <button class="calc-btn" onclick="calculateOSHC()">Compare Prices Now →</button>
-  <div class="calc-note">⚠️ Prices shown are estimates based on 2026 rates. Always get an exact quote directly from the provider before purchasing.</div>
-
-  <!-- RESULTS -->
-  <div class="results" id="results">
-    <div class="results-title" id="resultsTitle"></div>
-    <div class="results-sub" id="resultsSub"></div>
-    <div class="results-grid" id="resultsGrid"></div>
-    <p style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:20px">Prices are estimates only. Click "Get exact quote" to see the official price from each provider before purchasing.</p>
-  </div>
+  <p style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:12px">
+    Powered by <a href="https://usamajadoon.konpare.online/" target="_blank" rel="noopener" style="color:var(--terracotta-deep)">KONPARE</a> · All 4 government-approved OSHC providers · Secure payment · Certificate within minutes
+  </p>
 </div>
 </div>
 
@@ -260,133 +247,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 </div></div></footer>
 
 <script>
-// ── 2026 OSHC daily rates (AUD) by provider and cover type ────────
-// Based on publicly available approximate annual rates
-const RATES = {
-  allianz: { single: 1.85, couple: 3.70, family: 4.90, single_parent: 3.50 },
-  bupa:    { single: 2.00, couple: 4.00, family: 5.20, single_parent: 3.70 },
-  medibank:{ single: 1.92, couple: 3.84, family: 5.00, single_parent: 3.60 },
-  nib:     { single: 1.75, couple: 3.50, family: 4.70, single_parent: 3.30 },
-};
-
-const PROVIDERS = [
-  {
-    key: 'nib',
-    name: 'NIB',
-    color: '#FF6600',
-    tag: 'Lowest price',
-    tagClass: 'cheapest',
-    badge: 'cheapest',
-    badgeLabel: '✓ Lowest price',
-    quoteUrl: 'https://www.nib.com.au/overseas-students',
-    btnColor: '#FF6600',
-  },
-  {
-    key: 'allianz',
-    name: 'Allianz Care',
-    color: '#003781',
-    tag: 'Most popular',
-    tagClass: 'popular',
-    badge: 'popular',
-    badgeLabel: '★ Most popular',
-    quoteUrl: 'https://www.allianzcare.com.au/en/students/oshc.html',
-    btnColor: '#003781',
-  },
-  {
-    key: 'medibank',
-    name: 'Medibank',
-    color: '#E4003A',
-    tag: '',
-    tagClass: '',
-    badge: '',
-    quoteUrl: 'https://www.medibank.com.au/overseas-student-health-cover/',
-    btnColor: '#E4003A',
-  },
-  {
-    key: 'bupa',
-    name: 'Bupa',
-    color: '#0057A8',
-    tag: '',
-    tagClass: '',
-    badge: '',
-    quoteUrl: 'https://www.bupa.com.au/health-insurance/oshc',
-    btnColor: '#0057A8',
-  },
-];
-
-function daysBetween(d1, d2) {
-  return Math.round((new Date(d2) - new Date(d1)) / (1000 * 60 * 60 * 24));
-}
-
-function formatPrice(n) {
-  return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
-
-function coverLabel(ct) {
-  return {single:'Single',couple:'Couple',family:'Family',single_parent:'Single Parent'}[ct];
-}
-
-function calculateOSHC() {
-  const start = document.getElementById('startDate').value;
-  const end = document.getElementById('endDate').value;
-  const cover = document.getElementById('coverType').value;
-
-  if (!start || !end) {
-    alert('Please enter both your course start and end dates.');
-    return;
-  }
-  const days = daysBetween(start, end);
-  if (days <= 0) {
-    alert('End date must be after start date.');
-    return;
-  }
-
-  const months = (days / 30.44).toFixed(1);
-  const years = (days / 365.25).toFixed(2);
-
-  const results = document.getElementById('results');
-  const grid = document.getElementById('resultsGrid');
-  const title = document.getElementById('resultsTitle');
-  const sub = document.getElementById('resultsSub');
-
-  title.textContent = `Estimated OSHC prices for ${months} months (${days} days)`;
-  sub.textContent = `${coverLabel(cover)} cover · Course: ${new Date(start).toLocaleDateString('en-AU', {day:'numeric',month:'short',year:'numeric'})} → ${new Date(end).toLocaleDateString('en-AU', {day:'numeric',month:'short',year:'numeric'})}`;
-
-  grid.innerHTML = '';
-
-  PROVIDERS.forEach(p => {
-    const daily = RATES[p.key][cover];
-    const total = daily * days;
-    const monthly = (total / parseFloat(months));
-
-    const card = document.createElement('div');
-    card.className = 'result-card' + (p.tagClass ? ' ' + p.tagClass : '');
-    card.innerHTML = `
-      ${p.badge === 'cheapest' ? `<div class="best-badge">${p.badgeLabel}</div>` : ''}
-      ${p.badge === 'popular' ? `<div class="pop-badge">${p.badgeLabel}</div>` : ''}
-      <div class="provider-initial" style="background:${p.color}">${p.name[0]}</div>
-      <div class="provider-name-card">${p.name}</div>
-      <div class="price-display">${formatPrice(total)}</div>
-      <div class="price-period">Total for ${months} months</div>
-      <div class="monthly-price">≈ ${formatPrice(monthly)} / month</div>
-      <a href="${p.quoteUrl}" target="_blank" rel="noopener" class="get-quote-btn"
-         style="background:${p.color};color:white">Get exact quote →</a>
-    `;
-    grid.appendChild(card);
-  });
-
-  results.classList.add('show');
-  results.scrollIntoView({behavior:'smooth', block:'nearest'});
-}
-
-// Set default dates (today + 2 years)
-window.addEventListener('DOMContentLoaded', () => {
-  const today = new Date();
-  const twoYears = new Date(today);
-  twoYears.setFullYear(twoYears.getFullYear() + 2);
-  document.getElementById('startDate').value = today.toISOString().split('T')[0];
-  document.getElementById('endDate').value = twoYears.toISOString().split('T')[0];
-});
+// KONPARE handles live pricing
 </script>
 </body>
 </html>
