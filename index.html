@@ -328,6 +328,100 @@
   }
 
 
+
+  /* ── Sticky DILP Widget ──────────────────────── */
+  .sticky-widget{
+    position:fixed;right:24px;bottom:32px;z-index:500;
+    width:220px;background:var(--forest);border-radius:18px;
+    box-shadow:0 8px 32px rgba(31,58,46,0.35);
+    overflow:hidden;transition:transform .3s ease,opacity .3s ease;
+    transform:translateY(120%);opacity:0;
+  }
+  .sticky-widget.show{transform:translateY(0);opacity:1}
+  .sticky-widget-head{
+    background:var(--terracotta);padding:10px 14px 8px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .sw-fire{font-size:14px}
+  .sw-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(250,243,231,0.85)}
+  .sw-close{
+    background:none;border:none;color:rgba(250,243,231,0.7);
+    cursor:pointer;font-size:16px;line-height:1;padding:0;
+    transition:color .15s;
+  }
+  .sw-close:hover{color:white}
+  .sticky-widget-body{padding:14px 16px 16px}
+  .sw-title{
+    font-family:'Fraunces',serif;font-size:15px;font-weight:600;
+    color:white;line-height:1.3;margin-bottom:8px;
+  }
+  .sw-price{
+    font-family:'Fraunces',serif;font-size:22px;font-weight:600;
+    color:var(--gold);margin-bottom:10px;
+  }
+  .sw-price span{font-size:12px;font-weight:400;color:rgba(250,243,231,0.6);font-family:'Plus Jakarta Sans',sans-serif}
+  .sw-bullets{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:5px}
+  .sw-bullets li{font-size:11px;color:rgba(250,243,231,0.75);display:flex;gap:6px;line-height:1.4}
+  .sw-bullets li::before{content:"✓";color:var(--gold);font-weight:700;flex-shrink:0}
+  .sw-btn{
+    display:block;text-align:center;background:var(--gold);color:var(--ink);
+    padding:10px 14px;border-radius:10px;font-size:13px;font-weight:700;
+    text-decoration:none;transition:all .2s;
+  }
+  .sw-btn:hover{background:#d4a040;transform:translateY(-1px)}
+  .sw-sub{text-align:center;font-size:10px;color:rgba(250,243,231,0.45);margin-top:6px}
+
+  /* ── Exit-intent popup ───────────────────────── */
+  #exitPopup{
+    display:none;position:fixed;inset:0;z-index:9998;
+    background:rgba(35,24,18,0.6);backdrop-filter:blur(4px);
+    align-items:center;justify-content:center;padding:24px;
+  }
+  #exitPopup.open{display:flex;animation:epFade .2s ease}
+  @keyframes epFade{from{opacity:0}to{opacity:1}}
+  .ep-box{
+    background:white;border-radius:24px;max-width:480px;width:100%;
+    overflow:hidden;box-shadow:0 24px 64px rgba(35,24,18,0.3);
+    animation:epSlide .25s ease;
+  }
+  @keyframes epSlide{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+  .ep-head{
+    background:linear-gradient(135deg,var(--forest),#2D5A44);
+    padding:32px 32px 24px;text-align:center;
+  }
+  .ep-emoji{font-size:48px;display:block;margin-bottom:12px}
+  .ep-head h2{
+    font-family:'Fraunces',serif;font-size:26px;font-weight:600;
+    color:white;margin-bottom:8px;line-height:1.2;
+  }
+  .ep-head p{font-size:15px;color:rgba(250,243,231,0.8);margin:0;line-height:1.6}
+  .ep-body{padding:24px 32px 28px}
+  .ep-price-row{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    margin-bottom:20px;
+  }
+  .ep-price{font-family:'Fraunces',serif;font-size:40px;font-weight:600;color:var(--forest)}
+  .ep-price-note{font-size:13px;color:var(--ink-soft);line-height:1.5}
+  .ep-features{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+  .ep-feat{
+    background:var(--cream);border-radius:10px;padding:10px 12px;
+    font-size:13px;color:var(--ink);font-weight:500;
+    display:flex;align-items:center;gap:7px;
+  }
+  .ep-btn-buy{
+    display:block;text-align:center;background:var(--terracotta);color:white;
+    padding:15px;border-radius:12px;font-size:16px;font-weight:700;
+    text-decoration:none;margin-bottom:10px;transition:all .2s;
+  }
+  .ep-btn-buy:hover{background:var(--terracotta-deep);transform:translateY(-1px)}
+  .ep-dismiss{
+    display:block;text-align:center;font-size:13px;color:var(--ink-soft);
+    cursor:pointer;background:none;border:none;font-family:inherit;
+    width:100%;padding:4px;transition:color .15s;
+  }
+  .ep-dismiss:hover{color:var(--ink)}
+
+  @media(max-width:900px){.sticky-widget{display:none}}
   /* ── Accordion Services ──────────────────────── */
   .acc-grid{display:flex;flex-direction:column;gap:12px}
   .acc-card{
@@ -573,6 +667,53 @@
   <div class="mobile-section">Shop</div>
   <a href="dilp-guide-product.html" style="color:var(--terracotta);font-weight:700">📘 DILP Guide — AUD $19</a>
   <a href="contact.html">✉️ Contact</a>
+</div>
+
+
+<!-- STICKY DILP WIDGET -->
+<div class="sticky-widget" id="stickyWidget">
+  <div class="sticky-widget-head">
+    <span class="sw-fire">🔥</span>
+    <span class="sw-label">Most popular guide</span>
+    <button class="sw-close" onclick="closeWidget()" aria-label="Close">×</button>
+  </div>
+  <div class="sticky-widget-body">
+    <div class="sw-title">The Insider DILP Guide That Gets You Selected</div>
+    <div class="sw-price">AUD $19 <span>· One-time</span></div>
+    <ul class="sw-bullets">
+      <li>Real winning examples</li>
+      <li>Official assessor insights</li>
+      <li>Section-by-section guide</li>
+      <li>Instant PDF download</li>
+    </ul>
+    <a href="https://buy.stripe.com/cNi4gy9vxbQA1EO3i56Vq00" class="sw-btn">Buy now →</a>
+    <div class="sw-sub">🔒 Secure · Instant download</div>
+  </div>
+</div>
+
+<!-- EXIT-INTENT POPUP -->
+<div id="exitPopup">
+  <div class="ep-box">
+    <div class="ep-head">
+      <span class="ep-emoji">📘</span>
+      <h2>Before you go — don't leave empty-handed</h2>
+      <p>The DILP is the most important document in your Australia Awards application. Most applicants get it wrong. This guide shows you exactly what wins.</p>
+    </div>
+    <div class="ep-body">
+      <div class="ep-price-row">
+        <div class="ep-price">AUD $19</div>
+        <div class="ep-price-note">One-time payment<br/>Instant PDF download</div>
+      </div>
+      <div class="ep-features">
+        <div class="ep-feat">✅ Real winning examples</div>
+        <div class="ep-feat">🧑‍⚖️ Assessor insights</div>
+        <div class="ep-feat">📋 11 chapters</div>
+        <div class="ep-feat">⚡ Instant download</div>
+      </div>
+      <a href="https://buy.stripe.com/cNi4gy9vxbQA1EO3i56Vq00" class="ep-btn-buy">Get the guide — AUD $19 →</a>
+      <button class="ep-dismiss" onclick="closeExitPopup()">No thanks, I'll figure it out myself</button>
+    </div>
+  </div>
 </div>
 
 <!-- SEARCH MODAL -->
@@ -1981,6 +2122,63 @@ mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
 }));
 </script>
 
+<script>
+// ── Sticky DILP widget + exit-intent popup ───────────────────────
+(function(){
+  var widget = document.getElementById('stickyWidget');
+  var popup  = document.getElementById('exitPopup');
+  var widgetDismissed = false;
+  var popupShown = false;
+  var widgetTimer;
+
+  // Show widget after 8 seconds
+  widgetTimer = setTimeout(function(){
+    if(!widgetDismissed && widget) widget.classList.add('show');
+  }, 8000);
+
+  // Also show when user scrolls past 40% of page
+  window.addEventListener('scroll', function(){
+    if(widgetDismissed) return;
+    var scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if(scrollPct > 0.4 && widget) widget.classList.add('show');
+  }, {passive:true});
+
+  window.closeWidget = function(){
+    widgetDismissed = true;
+    clearTimeout(widgetTimer);
+    if(widget){ widget.classList.remove('show'); }
+  };
+
+  // Exit-intent on mouse leave (desktop only)
+  var exitTriggered = false;
+  document.addEventListener('mouseleave', function(e){
+    if(e.clientY <= 0 && !exitTriggered && !popupShown){
+      // Only show if user has been on page for at least 10 seconds
+      if(performance.now() > 10000){
+        exitTriggered = true;
+        popupShown = true;
+        if(popup) popup.classList.add('open');
+      }
+    }
+  });
+
+  // Close popup on backdrop click
+  if(popup){
+    popup.addEventListener('click', function(e){
+      if(e.target === popup) closeExitPopup();
+    });
+  }
+
+  window.closeExitPopup = function(){
+    if(popup) popup.classList.remove('open');
+  };
+
+  // Esc key closes popup
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeExitPopup();
+  });
+})();
+
 // ── Accordion Services ───────────────────────────────────────────
 (function(){
   var openIdx = -1;
@@ -2000,6 +2198,7 @@ mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   var first = document.getElementById('acc-2'); // featured card
   if(first) first.classList.add('open');
 })();
+</script>
 
 </body>
 </html>
