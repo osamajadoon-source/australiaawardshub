@@ -280,5 +280,20 @@
   });
 })();
 </script>
+<script>
+(function(){
+  var _loaded=false;
+  function _loadAds(){
+    if(_loaded)return; _loaded=true;
+    var s=document.createElement('script');
+    s.async=true; s.crossOrigin='anonymous';
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741';
+    document.head.appendChild(s);
+  }
+  window.addEventListener('scroll',_loadAds,{once:true,passive:true});
+  window.addEventListener('touchstart',_loadAds,{once:true,passive:true});
+  setTimeout(_loadAds,3000);
+})();
+</script>
 </body>
 </html>

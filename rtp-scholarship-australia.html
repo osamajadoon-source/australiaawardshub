@@ -13,7 +13,6 @@
 <meta property="og:type" content="article"/>
 <link rel="icon" type="image/png" href="logo.png"/>
 <meta name='impact-site-verification' value='9f161fae-7941-495e-841b-2c90dd5c1fdf'>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741" crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL2YCR2ZTZ"></script>
 <script>
@@ -474,6 +473,22 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
     var n=document.getElementById('mainNav');
     if(n){n.classList.toggle('scrolled',window.scrollY>40);}
   });
+})();
+</script>
+<script>
+(function(){
+  var _loaded=false;
+  function _loadAds(){
+    if(_loaded)return; _loaded=true;
+    var s=document.createElement('script');
+    s.async=true; s.crossOrigin='anonymous';
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741';
+    document.head.appendChild(s);
+  }
+  // Fire on first scroll (passive, once) or after 3 s — whichever comes first
+  window.addEventListener('scroll',_loadAds,{once:true,passive:true});
+  window.addEventListener('touchstart',_loadAds,{once:true,passive:true});
+  setTimeout(_loadAds,3000);
 })();
 </script>
 </body>
