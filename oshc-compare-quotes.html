@@ -128,15 +128,19 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 </head>
 <body>
 
-<nav><div class="container nav-inner">
+<nav id="mainNav" style="position:sticky;top:0;z-index:200;background:rgba(250,243,231,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:box-shadow .3s">
+<div class="container nav-inner">
 <a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Australia Awards Hub"/></span>Australia Awards Hub</a>
-<ul class="nav-links">
-<li><a href="oshc-australia-international-students.html">OSHC Guide</a></li>
-<li><a href="australia-student-visa-guide.html">Visa Guide</a></li>
-<li><a href="contact.html">Contact</a></li>
+<ul class="nav-links" style="display:flex;gap:4px;list-style:none;align-items:center">
+<li style="position:relative"><a href="index.html#scholarships" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:8px;display:inline-block">Scholarships</a></li>
+<li><a href="oshc-australia-international-students.html" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:8px;display:inline-block">OSHC Guide</a></li>
+<li><a href="australia-student-visa-guide.html" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:8px;display:inline-block">Visa Guide</a></li>
+<li><a href="student-budget-calculator.html" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:8px;display:inline-block">Budget Calculator</a></li>
+<li><a href="contact.html" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:8px;display:inline-block">Contact</a></li>
 </ul>
-<a href="contact.html" class="btn btn-primary">Get guidance</a>
-</div></nav>
+<a href="dilp-guide-product.html" class="btn btn-primary" style="font-size:13px;padding:9px 18px;background:var(--terracotta)">📘 DILP Guide</a>
+</div>
+</nav>
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
   <ol class="breadcrumb-list">
     <li><a href="index.html">Home</a></li>
@@ -144,6 +148,41 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
     <li><span>Compare OSHC Quotes</span></li>
   </ol>
 </nav>
+
+
+<!-- WHAT IS OSHC -->
+<section style="padding:64px 0 0">
+<div class="container">
+  <div class="section-label">Background</div>
+  <h2>What is OSHC — and who needs it?</h2>
+  <p style="font-size:16px;color:var(--ink-soft);max-width:760px;line-height:1.7;margin-bottom:20px">Overseas Student Health Cover (OSHC) is a mandatory health insurance product for all international students studying in Australia on a Subclass 500 student visa. It is a legal requirement — you cannot obtain a student visa without it, and you must maintain it for the entire duration of your visa. OSHC covers you for hospital treatment, GP visits, emergency ambulance services, and some prescription medicines while you are in Australia.</p>
+  <p style="font-size:16px;color:var(--ink-soft);max-width:760px;line-height:1.7;margin-bottom:20px">OSHC is not the same as Medicare. International students cannot access Australia's Medicare system (with very limited exceptions for students from countries with reciprocal health agreements). OSHC fills this gap by providing equivalent health coverage for the duration of your studies.</p>
+  <p style="font-size:16px;color:var(--ink-soft);max-width:760px;line-height:1.7;margin-bottom:40px">There are four government-approved OSHC providers in Australia: Allianz Care, Bupa, Medibank, and NIB. All four meet the Australian Government's minimum standards for OSHC. The differences between them lie in price, GP network size, prescription medicine coverage, and digital services. Use the tool above to compare current prices and buy instantly — your certificate arrives within minutes of purchase.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:40px">
+    <div style="background:white;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center">
+      <div style="width:44px;height:44px;background:#003781;border-radius:10px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:16px;font-family:'Fraunces',serif">A</div>
+      <div style="font-weight:700;font-size:14px;margin-bottom:4px">Allianz Care</div>
+      <div style="font-size:12px;color:var(--ink-soft)">Widest GP &amp; hospital network. Gap-free services available.</div>
+    </div>
+    <div style="background:white;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center">
+      <div style="width:44px;height:44px;background:#0057A8;border-radius:10px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:16px;font-family:'Fraunces',serif">B</div>
+      <div style="font-weight:700;font-size:14px;margin-bottom:4px">Bupa</div>
+      <div style="font-size:12px;color:var(--ink-soft)">100% MBS GP cover. Strong digital health tools and app.</div>
+    </div>
+    <div style="background:white;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center">
+      <div style="width:44px;height:44px;background:#E4003A;border-radius:10px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:16px;font-family:'Fraunces',serif">M</div>
+      <div style="font-weight:700;font-size:14px;margin-bottom:4px">Medibank</div>
+      <div style="font-size:12px;color:var(--ink-soft)">Highest medicine cover (up to $70/item). Large provider.</div>
+    </div>
+    <div style="background:white;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center">
+      <div style="width:44px;height:44px;background:#FF6600;border-radius:10px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:16px;font-family:'Fraunces',serif">N</div>
+      <div style="font-weight:700;font-size:14px;margin-bottom:4px">NIB</div>
+      <div style="font-size:12px;color:var(--ink-soft)">100% MBS GP cover. Often most competitively priced.</div>
+    </div>
+  </div>
+</div>
+</section>
 
 
 <!-- HERO -->
@@ -254,6 +293,77 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 </div>
 </section>
 
+<!-- COST RANGES -->
+<section style="background:var(--cream-2);padding:64px 0">
+<div class="container">
+  <div class="section-label">Estimated costs</div>
+  <h2>Approximate OSHC annual costs by coverage type</h2>
+  <p style="font-size:16px;color:var(--ink-soft);max-width:760px;margin-bottom:28px;line-height:1.7">OSHC prices vary by provider, coverage type, and the length of your policy. These are approximate 2026 annual ranges across all four providers — use the live comparator above for your exact dates and exact prices.</p>
+  <div style="overflow-x:auto;border-radius:16px;border:1px solid var(--line)">
+  <table style="width:100%;border-collapse:collapse;background:white;min-width:580px">
+    <thead><tr style="border-bottom:1px solid var(--line)">
+      <th style="padding:14px 18px;text-align:left;font-size:13px;font-weight:700">Coverage type</th>
+      <th style="padding:14px 18px;text-align:center;font-size:13px;font-weight:700">Who it covers</th>
+      <th style="padding:14px 18px;text-align:center;font-size:13px;font-weight:700">Approximate annual cost</th>
+      <th style="padding:14px 18px;text-align:center;font-size:13px;font-weight:700">Monthly equivalent</th>
+    </tr></thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--line)"><td style="padding:13px 18px;font-weight:600">Single</td><td style="padding:13px 18px;text-align:center;font-size:14px;color:var(--ink-soft)">Student only</td><td style="padding:13px 18px;text-align:center;font-weight:600">AUD 600 – 900</td><td style="padding:13px 18px;text-align:center;color:var(--ink-soft)">AUD 50 – 75</td></tr>
+      <tr style="border-bottom:1px solid var(--line)"><td style="padding:13px 18px;font-weight:600">Couple</td><td style="padding:13px 18px;text-align:center;font-size:14px;color:var(--ink-soft)">Student + spouse/partner</td><td style="padding:13px 18px;text-align:center;font-weight:600">AUD 1,400 – 2,000</td><td style="padding:13px 18px;text-align:center;color:var(--ink-soft)">AUD 117 – 167</td></tr>
+      <tr style="border-bottom:1px solid var(--line)"><td style="padding:13px 18px;font-weight:600">Family</td><td style="padding:13px 18px;text-align:center;font-size:14px;color:var(--ink-soft)">Student + spouse + children</td><td style="padding:13px 18px;text-align:center;font-weight:600">AUD 2,500 – 4,000</td><td style="padding:13px 18px;text-align:center;color:var(--ink-soft)">AUD 208 – 333</td></tr>
+      <tr><td style="padding:13px 18px;font-weight:600">Single parent</td><td style="padding:13px 18px;text-align:center;font-size:14px;color:var(--ink-soft)">Student + dependent children</td><td style="padding:13px 18px;text-align:center;font-weight:600">AUD 1,200 – 1,800</td><td style="padding:13px 18px;text-align:center;color:var(--ink-soft)">AUD 100 – 150</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="font-size:13px;color:var(--ink-soft);margin-top:14px">Prices vary significantly between providers and policy lengths. Longer policies (2+ years) typically offer a lower per-day rate. Always use the live comparator above for your exact dates.</p>
+</div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:64px 0">
+<div class="container">
+  <div class="section-label">FAQ</div>
+  <h2>Frequently asked questions about OSHC</h2>
+  <p style="font-size:16px;color:var(--ink-soft);max-width:680px;margin-bottom:32px;line-height:1.7">Common questions from international students about OSHC requirements, costs, and coverage.</p>
+  <div style="max-width:820px">
+    <div class="faq-item" style="border-bottom:1px solid var(--line)"><button class="faq-q" style="width:100%;background:none;border:none;padding:18px 0;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left">Is OSHC compulsory for all international students?<span class="faq-icon" style="font-size:22px;color:var(--terracotta);flex-shrink:0;transition:transform .2s">+</span></button><div class="faq-a" style="display:none;padding:0 0 18px"><p style="margin:0;font-size:15px;color:var(--ink-soft);line-height:1.7">Yes — OSHC is a mandatory visa condition for all international students on a Subclass 500 student visa. You must have OSHC that covers the full duration of your visa, starting on or before your course commencement date. Failure to maintain OSHC is a breach of your visa conditions and could result in your visa being cancelled.</p></div></div>
+    <div class="faq-item" style="border-bottom:1px solid var(--line)"><button class="faq-q" style="width:100%;background:none;border:none;padding:18px 0;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left">Can I choose any OSHC provider or must I use the one my university recommends?<span class="faq-icon" style="font-size:22px;color:var(--terracotta);flex-shrink:0;transition:transform .2s">+</span></button><div class="faq-a" style="display:none;padding:0 0 18px"><p style="margin:0;font-size:15px;color:var(--ink-soft);line-height:1.7">You can use any of the four government-approved OSHC providers — you are not required to use the provider your university recommends or defaults to during enrolment. Universities suggest a preferred provider for convenience, but you have full freedom of choice. Compare prices before committing — you may find a meaningfully lower price from a different provider for identical coverage.</p></div></div>
+    <div class="faq-item" style="border-bottom:1px solid var(--line)"><button class="faq-q" style="width:100%;background:none;border:none;padding:18px 0;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left">What does OSHC actually cover — and what does it not cover?<span class="faq-icon" style="font-size:22px;color:var(--terracotta);flex-shrink:0;transition:transform .2s">+</span></button><div class="faq-a" style="display:none;padding:0 0 18px"><p style="margin:0;font-size:15px;color:var(--ink-soft);line-height:1.7">OSHC covers hospital treatment (shared ward), GP visits (at a percentage of the Medicare Benefit Schedule), emergency ambulance, and some prescription medicines. It does not cover dental treatment (unless emergency), optical, physiotherapy, or mental health services beyond basic GP referrals. Some providers offer higher-tier OSHC with additional dental and optical cover for an extra cost. Check each provider's product disclosure statement for current coverage details.</p></div></div>
+    <div class="faq-item" style="border-bottom:1px solid var(--line)"><button class="faq-q" style="width:100%;background:none;border:none;padding:18px 0;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left">How do I extend my OSHC if my course is extended?<span class="faq-icon" style="font-size:22px;color:var(--terracotta);flex-shrink:0;transition:transform .2s">+</span></button><div class="faq-a" style="display:none;padding:0 0 18px"><p style="margin:0;font-size:15px;color:var(--ink-soft);line-height:1.7">Contact your OSHC provider directly — either through their app, website, or phone — to extend your policy to match your new course end date. You must extend your OSHC before the current policy expires; a gap in cover is a visa condition breach even if unintentional. Most providers allow online extensions within minutes. You will need your updated Confirmation of Enrolment (CoE) showing the new end date.</p></div></div>
+    <div class="faq-item" style="border-bottom:1px solid var(--line)"><button class="faq-q" style="width:100%;background:none;border:none;padding:18px 0;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left">Can I get a refund on OSHC if I leave Australia early?<span class="faq-icon" style="font-size:22px;color:var(--terracotta);flex-shrink:0;transition:transform .2s">+</span></button><div class="faq-a" style="display:none;padding:0 0 18px"><p style="margin:0;font-size:15px;color:var(--ink-soft);line-height:1.7">Yes — most OSHC providers allow a partial refund for the unused portion of your policy if you complete your course early, your visa is refused, or you withdraw from your course. You must apply for the refund before leaving Australia and provide supporting documentation. Contact your provider directly — refund policies and conditions vary slightly between providers. Administrative fees may apply.</p></div></div>
+    <div class="faq-item" style="border-bottom:1px solid var(--line)"><button class="faq-q" style="width:100%;background:none;border:none;padding:18px 0;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left">Does my OSHC cover my family in Australia?<span class="faq-icon" style="font-size:22px;color:var(--terracotta);flex-shrink:0;transition:transform .2s">+</span></button><div class="faq-a" style="display:none;padding:0 0 18px"><p style="margin:0;font-size:15px;color:var(--ink-soft);line-height:1.7">A single OSHC policy only covers you — it does not cover your spouse or children. If your spouse and dependent children are accompanying you to Australia on secondary student visas, they must also have OSHC. All four providers offer couple and family OSHC policies — family cover is significantly more expensive than single cover. Compare family policy prices carefully using the live comparator above as price differences between providers are larger for family cover.</p></div></div>
+    <div class="faq-item"><button class="faq-q" style="width:100%;background:none;border:none;padding:18px 0;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left">When should I buy OSHC?<span class="faq-icon" style="font-size:22px;color:var(--terracotta);flex-shrink:0;transition:transform .2s">+</span></button><div class="faq-a" style="display:none;padding:0 0 18px"><p style="margin:0;font-size:15px;color:var(--ink-soft);line-height:1.7">Buy OSHC after you receive your Confirmation of Enrolment (CoE), which contains your official course start and end dates. Do not buy OSHC before receiving your CoE — if you estimate the dates and get them wrong, you may end up with a gap in cover or paying for unnecessary extra months. Once you have your CoE, buy OSHC immediately so you can attach the certificate to your student visa application.</p></div></div>
+  </div>
+</div>
+</section>
+<!-- WHICH PROVIDER -->
+<section style="padding:0 0 64px">
+<div class="container">
+  <div class="section-label">Which provider?</div>
+  <h2>Which OSHC provider should you choose?</h2>
+  <p style="font-size:16px;color:var(--ink-soft);max-width:760px;margin-bottom:28px;line-height:1.7">All four providers meet Australian Government minimum standards — so the decision comes down to what matters most to you: price, network coverage, GP rebate percentage, or digital experience. Here is a quick guide based on what different types of students typically prioritise.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px">
+    <div style="background:white;border:1px solid var(--line);border-radius:14px;padding:20px 22px">
+      <div style="font-weight:700;font-size:15px;margin-bottom:6px">If price is your priority → NIB or Allianz</div>
+      <div style="font-size:14px;color:var(--ink-soft);line-height:1.6">NIB consistently offers competitive single-student pricing, particularly for shorter policies. Allianz is often competitive for family cover. Compare both using the live tool above with your exact dates.</div>
+    </div>
+    <div style="background:white;border:1px solid var(--line);border-radius:14px;padding:20px 22px">
+      <div style="font-weight:700;font-size:15px;margin-bottom:6px">If GP coverage matters → Bupa or NIB</div>
+      <div style="font-size:14px;color:var(--ink-soft);line-height:1.6">Both Bupa and NIB pay 100% of the Medicare Benefit Schedule (MBS) for GP visits. Allianz and Medibank pay 85%, meaning you may have a small out-of-pocket gap at some GP clinics.</div>
+    </div>
+    <div style="background:white;border:1px solid var(--line);border-radius:14px;padding:20px 22px">
+      <div style="font-weight:700;font-size:15px;margin-bottom:6px">If network size matters → Allianz</div>
+      <div style="font-size:14px;color:var(--ink-soft);line-height:1.6">Allianz has the widest hospital and GP network of any OSHC provider, and is the only provider offering gap-free services at member facilities — meaning zero out-of-pocket cost at participating providers.</div>
+    </div>
+    <div style="background:white;border:1px solid var(--line);border-radius:14px;padding:20px 22px">
+      <div style="font-weight:700;font-size:15px;margin-bottom:6px">If prescription medicines matter → Medibank</div>
+      <div style="font-size:14px;color:var(--ink-soft);line-height:1.6">Medibank covers up to AUD 70 per prescription item — higher than the AUD 50 cap offered by the other three providers. If you take regular prescription medication, this difference is worth factoring in.</div>
+    </div>
+  </div>
+  <p style="font-size:14px;color:var(--ink-soft);margin-top:16px;line-height:1.6">The best approach is to use the live comparator with your exact dates, then review the cheapest 1–2 options against the features table above. For most single students, the price difference between providers is AUD 50–150 per year — meaningful but not decisive. For families, the difference can be AUD 300–600 per year.</p>
+</div>
+</section>
+
 <!-- CTA -->
 <div class="container">
 <div class="cta-band">
@@ -273,7 +383,20 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 </div></div></footer>
 
 <script>
-// KONPARE handles live pricing
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const isOpen=item.style.display==='block'||btn.nextElementSibling.style.display==='block';
+    const ans=btn.nextElementSibling;
+    const icon=btn.querySelector('.faq-icon');
+    if(ans.style.display==='block'){ans.style.display='none';icon.style.transform='';}
+    else{ans.style.display='block';icon.style.transform='rotate(45deg)';}
+  });
+});
+window.addEventListener('scroll',()=>{
+  const n=document.getElementById('mainNav');
+  if(n)n.style.boxShadow=window.scrollY>40?'0 2px 20px rgba(35,24,18,0.10)':'none';
+});
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f9741cb8ce92234',t:'MTc3ODM5ODQxOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
