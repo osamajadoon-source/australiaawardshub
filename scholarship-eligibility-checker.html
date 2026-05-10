@@ -123,18 +123,79 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
   .breadcrumb-list li:last-child span{color:var(--ink);font-weight:600}
 
 </style>
+
+<style id="aa-nav-css">
+.aa-nav-links{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+.aa-nl{color:#231812;text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:4px;transition:background .2s,color .2s;white-space:nowrap;font-family:inherit}
+.aa-nl:hover{background:#F2E7D2;color:#C75A3C}
+.aa-has-drop{position:relative}
+.aa-drop{display:none;position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid rgba(35,24,18,0.12);border-radius:16px;padding:20px;box-shadow:0 4px 6px rgba(35,24,18,0.06),0 20px 40px rgba(35,24,18,0.12);z-index:300;gap:24px;min-width:220px}
+.aa-has-drop:hover .aa-drop{display:flex}
+.aa-dc{display:flex;flex-direction:column;gap:2px;min-width:180px}
+.aa-dh{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#5C4A3E;padding:4px 10px;margin-bottom:4px}
+.aa-dc a{font-size:14px;color:#231812;text-decoration:none;padding:7px 10px;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap;display:block}
+.aa-dc a:hover{background:#F2E7D2;color:#C75A3C}
+.aa-hamburger span{display:block;width:22px;height:2px;background:#231812;border-radius:2px}
+#mainNav.scrolled{box-shadow:0 2px 20px rgba(35,24,18,0.10);background:rgba(250,243,231,0.98)}
+@media(max-width:900px){.aa-nav-links{display:none!important}.aa-hamburger{display:flex!important}}
+</style>
 </head>
 <body>
 
-<nav><div class="container-wide nav-inner">
-<a href="/" class="logo"><span class="logo-mark"><img src="logo.png" alt="Australia Awards Hub"/></span>Australia Awards Hub</a>
-<ul class="nav-links">
-<li><a href="/#scholarships">Scholarships</a></li>
-<li><a href="student-budget-calculator"">Budget Calculator</a></li>
-<li><a href="contact"">Contact</a></li>
+<nav id="mainNav" style="position:sticky;top:0;z-index:200;background:rgba(250,243,231,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(35,24,18,0.12);transition:box-shadow .3s ease">
+<div style="max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+<a href="/" style="font-family:'Fraunces',serif;font-weight:600;font-size:20px;letter-spacing:-0.02em;display:flex;align-items:center;gap:12px;text-decoration:none;color:#231812">
+<span style="width:52px;height:52px;flex-shrink:0;display:block"><img src="logo.png" alt="Australia Awards Hub" style="width:100%;height:100%;object-fit:contain;display:block"/></span>Australia Awards Hub</a>
+<ul class="aa-nav-links">
+<li class="aa-has-drop"><a href="/#scholarships" class="aa-nl">Scholarships <span style="font-size:10px;opacity:.5">&#9662;</span></a>
+<div class="aa-drop">
+<div class="aa-dc"><div class="aa-dh">Top Scholarships</div>
+<a href="australia-awards-scholarship-2027">Australia Awards 2027</a>
+<a href="rtp-scholarship-australia">RTP Scholarship</a>
+<a href="fully-funded-scholarships-australia">Fully Funded Guide</a>
+<a href="melbourne-graduate-research-scholarship">Melbourne (MGRS)</a>
+<a href="sydney-usydis-scholarship">Sydney (USYDIS)</a>
+<a href="monash-graduate-scholarship">Monash (MGS)</a></div>
+<div class="aa-dc"><div class="aa-dh">More Scholarships</div>
+<a href="anu-chancellors-international-scholarship">ANU Chancellor&#39;s</a>
+<a href="unsw-scientia-coursework-scholarship">UNSW Scientia</a>
+<a href="uq-international-excellence-scholarship">UQ Excellence</a>
+<a href="monash-international-merit-scholarship">Monash Merit</a>
+<a href="rmit-future-leaders-scholarship">RMIT Future Leaders</a>
+<a href="destination-australia-scholarships">Destination Australia</a></div>
+</div></li>
+<li class="aa-has-drop"><a href="/#blog" class="aa-nl">Guides <span style="font-size:10px;opacity:.5">&#9662;</span></a>
+<div class="aa-drop">
+<div class="aa-dc"><div class="aa-dh">Application</div>
+<a href="australia-awards-dilp-guide">DILP Writing Guide</a>
+<a href="fully-funded-scholarships-australia">Fully Funded Guide</a>
+<a href="scholarship-eligibility-checker">Eligibility Checker</a></div>
+<div class="aa-dc"><div class="aa-dh">Visa &amp; Life</div>
+<a href="australia-student-visa-guide">Student Visa Guide</a>
+<a href="gte-statement-guide-australia">GTE Statement Guide</a>
+<a href="ielts-guide-australia-scholarships">IELTS Guide</a>
+<a href="student-budget-calculator">Budget Calculator</a></div>
+</div></li>
+<li class="aa-has-drop"><a href="#" class="aa-nl">Services <span style="font-size:10px;opacity:.5">&#9662;</span></a>
+<div class="aa-drop">
+<div class="aa-dc"><div class="aa-dh">Application Support</div>
+<a href="dilp-guide-product">&#128216; DILP Writing Guide</a>
+<a href="about">&#9997;&#65039; Application Review</a>
+<a href="about">&#127891; Course Selection</a></div>
+<div class="aa-dc"><div class="aa-dh">Visa &amp; Life</div>
+<a href="oshc-compare-quotes">&#127973;&#65039; OSHC Comparison</a>
+<a href="australia-student-visa-guide">&#9992;&#65039; Visa Assistance</a>
+<a href="contact">&#9993;&#65039; Contact Us</a></div>
+</div></li>
+<li><a href="blog" class="aa-nl">Blog</a></li>
+<li><a href="contact" class="aa-nl">Contact</a></li>
 </ul>
-<a href="contact"" class="btn btn-primary">Get guidance</a>
-</div></nav>
+<div style="display:flex;align-items:center;gap:8px">
+<a href="dilp-guide-product" style="display:inline-block;padding:9px 18px;border-radius:999px;font-weight:600;font-size:13px;text-decoration:none;background:#C75A3C;color:#FAF3E7;border:none;cursor:pointer;transition:all .2s">&#128216; DILP Guide</a>
+<button class="aa-hamburger" id="aaHamburger" aria-label="Menu" style="display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;align-items:center;justify-content:center"><span></span><span></span><span></span></button>
+</div>
+</div>
+</nav>
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
   <ol class="breadcrumb-list">
     <li><a href="/">Home</a></li>
@@ -653,5 +714,14 @@ function restart(){
   document.getElementById('progressLabel').textContent='Question 1 of 6';
 }
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f9be66f7c6be81c',t:'MTc3ODQ0NzEwNg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f9be66f7c6be81c',t:'MTc3ODQ0NzEwNg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<script id="aa-nav-scroll">
+(function(){
+  window.addEventListener('scroll',function(){
+    var n=document.getElementById('mainNav');
+    if(n){n.classList.toggle('scrolled',window.scrollY>40);}
+  });
+})();
+</script>
+</body>
 </html>
