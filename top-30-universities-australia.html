@@ -106,33 +106,82 @@ td{padding:16px;vertical-align:middle}
 footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 .footer-bottom{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:12px}
 @media(max-width:900px){.nav-links{display:none}.cta-band{padding:40px 24px}.hero h1{font-size:36px}}
+
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+.nav-item{position:relative}
+.nav-link{color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:4px;transition:background .2s,color .2s;white-space:nowrap}
+.nav-link:hover{background:var(--cream-2);color:var(--terracotta)}
+.nav-arrow{font-size:10px;opacity:0.5}
+.dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 6px rgba(35,24,18,0.06),0 20px 40px rgba(35,24,18,0.12);z-index:100;gap:24px;min-width:220px}
+.has-dropdown:hover .dropdown{display:flex}
+.dropdown-col{display:flex;flex-direction:column;gap:2px;min-width:180px}
+.dropdown-heading{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-soft);padding:4px 10px;margin-bottom:4px}
+.dropdown a{font-size:14px;color:var(--ink);text-decoration:none;padding:7px 10px;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+.dropdown a:hover{background:var(--cream-2);color:var(--terracotta)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;align-items:center;justify-content:center}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
+.btn-terra{background:var(--terracotta);color:var(--cream)}.btn-terra:hover{background:var(--gold);color:var(--ink)}
+.btn-outl{background:transparent;color:var(--cream);border:1px solid rgba(250,243,231,0.3)}
+.field-table{width:100%;border-collapse:collapse;font-size:14px;border-radius:12px;overflow:hidden;margin:20px 0 32px}
+.field-table th{background:var(--ink);color:var(--cream);padding:11px 16px;text-align:left;font-weight:600;font-size:12px}
+.field-table td{padding:11px 16px;border-bottom:1px solid var(--line);background:white;line-height:1.4}
+.field-table tr:last-child td{border-bottom:none}
+.field-table td:first-child{font-weight:600;background:var(--cream-2);width:180px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;padding:18px 0;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left}
+.faq-icon{font-size:22px;color:var(--terracotta);flex-shrink:0;transition:transform .2s}
+.faq-a{display:none;padding:0 0 18px}.faq-a p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.7}
+.faq-item.open .faq-a{display:block}.faq-item.open .faq-icon{transform:rotate(45deg)}
+.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 32px}
+.city-card{background:white;border:1px solid var(--line);border-radius:14px;padding:18px}
+.city-name{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:6px}
+.city-unis{font-size:13px;color:var(--ink-soft);line-height:1.6}
+.city-tag{font-size:12px;font-weight:600;color:var(--terracotta);margin-bottom:6px}
+nav.scrolled{box-shadow:0 2px 20px rgba(35,24,18,0.10);background:rgba(250,243,231,0.98)}
+@media(max-width:900px){.city-grid{grid-template-columns:1fr}.nav-links{display:none}.hamburger{display:flex}.field-table{font-size:12px}}
 </style>
 </head>
 <body>
-<nav><div class="container nav-inner">
+<nav id="mainNav">
+<div class="container nav-inner">
 <a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Australia Awards Hub"/></span>Australia Awards Hub</a>
 <ul class="nav-links">
-<li><a href="index.html#scholarships">Scholarships</a></li>
-<li><a href="index.html#blog">Guides</a></li>
-<li><a href="contact.html">Contact</a></li>
+<li class="nav-item has-dropdown"><a href="index.html#scholarships" class="nav-link">Scholarships <span class="nav-arrow">&#9662;</span></a>
+<div class="dropdown"><div class="dropdown-col"><div class="dropdown-heading">Top Scholarships</div><a href="australia-awards-scholarship-2027.html">Australia Awards 2027</a><a href="rtp-scholarship-australia.html">RTP Scholarship</a><a href="fully-funded-scholarships-australia.html">Fully Funded Guide</a><a href="melbourne-graduate-research-scholarship.html">Melbourne (MGRS)</a><a href="sydney-usydis-scholarship.html">Sydney (USYDIS)</a><a href="monash-graduate-scholarship.html">Monash (MGS)</a></div><div class="dropdown-col"><div class="dropdown-heading">More Scholarships</div><a href="anu-chancellors-international-scholarship.html">ANU Chancellor's</a><a href="unsw-scientia-coursework-scholarship.html">UNSW Scientia</a><a href="uq-international-excellence-scholarship.html">UQ Excellence</a><a href="monash-international-merit-scholarship.html">Monash Merit</a><a href="rmit-future-leaders-scholarship.html">RMIT Future Leaders</a><a href="destination-australia-scholarships.html">Destination Australia</a></div></div></li>
+<li class="nav-item has-dropdown"><a href="index.html#blog" class="nav-link">Guides <span class="nav-arrow">&#9662;</span></a>
+<div class="dropdown"><div class="dropdown-col"><div class="dropdown-heading">Application</div><a href="fully-funded-scholarships-australia.html">Fully Funded Guide</a><a href="scholarship-eligibility-checker.html">Eligibility Checker</a><a href="top-30-universities-australia.html">Top 30 Universities</a></div><div class="dropdown-col"><div class="dropdown-heading">Visa &amp; Life</div><a href="australia-student-visa-guide.html">Student Visa Guide</a><a href="ielts-guide-australia-scholarships.html">IELTS Guide</a><a href="student-budget-calculator.html">Budget Calculator</a></div></div></li>
+<li class="nav-item has-dropdown"><a href="#" class="nav-link">Services <span class="nav-arrow">&#9662;</span></a>
+<div class="dropdown"><div class="dropdown-col"><div class="dropdown-heading">Application Support</div><a href="dilp-guide-product.html">&#128216; DILP Writing Guide</a><a href="about.html#application-review">&#9997;&#65039; Application Review</a><a href="about.html#course-selection">&#127891; Course Selection</a></div><div class="dropdown-col"><div class="dropdown-heading">Visa &amp; Life</div><a href="oshc-compare-quotes.html">&#127973;&#65039; OSHC Comparison</a><a href="australia-student-visa-guide.html">&#9992;&#65039; Visa Assistance</a><a href="contact.html">&#9993;&#65039; Contact Us</a></div></div></li>
+<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 </ul>
-<a href="contact.html" class="btn btn-primary">Get guidance</a>
-</div></nav>
+<div class="nav-right">
+<a href="dilp-guide-product.html" class="btn btn-primary" style="font-size:13px;padding:9px 18px;background:var(--terracotta)">&#128216; DILP Guide</a>
+<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</div>
+</nav>
 
 <section class="hero">
 <div class="container">
 <div class="eyebrow">AA Hub Rankings · 2026</div>
 <h1 class="display">Top 30 Universities in Australia — <em style="color:var(--terracotta);font-style:italic">AA Hub Rankings 2026</em></h1>
-<p>The AA Hub Rankings 2026 — our independent combined score for the top 30 Australian universities, built for international students. We synthesise data from the three major global ranking systems into a single clear score so you can compare at a glance. Each scholarship link connects directly to available funding for that institution.</p>
+<p>Our independent combined score for Australia's top 30 universities, built for international students. We synthesise QS World University Rankings 2026, Times Higher Education 2026, and ARWU 2024 into a single weighted score — so you can compare at a glance instead of cross-referencing three separate tables. Each scholarship link connects directly to available funding at that institution.</p>
+<div class="sources" style="margin-top:24px">
+<span class="source-tag"><span class="source-dot" style="background:#5B00A5"></span>QS World University Rankings 2026</span>
+<span class="source-tag"><span class="source-dot" style="background:#C8102E"></span>Times Higher Education 2026</span>
+<span class="source-tag"><span class="source-dot" style="background:#E87722"></span>ARWU 2024</span>
 </div>
 </div>
 </section>
 
 <div class="container">
-    <div class="legend-item"><span class="legend-dot" style="background:#C8102E"></span>THE = Global rank (THE 2026)</div>
-    <div class="legend-item"><span class="legend-dot" style="background:#E87722"></span>ARWU = Global rank (ARWU 2024)</div>
-    <div class="legend-item"><span class="legend-dot" style="background:var(--terracotta)"></span>Score = Combined weighted score (out of 100)</div>
-    <div class="legend-item"><span class="legend-dot" style="background:var(--cream-2);border:1px solid var(--line)"></span>Go8 = Group of Eight research universities</div>
+  <div class="legend" style="padding:24px 0;display:flex;gap:20px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line);margin-bottom:8px">
+    <span style="font-size:12px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.08em">Key:</span>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--terracotta)"></span>AA Hub Score = Combined weighted score (QS + THE + ARWU), out of 100</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--forest)"></span>Go8 = Group of Eight research university</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#5B00A5"></span>Rankings data: QS 2026, THE 2026, ARWU 2024</div>
   </div>
 </div>
 
@@ -337,7 +386,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
           <span class="score-num">65</span>
         </div>
       </td>
-      <td><a href="index.html#scholarships" class="see-schol">Scholarships →</a></td>
+      <td><a href="macquarie-vc-international-scholarship.html" class="see-schol">Scholarships →</a></td>
     </tr><tr>
       <td class="rank-cell">
         <div class="rank-num">11</div>
@@ -489,7 +538,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
           <span class="score-num">50</span>
         </div>
       </td>
-      <td><a href="index.html#scholarships" class="see-schol">Scholarships →</a></td>
+      <td><a href="griffith-remarkable-scholarship.html" class="see-schol">Scholarships →</a></td>
     </tr><tr>
       <td class="rank-cell">
         <div class="rank-num">19</div>
@@ -546,7 +595,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
           <span class="score-num">46</span>
         </div>
       </td>
-      <td><a href="index.html#scholarships" class="see-schol">Scholarships →</a></td>
+      <td><a href="flinders-fiprs-scholarship.html" class="see-schol">Scholarships →</a></td>
     </tr><tr>
       <td class="rank-cell">
         <div class="rank-num">22</div>
@@ -641,7 +690,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
           <span class="score-num">39</span>
         </div>
       </td>
-      <td><a href="index.html#scholarships" class="see-schol">Scholarships →</a></td>
+      <td><a href="cdu-vc-international-scholarship.html" class="see-schol">Scholarships →</a></td>
     </tr><tr>
       <td class="rank-cell">
         <div class="rank-num">27</div>
@@ -724,7 +773,56 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 </div>
 </div>
 
-<div class="notes">
+
+<div class="container" style="padding:48px 24px 0">
+
+<h2 style="font-family:'Fraunces',serif;font-size:clamp(24px,4vw,36px);font-weight:500;letter-spacing:-0.02em;margin-bottom:16px">How to use this ranking</h2>
+<p style="font-size:16px;color:var(--ink-soft);max-width:800px;line-height:1.7;margin-bottom:20px">Rankings tell you about research output, employer reputation, and faculty quality — but not which university is the best fit for <em>your</em> situation. Before choosing based solely on rank, consider four factors that rankings don't capture: scholarship availability at your target institution, the strength of your specific discipline at that university, the city you want to live in, and the cost of living you can sustain.</p>
+<p style="font-size:16px;color:var(--ink-soft);max-width:800px;line-height:1.7;margin-bottom:40px">The top 8 universities — the Group of Eight — offer the strongest research scholarships for international students. If you are applying for a PhD or Masters by Research, your search should start with Go8 institutions. If you are a coursework student, universities ranked 9–18 often offer comparable education in your field with more accessible scholarship programs and lower competition.</p>
+
+<h2 style="font-family:'Fraunces',serif;font-size:clamp(24px,4vw,36px);font-weight:500;letter-spacing:-0.02em;margin-bottom:16px">Best universities by field</h2>
+<p style="font-size:16px;color:var(--ink-soft);max-width:800px;line-height:1.7;margin-bottom:20px">Overall ranking is not the same as field-specific strength. A university ranked #8 overall may be Australia's best in your discipline. Use this as a starting point — verify on each university's departmental page and recent research output.</p>
+<table class="field-table">
+<thead><tr><th>Field</th><th>Top picks in Australia</th><th>Scholarship links</th></tr></thead>
+<tbody>
+<tr><td>Engineering</td><td>Melbourne (#1), UNSW (#2), Monash (#5), Adelaide (#8)</td><td><a href="melbourne-graduate-research-scholarship.html" style="color:var(--terracotta-deep)">MGRS</a> · <a href="monash-graduate-scholarship.html" style="color:var(--terracotta-deep)">MGS</a></td></tr>
+<tr><td>Medicine &amp; Public Health</td><td>Melbourne (#1), UNSW (#2), Sydney (#3), Monash (#5), UQ (#6)</td><td><a href="sydney-usydis-scholarship.html" style="color:var(--terracotta-deep)">USYDIS</a> · <a href="uq-international-excellence-scholarship.html" style="color:var(--terracotta-deep)">UQ Excellence</a></td></tr>
+<tr><td>Business &amp; Economics</td><td>Melbourne (#1), UNSW (#2), ANU (#4), UQ (#6), UTS (#9)</td><td><a href="anu-chancellors-international-scholarship.html" style="color:var(--terracotta-deep)">ANU Chancellor's</a></td></tr>
+<tr><td>IT &amp; Computer Science</td><td>UNSW (#2), Sydney (#3), ANU (#4), Monash (#5), UTS (#9)</td><td><a href="unsw-scientia-coursework-scholarship.html" style="color:var(--terracotta-deep)">UNSW Scientia</a></td></tr>
+<tr><td>Law</td><td>Melbourne (#1), Sydney (#3), ANU (#4), UNSW (#2), UQ (#6)</td><td><a href="anu-chancellors-international-scholarship.html" style="color:var(--terracotta-deep)">ANU Chancellor's</a></td></tr>
+<tr><td>Pharmacy</td><td>Monash (#5) — #1 in Australia &amp; top 5 globally</td><td><a href="monash-graduate-scholarship.html" style="color:var(--terracotta-deep)">Monash MGS+MITS</a></td></tr>
+<tr><td>Agriculture &amp; Environment</td><td>UQ (#6), Melbourne (#1), ANU (#4), UWA (#7)</td><td><a href="uq-international-excellence-scholarship.html" style="color:var(--terracotta-deep)">UQ Excellence</a></td></tr>
+<tr><td>Education</td><td>Melbourne (#1), Monash (#5), UNSW (#2), QUT (#14)</td><td><a href="melbourne-graduate-research-scholarship.html" style="color:var(--terracotta-deep)">MGRS</a></td></tr>
+<tr><td>Marine &amp; Environmental Science</td><td>JCU (#22), UTAS (#20), UQ (#6)</td><td><a href="destination-australia-scholarships.html" style="color:var(--terracotta-deep)">Destination Australia</a></td></tr>
+<tr><td>Design &amp; Creative Arts</td><td>RMIT (#11), UTS (#9), Swinburne (#27)</td><td><a href="rmit-future-leaders-scholarship.html" style="color:var(--terracotta-deep)">RMIT Future Leaders</a></td></tr>
+</tbody>
+</table>
+
+<h2 style="font-family:'Fraunces',serif;font-size:clamp(24px,4vw,36px);font-weight:500;letter-spacing:-0.02em;margin-bottom:16px">Best universities by city</h2>
+<p style="font-size:16px;color:var(--ink-soft);max-width:800px;line-height:1.7;margin-bottom:20px">Where you live matters as much as where you study. Melbourne and Sydney dominate the rankings but also have the highest living costs. Brisbane offers a strong academic environment at lower cost. Use our <a href="student-budget-calculator.html" style="color:var(--terracotta-deep)">budget calculator</a> to compare living costs before committing to a city.</p>
+<div class="city-grid">
+<div class="city-card"><div class="city-name">Melbourne</div><div class="city-tag">5 universities in top 20</div><div class="city-unis">University of Melbourne (#1) · Monash (#5) · RMIT (#11) · Deakin (#16) · La Trobe (#17) · Swinburne (#27) · Victoria University (#30). Rent: AUD 750–1,400/mo. Strong international student community.</div></div>
+<div class="city-card"><div class="city-name">Sydney</div><div class="city-tag">3 universities in top 10</div><div class="city-unis">UNSW (#2) · University of Sydney (#3) · UTS (#9) · Macquarie (#10) · Western Sydney (#23). Rent: AUD 900–1,600/mo. Highest-ranked city cluster. Strongest employer network.</div></div>
+<div class="city-card"><div class="city-name">Brisbane</div><div class="city-tag">Lower cost, strong rankings</div><div class="city-unis">University of Queensland (#6) · QUT (#14) · Griffith (#18). Rent: AUD 650–1,100/mo. More affordable than Sydney or Melbourne. Growing international community.</div></div>
+<div class="city-card"><div class="city-name">Canberra</div><div class="city-tag">ANU — #1 in Australia overall</div><div class="city-unis">Australian National University (#4) · University of Canberra (#24). Rent: AUD 700–1,200/mo. Smaller city — strong for policy, law, and government careers. Direct access to federal institutions.</div></div>
+<div class="city-card"><div class="city-name">Perth</div><div class="city-tag">Affordable, strong for resources</div><div class="city-unis">UWA (#7) · Curtin (#12) · Murdoch (#25) · ECU (#29). Rent: AUD 650–1,100/mo. Strong in mining, petroleum, and resources engineering. Isolated but affordable lifestyle.</div></div>
+<div class="city-card"><div class="city-name">Adelaide</div><div class="city-tag">Cheapest major city</div><div class="city-unis">University of Adelaide (#8) · Flinders (#21) · UniSA (#19). Rent: AUD 600–1,000/mo. Australia's most affordable capital city. Strong in wine science, agriculture, and defence industries.</div></div>
+</div>
+
+<h2 style="font-family:'Fraunces',serif;font-size:clamp(24px,4vw,36px);font-weight:500;letter-spacing:-0.02em;margin-bottom:16px">Frequently asked questions</h2>
+<p style="font-size:16px;color:var(--ink-soft);max-width:800px;line-height:1.7;margin-bottom:28px">Common questions from international students researching Australian universities.</p>
+<div style="max-width:800px">
+<div class="faq-item"><button class="faq-q">What is the Group of Eight (Go8)?<span class="faq-icon">+</span></button><div class="faq-a"><p>The Group of Eight is Australia's alliance of eight leading research-intensive universities: University of Melbourne, University of Sydney, UNSW, ANU, Monash, University of Queensland, University of Western Australia, and University of Adelaide. They collectively receive more than 70% of Australia's competitive research funding, produce the majority of its internationally cited research, and offer the widest range of fully funded scholarships for international research students.</p></div></div>
+<div class="faq-item"><button class="faq-q">Are rankings the most important factor in choosing a university?<span class="faq-icon">+</span></button><div class="faq-a"><p>For most international students, no. Rankings reflect research output and employer reputation — but your field-specific ranking, scholarship availability, location, and living costs are equally or more important. A university ranked #15 that offers a full scholarship in your field is almost always a better choice than a #3 university where you receive no funding. Always evaluate scholarship opportunities alongside ranking data.</p></div></div>
+<div class="faq-item"><button class="faq-q">Which Australian university is best for engineering?<span class="faq-icon">+</span></button><div class="faq-a"><p>Melbourne, UNSW, Monash, and Adelaide are consistently the top four for engineering across QS and THE subject rankings. Monash leads in some engineering sub-fields including materials and manufacturing. UNSW is particularly strong in mining and petroleum engineering. For research scholarships in engineering, MGRS (Melbourne), USYDIS (Sydney), and MGS+MITS (Monash) are the strongest funding packages available.</p></div></div>
+<div class="faq-item"><button class="faq-q">Is ANU ranked #1 in Australia?<span class="faq-icon">+</span></button><div class="faq-a"><p>ANU consistently ranks #1 in Australia in the QS World University Rankings (ranked #30 globally in QS 2026). However, Melbourne ranks higher in THE and ARWU. Our combined AA Hub score places Melbourne #1 overall and ANU #4, reflecting this variation across ranking systems. Both are among the finest universities in the Asia-Pacific region.</p></div></div>
+<div class="faq-item"><button class="faq-q">Can I study at a top-ranked Australian university with a scholarship?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes — all top-10 universities on this list offer scholarships for international students. Research students (PhD, Masters by Research) have access to fully funded packages at Melbourne (MGRS), Sydney (USYDIS), UNSW (Scientia), ANU, Monash (MGS+MITS), and UQ. Coursework students can access partial tuition awards at ANU, Monash, UQ, and RMIT. See the scholarship links in the table for direct access to available funding at each institution.</p></div></div>
+<div class="faq-item"><button class="faq-q">Do these rankings include TAFE institutions?<span class="faq-icon">+</span></button><div class="faq-a"><p>No — this ranking covers only universities, not TAFE (Technical and Further Education) institutions. Australian universities and TAFEs are separate education sectors. All 30 institutions listed are registered higher education providers offering bachelor degrees and above.</p></div></div>
+<div class="faq-item"><button class="faq-q">How often are these rankings updated?<span class="faq-icon">+</span></button><div class="faq-a"><p>Our combined AA Hub Score is updated annually as new data from QS, THE, and ARWU is released. QS typically publishes in April, THE in October, and ARWU in August. The scores in this table reflect the most recent available data: QS 2026 (released April 2026), THE 2026 (released October 2025), and ARWU 2024 (released August 2024).</p></div></div>
+</div>
+</div>
+
+<div class="notes" style="margin-top:48px">
 <h3>How this ranking works</h3>
 <p><strong>AA Hub Rankings methodology:</strong> Our combined score synthesises data from QS World University Rankings 2026, Times Higher Education 2026, and ARWU 2024 — weighted to reflect their relevance to international students. The score is presented out of 100, with the University of Melbourne as the benchmark at 98. Rankings are reviewed annually as new global data is released.</p>
 
@@ -748,5 +846,9 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
 <div><a href="index.html" style="color:var(--terracotta);text-decoration:none">← Back to home</a></div>
 </div></div></footer>
 
-</body>
+<script>
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>btn.closest('.faq-item').classList.toggle('open'));});
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>40);});
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f96733ebc1e10cd',t:'MTc3ODM4OTk1OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
