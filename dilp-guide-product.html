@@ -152,15 +152,18 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
 </head>
 <body>
 
-<nav><div class="container nav-inner">
+<nav id="mainNav" style="position:sticky;top:0;z-index:200;background:rgba(250,243,231,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:box-shadow .3s">
+<div class="container nav-inner">
 <a href="index.html" class="logo"><span class="logo-mark"><img src="logo.png" alt="Australia Awards Hub"/></span>Australia Awards Hub</a>
 <ul class="nav-links">
-<li><a href="australia-awards-scholarship-2027.html">Australia Awards</a></li>
-<li><a href="australia-awards-dilp-guide.html">Free DILP Guide</a></li>
-<li><a href="contact.html">Contact</a></li>
+<li style="position:relative" class="has-dropdown"><a href="index.html#scholarships" class="nav-link" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:4px;transition:background .2s,color .2s;white-space:nowrap">Scholarships <span style="font-size:10px;opacity:0.5">&#9662;</span></a></li>
+<li><a href="australia-awards-dilp-guide.html" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px">Free DILP Guide</a></li>
+<li><a href="australia-awards-scholarship-2027.html" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px">Australia Awards</a></li>
+<li><a href="contact.html" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px">Contact</a></li>
 </ul>
-<a href="#buy" class="btn btn-primary">Buy — AUD $19</a>
-</div></nav>
+<a href="#buy" class="btn btn-primary" style="background:var(--terracotta)">Buy — AUD $19</a>
+</div>
+</nav>
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
   <ol class="breadcrumb-list">
     <li><a href="index.html">Home</a></li>
@@ -356,6 +359,62 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
 </div>
 </section>
 
+
+<!-- WHAT IS THE DILP -->
+<section style="background:var(--cream-2);padding:56px 0">
+<div class="container">
+  <div class="section-label">Background</div>
+  <h2>What is the DILP — and why does it matter so much?</h2>
+  <p class="intro-text">The Development Impact and Linkages Plan is a formal document submitted as part of every Australia Awards Scholarship application. It is not a personal statement or a cover letter — it is a structured plan that DFAT assessors formally score, section by section, against a set of criteria. It has two parts: Part 1 covers what you plan to do and learn during your scholarship, and Part 2 — the Development Leadership Plan — covers what you will do when you return home.</p>
+  <p style="font-size:16px;color:var(--ink-soft);line-height:1.7;max-width:680px;margin-bottom:0">Most scholarship decisions come down to the DILP. A candidate with an average academic record and a compelling, specific DILP will consistently outscore a candidate with excellent grades and a vague, generic plan. The DILP is where the scholarship is won or lost — and it is the document most applicants understand least. This guide exists to fix that.</p>
+</div>
+</section>
+
+<!-- WHO NEEDS THIS -->
+<section style="padding:56px 0">
+<div class="container">
+  <div class="section-label">Is this for you?</div>
+  <h2>Who this guide is for</h2>
+  <p class="intro-text">This guide is designed for any Australia Awards applicant who wants to understand what assessors actually score — not just what the guidelines say. It is most useful for:</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px">
+    <div style="background:white;border:1px solid var(--line);border-radius:16px;padding:22px">
+      <div style="font-size:20px;margin-bottom:10px">🇵🇰 🇧🇩 🇳🇬 🇰🇭 🇹🇱</div>
+      <div style="font-weight:600;font-size:15px;margin-bottom:6px">First-time applicants from priority countries</div>
+      <div style="font-size:14px;color:var(--ink-soft);line-height:1.5">You know your field but are new to the Australia Awards application process. You need to understand exactly what DFAT is looking for — not just the template instructions.</div>
+    </div>
+    <div style="background:white;border:1px solid var(--line);border-radius:16px;padding:22px">
+      <div style="font-size:20px;margin-bottom:10px">🔄</div>
+      <div style="font-weight:600;font-size:15px;margin-bottom:6px">Re-applicants who were shortlisted but not selected</div>
+      <div style="font-size:14px;color:var(--ink-soft);line-height:1.5">You came close last cycle. Your DILP was the weakest part. This guide shows you exactly how to make it specific enough to cross the line.</div>
+    </div>
+    <div style="background:white;border:1px solid var(--line);border-radius:16px;padding:22px">
+      <div style="font-size:20px;margin-bottom:10px">🏛️</div>
+      <div style="font-weight:600;font-size:15px;margin-bottom:6px">Government and public sector professionals</div>
+      <div style="font-size:14px;color:var(--ink-soft);line-height:1.5">You work in health, infrastructure, education, agriculture, or governance — sectors aligned with Australia Awards priorities. This guide helps you translate your professional reality into a compelling development plan.</div>
+    </div>
+    <div style="background:white;border:1px solid var(--line);border-radius:16px;padding:22px">
+      <div style="font-size:20px;margin-bottom:10px">🌐</div>
+      <div style="font-weight:600;font-size:15px;margin-bottom:6px">Applicants in any participating country</div>
+      <div style="font-size:14px;color:var(--ink-soft);line-height:1.5">The DILP framework is the same regardless of your country. The field-by-field chapter covers engineering, health, education, agriculture, and governance — the five most common applicant backgrounds globally.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--cream-2);padding:56px 0">
+<div class="container">
+  <div class="section-label">Questions</div>
+  <h2>Frequently asked questions</h2>
+  <div style="max-width:760px;margin-top:28px">
+    <div style="border-bottom:1px solid var(--line);padding:18px 0"><div style="font-weight:600;font-size:16px;margin-bottom:8px">Is this an official DFAT guide?</div><div style="font-size:15px;color:var(--ink-soft);line-height:1.65">No — Australia Awards Hub is an independent resource not affiliated with DFAT or the Australian Government. However, the assessor insights in this guide come from Dr. Joanne Barker, who is an official Australia Awards scholarship assessor with extensive experience evaluating applications. Her perspective is incorporated throughout every chapter.</div></div>
+    <div style="border-bottom:1px solid var(--line);padding:18px 0"><div style="font-weight:600;font-size:16px;margin-bottom:8px">Does this guide cover the 2027 application cycle?</div><div style="font-size:15px;color:var(--ink-soft);line-height:1.65">Yes — the DILP format and assessment criteria have not changed significantly between cycles. The guide covers the current OASIS application format and reflects the most recent assessor guidance available. The core DILP structure — Part 1 and Part 2 — is consistent across all recent application rounds.</div></div>
+    <div style="border-bottom:1px solid var(--line);padding:18px 0"><div style="font-weight:600;font-size:16px;margin-bottom:8px">Does it work for my field and country?</div><div style="font-size:15px;color:var(--ink-soft);line-height:1.65">Yes — Chapter 8 provides specific guidance for engineering, health, education, agriculture, and governance applicants. The DILP framework is the same regardless of your participating country, and the guide draws examples from applicants across South Asia, Southeast Asia, Africa, and the Pacific.</div></div>
+    <div style="border-bottom:1px solid var(--line);padding:18px 0"><div style="font-weight:600;font-size:16px;margin-bottom:8px">How is the guide delivered?</div><div style="font-size:15px;color:var(--ink-soft);line-height:1.65">Instantly via PDF download after purchase through Stripe. You do not need to create an account — your download link is emailed to you immediately after payment. The PDF is fully readable on desktop, tablet, and mobile.</div></div>
+    <div style="padding:18px 0"><div style="font-weight:600;font-size:16px;margin-bottom:8px">Is AUD $19 the right price for this?</div><div style="font-size:15px;color:var(--ink-soft);line-height:1.65">The Australia Awards Scholarship covers return airfare, full tuition, OSHC, and a living stipend of AUD 29,710 per year — a total package worth over AUD 100,000 for a two-year Master's. The guide costs AUD 19. If it improves your DILP enough to get you shortlisted — or to cross the line on your next reapplication — the return on investment is difficult to quantify.</div></div>
+  </div>
+</div>
+</section>
 <!-- BOTTOM CTA -->
 <section style="padding:72px 0">
 <div class="container">
@@ -380,5 +439,6 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
 </div>
 </div></div></footer>
 
-</body>
+<script>window.addEventListener("scroll",()=>{const n=document.getElementById("mainNav");if(n)n.style.boxShadow=window.scrollY>40?"0 2px 20px rgba(35,24,18,0.10)":"none";});</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f967ded0be04616',t:'MTc3ODM5MDM5Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
