@@ -8,11 +8,11 @@
 <link rel="alternate" hreflang="x-default" href="https://australiaawardshub.com/blog" />
 <link rel="alternate" hreflang="en"         href="https://australiaawardshub.com/blog" /> />
 <link rel="icon" type="image/png" href="logo.png"/>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL2YCR2ZTZ"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL2YCR2ZTZ');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--cream:#FAF3E7;--cream-2:#F2E7D2;--ink:#231812;--ink-soft:#5C4A3E;--terracotta:#C75A3C;--terracotta-deep:#A8442C;--forest:#1F3A2E;--gold:#E8B14F;--line:rgba(35,24,18,0.12);--shadow:0 2px 4px rgba(35,24,18,0.06),0 12px 32px rgba(35,24,18,0.08)}
@@ -119,7 +119,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:20px}
 {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "Australia Awards Hub — Scholarship Guides",
+  "name": "Australia Awards Hub \u2014 Scholarship Guides",
   "url": "https://australiaawardshub.com/blog",
   "description": "Guides and articles for international students applying for scholarships and student visas in Australia.",
   "inLanguage": "en",
@@ -133,6 +133,17 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:20px}
     }
   },
   "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Find Scholarships in Australia as an International Student: A Complete Guide",
+      "url": "https://australiaawardshub.com/how-to-find-scholarships-australia",
+      "datePublished": "2026-05-11",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Australia Awards Hub",
+        "url": "https://australiaawardshub.com"
+      }
+    },
     {
       "@type": "BlogPosting",
       "headline": "Australia Awards 2027",
@@ -195,13 +206,33 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:20px}
     },
     {
       "@type": "BlogPosting",
-      "headline": "Read the full guide →",
+      "headline": "Read the full guide \u2192",
       "url": "https://australiaawardshub.com/australia-awards-dilp-guide",
       "publisher": {
         "@type": "Organization",
         "name": "Australia Awards Hub",
         "url": "https://australiaawardshub.com"
       }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://australiaawardshub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://australiaawardshub.com/blog"
     }
   ]
 }
@@ -335,6 +366,19 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:20px}
 </div>
 
 <div class="articles-grid" id="articlesGrid">
+  <a class="art-card art-item" data-tag="guide" href="how-to-find-scholarships-australia" style="text-decoration:none;color:inherit">
+    <div class="art-card-img" style="background:linear-gradient(135deg,#006B35,#1F3A2E)">🔍</div>
+    <div class="art-card-body">
+      <span class="art-tag" style="background:#E8F5EE;color:#006B35;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:3px 9px;border-radius:999px;margin-bottom:10px;display:inline-block">Guide</span>
+      <h3>How to Find Scholarships in Australia as an International Student</h3>
+      <p>Government scholarships, research packages, and merit awards — how each works and how to find the right one for your background. Step-by-step with a profile matching table.</p>
+      <div class="art-card-foot">
+        <span>May 2026</span>
+        <span class="read-time">12 min read</span>
+      </div>
+    </div>
+  </a>
+
 
   <a class="art-card art-item" data-tag="visa" href="gte-statement-guide-australia"" style="text-decoration:none;color:inherit">
     <div class="art-card-img" style="background:linear-gradient(135deg,#3D2C20,#231812)">📄</div>
@@ -502,6 +546,22 @@ function filterPosts(tag, btn){
     var n=document.getElementById('mainNav');
     if(n){n.classList.toggle('scrolled',window.scrollY>40);}
   });
+})();
+</script>
+<script>
+(function(){
+  var _loaded=false;
+  function _loadAds(){
+    if(_loaded)return; _loaded=true;
+    var s=document.createElement('script');
+    s.async=true; s.crossOrigin='anonymous';
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741';
+    document.head.appendChild(s);
+  }
+  // Fire on first scroll (passive, once) or after 3 s — whichever comes first
+  window.addEventListener('scroll',_loadAds,{once:true,passive:true});
+  window.addEventListener('touchstart',_loadAds,{once:true,passive:true});
+  setTimeout(_loadAds,3000);
 })();
 </script>
 </body>
