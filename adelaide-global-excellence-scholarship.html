@@ -86,6 +86,40 @@
 #mainNav.scrolled{box-shadow:0 2px 20px rgba(35,24,18,0.10);background:rgba(250,243,231,0.98)}
 @media(max-width:900px){.aa-nav-links{display:none!important}.aa-hamburger{display:flex!important}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://australiaawardshub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Scholarships",
+      "item": "https://australiaawardshub.com/#scholarships"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Adelaide GES",
+      "item": "https://australiaawardshub.com/adelaide-global-excellence-scholarship"
+    }
+  ]
+}
+</script>
+<meta property="og:title" content="Adelaide Global Excellence Scholarship — Complete Guide 2026/2027" />
+<meta property="og:description" content="The University of Adelaide Global Academic Excellence Scholarship covers 50% of tuition fees for high-achieving international undergraduate and postgraduate stu" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://australiaawardshub.com/adelaide-global-excellence-scholarship" />
+<meta property="og:image" content="https://australiaawardshub.com/banner.png" />
+<meta property="og:image:width" content="1734" />
+<meta property="og:image:height" content="907" />
+<meta property="og:image:alt" content="Australia Awards Hub" />
 </head>
 <body>
 
@@ -279,6 +313,21 @@
     var n=document.getElementById('mainNav');
     if(n){n.classList.toggle('scrolled',window.scrollY>40);}
   });
+})();
+</script>
+<script>
+(function(){
+  var _loaded=false;
+  function _loadAds(){
+    if(_loaded)return; _loaded=true;
+    var s=document.createElement('script');
+    s.async=true; s.crossOrigin='anonymous';
+    s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741';
+    document.head.appendChild(s);
+  }
+  window.addEventListener('scroll',_loadAds,{once:true,passive:true});
+  window.addEventListener('touchstart',_loadAds,{once:true,passive:true});
+  setTimeout(_loadAds,3000);
 })();
 </script>
 </body>
