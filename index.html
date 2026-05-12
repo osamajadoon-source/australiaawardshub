@@ -2316,5 +2316,16 @@ mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   setTimeout(_loadAds,3000);
 })();
 </script>
+<script>
+(function(){
+  var i=document.createElement('iframe');
+  i.src='https://australiaawardshub-chatbot.vercel.app/widget';
+  i.id='aah-chat';
+  i.style.cssText='position:fixed;bottom:0;right:0;width:420px;height:680px;max-width:100vw;max-height:100vh;border:none;z-index:99999;pointer-events:none;background:transparent';
+  i.setAttribute('title','Australia Awards Hub Chat Assistant');
+  i.onload=function(){i.style.pointerEvents='all';};
+  document.body.appendChild(i);
+})();
+</script>
 </body>
 </html>

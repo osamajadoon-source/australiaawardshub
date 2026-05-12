@@ -177,5 +177,16 @@ window.addEventListener('scroll',()=>{document.getElementById('mainNav').classLi
 (function(){var _l=false;function _a(){if(_l)return;_l=true;var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464180506412741';document.head.appendChild(s);}
 window.addEventListener('scroll',_a,{once:true,passive:true});setTimeout(_a,3000);})();
 </script>
+<script>
+(function(){
+  var i=document.createElement('iframe');
+  i.src='https://australiaawardshub-chatbot.vercel.app/widget';
+  i.id='aah-chat';
+  i.style.cssText='position:fixed;bottom:0;right:0;width:420px;height:680px;max-width:100vw;max-height:100vh;border:none;z-index:99999;pointer-events:none;background:transparent';
+  i.setAttribute('title','Australia Awards Hub Chat Assistant');
+  i.onload=function(){i.style.pointerEvents='all';};
+  document.body.appendChild(i);
+})();
+</script>
 </body>
 </html>
