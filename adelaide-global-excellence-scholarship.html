@@ -194,7 +194,7 @@
     </div>
     <div class="hero-actions">
       <a class="btn-primary" href="https://www.adelaide.edu.au/scholarships/" target="_blank" rel="noopener">Apply officially →</a>
-      <a class="btn-secondary" href="contact"">Get application help</a>
+      <a class="btn-secondary" href="contact">Get application help</a>
     </div>
   </div>
 </div>
@@ -263,7 +263,7 @@
 
     <div class="cta-block">
       <p>Need help crafting a strong application for the University of Adelaide?</p>
-      <a href="contact"">Get in touch →</a>
+      <a href="contact">Get in touch →</a>
       <a href="/#scholarships">Browse all scholarships</a>
     </div>
   </article>
@@ -282,15 +282,15 @@
 
     <div class="sidebar-card">
       <h3>Related scholarships</h3>
-      <a class="related-link" href="griffith-remarkable-scholarship"">Griffith Remarkable Scholarship</a>
-      <a class="related-link" href="melbourne-graduate-research-scholarship"">Melbourne Graduate Research Scholarship</a>
-      <a class="related-link" href="anu-chancellors-international-scholarship"">ANU Chancellor's Scholarship</a>
-      <a class="related-link" href="uq-international-excellence-scholarship"">UQ Excellence Scholarship</a>
+      <a class="related-link" href="griffith-remarkable-scholarship">Griffith Remarkable Scholarship</a>
+      <a class="related-link" href="melbourne-graduate-research-scholarship">Melbourne Graduate Research Scholarship</a>
+      <a class="related-link" href="anu-chancellors-international-scholarship">ANU Chancellor's Scholarship</a>
+      <a class="related-link" href="uq-international-excellence-scholarship">UQ Excellence Scholarship</a>
     </div>
 
     <div class="sidebar-contact">
       <p>Not sure if your academic profile is competitive for this scholarship? Get an honest assessment.</p>
-      <a href="contact"">Contact us →</a>
+      <a href="contact">Contact us →</a>
     </div>
   </aside>
 </div>
@@ -337,7 +337,7 @@
   i.id='aah-chat';
   i.style.cssText='position:fixed;bottom:0;right:0;width:420px;height:680px;max-width:100vw;max-height:100vh;border:none;z-index:99999;pointer-events:none;background:transparent';
   i.setAttribute('title','Australia Awards Hub Chat Assistant');
-  i.onload=function(){i.style.pointerEvents='all';};
+  i.onload=function(){i.style.pointerEvents='none';i.style.zIndex='99999';};window.addEventListener('message',function(e){if(e.data&&e.data.aahOpen!==undefined){i.style.pointerEvents=e.data.aahOpen?'all':'none';}});;
   document.body.appendChild(i);
 })();
 </script>

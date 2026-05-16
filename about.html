@@ -287,7 +287,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
   <h2>Have a question? We are here.</h2>
   <p>Whether you need help finding the right scholarship or want a second opinion on your application — get in touch. We respond within 24–48 hours.</p>
   <div class="cta-btns">
-    <a href="contact"" class="btn btn-terra">Contact us →</a>
+    <a href="contact" class="btn btn-terra">Contact us →</a>
     <a href="/#scholarships" class="btn btn-outl">Browse scholarships</a>
   </div>
 </div>
@@ -331,7 +331,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
   i.id='aah-chat';
   i.style.cssText='position:fixed;bottom:0;right:0;width:420px;height:680px;max-width:100vw;max-height:100vh;border:none;z-index:99999;pointer-events:none;background:transparent';
   i.setAttribute('title','Australia Awards Hub Chat Assistant');
-  i.onload=function(){i.style.pointerEvents='all';};
+  i.onload=function(){i.style.pointerEvents='none';i.style.zIndex='99999';};window.addEventListener('message',function(e){if(e.data&&e.data.aahOpen!==undefined){i.style.pointerEvents=e.data.aahOpen?'all':'none';}});;
   document.body.appendChild(i);
 })();
 </script>

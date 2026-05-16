@@ -498,7 +498,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
   <h2>Need help with your scholarship application?</h2>
   <p>Once your IELTS score is ready, the next step is building a strong application. We can help with scholarship matching, personal statement review, and GTE guidance.</p>
   <div class="cta-btns">
-    <a href="contact"" class="btn btn-terra">Get in touch →</a>
+    <a href="contact" class="btn btn-terra">Get in touch →</a>
     <a href="/#scholarships" class="btn btn-outl">Browse scholarships</a>
   </div>
 </div>
@@ -529,9 +529,9 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
   </div>
   <div class="sidebar-card">
     <h3>Related guides</h3>
-    <a href="australia-student-visa-guide"" class="sidebar-link">Student Visa Guide →</a>
-    <a href="australia-awards-scholarship-2027"" class="sidebar-link">Australia Awards Guide →</a>
-    <a href="fully-funded-scholarships-australia"" class="sidebar-link">Fully Funded Scholarships →</a>
+    <a href="australia-student-visa-guide" class="sidebar-link">Student Visa Guide →</a>
+    <a href="australia-awards-scholarship-2027" class="sidebar-link">Australia Awards Guide →</a>
+    <a href="fully-funded-scholarships-australia" class="sidebar-link">Fully Funded Scholarships →</a>
   </div>
 </aside>
 </div>
@@ -580,7 +580,7 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
   i.id='aah-chat';
   i.style.cssText='position:fixed;bottom:0;right:0;width:420px;height:680px;max-width:100vw;max-height:100vh;border:none;z-index:99999;pointer-events:none;background:transparent';
   i.setAttribute('title','Australia Awards Hub Chat Assistant');
-  i.onload=function(){i.style.pointerEvents='all';};
+  i.onload=function(){i.style.pointerEvents='none';i.style.zIndex='99999';};window.addEventListener('message',function(e){if(e.data&&e.data.aahOpen!==undefined){i.style.pointerEvents=e.data.aahOpen?'all':'none';}});;
   document.body.appendChild(i);
 })();
 </script>

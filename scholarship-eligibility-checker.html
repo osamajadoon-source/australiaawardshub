@@ -376,7 +376,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
     <div class="cta-block">
       <h3>Want personalised advice on your application?</h3>
       <p>Our team reviews scholarship applications and helps you build the strongest possible case — including DILP writing, personal statements, and visa guidance.</p>
-      <a href="contact"">Get in touch — it's free →</a>
+      <a href="contact">Get in touch — it's free →</a>
     </div>
   </div>
 
@@ -784,7 +784,7 @@ function restart(){
   i.id='aah-chat';
   i.style.cssText='position:fixed;bottom:0;right:0;width:420px;height:680px;max-width:100vw;max-height:100vh;border:none;z-index:99999;pointer-events:none;background:transparent';
   i.setAttribute('title','Australia Awards Hub Chat Assistant');
-  i.onload=function(){i.style.pointerEvents='all';};
+  i.onload=function(){i.style.pointerEvents='none';i.style.zIndex='99999';};window.addEventListener('message',function(e){if(e.data&&e.data.aahOpen!==undefined){i.style.pointerEvents=e.data.aahOpen?'all':'none';}});;
   document.body.appendChild(i);
 })();
 </script>

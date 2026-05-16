@@ -527,8 +527,8 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line)}
   <h2>Need help with your student visa application?</h2>
   <p>OSHC is just one requirement. We help international students navigate the full visa process — from document preparation to GTE statements.</p>
   <div class="cta-btns">
-    <a href="contact"" class="btn btn-terra">Get visa guidance →</a>
-    <a href="australia-student-visa-guide"" class="btn btn-outl">Read visa guide</a>
+    <a href="contact" class="btn btn-terra">Get visa guidance →</a>
+    <a href="australia-student-visa-guide" class="btn btn-outl">Read visa guide</a>
   </div>
 </div>
 </div>
@@ -589,7 +589,7 @@ window.addEventListener('scroll',()=>{
   i.id='aah-chat';
   i.style.cssText='position:fixed;bottom:0;right:0;width:420px;height:680px;max-width:100vw;max-height:100vh;border:none;z-index:99999;pointer-events:none;background:transparent';
   i.setAttribute('title','Australia Awards Hub Chat Assistant');
-  i.onload=function(){i.style.pointerEvents='all';};
+  i.onload=function(){i.style.pointerEvents='none';i.style.zIndex='99999';};window.addEventListener('message',function(e){if(e.data&&e.data.aahOpen!==undefined){i.style.pointerEvents=e.data.aahOpen?'all':'none';}});;
   document.body.appendChild(i);
 })();
 </script>

@@ -295,7 +295,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
   <ol class="breadcrumb-list">
     <li><a href="/">Home</a></li>
-    <li><a href="dilp-guide-product"">Shop</a></li>
+    <li><a href="dilp-guide-product">Shop</a></li>
     <li><span>DILP Complete Guide — AUD $19</span></li>
   </ol>
 </nav>
@@ -564,8 +564,8 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
 <div>© 2026 Australia Awards Hub — Independent guide. Not affiliated with DFAT or the Australian Government.</div>
 <div style="display:flex;gap:20px">
 <a href="/" style="color:var(--terracotta);text-decoration:none">← Home</a>
-<a href="australia-awards-dilp-guide"" style="color:var(--ink-soft);text-decoration:none">Free DILP guide</a>
-<a href="contact"" style="color:var(--ink-soft);text-decoration:none">Contact</a>
+<a href="australia-awards-dilp-guide" style="color:var(--ink-soft);text-decoration:none">Free DILP guide</a>
+<a href="contact" style="color:var(--ink-soft);text-decoration:none">Contact</a>
 </div>
 </div></div></footer>
 
@@ -602,7 +602,7 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
   i.id='aah-chat';
   i.style.cssText='position:fixed;bottom:0;right:0;width:420px;height:680px;max-width:100vw;max-height:100vh;border:none;z-index:99999;pointer-events:none;background:transparent';
   i.setAttribute('title','Australia Awards Hub Chat Assistant');
-  i.onload=function(){i.style.pointerEvents='all';};
+  i.onload=function(){i.style.pointerEvents='none';i.style.zIndex='99999';};window.addEventListener('message',function(e){if(e.data&&e.data.aahOpen!==undefined){i.style.pointerEvents=e.data.aahOpen?'all':'none';}});;
   document.body.appendChild(i);
 })();
 </script>
