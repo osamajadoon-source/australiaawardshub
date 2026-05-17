@@ -1,0 +1,133 @@
+name: Daily Scholarship Agent
+
+on:
+  schedule:
+    # Runs every day at 02:00 UTC (midday AEST — 12:00 pm Sydney time)
+    - cron: "0 2 * * *"
+
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      max_articles:
+        description: "Max articles to publish (default: 3)"
+        required: false
+        default: "3"
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      # ── 1. Checkout repo ────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      # ── 2. Set up Python ────────────────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      # ── 3. Install dependencies ─────────────────────────────────────────────
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ── 4. Create required directories ─────────────────────────────────────
+      - name: Create directories
+        run: |
+          mkdir -p data/logs output
+
+      # ── 5. Restore published.json from repo (for deduplication) ────────────
+      - name: Restore published index
+        run: |
+          if [ -f "data/published.json" ]; then
+            echo "published.json found"
+          else
+            echo "{}" > data/published.json
+            echo "Created empty published.json"
+          fi
+
+      # ── 6. Run the scholarship agent ────────────────────────────────────────
+      - name: Run scholarship agent
+        env:
+          GEMINI_API_KEY:   ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN:     ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME:  ${{ secrets.MY_GITHUB_USERNAME }}
+          GITHUB_REPO:      ${{ secrets.MY_GITHUB_REPO }}
+          GITHUB_BRANCH:    main
+          SITE_URL:         https://australiaawardshub.com
+          SITE_NAME:        Australia Awards Hub
+          MAX_ARTICLES_PER_DAY: ${{ github.event.inputs.max_articles || '3' }}
+        run: |
+          cd agent
+          python main.py
+
+      # ── 7. Copy generated HTML files to repo root ───────────────────────────
+      - name: Copy output files
+        run: |
+          if [ -d "output" ] && [ "$(ls -A output/*.html 2>/dev/null)" ]; then
+            cp output/*.html ./ 2>/dev/null || true
+            echo "HTML files copied to repo root"
+          fi
+          if [ -f "output/sitemap.xml" ]; then
+            cp output/sitemap.xml ./sitemap.xml
+            echo "sitemap.xml updated"
+          fi
+          if [ -f "output/feed.xml" ]; then
+            cp output/feed.xml ./feed.xml
+            echo "feed.xml updated"
+          fi
+
+      # ── 8. Commit and push new files ────────────────────────────────────────
+      - name: Commit and push changes
+        run: |
+          git config user.name  "Scholarship Agent"
+          git config user.email "agent@australiaawardshub.com"
+
+          # Stage all new HTML files and updated files
+          git add *.html sitemap.xml feed.xml data/published.json 2>/dev/null || true
+
+          # Only commit if there are actual changes
+          if git diff --cached --quiet; then
+            echo "No changes to commit — all scholarships already published"
+          else
+            git commit -m "feat: auto-publish scholarship articles [$(date +'%Y-%m-%d')]"
+            git push origin main
+            echo "Changes pushed to GitHub"
+          fi
+
+      # ── 9. Upload run logs as artifact ──────────────────────────────────────
+      - name: Upload run logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent-logs-${{ github.run_number }}
+          path: data/logs/
+          retention-days: 30
+
+      # ── 10. Report summary ──────────────────────────────────────────────────
+      - name: Report summary
+        if: always()
+        run: |
+          echo "## Scholarship Agent Run Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f "data/logs/report_*.json" ]; then
+            cat data/logs/report_*.json | python3 -c "
+          import json,sys
+          d=json.load(sys.stdin)
+          print(f'- Scraped: {d.get(\"scraped\",0)}')
+          print(f'- Verified: {d.get(\"verified\",0)}')
+          print(f'- Published: {d.get(\"published\",0)}')
+          print(f'- Uploaded: {d.get(\"uploaded\",0)}')
+          print(f'- Errors: {len(d.get(\"errors\",[]))}')
+          " >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Cloudflare Pages will auto-deploy within 2 minutes." >> $GITHUB_STEP_SUMMARY
