@@ -10,7 +10,7 @@ load_dotenv()
 
 # ── AI ────────────────────────────────────────────────────────────────────────
 GEMINI_API_KEY      = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL        = "gemini-1.5-flash"          # fast + cheap for daily runs
+GEMINI_MODEL        = "gemini-2.0-flash"          # fast + cheap for daily runs
 
 # ── GitHub ────────────────────────────────────────────────────────────────────
 GITHUB_TOKEN        = os.getenv("GITHUB_TOKEN", "")
