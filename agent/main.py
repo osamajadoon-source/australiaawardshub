@@ -1,12 +1,5 @@
 """
 main.py — Master orchestration for the daily scholarship agent.
-
-Pipeline:
-  1. Scrape official university/government scholarship pages
-  2. Verify each scholarship is active and not a duplicate
-  3. Generate full SEO article with Gemini AI
-  4. Build HTML page matching site design
-  5. Push to GitHub → Cloudflare auto-deploys
 """
 
 import logging
@@ -16,7 +9,6 @@ import traceback
 from datetime import datetime
 from pathlib import Path
 
-# Allow running from project root or agent/ directory
 sys.path.insert(0, str(Path(__file__).parent))
 
 from config import (
@@ -28,8 +20,6 @@ from verifier import verify_and_rank, load_published
 from ai_writer import generate_article
 from publisher import publish_scholarship, update_sitemap, update_rss
 from github_uploader import upload_generated_files
-
-# ─── Logging setup ────────────────────────────────────────────────────────────
 
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 log_file = LOG_DIR / f"agent_{datetime.utcnow().strftime('%Y%m%d')}.log"
@@ -45,34 +35,30 @@ logging.basicConfig(
 logger = logging.getLogger("main")
 
 
-# ─── Helpers ──────────────────────────────────────────────────────────────────
-
-def save_scholarships_cache(scholarships: list[dict]) -> None:
+def save_scholarships_cache(scholarships):
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     with open(SCHOLARSHIPS_JSON, "w", encoding="utf-8") as f:
         json.dump(scholarships, f, indent=2, default=str)
 
 
-def write_run_report(report: dict) -> None:
+def write_run_report(report):
     report_file = LOG_DIR / f"report_{datetime.utcnow().strftime('%Y%m%d_%H%M')}.json"
     with open(report_file, "w") as f:
         json.dump(report, f, indent=2, default=str)
     logger.info(f"Run report saved: {report_file}")
 
 
-# ─── Main pipeline ────────────────────────────────────────────────────────────
-
-def run_agent() -> dict:
+def run_agent():
     start_time = datetime.utcnow()
     report = {
-        "run_started":    start_time.isoformat(),
-        "scraped":        0,
-        "verified":       0,
-        "generated":      0,
-        "published":      0,
-        "uploaded":       0,
-        "errors":         [],
-        "published_slugs":[],
+        "run_started":     start_time.isoformat(),
+        "scraped":         0,
+        "verified":        0,
+        "generated":       0,
+        "published":       0,
+        "uploaded":        0,
+        "errors":          [],
+        "published_slugs": [],
     }
 
     logger.info("=" * 60)
@@ -80,7 +66,7 @@ def run_agent() -> dict:
     logger.info(f"Time: {start_time.isoformat()}")
     logger.info("=" * 60)
 
-    # ── STEP 1: Scrape ────────────────────────────────────────────────────────
+    # ── STEP 1: Scrape ────────────────────────────────────────────
     logger.info("\n[STEP 1] Scraping official scholarship sources...")
     try:
         raw_scholarships = scrape_all_sources()
@@ -98,7 +84,7 @@ def run_agent() -> dict:
         write_run_report(report)
         return report
 
-    # ── STEP 2: Verify & rank ─────────────────────────────────────────────────
+    # ── STEP 2: Verify ────────────────────────────────────────────
     logger.info("\n[STEP 2] Verifying scholarships...")
     try:
         verified = verify_and_rank(raw_scholarships)
@@ -110,12 +96,12 @@ def run_agent() -> dict:
         verified = []
 
     if not verified:
-        logger.warning("No new scholarships to publish today. All duplicates or expired.")
+        logger.warning("No new scholarships to publish today.")
         report["run_completed"] = datetime.utcnow().isoformat()
         write_run_report(report)
         return report
 
-    # ── STEP 3: Generate articles ─────────────────────────────────────────────
+    # ── STEP 3: Generate articles ─────────────────────────────────
     logger.info(f"\n[STEP 3] Generating up to {MAX_ARTICLES_PER_DAY} articles with Gemini...")
     generated = []
     for scholarship in verified[:MAX_ARTICLES_PER_DAY]:
@@ -123,21 +109,22 @@ def run_agent() -> dict:
         try:
             article = generate_article(scholarship)
             if not article:
-                logger.warning(f"  Article generation failed — skipping")
+                logger.warning(f"  Article generation returned None — skipping")
                 report["errors"].append(f"Generation failed: {scholarship['title'][:50]}")
                 continue
-            if article.get("word_count", 0) < MIN_WORD_COUNT:
-                logger.warning(f"  Article too short ({article.get('word_count')} words) — skipping")
+            wc = article.get("word_count", 0)
+            if wc < MIN_WORD_COUNT:
+                logger.warning(f"  Article too short ({wc} words) — skipping")
                 continue
             generated.append(article)
-            logger.info(f"  Article generated: {article['word_count']} words")
+            logger.info(f"  Article generated OK: {wc} words, slug={article.get('slug','?')}")
         except Exception as e:
-            logger.error(f"  Error generating article: {e}")
+            logger.error(f"  Error generating article: {e}\n{traceback.format_exc()}")
             report["errors"].append(f"AI error ({scholarship['title'][:40]}): {e}")
 
     report["generated"] = len(generated)
 
-    # ── STEP 4: Publish HTML pages ────────────────────────────────────────────
+    # ── STEP 4: Publish HTML ──────────────────────────────────────
     logger.info(f"\n[STEP 4] Building HTML pages...")
     published_files = []
     for article in generated:
@@ -148,12 +135,12 @@ def run_agent() -> dict:
                 report["published_slugs"].append(article.get("slug", ""))
                 logger.info(f"  Published: {filename}")
         except Exception as e:
-            logger.error(f"  HTML build error: {e}")
+            logger.error(f"  HTML build error: {e}\n{traceback.format_exc()}")
             report["errors"].append(f"HTML build: {e}")
 
     report["published"] = len(published_files)
 
-    # ── STEP 5: Update sitemap + RSS ──────────────────────────────────────────
+    # ── STEP 5: Update sitemap + RSS ──────────────────────────────
     if published_files:
         logger.info("\n[STEP 5] Updating sitemap and RSS feed...")
         try:
@@ -164,7 +151,7 @@ def run_agent() -> dict:
         except Exception as e:
             logger.error(f"Sitemap/RSS update error: {e}")
 
-    # ── STEP 6: Push to GitHub ────────────────────────────────────────────────
+    # ── STEP 6: Push to GitHub ────────────────────────────────────
     logger.info("\n[STEP 6] Uploading to GitHub...")
     if published_files:
         try:
@@ -177,7 +164,6 @@ def run_agent() -> dict:
     else:
         logger.info("Nothing to upload.")
 
-    # ── Run complete ──────────────────────────────────────────────────────────
     end_time = datetime.utcnow()
     duration = (end_time - start_time).seconds
     report["run_completed"] = end_time.isoformat()
