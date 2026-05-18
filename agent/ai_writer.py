@@ -17,15 +17,12 @@ BASE_URL = "https://generativelanguage.googleapis.com"
 
 # Model preference order — first available wins
 PREFERRED_MODELS = [
+    "gemini-3.1-flash-lite",
+    "gemini-3-flash-preview",
+    "gemini-3.1-pro-preview",
     "gemini-2.5-flash",
-    "gemini-2.5-flash-preview-05-20",
-    "gemini-2.5-pro",
     "gemini-2.0-flash",
-    "gemini-2.0-flash-lite",
     "gemini-1.5-flash",
-    "gemini-1.5-flash-8b",
-    "gemini-1.5-pro",
-    "gemini-pro",
 ]
 
 _discovered_model = None   # cached after first discovery
