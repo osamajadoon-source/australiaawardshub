@@ -1,5 +1,5 @@
 """
-ai_writer.py — Uses Google Gemini REST API directly (no SDK version issues).
+ai_writer.py — Uses Google Gemini REST API directly.
 """
 
 import logging
@@ -18,71 +18,47 @@ GEMINI_URL = (
     "gemini-2.0-flash:generateContent"
 )
 
-ARTICLE_PROMPT = """You are a senior education journalist writing for {site_name}, an independent Australian scholarship reference website. Write a complete, human-sounding SEO article about the following scholarship.
+# NOTE: No .format() used on these prompts — variables injected manually below
+ARTICLE_PROMPT_TEMPLATE = (
+    "You are a senior education journalist writing for {SITE_NAME}, "
+    "an independent Australian scholarship reference website. "
+    "Write a complete, human-sounding SEO article about this scholarship.\n\n"
+    "SCHOLARSHIP DATA:\n"
+    "Title: {TITLE}\n"
+    "University/Provider: {UNIVERSITY}\n"
+    "Degree Level: {LEVEL}\n"
+    "Financial Benefits: {BENEFITS}\n"
+    "Deadline: {DEADLINE}\n"
+    "Source URL: {URL}\n"
+    "Raw page text: {BODY}\n\n"
+    "REQUIREMENTS:\n"
+    "- Write in Australian English\n"
+    "- Minimum 1200 words\n"
+    "- Professional but warm tone\n"
+    "- No AI phrases like 'delve into' or 'leverage'\n"
+    "- Include real numbers from the source text\n"
+    "- Do NOT invent facts\n\n"
+    "Respond with a JSON object (no markdown, no backticks) containing these exact keys:\n"
+    "title, meta_description, h1, intro, overview, benefits, eligibility, "
+    "documents, how_to_apply, deadline_section, faqs, conclusion, slug, "
+    "category, tags, social_caption, newsletter_blurb\n\n"
+    "For 'faqs' use a list of objects with 'q' and 'a' keys (5 FAQs).\n"
+    "For 'tags' use a list of 3 strings.\n"
+    "For eligibility/documents/how_to_apply use HTML list tags."
+)
 
-SCHOLARSHIP DATA:
-Title: {title}
-University/Provider: {university}
-Degree Level: {level}
-Financial Benefits: {benefits}
-Deadline: {deadline}
-Source URL: {url}
-Raw page text: {body_text}
-
-REQUIREMENTS:
-- Write in Australian English (enrol, programme, organisation)
-- Minimum 1200 words
-- Professional but warm tone
-- No AI-sounding phrases like "delve into", "leverage", "in conclusion"
-- Use "you" for the applicant
-- Include real numbers/dollar amounts from the source text
-- Do NOT invent facts
-
-OUTPUT FORMAT - respond with valid JSON only, no markdown backticks:
-{
-  "title": "SEO page title (60 chars max)",
-  "meta_description": "Meta description (155 chars max)",
-  "h1": "Main article heading",
-  "intro": "2-3 paragraph introduction",
-  "overview": "2-3 paragraphs about the scholarship",
-  "benefits": "2-3 paragraphs about what is covered",
-  "eligibility": "<ul><li>eligibility criteria</li></ul>",
-  "documents": "<ul><li>required documents</li></ul>",
-  "how_to_apply": "<ol><li>application steps</li></ol>",
-  "deadline_section": "1-2 paragraphs about deadline",
-  "faqs": [
-    {"q": "Question one?", "a": "Answer one."},
-    {"q": "Question two?", "a": "Answer two."},
-    {"q": "Question three?", "a": "Answer three."},
-    {"q": "Question four?", "a": "Answer four."},
-    {"q": "Question five?", "a": "Answer five."}
-  ],
-  "conclusion": "1-2 concluding paragraphs",
-  "slug": "url-friendly-slug",
-  "category": "postgraduate-scholarships",
-  "tags": ["tag1", "tag2", "tag3"],
-  "social_caption": "Social media caption (max 280 chars)",
-  "newsletter_blurb": "2-sentence newsletter summary"
-}"""
-
-META_PROMPT = """Extract metadata from this scholarship. Use ONLY information from the source text.
-
-Title: {title}
-Source text: {body_text}
-
-Return valid JSON only:
-{
-  "funding_type": "Full | Partial | Stipend only | Tuition only",
-  "amount_aud": "e.g. AUD $39,500/year or empty string",
-  "open_to": "e.g. All nationalities",
-  "study_fields": "e.g. All fields",
-  "application_mode": "e.g. Automatic | Separate application | Annual round"
-}"""
+META_PROMPT_TEMPLATE = (
+    "Extract metadata from this scholarship. Use ONLY the source text.\n\n"
+    "Title: {TITLE}\n"
+    "Source text: {BODY}\n\n"
+    "Respond with a JSON object (no markdown) with these exact keys:\n"
+    "funding_type, amount_aud, open_to, study_fields, application_mode"
+)
 
 
 def _call_gemini(prompt: str, max_retries: int = 3) -> str:
-    """Call Gemini REST API directly - no SDK needed."""
-    params = {"key": GEMINI_API_KEY}
+    """Call Gemini REST API directly."""
+    params  = {"key": GEMINI_API_KEY}
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
@@ -90,89 +66,91 @@ def _call_gemini(prompt: str, max_retries: int = 3) -> str:
             "maxOutputTokens": 8192,
         }
     }
-
     for attempt in range(1, max_retries + 1):
         try:
-            resp = requests.post(
-                GEMINI_URL,
-                params=params,
-                json=payload,
-                timeout=120,
-            )
+            resp = requests.post(GEMINI_URL, params=params, json=payload, timeout=120)
             if resp.status_code == 200:
                 data = resp.json()
                 return data["candidates"][0]["content"]["parts"][0]["text"]
-            else:
-                logger.warning(
-                    f"Gemini HTTP {resp.status_code} (attempt {attempt}): {resp.text[:200]}"
-                )
+            logger.warning(f"Gemini HTTP {resp.status_code} (attempt {attempt}): {resp.text[:200]}")
         except Exception as e:
             logger.warning(f"Gemini error (attempt {attempt}): {e}")
-
         if attempt < max_retries:
             time.sleep(5 * attempt)
-
     return ""
 
 
 def _parse_json(text: str) -> dict:
+    """Strip markdown fences and parse JSON."""
     cleaned = re.sub(r"```(?:json)?\s*", "", text).strip().rstrip("`").strip()
     start = cleaned.find("{")
     end   = cleaned.rfind("}") + 1
     if start == -1 or end == 0:
+        logger.error(f"No JSON object found in response: {cleaned[:200]}")
         return {}
     try:
         return json.loads(cleaned[start:end])
     except json.JSONDecodeError as e:
-        logger.error(f"JSON parse error: {e}\nRaw: {cleaned[:300]}")
+        logger.error(f"JSON parse error: {e} | Raw: {cleaned[start:start+300]}")
         return {}
 
 
 def generate_article(scholarship: dict) -> dict | None:
     logger.info(f"Generating article for: {scholarship['title'][:60]}")
 
-    prompt = ARTICLE_PROMPT.format(
-        site_name  = SITE_NAME,
-        title      = scholarship.get("title", ""),
-        university = scholarship.get("university", ""),
-        level      = scholarship.get("level", ""),
-        benefits   = scholarship.get("benefits", ""),
-        deadline   = scholarship.get("deadline", "Not specified"),
-        url        = scholarship.get("url", ""),
-        body_text  = scholarship.get("body_text", "")[:5000],
+    # Build prompts using simple string replacement (no .format())
+    article_prompt = (
+        ARTICLE_PROMPT_TEMPLATE
+        .replace("{SITE_NAME}",  SITE_NAME)
+        .replace("{TITLE}",      scholarship.get("title", ""))
+        .replace("{UNIVERSITY}", scholarship.get("university", ""))
+        .replace("{LEVEL}",      scholarship.get("level", ""))
+        .replace("{BENEFITS}",   scholarship.get("benefits", ""))
+        .replace("{DEADLINE}",   scholarship.get("deadline", "Not specified"))
+        .replace("{URL}",        scholarship.get("url", ""))
+        .replace("{BODY}",       scholarship.get("body_text", "")[:5000])
     )
 
-    raw = _call_gemini(prompt)
+    raw = _call_gemini(article_prompt)
     if not raw:
         logger.error("Gemini returned empty response")
         return None
 
+    logger.debug(f"Raw Gemini response (first 300): {raw[:300]}")
     article = _parse_json(raw)
     if not article or not article.get("title"):
-        logger.error("Could not parse Gemini response")
+        logger.error(f"Could not parse article JSON. Raw start: {raw[:200]}")
         return None
 
-    meta_raw  = _call_gemini(META_PROMPT.format(
-        title     = scholarship.get("title", ""),
-        body_text = scholarship.get("body_text", "")[:2000],
-    ))
+    # Get extra metadata
+    meta_prompt = (
+        META_PROMPT_TEMPLATE
+        .replace("{TITLE}", scholarship.get("title", ""))
+        .replace("{BODY}",  scholarship.get("body_text", "")[:2000])
+    )
+    meta_raw  = _call_gemini(meta_prompt)
     meta_data = _parse_json(meta_raw) if meta_raw else {}
 
     scholarship.update(article)
     scholarship.update(meta_data)
 
+    # Ensure valid slug
     slug = scholarship.get("slug", "")
     if not slug:
         from python_slugify import slugify
-        slug = slugify(scholarship["title"])
+        slug = slugify(scholarship.get("title", "scholarship"))
     scholarship["slug"] = re.sub(r"[^a-z0-9\-]", "", slug.lower())[:80]
 
+    # Word count
     all_text = " ".join([
-        article.get("intro", ""), article.get("overview", ""),
-        article.get("benefits", ""), article.get("eligibility", ""),
-        article.get("how_to_apply", ""), article.get("conclusion", ""),
+        article.get("intro", ""),
+        article.get("overview", ""),
+        article.get("benefits", ""),
+        article.get("eligibility", ""),
+        article.get("how_to_apply", ""),
+        article.get("conclusion", ""),
     ])
     scholarship["word_count"] = len(re.sub(r"<[^>]+>", "", all_text).split())
-    logger.info(f"  Word count: {scholarship['word_count']}")
+    logger.info(f"  Word count: {scholarship['word_count']}, slug: {scholarship['slug']}")
 
     return scholarship
