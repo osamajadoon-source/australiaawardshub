@@ -77,10 +77,12 @@ def discover_model() -> str:
     return _discovered_model
 
 
-ARTICLE_PROMPT_TEMPLATE = (
+
+   ARTICLE_PROMPT_TEMPLATE = (
     "You are a senior education journalist writing for {SITE_NAME}, "
     "an independent Australian scholarship reference website. "
-    "Write a complete, human-sounding SEO article about this scholarship.\n\n"
+    "Write a comprehensive, detailed, SEO-optimized article about this scholarship.\n\n"
+    "**CRITICAL REQUIREMENT: This article MUST be at least 1,200 words. Do not stop writing until you reach 1,200 words.**\n\n"
     "SCHOLARSHIP DATA:\n"
     "Title: {TITLE}\n"
     "University/Provider: {UNIVERSITY}\n"
@@ -89,13 +91,24 @@ ARTICLE_PROMPT_TEMPLATE = (
     "Deadline: {DEADLINE}\n"
     "Source URL: {URL}\n"
     "Raw page text: {BODY}\n\n"
-    "REQUIREMENTS:\n"
-    "- Write in Australian English\n"
-    "- Minimum 1200 words\n"
-    "- Professional but warm tone\n"
-    "- No AI phrases like delve into or leverage\n"
-    "- Include real numbers from the source text\n"
-    "- Do NOT invent facts\n\n"
+    "STRUCTURE REQUIREMENTS (write ALL sections in detail):\n"
+    "1. Introduction (150+ words): Hook the reader, explain why this scholarship matters\n"
+    "2. Overview (200+ words): What is the scholarship, who offers it, history/background\n"
+    "3. Benefits (200+ words): Break down financial value, additional perks, career advantages\n"
+    "4. Eligibility (200+ words): Detailed criteria, who should/shouldn't apply\n"
+    "5. Required Documents (150+ words): List and explain each document needed\n"
+    "6. How to Apply (200+ words): Step-by-step application process with tips\n"
+    "7. Deadline Section (100+ words): Key dates, time zones, submission tips\n"
+    "8. FAQs (5 questions, 2-3 sentences each): Common applicant questions\n"
+    "9. Conclusion (100+ words): Encouragement and next steps\n\n"
+    "WRITING REQUIREMENTS:\n"
+    "- Write in Australian English (colour, organisation, programme)\n"
+    "- **Minimum 1,200 words total — count as you write**\n"
+    "- Professional but warm, encouraging tone\n"
+    "- No AI phrases like 'delve into', 'leverage', 'in today's world', 'it's important to note'\n"
+    "- Include real numbers, dates, and facts from the source text\n"
+    "- Do NOT invent facts or make up eligibility criteria\n"
+    "- Use HTML list tags (<ul><li>) for eligibility, documents, how_to_apply sections\n\n"
     "Respond with a JSON object (no markdown, no backticks) with these exact keys:\n"
     "title, meta_description, h1, intro, overview, benefits, eligibility, "
     "documents, how_to_apply, deadline_section, faqs, conclusion, slug, "
@@ -103,14 +116,6 @@ ARTICLE_PROMPT_TEMPLATE = (
     "For faqs use a list of 5 objects each with q and a keys.\n"
     "For tags use a list of 3 strings.\n"
     "For eligibility, documents, how_to_apply use HTML list tags."
-)
-
-META_PROMPT_TEMPLATE = (
-    "Extract metadata from this scholarship. Use ONLY the source text.\n\n"
-    "Title: {TITLE}\n"
-    "Source text: {BODY}\n\n"
-    "Respond with a JSON object (no markdown) with these exact keys:\n"
-    "funding_type, amount_aud, open_to, study_fields, application_mode"
 )
 
 
