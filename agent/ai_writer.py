@@ -75,10 +75,7 @@ def discover_model() -> str:
     logger.error("Could not discover any model — using gemini-2.5-flash on v1beta")
     _discovered_model = f"{BASE_URL}/v1beta/models/gemini-2.5-flash:generateContent"
     return _discovered_model
-
-
-
-   ARTICLE_PROMPT_TEMPLATE = (
+ARTICLE_PROMPT_TEMPLATE = (
     "You are a senior education journalist writing for {SITE_NAME}, "
     "an independent Australian scholarship reference website. "
     "Write a comprehensive, detailed, SEO-optimized article about this scholarship.\n\n"
@@ -117,8 +114,6 @@ def discover_model() -> str:
     "For tags use a list of 3 strings.\n"
     "For eligibility, documents, how_to_apply use HTML list tags."
 )
-
-
 def _call_gemini(prompt: str, max_retries: int = 3) -> str:
     url    = discover_model()
     params = {"key": GEMINI_API_KEY}
