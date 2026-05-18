@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from config import (
     MAX_ARTICLES_PER_DAY, DATA_DIR, OUTPUT_DIR, LOG_DIR,
-    SCHOLARSHIPS_JSON, MIN_WORD_COUNT
+    SCHOLARSHIPS_JSON
 )
 from scraper import scrape_all_sources
 from verifier import verify_and_rank, load_published
@@ -113,7 +113,7 @@ def run_agent():
                 report["errors"].append(f"Generation failed: {scholarship['title'][:50]}")
                 continue
             wc = article.get("word_count", 0)
-            if wc < MIN_WORD_COUNT:
+            if wc < 800:
                 logger.warning(f"  Article too short ({wc} words) — skipping")
                 continue
             generated.append(article)
