@@ -114,6 +114,13 @@ ARTICLE_PROMPT_TEMPLATE = (
     "For tags use a list of 3 strings.\n"
     "For eligibility, documents, how_to_apply use HTML list tags."
 )
+META_PROMPT_TEMPLATE = (
+    "Extract metadata from this scholarship. Use ONLY the source text.\n\n"
+    "Title: {TITLE}\n"
+    "Source text: {BODY}\n\n"
+    "Respond with a JSON object (no markdown) with these exact keys:\n"
+    "funding_type, amount_aud, open_to, study_fields, application_mode"
+)
 def _call_gemini(prompt: str, max_retries: int = 3) -> str:
     url    = discover_model()
     params = {"key": GEMINI_API_KEY}
