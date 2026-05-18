@@ -14,8 +14,8 @@ from config import GEMINI_API_KEY, SITE_NAME
 logger = logging.getLogger(__name__)
 
 GEMINI_URL = (
-    "https://generativelanguage.googleapis.com/v1beta/models/"
-    "gemini-1.5-flash-latest:generateContent"
+    "https://generativelanguage.googleapis.com/v1/models/"
+    "gemini-1.5-flash:generateContent"
 )
 
 # NOTE: No .format() used on these prompts — variables injected manually below
