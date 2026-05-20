@@ -1190,9 +1190,32 @@ document.getElementById('finderCount').textContent=document.querySelectorAll('#c
 window.addEventListener('scroll',_a,{once:true,passive:true});window.addEventListener('touchstart',_a,{once:true,passive:true});setTimeout(_a,3000);})();
 </script>
 
-<!-- Chatbot -->
 <script>
-(function(){var i=document.createElement('iframe');i.src='https://australiaawardshub-chatbot.vercel.app/widget';i.id='aah-chat';i.style.cssText='position:fixed;bottom:0;right:0;width:420px;height:680px;max-width:100vw;max-height:100vh;border:none;z-index:99999;pointer-events:none;background:transparent';i.setAttribute('title','Australia Awards Hub Chat Assistant');i.onload=function(){i.style.pointerEvents='none';i.style.zIndex='99999';};window.addEventListener('message',function(e){if(e.data&&e.data.aahOpen!==undefined){i.style.pointerEvents=e.data.aahOpen?'all':'none';}});document.body.appendChild(i);})();
+(function(){
+  // Chat button (outside iframe — always clickable)
+  var btn = document.createElement("div");
+  btn.id = "aah-chat-btn";
+  btn.innerHTML = "&#128172;";
+  btn.style.cssText = "position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#C75A3C;color:white;font-size:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:100000;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .2s";
+  btn.onmouseenter = function(){ btn.style.transform="scale(1.1)"; };
+  btn.onmouseleave = function(){ btn.style.transform="scale(1)"; };
+  document.body.appendChild(btn);
+
+  // Chat iframe (hidden by default)
+  var iframe = document.createElement("iframe");
+  iframe.src = "https://australiaawardshub-chatbot.vercel.app/widget";
+  iframe.id  = "aah-chat";
+  iframe.style.cssText = "position:fixed;bottom:90px;right:24px;width:400px;height:600px;max-width:calc(100vw - 32px);max-height:calc(100vh - 110px);border:none;border-radius:16px;z-index:99999;display:none;box-shadow:0 8px 40px rgba(0,0,0,.2)";
+  iframe.setAttribute("title","Australia Awards Hub Chat");
+  document.body.appendChild(iframe);
+
+  var open = false;
+  btn.addEventListener("click", function(){
+    open = !open;
+    iframe.style.display = open ? "block" : "none";
+    btn.innerHTML = open ? "&#10005;" : "&#128172;";
+  });
+})();
 </script>
 
 </body>
