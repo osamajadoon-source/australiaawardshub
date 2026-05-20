@@ -1190,33 +1190,14 @@ document.getElementById('finderCount').textContent=document.querySelectorAll('#c
 window.addEventListener('scroll',_a,{once:true,passive:true});window.addEventListener('touchstart',_a,{once:true,passive:true});setTimeout(_a,3000);})();
 </script>
 
-<script>
-(function(){
-  // Chat button (outside iframe — always clickable)
-  var btn = document.createElement("div");
-  btn.id = "aah-chat-btn";
-  btn.innerHTML = "&#128172;";
-  btn.style.cssText = "position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#C75A3C;color:white;font-size:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:100000;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .2s";
-  btn.onmouseenter = function(){ btn.style.transform="scale(1.1)"; };
-  btn.onmouseleave = function(){ btn.style.transform="scale(1)"; };
-  document.body.appendChild(btn);
+<!-- Chat button -->
+<div id="aah-chat-btn" onclick="var f=document.getElementById('aah-chat');var o=f.style.display==='block';f.style.display=o?'none':'block';this.innerHTML=o?'&#128172;':'&#10005;';" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#C75A3C;color:white;font-size:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2147483647;box-shadow:0 4px 16px rgba(0,0,0,.25)">&#128172;</div>
 
-  // Chat iframe (hidden by default)
-  var iframe = document.createElement("iframe");
-  iframe.src = "https://australiaawardshub-chatbot.vercel.app/widget";
-  iframe.id  = "aah-chat";
-  iframe.style.cssText = "position:fixed;bottom:90px;right:24px;width:400px;height:600px;max-width:calc(100vw - 32px);max-height:calc(100vh - 110px);border:none;border-radius:16px;z-index:99999;display:none;box-shadow:0 8px 40px rgba(0,0,0,.2)";
-  iframe.setAttribute("title","Australia Awards Hub Chat");
-  document.body.appendChild(iframe);
+<!-- Chat iframe -->
+<iframe id="aah-chat" src="https://australiaawardshub-chatbot.vercel.app/widget" style="display:none;position:fixed;bottom:90px;right:24px;width:400px;height:600px;max-width:calc(100vw - 32px);max-height:calc(100vh - 110px);border:none;border-radius:16px;z-index:2147483646;box-shadow:0 8px 40px rgba(0,0,0,.2)" title="Chat"></iframe>
 
-  var open = false;
-  btn.addEventListener("click", function(){
-    open = !open;
-    iframe.style.display = open ? "block" : "none";
-    btn.innerHTML = open ? "&#10005;" : "&#128172;";
-  });
-})();
-</script>
+</body>
+</html>
 
 </body>
 </html>
