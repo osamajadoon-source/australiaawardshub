@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r agent/requirements.txt
 
       # ── 4. Create required directories ─────────────────────────────────────
       - name: Create directories
