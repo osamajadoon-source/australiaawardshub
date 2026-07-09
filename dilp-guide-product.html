@@ -214,10 +214,6 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
     "name": "Australia Awards Hub",
     "url": "https://australiaawardshub.com"
   },
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Australia Awards Scholarship Applicants"
-  },
   "inLanguage": "en",
   "offers": {
     "@type": "Offer",
@@ -231,6 +227,38 @@ footer{padding:40px 0 28px;border-top:1px solid var(--line);margin-top:60px}
       "@type": "Organization",
       "name": "Australia Awards Hub",
       "url": "https://australiaawardshub.com"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "AU",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "AUD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "AU"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      }
     }
   }
 }
