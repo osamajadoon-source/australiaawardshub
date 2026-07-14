@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "title": "PhD opportunities : The University of Western Australia",
+    "url": "https://www.uwa.edu.au/schools/research/health/phd-opportunities",
+    "snippet": "The University of Western Australia is one of the country’s most prestigious research-intensive universities, ranked in the world’s top 100 institutions and home to Nobel Prize winners Professors Barry Marshall and Robin Warren. UWA’s Faculty of Health and Medical Sciences offers",
+    "university": "UWA",
+    "supervisor": null,
+    "slug": "phd-phd-opportunities-the-university-of-western-australia",
+    "found_date": "2026-07-14"
+  },
+  {
+    "title": "PhD opportunities on Multomodal LLM/ human understanding",
+    "url": "https://supervisorconnect.it.monash.edu/projects/research/phd-opportunities-multomodal-llm-human-understanding",
+    "snippet": "Supervisor Connect allows you to explore cutting-edge initiatives and find a leading researcher to oversee your project. With scholarship opportunities ...Read more",
+    "university": "Monash",
+    "supervisor": "Connect allows you to explore cutting-edge initiatives and fi",
+    "slug": "phd-phd-opportunities-on-multomodal-llm-human-understanding",
+    "found_date": "2026-07-14"
+  },
+  {
+    "title": "IMPACCT PhD project opportunities - Sydney",
+    "url": "https://www.uts.edu.au/research/centres/impacct/about-us/study-us/impacct-phd-project-opportunities",
+    "snippet": "We have a range of projects available now in chronic disease, cancer and palliative care, symptom management and supportive care, models of care as well as.",
+    "university": "UTS",
+    "supervisor": null,
+    "slug": "phd-impacct-phd-project-opportunities-sydney",
+    "found_date": "2026-07-14"
+  },
+  {
+    "title": "Find an available PhD, MPhil project - The University of Queensland",
+    "url": "https://study.uq.edu.au/study-options/phd-mphil-professional-doctorate/projects",
+    "snippet": "### You're viewing this site as a domestic an international student. **You're a domestic student if you are:**. **You're an international student if you are:**. # Find a PhD or MPhil project with a scholarship. ## Scholarship-funded research projects. Explore our research project",
+    "university": "UQ",
+    "supervisor": null,
+    "slug": "phd-find-an-available-phd-mphil-project-the-university-of-queens",
+    "found_date": "2026-07-14"
+  }
+]
