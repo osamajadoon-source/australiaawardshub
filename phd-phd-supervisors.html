@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhD Supervisors | PhD Position — Australia Awards Hub</title>
+  <meta name="description" content="PhD Supervisors — a PhD position at Monash. View details and apply via the official university listing." />
+  <link rel="canonical" href="https://australiaawardshub.com/phd-phd-supervisors" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #F5EDE0; --amber: #F5A300; --amber-dark: #e09600; --dark: #1A1208; --white: #ffffff; --muted: #6b5c47; --border: #e8ddd0; --radius: 12px; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    nav.simple-nav { background: var(--cream); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 1rem; font-family: 'Playfair Display', serif; }
+    .nav-logo img { width: 36px; height: 36px; object-fit: contain; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.9rem; }
+    .hero { background: var(--amber); padding: 2.75rem 2rem 2.25rem; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb { font-size: 0.82rem; color: rgba(26,18,8,0.65); margin-bottom: 1.25rem; }
+    .breadcrumb a { color: rgba(26,18,8,0.65); text-decoration: none; }
+    .badge { display: inline-block; background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.45); color: var(--dark); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.85rem; border-radius: 50px; margin-bottom: 1rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3.4vw, 2.6rem); color: var(--dark); line-height: 1.2; margin-bottom: 1rem; max-width: 760px; }
+    .hero-desc { font-size: 0.98rem; color: rgba(26,18,8,0.8); max-width: 640px; margin-bottom: 1.5rem; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.35); border-radius: var(--radius); overflow: hidden; margin-bottom: 1.5rem; max-width: 720px; }
+    .stat { background: rgba(255,255,255,0.2); padding: 0.9rem 1.1rem; }
+    .stat-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,18,8,0.55); margin-bottom: 0.3rem; }
+    .stat-value { font-size: 0.9rem; font-weight: 600; color: var(--dark); line-height: 1.3; }
+    .btn-primary { background: var(--dark); color: var(--white); padding: 0.65rem 1.4rem; border-radius: 50px; text-decoration: none; font-size: 0.9rem; font-weight: 500; display: inline-block; }
+    .page-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
+    article h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; margin: 1.75rem 0 0.75rem; color: var(--dark); }
+    article h2:first-child { margin-top: 0; }
+    article p { font-size: 0.97rem; color: #3a2f22; margin-bottom: 0.9rem; }
+    .cta-block { margin-top: 2rem; padding: 1.5rem; background: #fff8ec; border-radius: var(--radius); text-align: center; }
+    .cta-block p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+    aside { position: sticky; top: 80px; }
+    .sidebar-card { background: var(--white); border-radius: var(--radius); padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 1.25rem; }
+    .sidebar-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 1rem; }
+    .detail-row { display: flex; flex-direction: column; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+    .detail-row:last-of-type { border-bottom: none; }
+    .detail-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+    .detail-value { font-size: 0.9rem; font-weight: 500; color: var(--dark); }
+    .sidebar-apply { display: block; background: var(--dark); color: var(--white); text-align: center; padding: 0.7rem 1rem; border-radius: 50px; text-decoration: none; font-size: 0.88rem; font-weight: 500; margin-top: 1rem; }
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 1.5rem 2rem; font-size: 0.83rem; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 0.5rem; }
+    @media (max-width: 768px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } .page-body { grid-template-columns: 1fr; } aside { position: static; } }
+  </style>
+  <meta property="og:title" content="PhD Supervisors | PhD Position" />
+  <meta property="og:description" content="PhD Supervisors — a PhD position at Monash. View details and apply via the official university listing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://australiaawardshub.com/phd-phd-supervisors" />
+  <meta property="og:image" content="https://australiaawardshub.com/banner.png" />
+</head>
+<body>
+
+<nav class="simple-nav">
+  <a href="/" class="nav-logo"><img src="logo.png" alt="Australia Awards Hub" />Australia Awards Hub</a>
+  <div class="nav-links">
+    <a href="/phd-research-positions">All PhD Positions</a>
+    <a href="/">Home</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/phd-research-positions">PhD &amp; Research Positions</a> &rsaquo; Monash</div>
+    <span class="badge">PhD Position &middot; Monash</span>
+    <h1>PhD Supervisors</h1>
+    <p class="hero-desc">A PhD research position at Monash, currently open to applicants. See the official listing for full eligibility, funding, and application details.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-label">University</div><div class="stat-value">Monash</div></div>
+      <div class="stat"><div class="stat-label">Supervisor</div><div class="stat-value">See official listing</div></div>
+      <div class="stat"><div class="stat-label">Status</div><div class="stat-value">Listed 2026-07-21</div></div>
+    </div>
+    <a href="https://www.monash.edu/science/schools/physics/postgrad/postgraduate-project/available-phd-positions" target="_blank" rel="noopener noreferrer nofollow" class="btn-primary">View official listing &rarr;</a>
+  </div>
+</section>
+
+<div class="page-body">
+  <article>
+    <h2>About this position</h2>
+    <p>This PhD position is offered by Monash, sourced from the university's own listings. For the full project description, eligibility criteria, funding details, and how to apply, use the official link below or in the box on the right.</p>
+
+    <h2>How to apply</h2>
+    <p>Applications for this position are handled directly by Monash — not by Australia Awards Hub. Visit the official listing to see the current application process, required documents, and closing date.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Position details</h3>
+      <div class="detail-row"><span class="detail-label">University</span><span class="detail-value">Monash</span></div>
+      <div class="detail-row"><span class="detail-label">Supervisor</span><span class="detail-value">See official listing</span></div>
+      <div class="detail-row"><span class="detail-label">Listed</span><span class="detail-value">2026-07-21</span></div>
+      <a href="https://www.monash.edu/science/schools/physics/postgrad/postgraduate-project/available-phd-positions" target="_blank" rel="noopener noreferrer nofollow" class="sidebar-apply">View official listing &rarr;</a>
+    </div>
+    <div class="sidebar-card">
+      <h3>More positions</h3>
+      <a href="/phd-research-positions" class="sidebar-apply" style="background:var(--amber);color:var(--dark);">Browse all PhD positions</a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  Independent editorial reference. Not affiliated with Monash or any Australian government body.
+  <br><a href="/">&larr; Back to home</a> &middot; <a href="/phd-research-positions">All PhD positions</a>
+</footer>
+
+</body>
+</html>
