@@ -286,5 +286,41 @@
     "supervisor": null,
     "slug": "phd-position-description-research-associate-in-chemistry",
     "found_date": "2026-07-21"
+  },
+  {
+    "title": "Position description user repository",
+    "url": "https://staff.flinders.edu.au/content/dam/staff/pc/staff-appointment-resource-kit/position-description-user-repository.pdf",
+    "snippet": "Contents HEO4 – Project Administrator (People and Culture) HEO4 – Assistant Accountant (Finance and Procurement Services) HEO5 – Employment Services Officer (People and Culture) HEO6 – Test Analyst (Information and Digital Services) HEO7 – Senior WHS Officer (People and Culture) ",
+    "university": "Flinders",
+    "supervisor": "Project Lead - People and Culture Classification Higher Educa",
+    "slug": "phd-position-description-user-repository",
+    "found_date": "2026-07-22"
+  },
+  {
+    "title": "Applying with us",
+    "url": "https://www.monash.edu/graduate-research/study/apply",
+    "snippet": "Note that each faculty may have specific guidance of what they are seeking in your research proposal at the application stage and that your research proposal may evolve after you apply as you work with your supervisor to refine it.\n\nGuidance on what to include is available in the",
+    "university": "Monash",
+    "supervisor": null,
+    "slug": "phd-applying-with-us",
+    "found_date": "2026-07-22"
+  },
+  {
+    "title": "Find a research degree or PhD",
+    "url": "https://www.deakin.edu.au/research/research-degrees/find-a-research-degree-or-phd",
+    "snippet": "#### Campus\n\n   Melbourne Burwood Campus\n   Geelong Waurn Ponds Campus\n   Geelong Waterfront Campus\n   Online\n\nShowing 1-12 of 42 results\n\n   Previous\n   1\n   2\n   3\n   4\n   Next\n\n## Apply for a research degree\n\nReady to take the next step? Find everything you need to apply for a",
+    "university": "Deakin",
+    "supervisor": null,
+    "slug": "phd-find-a-research-degree-or-phd",
+    "found_date": "2026-07-22"
+  },
+  {
+    "title": "Deep learning from less human supervision | Supervisor Connect",
+    "url": "https://supervisorconnect.it.monash.edu/projects/research/deep-learning-less-human-supervision",
+    "snippet": "Although deep learning has produces state of the art results on many problems, it is a data hungry technology requiring a lot of human supervision in the form of annotated data. Potential PhD topic include learning to learn and meta-learning, active learning, semi-supervised lear",
+    "university": "Monash",
+    "supervisor": null,
+    "slug": "phd-deep-learning-from-less-human-supervision-supervisor-connect",
+    "found_date": "2026-07-22"
   }
 ]
