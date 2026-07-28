@@ -277,5 +277,23 @@
     "supervisor": null,
     "slug": "masters-find-a-research-degree-or-phd",
     "found_date": "2026-07-27"
+  },
+  {
+    "title": "PhD and MPhil expression of interest",
+    "url": "https://science.anu.edu.au/webform/phd-and-mphil-expression-interest",
+    "snippet": "If possible, please reach out to the preferred supervisor via email, providing them with your CV, transcripts and details about the research project you would like to undertake.\n\nOR please complete the form below with as much detail as possible so that the College can assist.\n\nLi",
+    "university": "ANU",
+    "supervisor": null,
+    "slug": "masters-phd-and-mphil-expression-of-interest",
+    "found_date": "2026-07-28"
+  },
+  {
+    "title": "Setting up for success: Managing your graduate research project",
+    "url": "https://students.unimelb.edu.au/academic-skills/graduate-research-services/setting-up-for-success",
+    "snippet": "Learn how to work with a supervisor, set goals and other project management skills.",
+    "university": "Melbourne",
+    "supervisor": null,
+    "slug": "masters-setting-up-for-success-managing-your-graduate-research-proje",
+    "found_date": "2026-07-28"
   }
 ]
