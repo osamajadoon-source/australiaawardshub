@@ -511,5 +511,23 @@
     "supervisor": null,
     "slug": "phd-current-phd-supervision-crawford-school-of-public-policy",
     "found_date": "2026-07-29"
+  },
+  {
+    "title": "QUT  - Doctor of Philosophy - Research",
+    "url": "https://www.qut.edu.au/research/study-with-us/phd",
+    "snippet": "have a minimum grade point average (GPA) score of 5.0 on QUT's 7 point scale\n and present evidence of research experience and potential for approval.\n\nAdmission to the Doctor of Philosophy depends on an applicant’s demonstrated research aptitude and the availability of supervisio",
+    "university": "QUT",
+    "supervisor": null,
+    "slug": "phd-qut-doctor-of-philosophy-research",
+    "found_date": "2026-07-30"
+  },
+  {
+    "title": "PhD Projects - Institute for Molecular Bioscience",
+    "url": "https://imb.uq.edu.au/study/phd-projects",
+    "snippet": "PhD Projects · AI and Mechanical Ventilation · Bioengineering of novel nanovesicles for drug delivery · Characterising a specific regulator of venous vessel",
+    "university": "UQ",
+    "supervisor": null,
+    "slug": "phd-phd-projects-institute-for-molecular-bioscience",
+    "found_date": "2026-07-30"
   }
 ]
