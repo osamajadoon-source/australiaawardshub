@@ -295,5 +295,23 @@
     "supervisor": null,
     "slug": "masters-setting-up-for-success-managing-your-graduate-research-proje",
     "found_date": "2026-07-28"
+  },
+  {
+    "title": "Higher Degree by Research | Study",
+    "url": "https://www.uwa.edu.au/study/explore-courses/higher-degree-by-research",
+    "snippet": "Supervisors provide guidance on your topic, project design and dissertation, while existing projects may offer a clear path in your chosen field.",
+    "university": "UWA",
+    "supervisor": null,
+    "slug": "masters-higher-degree-by-research-study",
+    "found_date": "2026-07-30"
+  },
+  {
+    "title": "Expression of Interest in Higher Degree Research",
+    "url": "https://www.unsw.edu.au/content/dam/pdfs/ada/general/resources/2021-07-study-with-us/2021-07-ADA-expression%20of%20Interest%20in%20Higher%20Degree%20Research.pdf",
+    "snippet": "Expression of Interest in Higher Degree Research For applicants to the following programs: Master of Philosophy (MPhil) Name and date of test you will take,",
+    "university": "UNSW",
+    "supervisor": null,
+    "slug": "masters-expression-of-interest-in-higher-degree-research",
+    "found_date": "2026-07-30"
   }
 ]
