@@ -331,5 +331,32 @@
     "supervisor": null,
     "slug": "masters-how-to-write-a-research-proposal",
     "found_date": "2026-07-31"
+  },
+  {
+    "title": "Masters Research Project - ANU",
+    "url": "https://programsandcourses.anu.edu.au/course/phys8000",
+    "snippet": "The course is designed for students in the Master of Science (Advanced) programs offered by the Research School of Physics and the research topic will be commensurate with the specific augmentation being studied. This course is designed to connect students, on an individual basis",
+    "university": "ANU",
+    "supervisor": null,
+    "slug": "masters-masters-research-project-anu",
+    "found_date": "2026-08-02"
+  },
+  {
+    "title": "LAW4801 Research Project",
+    "url": "https://www.monash.edu/law/current-students/undergraduate/undergraduate-research-and-research-project-units/law4801-research-project",
+    "snippet": "### Research Project host units for 2026 and research project topics\n\nThe following elective units are available as host units, for the purposes of Research Paper, in Semester 2 2026. [...] | LAW4184 International criminal law | Dr Monique Cormier | The LAW4184 research essay top",
+    "university": "Monash",
+    "supervisor": null,
+    "slug": "masters-law4801-research-project",
+    "found_date": "2026-08-02"
+  },
+  {
+    "title": "Find a research supervisor",
+    "url": "https://www.flinders.edu.au/international/apply/apply-research-degree/find-research-supervisor",
+    "snippet": "PLUS at least five years’ of clinical or industry work experience.Save your Experience statement, together with any relevant evidence, as a single pdf entitled ‘(Your surname) Experience’\n\n4.   Contact Course CoordinatorAssociate Professor Chris Barr\n\nMaster of Research for Pract",
+    "university": "Flinders",
+    "supervisor": null,
+    "slug": "masters-find-a-research-supervisor",
+    "found_date": "2026-08-02"
   }
 ]
