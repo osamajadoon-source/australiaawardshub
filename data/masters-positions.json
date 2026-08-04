@@ -394,5 +394,23 @@
     "supervisor": null,
     "slug": "masters-postgraduate-research",
     "found_date": "2026-08-03"
+  },
+  {
+    "title": "Postgraduate research | The Australian National University",
+    "url": "https://study.anu.edu.au/apply/postgraduate-research",
+    "snippet": "Most colleges would like you to find and secure the support of a potential supervisor before you\ncomplete your application. For example, the ANU College of Business &\nEconomics has different arrangements for setting up supervision, so please check in with\nthem before applying.\n\nS",
+    "university": "ANU",
+    "supervisor": null,
+    "slug": "masters-postgraduate-research-the-australian-national-university",
+    "found_date": "2026-08-04"
+  },
+  {
+    "title": "Postgraduate thesis | Engineering - UNSW Sydney",
+    "url": "https://www.unsw.edu.au/engineering/student-life/academic-information/postgraduate-thesis",
+    "snippet": "1. CVEN9050 Masters Practice Project A (6 UoC) + CVEN9051 Masters Practice Project B (6 UoC)\n  2. CVEN9451 Masters Project A (4 UoC) + CVEN9452 Masters Project B (4 UoC) + CVEN9453 Masters Project C (4 UoC)\n\n  Applying for option 2; CVEN9451/9452/9453\n\n  To enrol in CVEN9451 Mast",
+    "university": "UNSW",
+    "supervisor": null,
+    "slug": "masters-postgraduate-thesis-engineering-unsw-sydney",
+    "found_date": "2026-08-04"
   }
 ]
