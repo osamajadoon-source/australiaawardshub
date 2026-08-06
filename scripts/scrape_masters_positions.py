@@ -83,6 +83,22 @@ GENERIC_TITLE_PATTERNS = [
     "research news", "funding opportunities", "news & funding",
     "news and funding", "postgraduate research studies",
     "research degrees", "study opportunities",
+
+    # generic degree/program overview pages — not a specific position
+    "master of research", "masters research thesis", "postgraduate research",
+    "postgraduate thesis", "higher degree by research", "doctor of philosophy",
+    "phd & mphil", "phd and mphil", "college of science and medicine",
+    "current phd supervision", "current supervision", "national industry phd program",
+    "start your research degree", "study with us", "research study",
+    "find a research degree", "find a research supervisor",
+    # staff/academic job ads — not a student PhD/Masters position
+    "position description", "research associate", "research fellow",
+    "research assistant", "principal research fellow", "associate professor",
+    "clinical research project manager",
+    # application paperwork, not a position itself
+    "expression of interest", "eoi form", "application form", ".docx",
+    # advice/story content
+    "pieces of advice", "phd story",
 ]
 
 BARE_GENERIC_TITLES = {
@@ -153,6 +169,26 @@ def is_excluded(url):
     return any(pattern in url for pattern in EXCLUDE_URL_PATTERNS)
 
 
+def normalize_url(url):
+    """Collapse www/non-www, protocol, trailing slash and query string so
+    the same underlying page isn't treated as 'new' just because it was
+    linked with a slightly different URL shape."""
+    u = re.sub(r"^https?://", "", url.strip().lower())
+    u = re.sub(r"^www\.", "", u)
+    u = u.split("?")[0].split("#")[0]
+    u = u.rstrip("/")
+    return u
+
+
+def title_key(title, url):
+    """Same university + near-identical title text = treat as the same
+    listing even if the source URL differs slightly (e.g. a scholarship
+    page reachable via two different paths on the same site)."""
+    uni = university_label(url)
+    norm_title = re.sub(r"[^a-z0-9]+", "", title.lower())
+    return f"{uni}::{norm_title}"
+
+
 def is_specific_project(title, content):
     title_lower = title.lower()
     text = f"{title} {content}".lower()
@@ -207,13 +243,15 @@ def unique_slug(base_slug, existing_slugs):
     return candidate
 
 
-def pick_new_candidates(posted_urls, existing_slugs, api_key, count=4):
+def pick_new_candidates(posted_urls, posted_title_keys, existing_slugs, api_key, count=4):
     day_offset = datetime.date.today().toordinal()
     queries = SEARCH_QUERIES[day_offset % len(SEARCH_QUERIES):] + \
         SEARCH_QUERIES[:day_offset % len(SEARCH_QUERIES)]
 
+    posted_urls_norm = {normalize_url(u) for u in posted_urls}
     found = []
-    seen_today = set()
+    seen_today_urls = set()
+    seen_today_titles = set()
 
     for q in queries:
         if len(found) >= count:
@@ -231,14 +269,20 @@ def pick_new_candidates(posted_urls, existing_slugs, api_key, count=4):
             title = item.get("title", "").strip()[:160]
             content = item.get("content", "").strip()
 
-            if link in posted_urls or link in seen_today or is_excluded(link):
+            link_norm = normalize_url(link)
+            tkey = title_key(title, link)
+
+            if (link_norm in posted_urls_norm or link_norm in seen_today_urls
+                    or tkey in posted_title_keys or tkey in seen_today_titles
+                    or is_excluded(link)):
                 continue
             if not any(d in link for d in UNI_DOMAINS):
                 continue
             if not is_specific_project(title, content):
                 continue
 
-            seen_today.add(link)
+            seen_today_urls.add(link_norm)
+            seen_today_titles.add(tkey)
             slug = unique_slug(slugify(title), existing_slugs)
             existing_slugs.add(slug)
 
@@ -538,9 +582,10 @@ def main():
 
     posted = load_posted()
     posted_urls = {e["url"] for e in posted}
+    posted_title_keys = {title_key(e["title"], e["url"]) for e in posted}
     existing_slugs = {e["slug"] for e in posted if "slug" in e}
 
-    candidates = pick_new_candidates(posted_urls, existing_slugs, api_key, count=DAILY_POST_COUNT)
+    candidates = pick_new_candidates(posted_urls, posted_title_keys, existing_slugs, api_key, count=DAILY_POST_COUNT)
     if not candidates:
         print("No new candidates found today — nothing to commit.")
         write_github_output(0, [])
