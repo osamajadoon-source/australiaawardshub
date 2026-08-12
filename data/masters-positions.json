@@ -241,5 +241,23 @@
     "supervisor": null,
     "slug": "masters-roles-and-responsibilities-university-of-melbourne",
     "found_date": "2026-08-11"
+  },
+  {
+    "title": "Graduate research applications (international) - Study",
+    "url": "https://study.unimelb.edu.au/how-to-apply/graduate-research/international-applications/applications",
+    "snippet": "Application closing dates and intake start dates can be found on the How to apply tab of each course page. Some faculties consider applications at any time, ...Read more",
+    "university": "Melbourne",
+    "supervisor": null,
+    "slug": "masters-graduate-research-applications-international-study",
+    "found_date": "2026-08-12"
+  },
+  {
+    "title": "Find a PhD or MPhil project with a scholarship - Study at UQ",
+    "url": "https://study.uq.edu.au/study-options/phd-mphil-professional-doctorate/projects",
+    "snippet": "Develop a protein-based technology to enhance targeted delivery of mRNA vaccines to dendritic cells (DCs) to improve vaccine efficacy and customise immune responses via targeting of different DC subsets.\n\n### Engineering yeast flavours for food and beverages\n\nEngineering yeast fl",
+    "university": "UQ",
+    "supervisor": null,
+    "slug": "masters-find-a-phd-or-mphil-project-with-a-scholarship-study-at-uq",
+    "found_date": "2026-08-12"
   }
 ]
