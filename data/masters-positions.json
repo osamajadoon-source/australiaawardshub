@@ -295,5 +295,14 @@
     "supervisor": null,
     "slug": "masters-masters-by-research-unsw-canberra",
     "found_date": "2026-08-16"
+  },
+  {
+    "title": "Research - RMIT University",
+    "url": "https://www.rmit.edu.au/research",
+    "snippet": "Our researchers are the world leaders in their field, delivering outstanding, quality projects that are cited worldwide. Browse our directory to see our capabilities and connect with our experts.\n\nSearch our directory\n\n#### PhD and research degrees\n\n About our research degrees\n S",
+    "university": "RMIT",
+    "supervisor": null,
+    "slug": "masters-research-rmit-university",
+    "found_date": "2026-08-20"
   }
 ]
