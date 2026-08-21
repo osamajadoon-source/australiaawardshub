@@ -484,5 +484,23 @@
     "supervisor": null,
     "slug": "phd-phd-education-apply-rmit-university",
     "found_date": "2026-08-20"
+  },
+  {
+    "title": "PhD Projects",
+    "url": "https://www.monash.edu/it/dsai/machine-learning/phd-projects",
+    "snippet": "We have opportunities available for PhD research in the areas of Data Science, Data Mining, Machine Learning and Deep Neural Networks, among others. Our students are supported by a range of scholarships and top-ups and receive travel support during their study.\n\nFor more general ",
+    "university": "Monash",
+    "supervisor": null,
+    "slug": "phd-phd-projects",
+    "found_date": "2026-08-21"
+  },
+  {
+    "title": "Research project directory",
+    "url": "https://www.monash.edu/engineering/future-students/graduate-research/phd/projects",
+    "snippet": "This PhD project investigates embodied robotic manipulation, focusing on developing perception-driven control strategies for robots to interact with and manipulate objects in dynamic and human-centric environments. The research will explore multi-sensory perception, integrating v",
+    "university": "Monash",
+    "supervisor": null,
+    "slug": "phd-research-project-directory",
+    "found_date": "2026-08-21"
   }
 ]
