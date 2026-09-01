@@ -547,5 +547,23 @@
     "supervisor": "Dean",
     "slug": "phd-professor-in-project-management-and-innovation",
     "found_date": "2026-08-29"
+  },
+  {
+    "title": "How a passion becomes a University of Melbourne PhD project",
+    "url": "https://research.unimelb.edu.au/study/experience/researcher-life/passion-becomes-phd-project",
+    "snippet": "She usually spends two days a week researching at home, then comes onto campus for three days, sitting with fellow researchers who are investigating how gameplay intersects with everything from artificial intelligence to ethics and YouTube content creators.\n\n“It’s such a fun rese",
+    "university": "Melbourne",
+    "supervisor": null,
+    "slug": "phd-how-a-passion-becomes-a-university-of-melbourne-phd-project",
+    "found_date": "2026-09-01"
+  },
+  {
+    "title": "The University of Queensland",
+    "url": "https://www.uq.edu.au",
+    "snippet": "## About UQ\n\nWe educate and work with outstanding people to build a better future.\n\n## Find a program\n\n## Looking for a UQ expert?\n\nWe have experts across over 1,000 specialisations. Find a UQ researcher, PhD supervisor or media expert by searching UQ Experts.\n\nFind an expert\n\n##",
+    "university": "UQ",
+    "supervisor": null,
+    "slug": "phd-the-university-of-queensland",
+    "found_date": "2026-09-01"
   }
 ]
