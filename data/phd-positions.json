@@ -565,5 +565,14 @@
     "supervisor": null,
     "slug": "phd-the-university-of-queensland",
     "found_date": "2026-09-01"
+  },
+  {
+    "title": "ARC Discovery Projects - Research support - University of Queensland",
+    "url": "https://research-support.uq.edu.au/resources-and-support/research-office/research-grants/funding-schemes/australian-research-council/arc-discovery-projects",
+    "snippet": "The Discovery Project scheme runs in a two-stage application process. Applicants will submit an Expression of Interest in RMS which is then assessed by the ARC College of Experts. Shortlisted projects will be invited to submit a full application.\n\n### UQ Information Sessions\n\nTo ",
+    "university": "UQ",
+    "supervisor": null,
+    "slug": "phd-arc-discovery-projects-research-support-university-of-queens",
+    "found_date": "2026-09-04"
   }
 ]
