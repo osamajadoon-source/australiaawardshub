@@ -448,5 +448,41 @@
     "supervisor": null,
     "slug": "masters-music-science-research",
     "found_date": "2026-09-05"
+  },
+  {
+    "title": "Research proposals",
+    "url": "https://students.unimelb.edu.au/academic-skills/reading-writing-and-referencing/referencing-and-research/research-proposals",
+    "snippet": "Details any results that you may already have resulting from previous Honours or Masters’ research work, or perhaps from a pilot study. It is important to relate these results to the critical framework of your intended new research project.\n\n### Timetable / Plan\n\nLists the stages",
+    "university": "Melbourne",
+    "supervisor": null,
+    "slug": "masters-research-proposals",
+    "found_date": "2026-09-10"
+  },
+  {
+    "title": "Master of Philosophy | Crawford School of Public Policy",
+    "url": "https://crawford.anu.edu.au/master-philosophy",
+    "snippet": "| Scholarship round | Date | Commencement Year |\n --- \n| Round 1 International | Closing 31 August each year | The following year by the 31st March |\n| Round 1 Domestic | Closing 31 October each year | The following year by the 31st March |\n| Round 2 (International and Domestic) ",
+    "university": "ANU",
+    "supervisor": null,
+    "slug": "masters-master-of-philosophy-crawford-school-of-public-policy",
+    "found_date": "2026-09-10"
+  },
+  {
+    "title": "Masters by Research and PhD",
+    "url": "https://www.monash.edu/research/phd-masters-by-research",
+    "snippet": "can be great stepping stone into doctoral-level research, as can the vast suite of Masters by Research degrees we offer. As with a PhD, completing a Masters by Research degree requires you to submit a thesis for assessment. Certain disciplines may also require you to submit creat",
+    "university": "Monash",
+    "supervisor": null,
+    "slug": "masters-masters-by-research-and-phd",
+    "found_date": "2026-09-10"
+  },
+  {
+    "title": "Graduate Research Supervision Procedure / Document / Policy Central",
+    "url": "https://policies.mq.edu.au/document/view.php?id=176",
+    "snippet": "4. the Intellectual Property Policy;\n   5. the Acceptable Use of IT Resources Policy;\n   6. for Graduate Research students admitted to Cotutelle or Joint Research Degrees, the MQ Guiding Principles for Cotutelle and Joint PhD Enrolment; and\n   7. for Graduate Research students ad",
+    "university": "Macquarie",
+    "supervisor": null,
+    "slug": "masters-graduate-research-supervision-procedure-document-policy-cent",
+    "found_date": "2026-09-10"
   }
 ]
