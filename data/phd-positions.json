@@ -583,5 +583,14 @@
     "supervisor": null,
     "slug": "phd-working-with-my-supervisors-university-of-melbourne",
     "found_date": "2026-09-10"
+  },
+  {
+    "title": "Joint PhDs",
+    "url": "https://study.unimelb.edu.au/how-to-apply/graduate-research/joint-phds",
+    "snippet": "When you apply for a joint PhD you nominate either Melbourne or an overseas institution as your Home Institution. Your Home Institution is usually the one where you spend most of your time. This is normally predetermined by the project or joint PhD opportunity you are applying fo",
+    "university": "Melbourne",
+    "supervisor": null,
+    "slug": "phd-joint-phds",
+    "found_date": "2026-09-13"
   }
 ]
