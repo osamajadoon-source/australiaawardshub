@@ -592,5 +592,23 @@
     "supervisor": null,
     "slug": "phd-joint-phds",
     "found_date": "2026-09-13"
+  },
+  {
+    "title": "Study graduate research - Faculty of Arts - The University of Melbourne",
+    "url": "https://arts.unimelb.edu.au/study/graduate-research",
+    "snippet": "Interested in undertaking a PhD in the Faculty of Arts for 2027 entry? Browse advertised research opportunities currently seeking expressions of interest from prospective graduate researchers. If your interests align with an advertised opportunity, follow the instructions in the ",
+    "university": "Melbourne",
+    "supervisor": null,
+    "slug": "phd-study-graduate-research-faculty-of-arts-the-university-of-me",
+    "found_date": "2026-09-15"
+  },
+  {
+    "title": "Steps to apply for a PhD, MPhil and professional doctorate",
+    "url": "https://study.uq.edu.au/admissions/phd-mphil-professional-doctorate",
+    "snippet": "Find an agent near you\n\n### Before you apply\n\nUnderstand the application process, check eligibility, choose a supervisor or project, and explore fees and scholarships.\n\n### Application dates\n\nWhen you need to submit your expression of interest and final application.\n\n### Submit y",
+    "university": "UQ",
+    "supervisor": null,
+    "slug": "phd-steps-to-apply-for-a-phd-mphil-and-professional-doctorate",
+    "found_date": "2026-09-15"
   }
 ]
