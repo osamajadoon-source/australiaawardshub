@@ -619,5 +619,32 @@
     "supervisor": null,
     "slug": "phd-call-for-joint-phd-project-proposals-research-at-melbourne",
     "found_date": "2026-09-16"
+  },
+  {
+    "title": "Monash PhD - Graduate Research",
+    "url": "https://www.monash.edu/graduate-research/programs-industry/monash-phd",
+    "snippet": "and beyond. How to apply, scholarships and pathwaysImage 5 [...] Research internships Research internships \n       Available projects and internships Available projects and internships \n       Professional and career development Professional and career development \n           Pro",
+    "university": "Monash",
+    "supervisor": null,
+    "slug": "phd-monash-phd-graduate-research",
+    "found_date": "2026-09-17"
+  },
+  {
+    "title": "Projects - Griffith University",
+    "url": "https://www.griffith.edu.au/griffith-sciences/research/projects",
+    "snippet": "View our available PhD projects to find an existing project that matches your research passion",
+    "university": "Griffith",
+    "supervisor": null,
+    "slug": "phd-projects-griffith-university",
+    "found_date": "2026-09-17"
+  },
+  {
+    "title": "Potential PhD projects | The John Curtin School of Medical Research",
+    "url": "https://jcsmr.anu.edu.au/study/talo-program/potential-phd-projects",
+    "snippet": "AI-Driven Decoding and Design of RNA-interacting molecules. This PhD project will develop integrated AI systems for biomedicine to decode and engineer molecules that specifically target RNA, a key challenge for cell biology, biotechnology, and RNA-targeting therapeutics. It aims ",
+    "university": "ANU",
+    "supervisor": null,
+    "slug": "phd-potential-phd-projects-the-john-curtin-school-of-medical-res",
+    "found_date": "2026-09-17"
   }
 ]
