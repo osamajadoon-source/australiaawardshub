@@ -574,5 +574,23 @@
     "supervisor": null,
     "slug": "masters-research-school-of-physics",
     "found_date": "2026-09-20"
+  },
+  {
+    "title": "Project 89 | Scholarship | Macquarie University",
+    "url": "https://www.mq.edu.au/research/phd-and-research-degrees/how-to-apply/scholarship-opportunities/scholarship-search/project-89",
+    "snippet": "### Key details\n\nFunded jointly by Macquarie University and the Vietnamese Government (Ministry of Education and Training), this scholarship aims to develop future research leaders by providing advanced training in a world-class research environment.\n\nSuccessful applicants will u",
+    "university": "Macquarie",
+    "supervisor": null,
+    "slug": "masters-project-89-scholarship-macquarie-university",
+    "found_date": "2026-09-21"
+  },
+  {
+    "title": "Master of Science Communication Research Project - ANU",
+    "url": "https://programsandcourses.anu.edu.au/course/scom8000",
+    "snippet": "The Master of Science Communication Research Project involves a substantive investigation of an approved topic in science communication.",
+    "university": "ANU",
+    "supervisor": null,
+    "slug": "masters-master-of-science-communication-research-project-anu",
+    "found_date": "2026-09-21"
   }
 ]
