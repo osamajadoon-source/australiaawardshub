@@ -169,6 +169,18 @@ def is_excluded(url):
     return any(pattern in url for pattern in EXCLUDE_URL_PATTERNS)
 
 
+def load_excluded():
+    """Permanently-excluded pages: junk that was manually removed before.
+    Kept forever (separately from the visible listing) so it can never be
+    re-added just because it's no longer in the visible JSON."""
+    path = os.path.join(os.path.dirname(__file__), "..", "data", "excluded-positions.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
+
 def normalize_url(url):
     """Collapse www/non-www, protocol, trailing slash and query string so
     the same underlying page isn't treated as 'new' just because it was
@@ -581,9 +593,11 @@ def main():
         sys.exit(1)
 
     posted = load_posted()
-    posted_urls = {e["url"] for e in posted}
-    posted_title_keys = {title_key(e["title"], e["url"]) for e in posted}
-    existing_slugs = {e["slug"] for e in posted if "slug" in e}
+    excluded = load_excluded()
+    posted_urls = {e["url"] for e in posted} | {e["url"] for e in excluded if e.get("url")}
+    posted_title_keys = {title_key(e["title"], e["url"]) for e in posted} | \
+        {title_key(e["title"], e["url"]) for e in excluded if e.get("title") and e.get("url")}
+    existing_slugs = {e["slug"] for e in posted if "slug" in e} | {e["slug"] for e in excluded if e.get("slug")}
 
     candidates = pick_new_candidates(posted_urls, posted_title_keys, existing_slugs, api_key, count=DAILY_POST_COUNT)
     if not candidates:
