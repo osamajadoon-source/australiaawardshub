@@ -682,5 +682,14 @@
     "supervisor": null,
     "slug": "masters-research-project-subjects",
     "found_date": "2026-09-30"
+  },
+  {
+    "title": "Research+You - QUT Centre for Robotics",
+    "url": "https://research.qut.edu.au/qcr/researchandyou",
+    "snippet": "You can sign up for a Vacation Research Experience Scheme (VRES) project. This pays $2,000 for 120-150 hours of work over 6-19 weeks during the summer break (late Nov – mid Feb). Applications for VRES projects are typically in August each year. They are posted here, but even bett",
+    "university": "QUT",
+    "supervisor": null,
+    "slug": "masters-research-you-qut-centre-for-robotics",
+    "found_date": "2026-10-02"
   }
 ]
