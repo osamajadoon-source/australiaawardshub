@@ -106,5 +106,23 @@
     "supervisor": null,
     "slug": "masters-phd-positions-clean-energy-futures-1-about-the-project",
     "found_date": "2026-09-25"
+  },
+  {
+    "title": "Masters by Research in computational materials discovery - RMIT University",
+    "url": "https://www.rmit.edu.au/scholarships/research/masters-computational-materials-discovery",
+    "snippet": "The project focuses on modelling two-dimensional (2D) metal oxides using quantum simulation tools to investigate their electronic and dielectric properties. It is suited to applicants with a background in materials science, physics, engineering, or computer science who are intere",
+    "university": "RMIT",
+    "supervisor": null,
+    "slug": "masters-masters-by-research-in-computational-materials-discovery-rmi",
+    "found_date": "2026-10-03"
+  },
+  {
+    "title": "Milestones and requirements - Griffith University",
+    "url": "https://intranet.secure.griffith.edu.au/research/griffith-graduate-research-school/milestones",
+    "snippet": "The HDR Convenor, on the recommendation of the principal supervisor, may approve an extension of up to six months FTE for a Doctoral candidate and three months FTE for a Masters (Research) candidate. Extensions beyond this period require approval from the Dean, Research and will ",
+    "university": "Griffith",
+    "supervisor": null,
+    "slug": "masters-milestones-and-requirements-griffith-university",
+    "found_date": "2026-10-03"
   }
 ]
