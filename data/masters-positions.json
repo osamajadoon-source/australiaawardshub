@@ -133,5 +133,23 @@
     "supervisor": null,
     "slug": "masters-discovery-projects",
     "found_date": "2026-10-04"
+  },
+  {
+    "title": "Honours and Masters project | Supervisor Connect | Monash University",
+    "url": "https://supervisorconnect.it.monash.edu/projects/honours?page=3",
+    "snippet": "### Automated Video-based Epilepsy Seizure Classification and Sudden Unexpected Death in Epilepsy (SUDEP) Detection\n\nDevelop, implement, and test deep learning techniques for automatic classification of epileptic seizures using video data of seizures\n\n### Ambulance Clinical Recor",
+    "university": "Monash",
+    "supervisor": null,
+    "slug": "masters-honours-and-masters-project-supervisor-connect-monash-univer",
+    "found_date": "2026-10-07"
+  },
+  {
+    "title": "Master of Project Management - RMIT University",
+    "url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/master-of-project-management-mc210",
+    "snippet": "utilise specific research and technical skills to strategically develop and implement project management strategies and solutions that are responsive to complex sustainable and economic theories and enhance project value, delivery and governance. [...] integrate and apply appropr",
+    "university": "RMIT",
+    "supervisor": null,
+    "slug": "masters-master-of-project-management-rmit-university",
+    "found_date": "2026-10-07"
   }
 ]
