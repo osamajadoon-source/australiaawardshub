@@ -205,5 +205,14 @@
     "supervisor": null,
     "slug": "masters-research-funding-res-hub",
     "found_date": "2026-10-24"
+  },
+  {
+    "title": "Research Project for Advanced Masters - ANU",
+    "url": "https://programsandcourses.anu.edu.au/course/biol8701",
+    "snippet": "1. Plan and engage in an independent and sustained investigation of a chosen research topic supervised by academic staff.\n2. Systematically identify relevant theory and concepts in the chosen field, relate these to appropriate methodologies and evidence, and draw appropriate conc",
+    "university": "ANU",
+    "supervisor": null,
+    "slug": "masters-research-project-for-advanced-masters-anu",
+    "found_date": "2026-10-25"
   }
 ]
